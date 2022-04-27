@@ -1,5 +1,15 @@
 apply plugin: "com.android.application"
 
+project.ext.envConfigFiles = [
+    developmentdebug: ".env.development",
+    developmentrelease: ".env.development",
+    stagingdebug: ".env.staging",
+    stagingrelease: ".env.staging",
+    productiondebug: ".env.production",
+    productionrelease: ".env.production"
+]
+apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
+
 import com.android.build.OutputFile
 import org.apache.tools.ant.taskdefs.condition.Os
 
@@ -141,6 +151,8 @@ android {
         versionCode 1
         versionName "1.0"
         buildConfigField "boolean", "IS_NEW_ARCHITECTURE_ENABLED", isNewArchitectureEnabled().toString()
+        
+        resValue "string", "build_config_package", "com.jhseo.reactnative.rnclosemountain"
 
         if (isNewArchitectureEnabled()) {
             // We configure the NDK build only if you decide to opt-in for the New Architecture.
@@ -234,6 +246,7 @@ android {
     buildTypes {
         debug {
             signingConfig signingConfigs.debug
+            matchingFallbacks = ['debug', 'release']
         }
         release {
             // Caution! In production, you need to generate your own keystore file.
@@ -266,6 +279,7 @@ dependencies {
 
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
+    implementation project(':react-native-config')
     implementation project(':react-native-svg')
 
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
