@@ -6,6 +6,10 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
+import Config from 'react-native-config';
+import './i18n';
+
+console.log('config', Config.API_URL, Config.NODE_ENV);
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -23,6 +27,9 @@ const App = () => {
       >
         <View style={backgroundStyle}>
           <Text>App</Text>
+        </View>
+        <View style={backgroundStyle}>
+          <Text>{Config.NODE_ENV ?? 'not get'}</Text>
         </View>
       </ScrollView>
     </SafeAreaView>
