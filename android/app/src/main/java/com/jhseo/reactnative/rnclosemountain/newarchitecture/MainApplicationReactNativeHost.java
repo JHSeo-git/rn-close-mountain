@@ -1,4 +1,4 @@
-package com.rnclosemountain.newarchitecture;
+package com.jhseo.reactnative.rnclosemountain.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -19,9 +19,9 @@ import com.facebook.react.fabric.CoreComponentsRegistry;
 import com.facebook.react.fabric.EmptyReactNativeConfig;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import com.rnclosemountain.BuildConfig;
-import com.rnclosemountain.newarchitecture.components.MainComponentsRegistry;
-import com.rnclosemountain.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import com.jhseo.reactnative.rnclosemountain.BuildConfig;
+import com.jhseo.reactnative.rnclosemountain.newarchitecture.components.MainComponentsRegistry;
+import com.jhseo.reactnative.rnclosemountain.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 

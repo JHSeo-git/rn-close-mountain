@@ -1,4 +1,4 @@
-package com.rnclosemountain;
+package com.jhseo.reactnative.rnclosemountain;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;

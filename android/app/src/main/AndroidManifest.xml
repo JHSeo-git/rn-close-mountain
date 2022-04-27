@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.rnclosemountain">
+  package="com.jhseo.reactnative.rnclosemountain">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
