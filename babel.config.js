@@ -5,5 +5,8 @@ module.exports = {
       { useTransformReactJSXExpermiental: true },
     ],
   ],
-  plugins: [['@babel/plugin-transform-react-jsx', { runtime: 'automatic' }]],
+  plugins: [
+    'react-native-reanimated/plugin',
+    ['@babel/plugin-transform-react-jsx', { runtime: 'automatic' }],
+  ],
 };
