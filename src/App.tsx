@@ -1,4 +1,5 @@
 import {
+  Image,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -30,6 +31,9 @@ const App = () => {
         </View>
         <View style={backgroundStyle}>
           <Text>{Config.NODE_ENV ?? 'not get'}</Text>
+        </View>
+        <View>
+          <Image source={require('./assets/images/sample.gif')} />
         </View>
       </ScrollView>
     </SafeAreaView>
