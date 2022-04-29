@@ -16,7 +16,7 @@ export type SampleStackParamList = {
   SampleBottomSheet: undefined;
 };
 
-export type SampleScreenProps<T extends keyof SampleStackParamList> =
+export type SampleStackScreenProps<T extends keyof SampleStackParamList> =
   CompositeScreenProps<
     NativeStackScreenProps<SampleStackParamList, T>,
     RootStackScreenProps<keyof RootStackParamList>
