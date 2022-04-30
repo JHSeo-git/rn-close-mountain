@@ -19,7 +19,7 @@ export const COLORS = {
   warning: colors.amber.amber10,
   danger: colors.crimson.crimson10,
 
-  hiContrast: colors.gray.gray11,
+  hiContrast: colors.gray.gray12,
   loContrast: '#fff',
 
   white: '#fff',
