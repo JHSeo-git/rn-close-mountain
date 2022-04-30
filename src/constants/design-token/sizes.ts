@@ -15,4 +15,7 @@ export const SIZES = {
   $14: 56,
   $16: 64,
   $20: 80,
+
+  // semantic
+  headerHeight: 44,
 };
