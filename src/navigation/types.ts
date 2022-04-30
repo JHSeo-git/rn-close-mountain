@@ -14,6 +14,7 @@ export type SampleStackParamList = {
   SampleHome: undefined;
   SampleGIF: undefined;
   SampleBottomSheet: undefined;
+  SampleBottomSheetModal: undefined;
 };
 
 export type SampleStackScreenProps<T extends keyof SampleStackParamList> =
