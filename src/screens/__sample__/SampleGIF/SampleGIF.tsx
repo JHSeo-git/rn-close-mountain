@@ -8,7 +8,7 @@ import { SPACE } from '../../../constants/design-token';
 const SampleGIF = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <Header title="Sample GIF" hasGoback />
+      <Header title="GIF" hasGoback />
       <View style={styles.main}>
         <View style={styles.spaceView}>
           <Text style={textStyles.strong}>Sample GIF (200 X 200)</Text>

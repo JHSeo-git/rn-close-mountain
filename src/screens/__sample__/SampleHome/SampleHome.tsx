@@ -33,6 +33,13 @@ const SampleHome = ({ navigation }: SampleHomeProps) => {
         </View>
         <View style={styles.buttonBox}>
           <SampleButton
+            onPress={() => navigation.navigate('SampleBottomSheetModal')}
+          >
+            <Text style={styles.buttonText}>Bottom Sheet Modal</Text>
+          </SampleButton>
+        </View>
+        <View style={styles.buttonBox}>
+          <SampleButton
             onPress={() =>
               i18n.changeLanguage(i18n.language === 'en' ? 'ko' : 'en')
             }
