@@ -1,5 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import { View, Text, StyleSheet, Pressable } from 'react-native';
+import { FONTS, FONTSIZES, SIZES, SPACE } from '../../constants/design-token';
+import { viewStyles } from '../../constants/global-styles';
 
 type HeaderProps = {
   title?: string;
@@ -8,6 +10,7 @@ type HeaderProps = {
 
 const Header = ({ title, hasGoback }: HeaderProps) => {
   const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
       <View style={styles.leftBox}>
@@ -29,23 +32,22 @@ const Header = ({ title, hasGoback }: HeaderProps) => {
 
 const styles = StyleSheet.create({
   container: {
-    height: 44,
-    paddingHorizontal: 20,
+    height: SIZES.headerHeight,
+    paddingHorizontal: SPACE.$5,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
   },
   leftBox: {},
   centerBox: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    zIndex: -1,
     ...StyleSheet.absoluteFillObject,
+    ...viewStyles.center,
+    zIndex: -1,
   },
   rightBox: {},
   title: {
-    fontSize: 20,
-    fontFamily: 'Poppins-Bold',
+    fontSize: FONTSIZES.xl,
+    fontFamily: FONTS.bold,
   },
 });
 
