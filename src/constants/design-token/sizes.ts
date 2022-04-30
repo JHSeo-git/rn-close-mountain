@@ -18,4 +18,4 @@ export const SIZES = {
 
   // semantic
   headerHeight: 44,
-};
+} as const;

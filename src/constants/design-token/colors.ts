@@ -24,4 +24,4 @@ export const COLORS = {
 
   white: '#fff',
   shadow: colors.gray.gray10,
-};
+} as const;

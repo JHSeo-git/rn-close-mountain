@@ -7,4 +7,4 @@ export const RADII = {
   '2xl': 16,
   '3xl': 24,
   pill: 9999,
-};
+} as const;
