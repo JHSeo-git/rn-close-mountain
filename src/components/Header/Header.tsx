@@ -1,7 +1,14 @@
 import { useNavigation } from '@react-navigation/native';
 import { View, Text, StyleSheet, Pressable } from 'react-native';
-import { FONTS, FONTSIZES, SIZES, SPACE } from '../../constants/design-token';
+import {
+  COLORS,
+  FONTS,
+  FONTSIZES,
+  SIZES,
+  SPACE,
+} from '../../constants/design-token';
 import { viewStyles } from '../../constants/global-styles';
+import ChevronLeftSvg from '../../assets/icons/chevron-left.svg';
 
 type HeaderProps = {
   title?: string;
@@ -16,7 +23,7 @@ const Header = ({ title, hasGoback }: HeaderProps) => {
       <View style={styles.leftBox}>
         {hasGoback && (
           <Pressable onPress={() => navigation.goBack()}>
-            <Text>back</Text>
+            <ChevronLeftSvg width={32} height={32} color={COLORS.hiContrast} />
           </Pressable>
         )}
       </View>
