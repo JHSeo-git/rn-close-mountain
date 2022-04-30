@@ -1,5 +1,12 @@
 {
   "common": {
+    "home": "Home",
     "welcome": "Welcome to Close Mountain"
+  },
+  "sample": {
+    "main": "Main",
+    "sample": "Sample",
+    "develop_mode": "Develop Mode",
+    "product_mode": "Product Mode"
   }
 }

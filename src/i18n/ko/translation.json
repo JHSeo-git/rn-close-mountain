@@ -1,5 +1,12 @@
 {
   "common": {
+    "home": "홈",
     "welcome": "Close Mountain에 오신 것을 환영합니다"
+  },
+  "sample": {
+    "main": "메인",
+    "sample": "샘플",
+    "develop_mode": "개발 모드",
+    "product_mode": "운영 모드"
   }
 }
