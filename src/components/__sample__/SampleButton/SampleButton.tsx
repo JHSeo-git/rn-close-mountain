@@ -1,5 +1,5 @@
 import { Animated, Pressable, StyleProp, ViewStyle } from 'react-native';
-import styles from './Button.styles';
+import { styles } from './SampleButton.styles';
 
 type ButtonProps = React.ComponentProps<typeof Pressable> & {
   style?: StyleProp<ViewStyle>;
