@@ -2,6 +2,11 @@
   "common": {
     "welcome": "Close Mountain에 오신 것을 환영합니다",
     "home": "홈",
+    "main": "메인",
+    "rankings": "순위",
+    "search": "검색",
+    "profile": "프로필",
+    "more": "더보기",
     "close": "닫기",
     "increment": "더하기",
     "decrement": "빼기",

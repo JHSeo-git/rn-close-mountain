@@ -2,6 +2,11 @@
   "common": {
     "welcome": "Welcome to Close Mountain",
     "home": "Home",
+    "main": "Main",
+    "rankings": "Rankings",
+    "search": "Search",
+    "profile": "Profile",
+    "more": "More",
     "close": "Close",
     "increment": "Increment",
     "decrement": "Decrement",
