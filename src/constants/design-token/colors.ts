@@ -21,6 +21,7 @@ export const COLORS = {
 
   hiContrast: colors.gray.gray12,
   loContrast: '#fff',
+  transparent: 'transparent',
 
   white: '#fff',
   shadow: colors.gray.gray10,

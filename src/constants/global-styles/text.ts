@@ -47,4 +47,10 @@ export const textStyles = StyleSheet.create({
     fontSize: FONTSIZES.sm,
     color: COLORS.hiContrast,
   },
+  primary: {
+    color: COLORS.primary,
+  },
+  contrast: {
+    color: COLORS.loContrast,
+  },
 });
