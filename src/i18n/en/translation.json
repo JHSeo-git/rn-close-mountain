@@ -1,11 +1,26 @@
 {
   "common": {
+    "welcome": "Welcome to Close Mountain",
     "home": "Home",
-    "welcome": "Welcome to Close Mountain"
+    "close": "Close",
+    "increment": "Increment",
+    "decrement": "Decrement",
+    "change_language": "Change Language"
   },
   "sample": {
     "main": "Main",
     "sample": "Sample",
+    "sample_code": "Sample Code",
+    "sample_bottomsheet": "Bottom Sheet",
+    "sample_bottomsheet_modal": "Bottom Sheet Modal",
+    "sample_snap_to": "Snap to {{percent}}%",
+    "sample_present": "Present",
+    "sample_dismiss": "Dismiss",
+    "sample_expand": "Expand",
+    "sample_collapse": "Collapse",
+    "sample_close": "Close",
+    "sample_backdrop_click_mode": "Backdrop click mode",
+    "change_language": "Change Language",
     "develop_mode": "Develop Mode",
     "product_mode": "Product Mode"
   }

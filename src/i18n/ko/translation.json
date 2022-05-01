@@ -1,11 +1,26 @@
 {
   "common": {
+    "welcome": "Close Mountain에 오신 것을 환영합니다",
     "home": "홈",
-    "welcome": "Close Mountain에 오신 것을 환영합니다"
+    "close": "닫기",
+    "increment": "더하기",
+    "decrement": "빼기",
+    "change_language": "언어 변경"
   },
   "sample": {
     "main": "메인",
     "sample": "샘플",
+    "sample_code": "샘플 코드",
+    "sample_bottomsheet": "Bottom Sheet",
+    "sample_bottomsheet_modal": "Bottom Sheet Modal",
+    "sample_snap_to": "{{percent}}%으로 변경",
+    "sample_present": "나타내기",
+    "sample_dismiss": "내리기",
+    "sample_expand": "펼치기",
+    "sample_collapse": "접기",
+    "sample_close": "닫기",
+    "sample_backdrop_click_mode": "백드랍 클릭 모드",
+    "change_language": "언어 변경",
     "develop_mode": "개발 모드",
     "product_mode": "운영 모드"
   }
