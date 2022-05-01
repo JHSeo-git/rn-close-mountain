@@ -3,6 +3,7 @@ import SampleHome from '../../../screens/__sample__/SampleHome';
 import SampleGIF from '../../../screens/__sample__/SampleGIF';
 import SampleBottomSheet from '../../../screens/__sample__/SampleBottomSheet';
 import SampleBottomSheetModal from '../../../screens/__sample__/SampleBottomSheetModal';
+import SampleMobx from '../../../screens/__sample__/SampleMobx';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,6 +22,7 @@ const SampleNavigation = () => {
         name="SampleBottomSheetModal"
         component={SampleBottomSheetModal}
       />
+      <Stack.Screen name="SampleMobx" component={SampleMobx} />
     </Stack.Navigator>
   );
 };

@@ -5,15 +5,18 @@ import {
 } from 'react-native-safe-area-context';
 
 import RootNavigation from './navigation/RootNavigation';
+import { StoreContextProvider } from './contexts/StoreContext';
 import './i18n';
 
 const App = () => {
   return (
-    <SafeAreaProvider initialMetrics={initialWindowMetrics}>
-      <NavigationContainer>
-        <RootNavigation />
-      </NavigationContainer>
-    </SafeAreaProvider>
+    <StoreContextProvider>
+      <SafeAreaProvider initialMetrics={initialWindowMetrics}>
+        <NavigationContainer>
+          <RootNavigation />
+        </NavigationContainer>
+      </SafeAreaProvider>
+    </StoreContextProvider>
   );
 };
 

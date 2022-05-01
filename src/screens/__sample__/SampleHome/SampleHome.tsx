@@ -1,11 +1,11 @@
 import { View, Text, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useTranslation } from 'react-i18next';
 import SampleButton from '../../../components/__sample__/SampleButton';
 import Header from '../../../components/Header';
 import { textStyles, viewStyles } from '../../../constants/global-styles';
 import { COLORS } from '../../../constants/design-token';
 import type { SampleStackScreenProps } from '../../../navigation/types';
-import { useTranslation } from 'react-i18next';
 
 type SampleHomeProps = SampleStackScreenProps<'SampleHome'>;
 
@@ -36,6 +36,11 @@ const SampleHome = ({ navigation }: SampleHomeProps) => {
             onPress={() => navigation.navigate('SampleBottomSheetModal')}
           >
             <Text style={styles.buttonText}>Bottom Sheet Modal</Text>
+          </SampleButton>
+        </View>
+        <View style={styles.buttonBox}>
+          <SampleButton onPress={() => navigation.navigate('SampleMobx')}>
+            <Text style={styles.buttonText}>Mobx</Text>
           </SampleButton>
         </View>
         <View style={styles.buttonBox}>
