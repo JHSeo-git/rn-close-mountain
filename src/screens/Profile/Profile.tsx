@@ -3,18 +3,18 @@ import { View, Text, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Header from '../../components/Header';
 import { viewStyles } from '../../constants/global-styles';
-import type { RootStackScreenProps } from '../../navigation/types';
+import type { MainTabScreenProps } from '../../navigation/types';
 
-type MainHomeProps = RootStackScreenProps<'Home'>;
+type ProfileProps = MainTabScreenProps<'Profile'>;
 
-const MainHome = ({}: MainHomeProps) => {
+const Profile = ({}: ProfileProps) => {
   const { t } = useTranslation();
 
   return (
     <SafeAreaView style={styles.container}>
-      <Header title={t('common.main')} />
+      <Header title={t('common.profile')} />
       <View style={viewStyles.flex_1_padding_20}>
-        <Text>MainHome</Text>
+        <Text>Profile</Text>
       </View>
     </SafeAreaView>
   );
@@ -27,4 +27,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default MainHome;
+export default Profile;
