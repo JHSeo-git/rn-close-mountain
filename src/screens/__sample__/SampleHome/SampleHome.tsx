@@ -1,10 +1,12 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useTranslation } from 'react-i18next';
-import SampleButton from '../../../components/__sample__/SampleButton';
 import Header from '../../../components/Header';
-import { textStyles, viewStyles } from '../../../constants/global-styles';
+import UIText from '../../../components/UIText';
+import SampleButton from '../../../components/__sample__/SampleButton';
 import { COLORS } from '../../../constants/design-token';
+import * as textStyles from '../../../constants/global-styles/textStyles';
+import * as viewStyles from '../../../constants/global-styles/viewStyles';
 import type { SampleStackScreenProps } from '../../../navigation/types';
 
 type SampleHomeProps = SampleStackScreenProps<'SampleHome'>;
@@ -17,30 +19,30 @@ const SampleHome = ({ navigation }: SampleHomeProps) => {
       <Header title={t('sample.sample')} hasGoback />
       <View style={styles.main}>
         <View style={styles.hero}>
-          <Text style={styles.text}>{t('sample.sample_code')}</Text>
+          <UIText style={styles.text}>{t('sample.sample_code')}</UIText>
         </View>
         <View style={styles.buttonBox}>
           <SampleButton onPress={() => navigation.navigate('SampleGIF')}>
-            <Text style={styles.buttonText}>GIF</Text>
+            <UIText style={styles.buttonText}>GIF</UIText>
           </SampleButton>
         </View>
         <View style={styles.buttonBox}>
           <SampleButton
             onPress={() => navigation.navigate('SampleBottomSheet')}
           >
-            <Text style={styles.buttonText}>Bottom Sheet</Text>
+            <UIText style={styles.buttonText}>Bottom Sheet</UIText>
           </SampleButton>
         </View>
         <View style={styles.buttonBox}>
           <SampleButton
             onPress={() => navigation.navigate('SampleBottomSheetModal')}
           >
-            <Text style={styles.buttonText}>Bottom Sheet Modal</Text>
+            <UIText style={styles.buttonText}>Bottom Sheet Modal</UIText>
           </SampleButton>
         </View>
         <View style={styles.buttonBox}>
           <SampleButton onPress={() => navigation.navigate('SampleMobx')}>
-            <Text style={styles.buttonText}>Mobx</Text>
+            <UIText style={styles.buttonText}>Mobx</UIText>
           </SampleButton>
         </View>
         <View style={styles.buttonBox}>
@@ -49,7 +51,9 @@ const SampleHome = ({ navigation }: SampleHomeProps) => {
               i18n.changeLanguage(i18n.language === 'en' ? 'ko' : 'en')
             }
           >
-            <Text style={styles.buttonText}>{t('sample.change_language')}</Text>
+            <UIText style={styles.buttonText}>
+              {t('sample.change_language')}
+            </UIText>
           </SampleButton>
         </View>
       </View>

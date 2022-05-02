@@ -1,12 +1,14 @@
-import React, { useCallback, useMemo, useRef, useState } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { useCallback, useMemo, useRef, useState } from 'react';
+import { View, StyleSheet } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import BottomSheet, { BottomSheetBackdrop } from '@gorhom/bottom-sheet';
 import Header from '../../../components/Header';
+import UIText from '../../../components/UIText';
 import SampleButton from '../../../components/__sample__/SampleButton';
 import { COLORS, SHADOWS, SPACE } from '../../../constants/design-token';
-import { textStyles, viewStyles } from '../../../constants/global-styles';
+import * as textStyles from '../../../constants/global-styles/textStyles';
+import * as viewStyles from '../../../constants/global-styles/viewStyles';
 
 const SampleBottomSheet = () => {
   const { t } = useTranslation();
@@ -63,52 +65,58 @@ const SampleBottomSheet = () => {
     <SafeAreaView style={viewStyles.flex_1_bg_white}>
       <Header title={t('sample.sample_bottomsheet')} hasGoback />
       <View style={styles.main}>
-        <Text style={textStyles.strong}>Sample Bottom Sheet</Text>
-        <Text style={textStyles.small}>
+        <UIText style={textStyles.strong}>Sample Bottom Sheet</UIText>
+        <UIText style={textStyles.small}>
           Bottom Sheet Index: {bottomSheetIndex}
-        </Text>
+        </UIText>
         <View style={styles.buttonBox}>
           <SampleButton onPress={() => handleSnapPress(2)}>
-            <Text style={styles.buttonText}>
+            <UIText style={styles.buttonText}>
               {t('sample.sample_snap_to', { percent: '90' })}
-            </Text>
+            </UIText>
           </SampleButton>
         </View>
         <View style={styles.buttonBox}>
           <SampleButton onPress={() => handleSnapPress(1)}>
-            <Text style={styles.buttonText}>
+            <UIText style={styles.buttonText}>
               {t('sample.sample_snap_to', { percent: '50' })}
-            </Text>
+            </UIText>
           </SampleButton>
         </View>
         <View style={styles.buttonBox}>
           <SampleButton onPress={() => handleSnapPress(0)}>
-            <Text style={styles.buttonText}>
+            <UIText style={styles.buttonText}>
               {t('sample.sample_snap_to', { percent: '25' })}
-            </Text>
+            </UIText>
           </SampleButton>
         </View>
         <View style={styles.buttonBox}>
           <SampleButton onPress={() => handleExpandPress()}>
-            <Text style={styles.buttonText}>{t('sample.sample_expand')}</Text>
+            <UIText style={styles.buttonText}>
+              {t('sample.sample_expand')}
+            </UIText>
           </SampleButton>
         </View>
         <View style={styles.buttonBox}>
           <SampleButton onPress={() => handleCollapsePress()}>
-            <Text style={styles.buttonText}>{t('sample.sample_collapse')}</Text>
+            <UIText style={styles.buttonText}>
+              {t('sample.sample_collapse')}
+            </UIText>
           </SampleButton>
         </View>
         <View style={styles.buttonBox}>
           <SampleButton onPress={() => handleClosePress()}>
-            <Text style={styles.buttonText}>{t('sample.sample_close')}</Text>
+            <UIText style={styles.buttonText}>
+              {t('sample.sample_close')}
+            </UIText>
           </SampleButton>
         </View>
         <View style={styles.buttonBox}>
           <SampleButton onPress={() => handleTogglePressBehavior()}>
-            <Text style={styles.buttonText}>
+            <UIText style={styles.buttonText}>
               {t('sample.sample_backdrop_click_mode')}
               {`: ${backdropPressBehavior}`}
-            </Text>
+            </UIText>
           </SampleButton>
         </View>
       </View>
@@ -123,7 +131,7 @@ const SampleBottomSheet = () => {
         backdropComponent={renderBackdrop}
       >
         <View style={styles.bottomSheet}>
-          <Text style={textStyles.h2}>Awesome 🎉</Text>
+          <UIText style={textStyles.h2}>Awesome 🎉</UIText>
         </View>
       </BottomSheet>
     </SafeAreaView>

@@ -1,13 +1,9 @@
 import { useNavigation } from '@react-navigation/native';
-import { View, Text, StyleSheet, Pressable } from 'react-native';
-import {
-  COLORS,
-  FONTS,
-  FONTSIZES,
-  SIZES,
-  SPACE,
-} from '../../constants/design-token';
-import { viewStyles } from '../../constants/global-styles';
+import { View, StyleSheet, Pressable } from 'react-native';
+import UIText from '../UIText';
+import * as viewStyles from '../../constants/global-styles/viewStyles';
+import { COLORS, FONTSIZES, SIZES, SPACE } from '../../constants/design-token';
+
 import ChevronLeftSvg from '../../assets/icons/chevron-left.svg';
 
 type HeaderProps = {
@@ -28,10 +24,10 @@ const Header = ({ title, hasGoback }: HeaderProps) => {
         )}
       </View>
       <View style={styles.centerBox}>
-        {title && <Text style={styles.title}>{title}</Text>}
+        {title && <UIText style={styles.title}>{title}</UIText>}
       </View>
       <View style={styles.rightBox}>
-        <Text> </Text>
+        <UIText> </UIText>
       </View>
     </View>
   );
@@ -54,7 +50,6 @@ const styles = StyleSheet.create({
   rightBox: {},
   title: {
     fontSize: FONTSIZES.xl,
-    fontFamily: FONTS.bold,
   },
 });
 

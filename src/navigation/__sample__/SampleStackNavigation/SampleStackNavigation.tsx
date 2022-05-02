@@ -4,10 +4,11 @@ import SampleGIF from '../../../screens/__sample__/SampleGIF';
 import SampleBottomSheet from '../../../screens/__sample__/SampleBottomSheet';
 import SampleBottomSheetModal from '../../../screens/__sample__/SampleBottomSheetModal';
 import SampleMobx from '../../../screens/__sample__/SampleMobx';
+import type { SampleStackParamList } from '../../types';
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<SampleStackParamList>();
 
-const SampleNavigation = () => {
+const SampleStackNavigation = () => {
   return (
     <Stack.Navigator
       initialRouteName="SampleHome"
@@ -27,4 +28,4 @@ const SampleNavigation = () => {
   );
 };
 
-export default SampleNavigation;
+export default SampleStackNavigation;

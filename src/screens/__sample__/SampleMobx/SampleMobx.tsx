@@ -1,13 +1,14 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { observer } from 'mobx-react-lite';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useTranslation } from 'react-i18next';
-import Header from '../../../components/Header';
-import { textStyles, viewStyles } from '../../../constants/global-styles';
-
 import { useStore } from '../../../contexts/StoreContext';
-import { SPACE } from '../../../constants/design-token';
+import Header from '../../../components/Header';
+import UIText from '../../../components/UIText';
 import SampleButton from '../../../components/__sample__/SampleButton';
+import { SPACE } from '../../../constants/design-token';
+import * as textStyles from '../../../constants/global-styles/textStyles';
+import * as viewStyles from '../../../constants/global-styles/viewStyles';
 
 const SampleMobx = observer(() => {
   const { t } = useTranslation();
@@ -17,19 +18,19 @@ const SampleMobx = observer(() => {
     <SafeAreaView style={viewStyles.flex_1_bg_white}>
       <Header title="Mobx" hasGoback />
       <View style={viewStyles.flex_1_padding_20}>
-        <Text style={textStyles.h3}>Count: {SampleStore.count}</Text>
+        <UIText style={textStyles.h3}>Count: {SampleStore.count}</UIText>
         <View style={styles.buttonBox}>
           <SampleButton onPress={() => SampleStore.increment()}>
-            <Text style={[textStyles.strong, textStyles.contrast]}>
+            <UIText style={[textStyles.strong, textStyles.contrast]}>
               {t('common.increment')}
-            </Text>
+            </UIText>
           </SampleButton>
         </View>
         <View style={styles.buttonBox}>
           <SampleButton onPress={() => SampleStore.decrement()}>
-            <Text style={[textStyles.strong, textStyles.contrast]}>
+            <UIText style={[textStyles.strong, textStyles.contrast]}>
               {t('common.decrement')}
-            </Text>
+            </UIText>
           </SampleButton>
         </View>
       </View>

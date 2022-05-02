@@ -1,11 +1,13 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useTranslation } from 'react-i18next';
 import Config from 'react-native-config';
-import SampleButton from '../../components/__sample__/SampleButton';
 import Header from '../../components/Header';
-import { textStyles, viewStyles } from '../../constants/global-styles';
+import UIText from '../../components/UIText';
+import SampleButton from '../../components/__sample__/SampleButton';
 import { COLORS } from '../../constants/design-token';
+import * as textStyles from '../../constants/global-styles/textStyles';
+import * as viewStyles from '../../constants/global-styles/viewStyles';
 import type { RootStackScreenProps } from '../../navigation/types';
 
 type HomeProps = RootStackScreenProps<'Home'>;
@@ -18,20 +20,20 @@ const Home = ({ navigation }: HomeProps) => {
       <Header title={t('common.home')} />
       <View style={styles.main}>
         <View style={styles.hero}>
-          <Text style={textStyles.content}>
+          <UIText style={textStyles.content}>
             {Config.NODE_ENV !== 'production'
               ? t('sample.develop_mode')
               : t('sample.product_mode')}
-          </Text>
+          </UIText>
         </View>
         <View style={styles.buttonBox}>
           <SampleButton onPress={() => navigation.navigate('Main')}>
-            <Text style={styles.buttonText}>{t('sample.main')}</Text>
+            <UIText style={styles.buttonText}>{t('sample.main')}</UIText>
           </SampleButton>
         </View>
         <View style={styles.buttonBox}>
           <SampleButton onPress={() => navigation.navigate('Sample')}>
-            <Text style={styles.buttonText}>{t('sample.sample')}</Text>
+            <UIText style={styles.buttonText}>{t('sample.sample')}</UIText>
           </SampleButton>
         </View>
       </View>

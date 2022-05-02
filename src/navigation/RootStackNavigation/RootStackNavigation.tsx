@@ -1,11 +1,11 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from '../../screens/Home';
-import MainNavigation from '../MainNavigation';
-import SampleNavigation from '../__sample__/SampleNavigation';
+import MainTabNavigation from '../MainTabNavigation';
+import SampleStackNavigation from '../__sample__/SampleStackNavigation';
 
 const Stack = createNativeStackNavigator();
 
-const RootNavigation = () => {
+const RootStackNavigation = () => {
   return (
     <Stack.Navigator
       initialRouteName="Home"
@@ -14,10 +14,10 @@ const RootNavigation = () => {
       }}
     >
       <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="Main" component={MainNavigation} />
-      <Stack.Screen name="Sample" component={SampleNavigation} />
+      <Stack.Screen name="Main" component={MainTabNavigation} />
+      <Stack.Screen name="Sample" component={SampleStackNavigation} />
     </Stack.Navigator>
   );
 };
 
-export default RootNavigation;
+export default RootStackNavigation;

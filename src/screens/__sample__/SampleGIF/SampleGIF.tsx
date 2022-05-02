@@ -1,9 +1,12 @@
-import { View, Image, Text, StyleSheet } from 'react-native';
+import { View, Image, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Header from '../../../components/Header';
-import SampleGifImage from '../../../assets/images/sample.gif';
-import { textStyles, viewStyles } from '../../../constants/global-styles';
+import UIText from '../../../components/UIText';
+import * as textStyles from '../../../constants/global-styles/textStyles';
+import * as viewStyles from '../../../constants/global-styles/viewStyles';
 import { SPACE } from '../../../constants/design-token';
+
+import SampleGifImage from '../../../assets/images/sample.gif';
 
 const SampleGIF = () => {
   return (
@@ -11,11 +14,11 @@ const SampleGIF = () => {
       <Header title="GIF" hasGoback />
       <View style={styles.main}>
         <View style={styles.spaceView}>
-          <Text style={textStyles.strong}>Sample GIF (200 X 200)</Text>
+          <UIText style={textStyles.strong}>Sample GIF (200 X 200)</UIText>
           <Image source={SampleGifImage} style={styles.image} />
         </View>
         <View style={styles.spaceView}>
-          <Text style={textStyles.strong}>Sample GIF (width: 100%)</Text>
+          <UIText style={textStyles.strong}>Sample GIF (width: 100%)</UIText>
           <Image source={SampleGifImage} style={styles.imageMax} />
         </View>
       </View>

@@ -1,15 +1,17 @@
-import { View, Text, StyleSheet } from 'react-native';
-import React, { useCallback, useMemo, useRef, useState } from 'react';
+import { useCallback, useMemo, useRef, useState } from 'react';
+import { View, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { textStyles, viewStyles } from '../../../constants/global-styles';
-import Header from '../../../components/Header';
 import { useTranslation } from 'react-i18next';
 import {
   BottomSheetBackdrop,
   BottomSheetModal,
   BottomSheetModalProvider,
 } from '@gorhom/bottom-sheet';
+import Header from '../../../components/Header';
+import UIText from '../../../components/UIText';
 import SampleButton from '../../../components/__sample__/SampleButton';
+import * as textStyles from '../../../constants/global-styles/textStyles';
+import * as viewStyles from '../../../constants/global-styles/viewStyles';
 import { COLORS, SHADOWS, SPACE } from '../../../constants/design-token';
 
 const SampleBottomSheetModal = () => {
@@ -54,15 +56,15 @@ const SampleBottomSheetModal = () => {
       <SafeAreaView style={viewStyles.flex_1_bg_white}>
         <Header title={t('sample.sample_bottomsheet_modal')} hasGoback />
         <View style={styles.main}>
-          <Text style={textStyles.strong}>Sample Bottom Sheet Modal</Text>
-          <Text style={textStyles.small}>
+          <UIText style={textStyles.strong}>Sample Bottom Sheet Modal</UIText>
+          <UIText style={textStyles.small}>
             Bottom Sheet Modal Index: {bottomSheetIndex}
-          </Text>
+          </UIText>
           <View style={styles.buttonBox}>
             <SampleButton onPress={handlePresentPress}>
-              <Text style={styles.buttonText}>
+              <UIText style={styles.buttonText}>
                 {t('sample.sample_present')}
-              </Text>
+              </UIText>
             </SampleButton>
           </View>
         </View>
@@ -77,20 +79,20 @@ const SampleBottomSheetModal = () => {
         >
           <View style={styles.modalContainer}>
             <View style={[viewStyles.center, { flex: 1 }]}>
-              <Text style={textStyles.h2}>Awesome 🎉</Text>
+              <UIText style={textStyles.h2}>Awesome 🎉</UIText>
             </View>
             <View style={styles.closeButtonBox}>
               <SampleButton onPress={handleDismissPress}>
-                <Text style={styles.buttonText}>
+                <UIText style={styles.buttonText}>
                   {t('sample.sample_dismiss')}
-                </Text>
+                </UIText>
               </SampleButton>
             </View>
             <View style={styles.closeButtonBox}>
               <SampleButton onPress={handleClosePress}>
-                <Text style={styles.buttonText}>
+                <UIText style={styles.buttonText}>
                   {t('sample.sample_close')}
-                </Text>
+                </UIText>
               </SampleButton>
             </View>
           </View>

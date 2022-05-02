@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useTranslation } from 'react-i18next';
 import MainHomeNavigation from '../MainHomeNavigation';
@@ -6,6 +6,7 @@ import Rankings from '../../screens/Rankings';
 import Search from '../../screens/Search';
 import Profile from '../../screens/Profile';
 import More from '../../screens/More';
+import UIText from '../../components/UIText';
 import {
   COLORS,
   FONTSIZES,
@@ -13,7 +14,8 @@ import {
   SHADOWS,
   SPACE,
 } from '../../constants/design-token';
-import { textStyles } from '../../constants/global-styles';
+import * as textStyles from '../../constants/global-styles/textStyles';
+
 import type { MainTabParamList } from '../types';
 
 import HomeSvg from '../../assets/icons/home.svg';
@@ -24,7 +26,7 @@ import HamburgerMenuSvg from '../../assets/icons/hamburger-menu.svg';
 
 const Tab = createBottomTabNavigator<MainTabParamList>();
 
-const MainNavigation = () => {
+const MainTabNavigation = () => {
   const { t } = useTranslation();
 
   return (
@@ -41,9 +43,9 @@ const MainNavigation = () => {
         component={MainHomeNavigation}
         options={{
           tabBarLabel: ({ focused }) => (
-            <Text style={[styles.tabLabel, focused && textStyles.primary]}>
+            <UIText style={[styles.tabLabel, focused && textStyles.primary]}>
               {t('common.home')}
-            </Text>
+            </UIText>
           ),
           tabBarIcon: ({ color, size, focused }) => (
             <View style={[styles.tabIconBox, focused && styles.tabActive]}>
@@ -57,9 +59,9 @@ const MainNavigation = () => {
         component={Rankings}
         options={{
           tabBarLabel: ({ focused }) => (
-            <Text style={[styles.tabLabel, focused && textStyles.primary]}>
+            <UIText style={[styles.tabLabel, focused && textStyles.primary]}>
               {t('common.rankings')}
-            </Text>
+            </UIText>
           ),
           tabBarIcon: ({ color, size, focused }) => (
             <View style={[styles.tabIconBox, focused && styles.tabActive]}>
@@ -73,9 +75,9 @@ const MainNavigation = () => {
         component={Search}
         options={{
           tabBarLabel: ({ focused }) => (
-            <Text style={[styles.tabLabel, focused && textStyles.primary]}>
+            <UIText style={[styles.tabLabel, focused && textStyles.primary]}>
               {t('common.search')}
-            </Text>
+            </UIText>
           ),
           tabBarIcon: ({ color, size, focused }) => (
             <View style={[styles.tabIconBox, focused && styles.tabActive]}>
@@ -89,9 +91,9 @@ const MainNavigation = () => {
         component={Profile}
         options={{
           tabBarLabel: ({ focused }) => (
-            <Text style={[styles.tabLabel, focused && textStyles.primary]}>
+            <UIText style={[styles.tabLabel, focused && textStyles.primary]}>
               {t('common.profile')}
-            </Text>
+            </UIText>
           ),
           tabBarIcon: ({ color, size, focused }) => (
             <View style={[styles.tabIconBox, focused && styles.tabActive]}>
@@ -105,9 +107,9 @@ const MainNavigation = () => {
         component={More}
         options={{
           tabBarLabel: ({ focused }) => (
-            <Text style={[styles.tabLabel, focused && textStyles.primary]}>
+            <UIText style={[styles.tabLabel, focused && textStyles.primary]}>
               {t('common.more')}
-            </Text>
+            </UIText>
           ),
           tabBarIcon: ({ color, size, focused }) => (
             <View style={[styles.tabIconBox, focused && styles.tabActive]}>
@@ -147,4 +149,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default MainNavigation;
+export default MainTabNavigation;
