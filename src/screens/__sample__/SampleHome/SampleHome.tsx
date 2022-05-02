@@ -7,7 +7,7 @@ import SampleButton from '../../../components/__sample__/SampleButton';
 import { COLORS } from '../../../constants/design-token';
 import * as textStyles from '../../../constants/global-styles/textStyles';
 import * as viewStyles from '../../../constants/global-styles/viewStyles';
-import type { SampleStackScreenProps } from '../../../navigation/types';
+import type { SampleStackScreenProps } from '../../types';
 
 type SampleHomeProps = SampleStackScreenProps<'SampleHome'>;
 

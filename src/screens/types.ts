@@ -3,13 +3,26 @@ import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import type { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
 
 export type RootStackParamList = {
-  RootHome: undefined;
-  Main: undefined;
+  MainTab: undefined;
   Sample: undefined;
 };
 
 export type RootStackScreenProps<T extends keyof RootStackParamList> =
   NativeStackScreenProps<RootStackParamList, T>;
+
+export type MainTabParamList = {
+  HomeStack: undefined;
+  Rankings: undefined;
+  Search: undefined;
+  Profile: undefined;
+  More: undefined;
+};
+
+export type MainTabScreenProps<T extends keyof MainTabParamList> =
+  CompositeScreenProps<
+    BottomTabScreenProps<MainTabParamList, T>,
+    RootStackScreenProps<keyof RootStackParamList>
+  >;
 
 export type SampleStackParamList = {
   SampleHome: undefined;
@@ -25,22 +38,8 @@ export type SampleStackScreenProps<T extends keyof SampleStackParamList> =
     RootStackScreenProps<keyof RootStackParamList>
   >;
 
-export type MainTabParamList = {
-  Home: undefined;
-  Rankings: undefined;
-  Search: undefined;
-  Profile: undefined;
-  More: undefined;
-};
-
-export type MainTabScreenProps<T extends keyof MainTabParamList> =
-  CompositeScreenProps<
-    BottomTabScreenProps<MainTabParamList, T>,
-    RootStackScreenProps<keyof RootStackParamList>
-  >;
-
 export type HomeStackParamList = {
-  HomeMain: undefined;
+  Home: undefined;
 };
 
 export type HomeStackScreenProps<T extends keyof HomeStackParamList> =

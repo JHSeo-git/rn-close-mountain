@@ -4,7 +4,7 @@ import {
   initialWindowMetrics,
 } from 'react-native-safe-area-context';
 
-import RootStackNavigation from './navigation/RootStackNavigation';
+import RootStack from './screens/RootStack';
 import { StoreContextProvider } from './contexts/StoreContext';
 import './i18n';
 import { COLORS } from './constants/design-token';
@@ -17,7 +17,7 @@ const App = () => {
     <StoreContextProvider>
       <SafeAreaProvider initialMetrics={initialWindowMetrics}>
         <NavigationContainer theme={theme}>
-          <RootStackNavigation />
+          <RootStack />
         </NavigationContainer>
       </SafeAreaProvider>
     </StoreContextProvider>

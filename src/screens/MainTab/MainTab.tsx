@@ -1,11 +1,11 @@
 import { StyleSheet, View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useTranslation } from 'react-i18next';
-import HomeStackNavigation from '../HomeStackNavigation';
-import Rankings from '../../screens/Rankings';
-import Search from '../../screens/Search';
-import Profile from '../../screens/Profile';
-import More from '../../screens/More';
+import HomeStack from '../HomeStack';
+import RankingsScreen from '../RankingsScreen';
+import SearchScreen from '../SearchScreen';
+import ProfileScreen from '../ProfileScreen';
+import MoreScreen from '../MoreScreen';
 import UIText from '../../components/UIText';
 import {
   COLORS,
@@ -26,12 +26,12 @@ import HamburgerMenuSvg from '../../assets/icons/hamburger-menu.svg';
 
 const Tab = createBottomTabNavigator<MainTabParamList>();
 
-const MainTabNavigation = () => {
+const MainTab = () => {
   const { t } = useTranslation();
 
   return (
     <Tab.Navigator
-      initialRouteName="Home"
+      initialRouteName="HomeStack"
       screenOptions={{
         headerShown: false,
         tabBarActiveTintColor: COLORS.primary,
@@ -39,8 +39,8 @@ const MainTabNavigation = () => {
       }}
     >
       <Tab.Screen
-        name="Home"
-        component={HomeStackNavigation}
+        name="HomeStack"
+        component={HomeStack}
         options={{
           tabBarLabel: ({ focused }) => (
             <UIText style={[styles.tabLabel, focused && textStyles.primary]}>
@@ -56,7 +56,7 @@ const MainTabNavigation = () => {
       />
       <Tab.Screen
         name="Rankings"
-        component={Rankings}
+        component={RankingsScreen}
         options={{
           tabBarLabel: ({ focused }) => (
             <UIText style={[styles.tabLabel, focused && textStyles.primary]}>
@@ -72,7 +72,7 @@ const MainTabNavigation = () => {
       />
       <Tab.Screen
         name="Search"
-        component={Search}
+        component={SearchScreen}
         options={{
           tabBarLabel: ({ focused }) => (
             <UIText style={[styles.tabLabel, focused && textStyles.primary]}>
@@ -88,7 +88,7 @@ const MainTabNavigation = () => {
       />
       <Tab.Screen
         name="Profile"
-        component={Profile}
+        component={ProfileScreen}
         options={{
           tabBarLabel: ({ focused }) => (
             <UIText style={[styles.tabLabel, focused && textStyles.primary]}>
@@ -104,7 +104,7 @@ const MainTabNavigation = () => {
       />
       <Tab.Screen
         name="More"
-        component={More}
+        component={MoreScreen}
         options={{
           tabBarLabel: ({ focused }) => (
             <UIText style={[styles.tabLabel, focused && textStyles.primary]}>
@@ -149,4 +149,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default MainTabNavigation;
+export default MainTab;

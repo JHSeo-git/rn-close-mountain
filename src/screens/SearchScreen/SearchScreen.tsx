@@ -4,18 +4,18 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import Header from '../../components/Header';
 import UIText from '../../components/UIText';
 import * as viewStyles from '../../constants/global-styles/viewStyles';
-import type { MainTabScreenProps } from '../../navigation/types';
+import type { MainTabScreenProps } from '../types';
 
-type ProfileProps = MainTabScreenProps<'Profile'>;
+type SearchScreenProps = MainTabScreenProps<'Search'>;
 
-const Profile = ({}: ProfileProps) => {
+const SearchScreen = ({}: SearchScreenProps) => {
   const { t } = useTranslation();
 
   return (
     <SafeAreaView style={styles.container}>
-      <Header title={t('common.profile')} />
+      <Header title={t('common.search')} />
       <View style={viewStyles.flex_1_padding_20}>
-        <UIText>Profile</UIText>
+        <UIText>Search</UIText>
       </View>
     </SafeAreaView>
   );
@@ -28,4 +28,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Profile;
+export default SearchScreen;

@@ -4,18 +4,18 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import Header from '../../components/Header';
 import UIText from '../../components/UIText';
 import * as viewStyles from '../../constants/global-styles/viewStyles';
-import type { MainTabScreenProps } from '../../navigation/types';
+import type { HomeStackScreenProps } from '../types';
 
-type MoreProps = MainTabScreenProps<'More'>;
+type HomeScreenProps = {} & HomeStackScreenProps<'Home'>;
 
-const More = ({}: MoreProps) => {
+const HomeScreen = ({}: HomeScreenProps) => {
   const { t } = useTranslation();
 
   return (
     <SafeAreaView style={styles.container}>
-      <Header title={t('common.more')} />
+      <Header title={t('common.home')} />
       <View style={viewStyles.flex_1_padding_20}>
-        <UIText>More</UIText>
+        <UIText>Home</UIText>
       </View>
     </SafeAreaView>
   );
@@ -28,4 +28,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default More;
+export default HomeScreen;

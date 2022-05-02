@@ -4,11 +4,11 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import Header from '../../components/Header';
 import UIText from '../../components/UIText';
 import * as viewStyles from '../../constants/global-styles/viewStyles';
-import type { MainTabScreenProps } from '../../navigation/types';
+import type { MainTabScreenProps } from '../types';
 
-type RankingsProps = MainTabScreenProps<'Rankings'>;
+type RankingsScreenProps = MainTabScreenProps<'Rankings'>;
 
-const Rankings = ({}: RankingsProps) => {
+const RankingsScreen = ({}: RankingsScreenProps) => {
   const { t } = useTranslation();
 
   return (
@@ -28,4 +28,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Rankings;
+export default RankingsScreen;
