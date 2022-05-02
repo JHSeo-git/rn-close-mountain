@@ -80,10 +80,24 @@ design token을 만들고 global style을 정의해두고 쓰고 있습니다.
 
 ### 5. folder structure
 
-> [delightful folder]()
+> [delightful folder](https://www.seonest.net/posts/%EB%B2%88-Delightful-React-FileDirectory-Structure)
 
 기본적인 룰은 위 사이트 내용과 동일합니다.
 그 외 RN에 맞게 몇 개 추가되거나, 개발 편의성을 위해 추가된 폴더가 있습니다.
+
+```bash
+src
+├── assets
+├── components
+├── constants
+├── contexts
+├── hooks
+├── i18n
+├── navigation
+├── screens
+├── stores
+└── utils
+```
 
 ### 6. .env
 
