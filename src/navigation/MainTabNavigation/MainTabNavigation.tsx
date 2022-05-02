@@ -1,7 +1,7 @@
 import { StyleSheet, View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useTranslation } from 'react-i18next';
-import MainHomeNavigation from '../MainHomeNavigation';
+import HomeStackNavigation from '../HomeStackNavigation';
 import Rankings from '../../screens/Rankings';
 import Search from '../../screens/Search';
 import Profile from '../../screens/Profile';
@@ -31,7 +31,7 @@ const MainTabNavigation = () => {
 
   return (
     <Tab.Navigator
-      initialRouteName="MainHome"
+      initialRouteName="Home"
       screenOptions={{
         headerShown: false,
         tabBarActiveTintColor: COLORS.primary,
@@ -39,8 +39,8 @@ const MainTabNavigation = () => {
       }}
     >
       <Tab.Screen
-        name="MainHome"
-        component={MainHomeNavigation}
+        name="Home"
+        component={HomeStackNavigation}
         options={{
           tabBarLabel: ({ focused }) => (
             <UIText style={[styles.tabLabel, focused && textStyles.primary]}>

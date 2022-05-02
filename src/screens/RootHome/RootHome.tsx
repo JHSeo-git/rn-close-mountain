@@ -10,9 +10,9 @@ import * as textStyles from '../../constants/global-styles/textStyles';
 import * as viewStyles from '../../constants/global-styles/viewStyles';
 import type { RootStackScreenProps } from '../../navigation/types';
 
-type HomeProps = RootStackScreenProps<'Home'>;
+type RootHomeProps = RootStackScreenProps<'RootHome'>;
 
-const Home = ({ navigation }: HomeProps) => {
+const RootHome = ({ navigation }: RootHomeProps) => {
   const { t } = useTranslation();
 
   return (
@@ -61,4 +61,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Home;
+export default RootHome;

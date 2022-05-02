@@ -3,7 +3,7 @@ import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import type { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
 
 export type RootStackParamList = {
-  Home: undefined;
+  RootHome: undefined;
   Main: undefined;
   Sample: undefined;
 };
@@ -26,7 +26,7 @@ export type SampleStackScreenProps<T extends keyof SampleStackParamList> =
   >;
 
 export type MainTabParamList = {
-  MainHome: undefined;
+  Home: undefined;
   Rankings: undefined;
   Search: undefined;
   Profile: undefined;
@@ -37,6 +37,16 @@ export type MainTabScreenProps<T extends keyof MainTabParamList> =
   CompositeScreenProps<
     BottomTabScreenProps<MainTabParamList, T>,
     RootStackScreenProps<keyof RootStackParamList>
+  >;
+
+export type HomeStackParamList = {
+  HomeMain: undefined;
+};
+
+export type HomeStackScreenProps<T extends keyof HomeStackParamList> =
+  CompositeScreenProps<
+    NativeStackScreenProps<HomeStackParamList, T>,
+    MainTabScreenProps<keyof MainTabParamList>
   >;
 
 declare global {
