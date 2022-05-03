@@ -1,23 +1,21 @@
-import { useTranslation } from 'react-i18next';
 import { StyleSheet, Text } from 'react-native';
-import { FONTS } from '../../constants/design-token';
+import * as textStyles from '../../constants/global-styles/textStyles';
 
 type UITextProps = {
-  fontWeight?: keyof typeof FONTS.poppins;
+  as?: keyof typeof textStyles;
 } & React.ComponentProps<typeof Text>;
 
-const UIText = ({ fontWeight = 'regular', style, ...props }: UITextProps) => {
-  const { i18n } = useTranslation();
-  const font = i18n.language === 'en' ? FONTS.poppins : FONTS.pretendard;
-
+const UIText = ({ as = 'content', style, ...props }: UITextProps) => {
   return (
     <Text
-      style={[
-        //
-        styles.default,
-        { fontFamily: font[fontWeight] },
+      style={StyleSheet.compose(
+        [
+          //
+          styles.default,
+          textStyles[as],
+        ],
         style,
-      ]}
+      )}
       {...props}
     />
   );
