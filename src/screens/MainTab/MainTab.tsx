@@ -20,7 +20,7 @@ import type { MainTabParamList } from '../types';
 
 import HomeSvg from '../../assets/icons/home.svg';
 import BarChartSvg from '../../assets/icons/bar-chart.svg';
-import MagnifyingGlassSvg from '../../assets/icons/magnifying-glass.svg';
+import SearchSvg from '../../assets/icons/search.svg';
 import PersonSvg from '../../assets/icons/person.svg';
 import HamburgerMenuSvg from '../../assets/icons/hamburger-menu.svg';
 
@@ -81,7 +81,7 @@ const MainTab = () => {
           ),
           tabBarIcon: ({ color, size, focused }) => (
             <View style={[styles.tabIconBox, focused && styles.tabActive]}>
-              <MagnifyingGlassSvg width={size} height={size} color={color} />
+              <SearchSvg width={size} height={size} color={color} />
             </View>
           ),
         }}
