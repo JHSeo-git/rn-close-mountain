@@ -1,51 +1,90 @@
-import { useNavigation } from '@react-navigation/native';
 import { View, StyleSheet } from 'react-native';
 import UIText from '../UIText';
-import * as viewStyles from '../../constants/global-styles/viewStyles';
+import { IconButton } from 'react-native-paper';
 import { COLORS, SIZES, SPACE } from '../../constants/design-token';
-import { AllOrNone } from '../../utils/types/type-utils';
+import * as viewStyles from '../../constants/global-styles/viewStyles';
+import type { AllOrNone } from '../../utils/types/type-utils';
 
 import ChevronLeftSvg from '../../assets/icons/chevron-left.svg';
-import GearSvg from '../../assets/icons/gear.svg';
-import HamburgerMenuSvg from '../../assets/icons/hamburger-menu.svg';
-import SearchSvg from '../../assets/icons/search.svg';
-import CloseSvg from '../../assets/icons/close.svg';
-import RippleButton from '../RippleButton';
+import CustomTouchableRipple from '../CustomTouchableRipple';
 
 type DefaultProps = {
   title?: string;
-  hasGoback?: boolean;
+};
+
+type LeftButtonProps = {
+  leftIcon: 'back';
+  onLeftIconPress: () => void;
 };
 
 type RightButtonProps = {
-  rightIcon: 'gear' | 'hamberger-menu' | 'search' | 'close';
+  rightIcon: 'setting' | 'hamberger-menu' | 'search' | 'close';
   onRightIconPress: () => void;
 };
 
-type HeaderProps = DefaultProps & AllOrNone<RightButtonProps>;
+type HeaderProps = DefaultProps &
+  AllOrNone<LeftButtonProps> &
+  AllOrNone<RightButtonProps>;
 
 const Header = ({
   title,
-  hasGoback = false,
+  leftIcon,
+  onLeftIconPress,
   rightIcon,
   onRightIconPress,
 }: HeaderProps) => {
-  const navigation = useNavigation();
-
-  const renderRightIcon = () => {
+  const renderLeft = () => {
     return (
       <>
-        {rightIcon === 'gear' && (
-          <GearSvg width={24} height={24} color={COLORS.hiContrast} />
+        {leftIcon === 'back' && (
+          <CustomTouchableRipple
+            borderless
+            onPress={onLeftIconPress}
+            style={{
+              borderRadius: 16,
+            }}
+          >
+            <ChevronLeftSvg width={32} height={32} color={COLORS.hiContrast} />
+          </CustomTouchableRipple>
+        )}
+      </>
+    );
+  };
+
+  const renderRight = () => {
+    return (
+      <>
+        {rightIcon === 'setting' && (
+          <IconButton
+            icon="cog"
+            size={24}
+            color={COLORS.hiContrast}
+            onPress={onRightIconPress}
+          />
         )}
         {rightIcon === 'hamberger-menu' && (
-          <HamburgerMenuSvg width={24} height={24} color={COLORS.hiContrast} />
+          <IconButton
+            icon="menu"
+            size={24}
+            color={COLORS.hiContrast}
+            onPress={onRightIconPress}
+          />
         )}
         {rightIcon === 'search' && (
-          <SearchSvg width={24} height={24} color={COLORS.hiContrast} />
+          <IconButton
+            icon="magnify"
+            size={24}
+            color={COLORS.hiContrast}
+            onPress={onRightIconPress}
+          />
         )}
         {rightIcon === 'close' && (
-          <CloseSvg width={24} height={24} color={COLORS.hiContrast} />
+          <IconButton
+            icon="close"
+            size={24}
+            color={COLORS.hiContrast}
+            onPress={onRightIconPress}
+          />
         )}
       </>
     );
@@ -53,23 +92,11 @@ const Header = ({
 
   return (
     <View style={styles.container}>
-      <View style={styles.leftBox}>
-        {hasGoback && (
-          <RippleButton onPress={() => navigation.goBack()}>
-            <ChevronLeftSvg width={32} height={32} color={COLORS.hiContrast} />
-          </RippleButton>
-        )}
-      </View>
+      <View style={styles.leftBox}>{renderLeft()}</View>
       <View style={styles.centerBox}>
         {title && <UIText as="h2">{title}</UIText>}
       </View>
-      <View style={styles.rightBox}>
-        {rightIcon && (
-          <RippleButton onPress={onRightIconPress}>
-            {renderRightIcon()}
-          </RippleButton>
-        )}
-      </View>
+      <View style={styles.rightBox}>{renderRight()}</View>
     </View>
   );
 };
@@ -82,13 +109,17 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
   },
-  leftBox: {},
+  leftBox: {
+    ...viewStyles.center,
+  },
   centerBox: {
     ...StyleSheet.absoluteFillObject,
     ...viewStyles.center,
     zIndex: -1,
   },
-  rightBox: {},
+  rightBox: {
+    ...viewStyles.center,
+  },
 });
 
 export default Header;
