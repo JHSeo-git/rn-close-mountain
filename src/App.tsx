@@ -3,11 +3,12 @@ import {
   SafeAreaProvider,
   initialWindowMetrics,
 } from 'react-native-safe-area-context';
-
+import { Provider as PaperProvider } from 'react-native-paper';
 import RootStack from './screens/RootStack';
 import { StoreContextProvider } from './contexts/StoreContext';
-import './i18n';
 import { COLORS } from './constants/design-token';
+import muiTheme from './constants/mui/theme';
+import './i18n';
 
 const App = () => {
   const theme = useTheme();
@@ -15,11 +16,13 @@ const App = () => {
 
   return (
     <StoreContextProvider>
-      <SafeAreaProvider initialMetrics={initialWindowMetrics}>
-        <NavigationContainer theme={theme}>
-          <RootStack />
-        </NavigationContainer>
-      </SafeAreaProvider>
+      <PaperProvider theme={muiTheme}>
+        <SafeAreaProvider initialMetrics={initialWindowMetrics}>
+          <NavigationContainer theme={theme}>
+            <RootStack />
+          </NavigationContainer>
+        </SafeAreaProvider>
+      </PaperProvider>
     </StoreContextProvider>
   );
 };
