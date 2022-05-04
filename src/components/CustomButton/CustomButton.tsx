@@ -3,11 +3,19 @@ import { Button } from 'react-native-paper';
 
 type CustomButtonProps = {} & React.ComponentProps<typeof Button>;
 
-const CustomButton = ({ style, labelStyle, ...props }: CustomButtonProps) => {
+const CustomButton = ({
+  mode = 'contained',
+  style,
+  labelStyle,
+  uppercase = false,
+  ...props
+}: CustomButtonProps) => {
   return (
     <Button
+      mode={mode}
       style={[styles.buttonDefault, style]}
       labelStyle={[styles.labelDefault, labelStyle]}
+      uppercase={uppercase}
       {...props}
     />
   );
