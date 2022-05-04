@@ -9,18 +9,18 @@ import * as viewStyles from '../../constants/global-styles/viewStyles';
 import PersonSvg from '../../assets/icons/person.svg';
 
 import type { MainTabScreenProps } from '../types';
-import SignInNavigateButton from '../../components/SignInNavigateButton';
+import SignInNavigateButton from './SignInNavigateButton';
 
 type ProfileScreenProps = MainTabScreenProps<'Profile'>;
 
-const ProfileScreen = ({}: ProfileScreenProps) => {
+const ProfileScreen = ({ navigation }: ProfileScreenProps) => {
   const { t } = useTranslation();
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={viewStyles.flex_1_bg_white}>
       <Header
         title={t('common.profile')}
-        rightIcon="gear"
+        rightIcon="setting"
         onRightIconPress={() => {}}
       />
       <View style={viewStyles.flex_1_padding_x_20}>
@@ -37,14 +37,17 @@ const ProfileScreen = ({}: ProfileScreenProps) => {
         </View>
         <View style={styles.listBox}>
           <View style={styles.listItem}>
-            <SignInNavigateButton provider="email" />
+            <SignInNavigateButton
+              provider="email"
+              onPress={() => navigation.navigate('SignIn')}
+            />
           </View>
           <View style={Platform.OS === 'ios' && styles.listItem}>
-            <SignInNavigateButton provider="google" />
+            <SignInNavigateButton provider="google" onPress={() => {}} />
           </View>
           {Platform.OS === 'ios' && (
             <View>
-              <SignInNavigateButton provider="google" />
+              <SignInNavigateButton provider="apple" onPress={() => {}} />
             </View>
           )}
         </View>
@@ -54,10 +57,6 @@ const ProfileScreen = ({}: ProfileScreenProps) => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
   avatarBox: {
     marginTop: SPACE.$8,
     alignItems: 'center',
