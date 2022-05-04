@@ -1,17 +1,17 @@
-import { StyleSheet, Text } from 'react-native';
+import { StyleSheet } from 'react-native';
 import React, { useMemo } from 'react';
-import RippleButton from '../RippleButton';
-import UIText from '../UIText';
+import UIText from '../../components/UIText';
 import { COLORS, RADII, SPACE } from '../../constants/design-token';
+import CustomTouchableRipple from '../../components/CustomTouchableRipple';
 
 import EmailSvg from '../../assets/icons/envelop-close.svg';
 import GoogleSvg from '../../assets/icons/google.svg';
-import AppleSvg from '../../assets/icons/google.svg';
+import AppleSvg from '../../assets/icons/apple.svg';
 import ChevronRightSvg from '../../assets/icons/chevron-right.svg';
 
 type SignInNavigateButtonProps = {
   provider: 'email' | 'google' | 'apple';
-} & Omit<React.ComponentProps<typeof RippleButton>, 'children'>;
+} & Omit<React.ComponentProps<typeof CustomTouchableRipple>, 'children'>;
 
 const SignInNavigateButton = ({
   provider,
@@ -35,18 +35,20 @@ const SignInNavigateButton = ({
       case 'google':
         return <GoogleSvg width={24} height={24} />;
       case 'apple':
-        return <GoogleSvg width={24} height={24} />;
+        return <AppleSvg width={24} height={24} />;
     }
   };
 
   return (
-    <RippleButton {...props} style={[styles.container]}>
-      {renderProviderIcon()}
-      <UIText as="strong" style={styles.buttonText}>
-        {providerName}
-      </UIText>
-      <ChevronRightSvg width={24} height={24} color={COLORS.gray11} />
-    </RippleButton>
+    <CustomTouchableRipple {...props} style={[styles.container]}>
+      <>
+        {renderProviderIcon()}
+        <UIText as="strong" style={styles.buttonText}>
+          {providerName}
+        </UIText>
+        <ChevronRightSvg width={24} height={24} color={COLORS.gray11} />
+      </>
+    </CustomTouchableRipple>
   );
 };
 
