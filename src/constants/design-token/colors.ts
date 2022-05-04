@@ -15,9 +15,10 @@ export const COLORS = {
   secondary: colors.cyan.cyan10,
   tertiary: colors.teal.teal10,
 
+  disabled: colors.gray.gray8,
   success: colors.green.green10,
   warning: colors.amber.amber10,
-  danger: colors.crimson.crimson10,
+  error: colors.crimson.crimson10,
 
   hiContrast: colors.gray.gray12,
   loContrast: '#fff',
