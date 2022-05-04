@@ -4,6 +4,8 @@ import type { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
 
 export type RootStackParamList = {
   MainTab: undefined;
+  SignIn: undefined;
+  SignUp: undefined;
   Sample: undefined;
 };
 
@@ -24,20 +26,6 @@ export type MainTabScreenProps<T extends keyof MainTabParamList> =
     RootStackScreenProps<keyof RootStackParamList>
   >;
 
-export type SampleStackParamList = {
-  SampleHome: undefined;
-  SampleGIF: undefined;
-  SampleBottomSheet: undefined;
-  SampleBottomSheetModal: undefined;
-  SampleMobx: undefined;
-};
-
-export type SampleStackScreenProps<T extends keyof SampleStackParamList> =
-  CompositeScreenProps<
-    NativeStackScreenProps<SampleStackParamList, T>,
-    RootStackScreenProps<keyof RootStackParamList>
-  >;
-
 export type HomeStackParamList = {
   Home: undefined;
 };
@@ -46,6 +34,20 @@ export type HomeStackScreenProps<T extends keyof HomeStackParamList> =
   CompositeScreenProps<
     NativeStackScreenProps<HomeStackParamList, T>,
     MainTabScreenProps<keyof MainTabParamList>
+  >;
+
+// -------------- SAMPLE ----------------
+export type SampleStackParamList = {
+  SampleHome: undefined;
+  SampleGIF: undefined;
+  SampleBottomSheet: undefined;
+  SampleBottomSheetModal: undefined;
+  SampleMobx: undefined;
+};
+export type SampleStackScreenProps<T extends keyof SampleStackParamList> =
+  CompositeScreenProps<
+    NativeStackScreenProps<SampleStackParamList, T>,
+    RootStackScreenProps<keyof RootStackParamList>
   >;
 
 declare global {
