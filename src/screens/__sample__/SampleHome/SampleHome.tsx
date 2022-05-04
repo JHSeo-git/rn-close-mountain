@@ -16,7 +16,7 @@ const SampleHome = ({ navigation }: SampleHomeProps) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Header title={t('sample.sample')} hasGoback />
+      <Header title={t('sample.sample')} />
       <View style={styles.main}>
         <View style={styles.hero}>
           <UIText style={styles.text}>{t('sample.sample_code')}</UIText>
