@@ -10,11 +10,25 @@ import PersonSvg from '../../assets/icons/person.svg';
 
 import type { MainTabScreenProps } from '../types';
 import SignInNavigateButton from './SignInNavigateButton';
+import { observer } from 'mobx-react-lite';
+import { useStore } from '../../contexts/StoreContext';
+import { useEffect } from 'react';
 
 type ProfileScreenProps = MainTabScreenProps<'Profile'>;
 
-const ProfileScreen = ({ navigation }: ProfileScreenProps) => {
+const ProfileScreen = observer(({ navigation }: ProfileScreenProps) => {
   const { t } = useTranslation();
+  const { GoogleSignInStore } = useStore();
+
+  const onGoogleSignIn = () => {
+    GoogleSignInStore.signIn();
+  };
+
+  useEffect(() => {
+    return () => {
+      GoogleSignInStore.reset();
+    };
+  }, []);
 
   return (
     <SafeAreaView style={viewStyles.flex_1_bg_white}>
@@ -43,7 +57,7 @@ const ProfileScreen = ({ navigation }: ProfileScreenProps) => {
             />
           </View>
           <View style={Platform.OS === 'ios' && styles.listItem}>
-            <SignInNavigateButton provider="google" onPress={() => {}} />
+            <SignInNavigateButton provider="google" onPress={onGoogleSignIn} />
           </View>
           {Platform.OS === 'ios' && (
             <View>
@@ -54,7 +68,7 @@ const ProfileScreen = ({ navigation }: ProfileScreenProps) => {
       </View>
     </SafeAreaView>
   );
-};
+});
 
 const styles = StyleSheet.create({
   avatarBox: {
