@@ -1,4 +1,4 @@
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Platform } from 'react-native';
 import UIText from '../UIText';
 import { IconButton } from 'react-native-paper';
 import { COLORS, SIZES, SPACE } from '../../constants/design-token';
@@ -116,6 +116,7 @@ const styles = StyleSheet.create({
     ...StyleSheet.absoluteFillObject,
     ...viewStyles.center,
     zIndex: -1,
+    paddingTop: Platform.OS === 'android' ? SPACE.$2 : SPACE.$1,
   },
   rightBox: {
     ...viewStyles.center,
