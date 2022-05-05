@@ -13,11 +13,11 @@ import * as textStyles from '../../constants/global-styles/textStyles';
 
 const SignInForm = observer(() => {
   const { t } = useTranslation();
-  const { SignInStore } = useStore();
+  const { EmailSignInStore } = useStore();
 
   const initialValues = {
-    email: SignInStore.email,
-    password: SignInStore.password,
+    email: EmailSignInStore.email,
+    password: EmailSignInStore.password,
   };
 
   const validationSchema = yup.object().shape({
@@ -32,7 +32,7 @@ const SignInForm = observer(() => {
 
   useEffect(() => {
     return () => {
-      SignInStore.reset();
+      EmailSignInStore.reset();
     };
   }, []);
 
