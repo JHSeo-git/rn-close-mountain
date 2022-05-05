@@ -17,5 +17,5 @@ export const SIZES = {
   $20: 80,
 
   // semantic
-  headerHeight: 44,
+  headerHeight: 64,
 } as const;
