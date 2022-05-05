@@ -40,7 +40,10 @@ const SignInForm = observer(() => {
     <Formik
       initialValues={initialValues}
       validationSchema={validationSchema}
-      onSubmit={onSubmit}
+      onSubmit={values => {
+        console.log(values);
+        onSubmit();
+      }}
       enableReinitialize
     >
       {({
@@ -52,6 +55,7 @@ const SignInForm = observer(() => {
         values,
       }) => (
         <>
+          {/** TODO: move focusing when enter */}
           <CustomTextInput
             label={t('member.message.email_placeholder')}
             placeholder={t('member.message.email_placeholder')}
@@ -76,6 +80,7 @@ const SignInForm = observer(() => {
             textContentType="password"
             returnKeyType="done"
             secureTextEntry={true}
+            onSubmitEditing={handleSubmit}
           />
           <CustomButton
             style={styles.buttonStyle}
