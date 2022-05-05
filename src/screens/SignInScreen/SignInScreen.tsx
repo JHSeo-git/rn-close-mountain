@@ -21,14 +21,10 @@ const SignInScreen = ({ navigation }: SignInScreenProps) => {
   return (
     <DismissKeyboard>
       <SafeAreaView style={viewStyles.flex_1_bg_white}>
-        <Header
-          title={t('common.signIn')}
-          rightIcon="close"
-          onRightIconPress={() => navigation.pop()}
-        />
+        <Header rightIcon="close" onRightIconPress={() => navigation.pop()} />
         <View style={viewStyles.flex_1_padding_20}>
           <View style={styles.titleBox}>
-            <UIText as="h3">{t('common.signIn')}</UIText>
+            <UIText as="h2">{t('common.signIn')}</UIText>
             <UIText as="content" style={{ marginTop: SPACE.$2 }}>
               {t('common.message.signin_main')}
             </UIText>
@@ -50,7 +46,6 @@ const SignInScreen = ({ navigation }: SignInScreenProps) => {
 
 const styles = StyleSheet.create({
   titleBox: {
-    marginTop: SPACE.$10,
     alignItems: 'center',
   },
   titleImage: {
