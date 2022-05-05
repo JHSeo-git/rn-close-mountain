@@ -1,4 +1,4 @@
-import { StyleSheet, View } from 'react-native';
+import { Platform, StyleSheet, View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useTranslation } from 'react-i18next';
 import HomeStack from '../HomeStack';
@@ -124,20 +124,20 @@ const MainTab = () => {
 
 const styles = StyleSheet.create({
   tab: {
+    height: Platform.OS === 'android' ? 70 : 90,
     position: 'absolute',
-    height: 90,
     borderTopLeftRadius: RADII['2xl'],
     borderTopRightRadius: RADII['2xl'],
     borderTopColor: COLORS.transparent,
     ...SHADOWS.dark,
   },
   tabIconBox: {
-    paddingTop: SPACE.$1,
     flex: 1,
     borderTopWidth: 2,
     borderTopColor: COLORS.transparent,
     justifyContent: 'center',
     alignItems: 'center',
+    paddingTop: Platform.OS === 'android' ? SPACE.$1 : 0,
   },
   tabActive: {
     borderTopColor: COLORS.primary,
@@ -146,6 +146,7 @@ const styles = StyleSheet.create({
     ...textStyles.content,
     fontSize: FONTSIZES.xs,
     color: COLORS.gray10,
+    paddingBottom: Platform.OS === 'android' ? SPACE.$2 : 0,
   },
 });
 
