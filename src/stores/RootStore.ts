@@ -1,18 +1,21 @@
 import AuthStore from './AuthStore';
-import SignInStore from './SignInStore';
+import GoogleSignInStore from './GoogleSignInStore';
+import EmailSignInStore from './EmailSignInStore';
 import SampleStore from './__sample__/SampleStore';
 
 class RootStore {
   SampleStore: SampleStore;
   AuthStore: AuthStore;
-  SignInStore: SignInStore;
+  EmailSignInStore: EmailSignInStore;
+  GoogleSignInStore: GoogleSignInStore;
 
   constructor() {
     // sample
     this.SampleStore = new SampleStore();
 
     this.AuthStore = new AuthStore();
-    this.SignInStore = new SignInStore();
+    this.EmailSignInStore = new EmailSignInStore();
+    this.GoogleSignInStore = new GoogleSignInStore();
   }
 }
 
