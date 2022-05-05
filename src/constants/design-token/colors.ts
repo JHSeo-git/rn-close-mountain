@@ -10,6 +10,8 @@ export const COLORS = {
   ...colors.green,
   ...colors.amber,
 
+  ...colors.grayA,
+
   // semantic
   primary: colors.blue.blue10,
   secondary: colors.cyan.cyan10,
