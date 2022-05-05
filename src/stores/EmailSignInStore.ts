@@ -1,6 +1,6 @@
 import { action, makeObservable, observable } from 'mobx';
 
-class SignInStore {
+class EmailSignInStore {
   email: string | undefined;
   password: string | undefined;
 
@@ -14,18 +14,18 @@ class SignInStore {
     });
   }
 
-  setEmail(email: string | undefined) {
+  setEmail = (email: string | undefined) => {
     this.email = email;
-  }
+  };
 
-  setPassword(password: string | undefined) {
+  setPassword = (password: string | undefined) => {
     this.password = password;
-  }
+  };
 
-  reset() {
+  reset = () => {
     this.email = undefined;
     this.password = undefined;
-  }
+  };
 }
 
-export default SignInStore;
+export default EmailSignInStore;
