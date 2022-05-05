@@ -32,7 +32,6 @@ const CustomTextInput = ({
     </>
   );
 };
-
 const styles = StyleSheet.create({
   defaultStyle: {},
   errorStyle: {
