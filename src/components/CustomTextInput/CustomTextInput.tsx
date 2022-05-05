@@ -1,7 +1,6 @@
 import { StyleSheet } from 'react-native';
-import { TextInput } from 'react-native-paper';
-import { COLORS, SPACE } from '../../constants/design-token';
-import UIText from '../UIText';
+import { HelperText, TextInput } from 'react-native-paper';
+import { COLORS } from '../../constants/design-token';
 
 type CustomTextInputProps = {
   errorText?: string;
@@ -24,21 +23,14 @@ const CustomTextInput = ({
         autoCapitalize={autoCapitalize}
         {...props}
       />
-      {errorText && (
-        <UIText as="small" style={styles.errorStyle}>
-          {errorText}
-        </UIText>
-      )}
+      <HelperText type="error" visible={!!errorText}>
+        {errorText}
+      </HelperText>
     </>
   );
 };
 const styles = StyleSheet.create({
   defaultStyle: {},
-  errorStyle: {
-    color: COLORS.error,
-    marginTop: SPACE.$1,
-    marginLeft: SPACE.$3,
-  },
 });
 
 export default CustomTextInput;
