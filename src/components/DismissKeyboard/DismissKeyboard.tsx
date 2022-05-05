@@ -1,10 +1,6 @@
 import React from 'react';
-import {
-  Keyboard,
-  KeyboardAvoidingView,
-  Platform,
-  TouchableWithoutFeedback,
-} from 'react-native';
+import { Keyboard, TouchableWithoutFeedback } from 'react-native';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 type DismissKeyboardProps = {
   children: React.ReactNode;
@@ -12,12 +8,9 @@ type DismissKeyboardProps = {
 
 const DismissKeyboard = ({ children }: DismissKeyboardProps) => (
   <TouchableWithoutFeedback style={{ flex: 1 }} onPress={Keyboard.dismiss}>
-    <KeyboardAvoidingView
-      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-      style={{ flex: 1 }}
-    >
+    <KeyboardAwareScrollView style={{ flex: 1 }}>
       {children}
-    </KeyboardAvoidingView>
+    </KeyboardAwareScrollView>
   </TouchableWithoutFeedback>
 );
 
