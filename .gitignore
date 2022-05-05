@@ -62,6 +62,7 @@ buck-out/
 
 # env
 
+.env
 .env.local
 .env.development
 .env.staging
