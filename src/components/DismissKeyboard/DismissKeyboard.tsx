@@ -8,7 +8,10 @@ type DismissKeyboardProps = {
 
 const DismissKeyboard = ({ children }: DismissKeyboardProps) => (
   <TouchableWithoutFeedback style={{ flex: 1 }} onPress={Keyboard.dismiss}>
-    <KeyboardAwareScrollView style={{ flex: 1 }}>
+    <KeyboardAwareScrollView
+      keyboardShouldPersistTaps="handled"
+      style={{ flex: 1 }}
+    >
       {children}
     </KeyboardAwareScrollView>
   </TouchableWithoutFeedback>
