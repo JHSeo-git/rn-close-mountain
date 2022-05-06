@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native';
-import { useEffect } from 'react';
+import { StyleSheet, TextInput } from 'react-native';
+import { useEffect, useRef } from 'react';
 import { Formik } from 'formik';
 import * as yup from 'yup';
 import { useTranslation } from 'react-i18next';
@@ -10,14 +10,16 @@ import CustomTextInput from '../../components/CustomTextInput';
 import { useStore } from '../../contexts/StoreContext';
 import { SPACE } from '../../constants/design-token';
 import * as textStyles from '../../constants/global-styles/textStyles';
+import axios, { AxiosError } from 'axios';
 
 const SignInForm = observer(() => {
   const { t } = useTranslation();
-  const { EmailSignInStore } = useStore();
+  const { emailSignInStore } = useStore();
+  const passwordRef: React.Ref<TextInput> = useRef(null);
 
   const initialValues = {
-    email: EmailSignInStore.email,
-    password: EmailSignInStore.password,
+    email: emailSignInStore.email,
+    password: emailSignInStore.password,
   };
 
   const validationSchema = yup.object().shape({
@@ -28,11 +30,9 @@ const SignInForm = observer(() => {
     password: yup.string().required(t('member.message.password_required')),
   });
 
-  const onSubmit = () => {};
-
   useEffect(() => {
     return () => {
-      EmailSignInStore.reset();
+      emailSignInStore.reset();
     };
   }, []);
 
@@ -40,11 +40,37 @@ const SignInForm = observer(() => {
     <Formik
       initialValues={initialValues}
       validationSchema={validationSchema}
-      onSubmit={values => {
-        console.log(values);
-        onSubmit();
-      }}
       enableReinitialize
+      onSubmit={async (values, action) => {
+        try {
+          if (!values.email) {
+            action.setFieldError('email', t('member.message.email_required'));
+            return;
+          }
+          if (!values.password) {
+            action.setFieldError(
+              'password',
+              t('member.message.password_required'),
+            );
+            return;
+          }
+
+          emailSignInStore.setFetchData(values.email, values.password);
+          const result = await emailSignInStore.signIn();
+
+          if (!result) {
+            // TODO: show error message(no response result)
+          }
+        } catch (e: AxiosError | unknown) {
+          // https://github.com/axios/axios/issues/3612#issuecomment-770224236
+          if (axios.isAxiosError(e)) {
+            // TODO: snackbar
+            console.error(e.response?.data);
+          } else {
+            console.error((e as any).response.data);
+          }
+        }
+      }}
     >
       {({
         errors,
@@ -67,9 +93,14 @@ const SignInForm = observer(() => {
             keyboardType="email-address"
             textContentType="emailAddress"
             returnKeyType="next"
+            onSubmitEditing={() => {
+              passwordRef.current?.focus();
+            }}
+            disabled={emailSignInStore.loading}
           />
           <CustomTextInput
-            style={{ marginTop: SPACE.$2 }}
+            ref={passwordRef}
+            style={{ marginTop: SPACE.$3 }}
             label={t('member.message.password_placeholder')}
             placeholder={t('member.message.password_placeholder')}
             onChangeText={handleChange('password')}
@@ -81,11 +112,14 @@ const SignInForm = observer(() => {
             returnKeyType="done"
             secureTextEntry={true}
             onSubmitEditing={handleSubmit}
+            disabled={emailSignInStore.loading}
           />
           <CustomButton
             style={styles.buttonStyle}
             labelStyle={styles.buttonLabelStyle}
             onPress={handleSubmit}
+            loading={emailSignInStore.loading}
+            disabled={emailSignInStore.loading}
           >
             {t('common.signIn')}
           </CustomButton>
