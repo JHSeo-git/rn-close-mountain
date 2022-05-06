@@ -6,9 +6,9 @@ import { COLORS } from '../../constants/design-token';
 import * as viewStyles from '../../constants/global-styles/viewStyles';
 
 const Loader = observer(() => {
-  const { LoaderStore } = useStore();
+  const { loaderStore } = useStore();
 
-  if (!LoaderStore.loading) {
+  if (!loaderStore.loading) {
     return null;
   }
 
@@ -16,7 +16,7 @@ const Loader = observer(() => {
     <Portal>
       <View style={styles.container}>
         <ActivityIndicator
-          animating={LoaderStore.loading}
+          animating={loaderStore.loading}
           size="large"
           color={COLORS.primary}
         />
