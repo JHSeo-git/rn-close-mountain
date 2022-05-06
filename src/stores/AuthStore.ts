@@ -1,13 +1,33 @@
-import { makeObservable, observable } from 'mobx';
+import { action, makeObservable, observable, override } from 'mobx';
+import BaseStore from './base/BaseStore';
+import RootStore from './RootStore';
+import type { SessionInfo } from './types';
 
-class AuthStore {
-  isAuthenticated = true;
+class AuthStore extends BaseStore {
+  isAuthenticated = false;
+  sessionInfo: SessionInfo | null = null;
 
-  constructor() {
+  constructor(root: RootStore) {
+    super(root);
     makeObservable(this, {
+      loading: override,
+      error: override,
       isAuthenticated: observable,
+      sessionInfo: observable,
+      setSessionInfo: action,
+      reset: action,
     });
   }
+
+  setSessionInfo = (sessionInfo: SessionInfo | null) => {
+    this.sessionInfo = sessionInfo;
+    this.isAuthenticated = !!sessionInfo;
+  };
+
+  reset = () => {
+    this.isAuthenticated = false;
+    this.sessionInfo = null;
+  };
 }
 
 export default AuthStore;
