@@ -27,6 +27,8 @@ ios 에뮬레이터 경우 developer mode가 실행이 되지 않아 찾다보�
 
 저 같은 경우 에뮬레이터 키보드 설정 후에 `cmd + d`를 입력하면 developer modal이 나타납니다.
 
+또는 Device 메뉴아래에 "Shake" 버튼을 누르면 developer modal이 나타납니다.
+
 ## snapPoints가 1개 일 경우 bottom-sheet modal backdrop이 안나타는 문제
 
 snapPoints가 1개 일 경우 index 범위가 -1, 0 이기 떄문에 아래와 같이 처리해주어야 합니다.

@@ -54,11 +54,14 @@ yarn add -D @types/uuid react-native-svg-transformer
 - `npx react-native link` (android, ios)
 - manual link (android, ios)
 
-### 1. store
+### 1. mobx
 
-> mobx
+> store
 
 mobx 써야할 경우가 있어서 이번에 한 번 사용해보려고 합니다.
+
+> 전체적인 구조는 아래 블로그 글과 거의 흡사합니다.  
+> https://dev.to/cakasuma/using-mobx-hooks-with-multiple-stores-in-react-3dk4
 
 ### 2. fetch
 
@@ -159,3 +162,26 @@ react-navigation을 사용한다면 별도로 android 프로젝트에 코드를 
 react-native-reanimated와 react-native-gesture-handler를 의존성으로 가지기에 같이 설치해야 합니다.
 
 마찬가지로 android, ios 설정이 필요함으로 공식 문서에서 참고하도록 합니다.
+
+### 12. google login
+
+react-native에서 google login을 사용하기 위해 [react-native-google-signin](https://github.com/react-native-google-signin)을 사용합니다.
+안드로이드와 IOS 둘 다 설정해줘야 하니 공식 문서를 잘 따라가면서 설정해야 합니다.
+
+#### 라이브러리 등록
+
+- 안드로이드는 autolink를 사용하기 때문에 별도 설정할 필요가 없습니다.
+- IOS는 `pod install` 사용하면 자동으로 Podfile이 설치됩니다.
+
+#### Google Client ID and credentials.plist(or credentials.json) 발급
+
+안드로이드와 IOS 둘 다 각각 발급해서 적용해야 합니다.
+
+- IOS: package명 만 입력하면 발급받을 수 있습니다.
+- ANDROID: 안드로이드는 조금 까다로운데 keystore에 있는 SHA1 값이 필요합니다. android/app/debug.keystore의 SHA1 값을 일단 등록해서 사용할 것입니다.(production.keystore는 또 따로 등록해야되는건지...그건 잘 모르겠네...)([여기서 확인](https://developers.google.com/android/guides/client-auth))
+
+```bash
+# android
+# debug.keystore 초기 비밀번호는 android 입니다.
+keytool -list -v -keystore android/app/debug.keystore
+```
