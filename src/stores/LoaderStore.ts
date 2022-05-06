@@ -1,11 +1,13 @@
-import { action, makeObservable, observable } from 'mobx';
+import { action, makeObservable, override } from 'mobx';
+import BaseStore from './base/BaseStore';
+import RootStore from './RootStore';
 
-class LoaderStore {
-  loading = false;
-
-  constructor() {
+class LoaderStore extends BaseStore {
+  constructor(root: RootStore) {
+    super(root);
     makeObservable(this, {
-      loading: observable,
+      loading: override,
+      error: override,
       showLoader: action,
       hideLoader: action,
     });
