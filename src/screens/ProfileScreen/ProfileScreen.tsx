@@ -1,32 +1,31 @@
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { observer } from 'mobx-react-lite';
 import { View, StyleSheet, Platform } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import SignInNavigateButton from './SignInNavigateButton';
 import Header from '../../components/Header';
 import UIText from '../../components/UIText';
+import { useStore } from '../../contexts/StoreContext';
 import { COLORS, SPACE } from '../../constants/design-token';
 import * as viewStyles from '../../constants/global-styles/viewStyles';
+import type { MainTabScreenProps } from '../types';
 
 import PersonSvg from '../../assets/icons/person.svg';
-
-import type { MainTabScreenProps } from '../types';
-import SignInNavigateButton from './SignInNavigateButton';
-import { observer } from 'mobx-react-lite';
-import { useStore } from '../../contexts/StoreContext';
-import { useEffect } from 'react';
 
 type ProfileScreenProps = MainTabScreenProps<'Profile'>;
 
 const ProfileScreen = observer(({ navigation }: ProfileScreenProps) => {
   const { t } = useTranslation();
-  const { GoogleSignInStore } = useStore();
+  const { googleSignInStore } = useStore();
 
   const onGoogleSignIn = () => {
-    GoogleSignInStore.signIn();
+    googleSignInStore.signIn();
   };
 
   useEffect(() => {
     return () => {
-      GoogleSignInStore.reset();
+      googleSignInStore.reset();
     };
   }, []);
 
@@ -43,10 +42,10 @@ const ProfileScreen = observer(({ navigation }: ProfileScreenProps) => {
             <PersonSvg width={40} height={40} color={COLORS.gray9} />
           </View>
           <UIText as="h3" style={{ marginTop: SPACE.$4 }}>
-            Login
+            {t('common.login')}
           </UIText>
           <UIText as="small" style={{ marginTop: SPACE.$2 }}>
-            Login for using all features
+            {t('common.message.profile_login')}
           </UIText>
         </View>
         <View style={styles.listBox}>
