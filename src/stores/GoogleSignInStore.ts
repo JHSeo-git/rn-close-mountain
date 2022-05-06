@@ -3,8 +3,10 @@ import {
   statusCodes,
   User,
 } from '@react-native-google-signin/google-signin';
-import { action, makeObservable, observable } from 'mobx';
+import { action, makeObservable, observable, override } from 'mobx';
 import Config from 'react-native-config';
+import BaseStore from './base/BaseStore';
+import RootStore from './RootStore';
 
 // Configuration for GoogleSignin
 if (!Config.GOOGLE_CLIENT_ID_IOS) {
@@ -24,16 +26,15 @@ class GoogleSignInError extends Error {
   }
 }
 
-class GoogleSignInStore {
+class GoogleSignInStore extends BaseStore {
   userInfo: User | null = null;
-  loading: boolean = false;
-  error: unknown | null = null;
 
-  constructor() {
+  constructor(root: RootStore) {
+    super(root);
     makeObservable(this, {
+      loading: override,
+      error: override,
       userInfo: observable,
-      loading: observable,
-      error: observable,
       signIn: action,
       signOut: action,
       reset: action,
@@ -46,6 +47,12 @@ class GoogleSignInStore {
       await GoogleSignin.hasPlayServices();
       const googleUserInfo = await GoogleSignin.signIn();
       this.userInfo = googleUserInfo;
+      console.log(
+        'google sign in success: ',
+        JSON.stringify(this.userInfo, null, 2),
+      );
+
+      // TODO: call api to sign in
     } catch (e: unknown) {
       if (e instanceof GoogleSignInError) {
         if (e.code === statusCodes.SIGN_IN_CANCELLED) {
@@ -58,6 +65,7 @@ class GoogleSignInStore {
           // some other error happened
         }
         this.error = e;
+        console.error('google sign in error: ', e);
       }
     } finally {
       this.loading = false;
