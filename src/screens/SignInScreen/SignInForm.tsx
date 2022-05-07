@@ -4,17 +4,21 @@ import { Formik } from 'formik';
 import * as yup from 'yup';
 import { useTranslation } from 'react-i18next';
 import { observer } from 'mobx-react-lite';
-
+import { useNavigation } from '@react-navigation/native';
 import CustomButton from '../../components/CustomButton';
 import CustomTextInput from '../../components/CustomTextInput';
-import { useStore } from '../../contexts/StoreContext';
 import { SPACE } from '../../constants/design-token';
+import { useStore } from '../../contexts/StoreContext';
 import * as textStyles from '../../constants/global-styles/textStyles';
-import axios, { AxiosError } from 'axios';
+import AppError from '../../utils/error/AppError';
+
+import type { MainTabScreenProps } from '../types';
 
 const SignInForm = observer(() => {
   const { t } = useTranslation();
-  const { emailSignInStore } = useStore();
+  const navigation =
+    useNavigation<MainTabScreenProps<'Profile'>['navigation']>();
+  const { emailSignInStore, snackbarStore, authStore } = useStore();
   const passwordRef: React.Ref<TextInput> = useRef(null);
 
   const initialValues = {
@@ -33,6 +37,7 @@ const SignInForm = observer(() => {
   useEffect(() => {
     return () => {
       emailSignInStore.reset();
+      snackbarStore.reset();
     };
   }, []);
 
@@ -58,16 +63,20 @@ const SignInForm = observer(() => {
           emailSignInStore.setFetchData(values.email, values.password);
           const result = await emailSignInStore.signIn();
 
-          if (!result) {
-            // TODO: show error message(no response result)
+          if (!result?.jwt || !result?.user) {
+            snackbarStore.showSnackbar(
+              t('member.message.signin_response_data_empty'),
+              'error',
+            );
           }
-        } catch (e: AxiosError | unknown) {
-          // https://github.com/axios/axios/issues/3612#issuecomment-770224236
-          if (axios.isAxiosError(e)) {
-            // TODO: snackbar
-            console.error(e.response?.data);
-          } else {
-            console.error((e as any).response.data);
+
+          // if result exists, set session in sessionStorage.
+          // and then, navigate home screen
+          authStore.setSessionInfo({ token: result.jwt });
+          navigation.navigate('HomeStack');
+        } catch (e: unknown) {
+          if (e instanceof AppError) {
+            snackbarStore.showSnackbar(e.message, 'error');
           }
         }
       }}
