@@ -15,7 +15,6 @@ class AuthStore extends BaseStore {
       isAuthenticated: observable,
       sessionInfo: observable,
       setSessionInfo: action,
-      reset: action,
     });
   }
 
@@ -24,9 +23,8 @@ class AuthStore extends BaseStore {
     this.isAuthenticated = !!sessionInfo;
   };
 
-  reset = () => {
-    this.isAuthenticated = false;
-    this.sessionInfo = null;
+  sessionOut = () => {
+    this.setSessionInfo(null);
   };
 }
 
