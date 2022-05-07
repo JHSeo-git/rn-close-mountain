@@ -61,6 +61,9 @@ class EmailSignInStore extends BaseStore {
       if (e instanceof AppError) {
         throw e;
       } else if (axios.isAxiosError(e) && e.response) {
+        /**
+         * @see https://github.com/axios/axios/issues/3612#issuecomment-933263425
+         */
         const errorResponse = e.response.data as AxiosErrorResponse | undefined;
 
         const message = errorResponse?.error.message ?? e.message;
