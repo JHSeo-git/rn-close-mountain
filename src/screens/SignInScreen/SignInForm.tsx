@@ -70,9 +70,11 @@ const SignInForm = observer(() => {
             );
           }
 
+          // TODO: confirmed user, blocked user
+
           // if result exists, set session in sessionStorage.
           // and then, navigate home screen
-          authStore.setSessionInfo({ token: result.jwt });
+          await authStore.sessionIn({ token: result.jwt });
           navigation.navigate('HomeStack');
         } catch (e: unknown) {
           if (e instanceof AppError) {
