@@ -1,7 +1,11 @@
+import axios from 'axios';
 import { action, makeObservable, observable, override } from 'mobx';
-import emailSignIn from '../utils/api/auth/emailSignIn';
+import emailSignIn from '../api/auth/emailSignIn';
 import BaseStore from './base/BaseStore';
 import RootStore from './RootStore';
+
+import { AxiosErrorResponse } from '../api/types';
+import AppError from '../utils/error/AppError';
 
 class EmailSignInStore extends BaseStore {
   email: string | undefined;
@@ -40,7 +44,11 @@ class EmailSignInStore extends BaseStore {
 
     try {
       if (!this.email || !this.password) {
-        throw new Error('Email or password is not set');
+        throw new AppError({
+          message: 'Email or password is not set',
+          name: 'EmailOrPasswordNotSet',
+          label: 'VALIDATION',
+        });
       }
 
       const result = await emailSignIn({
@@ -49,8 +57,26 @@ class EmailSignInStore extends BaseStore {
       });
 
       return result;
-    } catch (e: unknown) {
-      throw e;
+    } catch (e: any) {
+      if (e instanceof AppError) {
+        throw e;
+      } else if (axios.isAxiosError(e) && e.response) {
+        const errorResponse = e.response.data as AxiosErrorResponse | undefined;
+
+        const message = errorResponse?.error.message ?? e.message;
+        const name = errorResponse?.error.name ?? e.name;
+        const status =
+          errorResponse?.error.status ??
+          (e.status ? parseInt(e.status, 10) : undefined);
+        const stack = e.stack;
+
+        throw new AppError({ message, name, label: 'API', status, stack });
+      } else {
+        const message = e.message ?? 'Unknown error';
+        const name = e.name ?? 'UnknownError';
+
+        throw new AppError({ message, name, label: 'UNKNOWN' });
+      }
     } finally {
       this.loading = false;
     }
