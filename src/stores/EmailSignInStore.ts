@@ -58,28 +58,7 @@ class EmailSignInStore extends BaseStore {
 
       return result;
     } catch (e: any) {
-      if (e instanceof AppError) {
-        throw e;
-      } else if (axios.isAxiosError(e) && e.response) {
-        /**
-         * @see https://github.com/axios/axios/issues/3612#issuecomment-933263425
-         */
-        const errorResponse = e.response.data as AxiosErrorResponse | undefined;
-
-        const message = errorResponse?.error.message ?? e.message;
-        const name = errorResponse?.error.name ?? e.name;
-        const status =
-          errorResponse?.error.status ??
-          (e.status ? parseInt(e.status, 10) : undefined);
-        const stack = e.stack;
-
-        throw new AppError({ message, name, label: 'API', status, stack });
-      } else {
-        const message = e.message ?? 'Unknown error';
-        const name = e.name ?? 'UnknownError';
-
-        throw new AppError({ message, name, label: 'UNKNOWN' });
-      }
+      throw this.errorHandler(e);
     } finally {
       this.loading = false;
     }
