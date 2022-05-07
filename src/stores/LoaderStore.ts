@@ -1,25 +1,30 @@
-import { action, makeObservable, override } from 'mobx';
+import { action, makeObservable, observable } from 'mobx';
 import BaseStore from './base/BaseStore';
 import RootStore from './RootStore';
 
 class LoaderStore extends BaseStore {
+  visible: boolean = false;
   constructor(root: RootStore) {
     super(root);
     makeObservable(this, {
-      loading: override,
-      error: override,
+      visible: observable,
       showLoader: action,
       hideLoader: action,
+      reset: action,
     });
   }
 
   showLoader = () => {
-    this.loading = true;
+    this.visible = true;
   };
 
   hideLoader = () => {
-    this.loading = true;
+    this.visible = false;
   };
+
+  reset() {
+    this.visible = false;
+  }
 }
 
 export default LoaderStore;
