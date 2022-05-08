@@ -49,6 +49,7 @@ class AuthStore extends BaseStore {
 
       this.sessionIn({ token });
     } catch (e) {
+      this.error = e;
       throw this.errorHandler(e);
     } finally {
       this.initialized = true;
