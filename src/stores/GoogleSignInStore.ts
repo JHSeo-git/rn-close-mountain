@@ -1,40 +1,33 @@
 import {
   GoogleSignin,
   statusCodes,
-  User,
 } from '@react-native-google-signin/google-signin';
-import { action, makeObservable, observable, override } from 'mobx';
+import { action, makeObservable, override } from 'mobx';
 import Config from 'react-native-config';
+import googleSignIn from '../api/auth/googleSignIn';
+import AppError from '../utils/error/AppError';
 import BaseStore from './base/BaseStore';
 import RootStore from './RootStore';
 
 // Configuration for GoogleSignin
 if (!Config.GOOGLE_CLIENT_ID_IOS) {
-  throw new Error('GOOGLE_CLIENT_ID_IOS is not defined');
+  throw new AppError({
+    message: 'env.GOOGLE_CLIENT_ID_IOS is not defined',
+    name: 'GOOGLE_CLIENT_ID_IOS_NOT_DEFINED',
+    label: 'APP',
+  });
 }
 
 GoogleSignin.configure({
   iosClientId: Config.GOOGLE_CLIENT_ID_IOS,
 });
 
-class GoogleSignInError extends Error {
-  code: any;
-
-  constructor(message: string) {
-    super(message);
-    this.name = 'GoogleSignInError';
-  }
-}
-
 class GoogleSignInStore extends BaseStore {
-  userInfo: User | null = null;
-
   constructor(root: RootStore) {
     super(root);
     makeObservable(this, {
       loading: override,
       error: override,
-      userInfo: observable,
       signIn: action,
       signOut: action,
       reset: action,
@@ -46,26 +39,50 @@ class GoogleSignInStore extends BaseStore {
     try {
       await GoogleSignin.hasPlayServices();
       const googleUserInfo = await GoogleSignin.signIn();
-      this.userInfo = googleUserInfo;
+      const { accessToken } = await GoogleSignin.getTokens();
+
       console.log(
         'google sign in success: ',
-        JSON.stringify(this.userInfo, null, 2),
+        JSON.stringify({ userInfo: googleUserInfo, accessToken }, null, 2),
       );
 
-      // TODO: call api to sign in
-    } catch (e: unknown) {
-      if (e instanceof GoogleSignInError) {
-        if (e.code === statusCodes.SIGN_IN_CANCELLED) {
-          // user cancelled the login flow
-        } else if (e.code === statusCodes.IN_PROGRESS) {
-          // operation (e.g. sign in) is in progress already
-        } else if (e.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
-          // play services not available or outdated
-        } else {
-          // some other error happened
-        }
-        this.error = e;
-        console.error('google sign in error: ', e);
+      if (!googleUserInfo.idToken) {
+        return;
+      }
+
+      const result = await googleSignIn({
+        oauthToken: googleUserInfo.idToken,
+        accessToken,
+        email: googleUserInfo.user.email,
+      });
+
+      return result;
+    } catch (e: any) {
+      this.error = e;
+      if (e.code === statusCodes.SIGN_IN_CANCELLED) {
+        // user cancelled the login flow
+        throw new AppError({
+          label: 'API',
+          name: 'GOOGLE_SIGN_IN_CANCELLED',
+          message: e.message ?? 'Google signin cancelled',
+        });
+      } else if (e.code === statusCodes.IN_PROGRESS) {
+        // operation (e.g. sign in) is in progress already
+        throw new AppError({
+          label: 'API',
+          name: 'GOOGLE_IN_PROGRESS',
+          message: e.message ?? 'Google signin is in progress already',
+        });
+      } else if (e.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
+        // play services not available or outdated
+        throw new AppError({
+          label: 'API',
+          name: 'GOOGLE_PLAY_SERVICES_NOT_AVAILABLE',
+          message:
+            e.message ?? 'Google play services not available or outdated',
+        });
+      } else {
+        throw this.errorHandler(e);
       }
     } finally {
       this.loading = false;
@@ -77,7 +94,6 @@ class GoogleSignInStore extends BaseStore {
     try {
       // await GoogleSignin.revokeAccess();
       await GoogleSignin.signOut();
-      this.userInfo = null;
     } catch (e: unknown) {
       this.error = e;
     } finally {
@@ -86,7 +102,6 @@ class GoogleSignInStore extends BaseStore {
   };
 
   reset = () => {
-    this.userInfo = null;
     this.loading = false;
     this.error = null;
   };
