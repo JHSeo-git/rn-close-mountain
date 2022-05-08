@@ -22,8 +22,8 @@ const SignInForm = observer(() => {
   const passwordRef: React.Ref<TextInput> = useRef(null);
 
   const initialValues = {
-    email: emailSignInStore.email,
-    password: emailSignInStore.password,
+    email: undefined,
+    password: undefined,
   };
 
   const validationSchema = yup.object().shape({
@@ -60,14 +60,18 @@ const SignInForm = observer(() => {
             return;
           }
 
-          emailSignInStore.setFetchData(values.email, values.password);
-          const result = await emailSignInStore.signIn();
+          const result = await emailSignInStore.signIn(
+            values.email,
+            values.password,
+          );
 
           if (!result?.jwt || !result?.user) {
+            // TODO: 회원가입 안내 창 띄우기
             snackbarStore.showSnackbar(
               t('member.message.signin_response_data_empty'),
               'error',
             );
+            return;
           }
 
           // TODO: confirmed user, blocked user
