@@ -1,4 +1,4 @@
-type AppErrorLabel = 'VALIDATION' | 'API' | 'UNKNOWN';
+type AppErrorLabel = 'VALIDATION' | 'API' | 'APP' | 'UNKNOWN';
 
 type AppConstructorParams = {
   message: string;
