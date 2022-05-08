@@ -1,6 +1,6 @@
 export type Provider = 'email' | 'google' | 'apple';
 
-export type EmailSignInResponse = {
+export type SignInResponse = {
   jwt: string;
   user: User;
 };
