@@ -2,21 +2,23 @@
 
 개발하기 위한 Setup을 합니다.
 
-- [build, deploy](#build-deploy)
-- [third-party library](#third-party-library)  
-  [1. mobx](#1-mobx)  
-  [2. fetch](#2-fetch)  
-  [3. storage](#3-storage)  
-  [4. style](#4-style)  
-  [5. folder structure](#5-folder-structure)  
-  [6. .env](#6-env)  
-  [7. test](#7-test)  
-  [8. i18n](#8-i18n)  
-  [9. gesture](#9-gesture)  
-  [10. git, webp](#10-gif-webp)  
-  [11. bottom-sheet](#11-bottom-sheet)  
-  [12. google-login](#12-google-login)  
-  [13. error 관리](#13-error-관리)
+[build, deploy](#build-deploy)
+
+[third-party library](#third-party-library)
+
+1. [mobx](#1-mobx)
+2. [fetch](#2-fetch)
+3. [storage](#3-storage)
+4. [style](#4-style)
+5. [folder structure](#5-folder-structure)
+6. [.env](#6-env)
+7. [test](#7-test)
+8. [i18n](#8-i18n)
+9. [gesture](#9-gesture)
+10. [git, webp](#10-gif-webp)
+11. [bottom-sheet](#11-bottom-sheet)
+12. [google-login](#12-google-login)
+13. [error 관리](#13-error-관리)
 
 ## build, deploy
 
