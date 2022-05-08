@@ -12,15 +12,39 @@ import * as viewStyles from '../../constants/global-styles/viewStyles';
 import type { MainTabScreenProps } from '../types';
 
 import PersonSvg from '../../assets/icons/person.svg';
+import AppError from '../../utils/error/AppError';
 
 type ProfileScreenProps = MainTabScreenProps<'Profile'>;
 
 const ProfileScreen = observer(({ navigation }: ProfileScreenProps) => {
   const { t } = useTranslation();
-  const { googleSignInStore } = useStore();
+  const { googleSignInStore, snackbarStore, authStore } = useStore();
 
-  const onGoogleSignIn = () => {
-    googleSignInStore.signIn();
+  const onGoogleSignIn = async () => {
+    try {
+      const result = await googleSignInStore.signIn();
+
+      if (!result?.jwt || !result?.user) {
+        // TODO: 회원가입 안내 창 띄우기
+        snackbarStore.showSnackbar(
+          t('member.message.signin_response_data_empty'),
+          'error',
+        );
+        return;
+      }
+
+      // TODO: confirmed user, blocked user
+
+      // if result exists, set session in sessionStorage.
+      // and then, navigate home screen
+      await authStore.sessionIn({ token: result.jwt });
+      navigation.navigate('HomeStack');
+    } catch (e: unknown) {
+      console.log('not catch', e);
+      if (e instanceof AppError) {
+        snackbarStore.showSnackbar(e.message, 'error');
+      }
+    }
   };
 
   useEffect(() => {
