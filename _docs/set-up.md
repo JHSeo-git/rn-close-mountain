@@ -4,6 +4,18 @@
 
 - [build, deploy](#build-deploy)
 - [third-party library](#third-party-library)
+  - [1. mobx](#1-mobx)
+  - [2. fetch](#2-fetch)
+  - [3. storage](#3-storage)
+  - [4. style](#4-style)
+  - [5. folder structure](#5-folder-structure)
+  - [6. .env](#6-env)
+  - [7. test](#7-test)
+  - [8. i18n](#8-i18n)
+  - [9. gesture](#9-gesture)
+  - [10. git, webp](#10-gif-webp)
+  - [11. bottom-sheet](#11-bottom-sheet)
+  - [12. google-login](#12-google-login)
 
 ## build, deploy
 
@@ -13,14 +25,6 @@
 [ios의 경우](https://reactnative.dev/docs/publishing-to-app-store) `--configuration Release` 옵션을 추가하여 `run-ios` 스트립트를 호출하면 됩니다.
 
 자세한 내용은 해당 링크를 참조하세요.
-
-## shadow
-
-안드로이드, IOS shadow 적용할 때 Web css와는 다릅니다.
-
-RN shadow style 코드를 생성해주는 사이트를 이용합니다.
-
-https://ethercreative.github.io/react-native-shadow-generator/
 
 ## third-party library
 
@@ -63,9 +67,16 @@ mobx 써야할 경우가 있어서 이번에 한 번 사용해보려고 합니�
 > 전체적인 구조는 아래 블로그 글과 거의 흡사합니다.  
 > https://dev.to/cakasuma/using-mobx-hooks-with-multiple-stores-in-react-3dk4
 
+다만 개인적으로는 react와 잘 맞지 않는 부분이 많다고 느껴집니다.
+function component와 그렇게 잘 맞다는 생각이 들지 않고, custom hook과 연계부분이 아쉽습니다.
+개인적으로 custom hook에 비지니스 로직을 수행하는 경우가 많은데 mobx를 사용하다 보니 action에서 모든 걸 처리하려고 하는 것 같아서 조금 어색했습니다.(다만 이번이 제가 처음이고, 사용법을 전혀 몰라서 이런 느낌이 들 수 있습니다.)
+
 ### 2. fetch
 
 > axios
+
+많이 사용되는 라이브러리 중 하나인 axios를 사용하려고 합니다.
+인터셉터를 통해 로그관리를 하려고 합니다.
 
 ### 3. storage
 
@@ -76,10 +87,22 @@ deprecated library를 받지 말고 꼭 위 라이브러리를 받도록 주의�
 
 ### 4. style
 
-> StyleSheet
+> StyleSheet + react-native-paper + radix-ui/colors
 
 별도 CSS-IN-JS 라이브러리를 쓰지 않고 RN에서 제공하는 StyleSheet를 이용해 작업합니다.
 design token을 만들고 global style을 정의해두고 쓰고 있습니다.
+
+추가로 react-native-paper를 사용합니다. mui의 RN 버전인데,,, 마찬가지로 써야할 경우가 있어서 미리 익히는 차원에서 react-native-paper를 사용하려고 합니다.
+
+color palette를 위해 radix-ui/colors를 사용합니다.
+
+### shadow
+
+안드로이드, IOS shadow 적용할 때 Web css와는 다릅니다.
+
+RN shadow style 코드를 생성해주는 사이트를 이용합니다.
+
+https://ethercreative.github.io/react-native-shadow-generator/
 
 ### 5. folder structure
 
@@ -90,13 +113,13 @@ design token을 만들고 global style을 정의해두고 쓰고 있습니다.
 
 ```bash
 src
+├── api
 ├── assets
 ├── components
 ├── constants
 ├── contexts
 ├── hooks
 ├── i18n
-├── navigation
 ├── screens
 ├── stores
 └── utils
@@ -185,3 +208,23 @@ react-native에서 google login을 사용하기 위해 [react-native-google-sign
 # debug.keystore 초기 비밀번호는 android 입니다.
 keytool -list -v -keystore android/app/debug.keystore
 ```
+
+### 13. error 관리
+
+Error를 상속받는 AppError를 만들어서 에러처리를 하려고 합니다.
+
+일단 가장 많이 발생할 것으로 예상되는 루트가 api 처리하는 루트인데 일반적인 경로는 다음과 같습니다.
+
+1. `screen(or component)`에서 store action 호출
+2. `store action`에서 api function 호출
+3. `api function`에서 axios 실행 후 성공응답 or 에러응답
+
+만약 axios 실행이 success 라면 호출한 반대 순서로 정상 return 됩니다.  
+일단 비지니스 로직을 가진 store action에서 에러관리를 하기위해 집중할 것입니다.
+
+만약 axios 실행이 error 라면 다음과 같이 처리합니다.
+a. `api function`에서 try/catch없이 그대로 throw 됩니다.
+b. `store action`에서 catch문을 통해 Error를 AppError로 감싸서 throw AppError;
+c. `screen(or component)`에서 catch문을 통해 AppError를 무시할지 snackbar를 호출할지 navigate할지 또 다른 비지니스 로직을 호출할지를 결정합니다.
+
+기본적인 룰은 위와 같으나 사각에서 발생한 에러를 잡기 위해 추후에 global Error boundary를 추가해서 처리할 생각입니다.
