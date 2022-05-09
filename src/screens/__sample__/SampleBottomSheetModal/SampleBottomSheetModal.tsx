@@ -54,7 +54,7 @@ const SampleBottomSheetModal = () => {
   return (
     <BottomSheetModalProvider>
       <SafeAreaView style={viewStyles.flex_1_bg_white}>
-        <Header title={t('sample.sample_bottomsheet_modal')} hasGoback />
+        <Header title={t('sample.sample_bottomsheet_modal')} />
         <View style={styles.main}>
           <UIText style={textStyles.strong}>Sample Bottom Sheet Modal</UIText>
           <UIText style={textStyles.small}>

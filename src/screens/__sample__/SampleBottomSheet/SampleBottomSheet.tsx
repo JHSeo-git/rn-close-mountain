@@ -63,7 +63,7 @@ const SampleBottomSheet = () => {
 
   return (
     <SafeAreaView style={viewStyles.flex_1_bg_white}>
-      <Header title={t('sample.sample_bottomsheet')} hasGoback />
+      <Header title={t('sample.sample_bottomsheet')} />
       <View style={styles.main}>
         <UIText style={textStyles.strong}>Sample Bottom Sheet</UIText>
         <UIText style={textStyles.small}>

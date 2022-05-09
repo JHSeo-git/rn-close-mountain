@@ -12,22 +12,22 @@ import * as viewStyles from '../../../constants/global-styles/viewStyles';
 
 const SampleMobx = observer(() => {
   const { t } = useTranslation();
-  const { SampleStore } = useStore();
+  const { sampleStore } = useStore();
 
   return (
     <SafeAreaView style={viewStyles.flex_1_bg_white}>
-      <Header title="Mobx" hasGoback />
+      <Header title="Mobx" />
       <View style={viewStyles.flex_1_padding_20}>
-        <UIText style={textStyles.h3}>Count: {SampleStore.count}</UIText>
+        <UIText style={textStyles.h3}>Count: {sampleStore.count}</UIText>
         <View style={styles.buttonBox}>
-          <SampleButton onPress={() => SampleStore.increment()}>
+          <SampleButton onPress={() => sampleStore.increment()}>
             <UIText style={[textStyles.strong, textStyles.contrast]}>
               {t('common.increment')}
             </UIText>
           </SampleButton>
         </View>
         <View style={styles.buttonBox}>
-          <SampleButton onPress={() => SampleStore.decrement()}>
+          <SampleButton onPress={() => sampleStore.decrement()}>
             <UIText style={[textStyles.strong, textStyles.contrast]}>
               {t('common.decrement')}
             </UIText>

@@ -11,7 +11,7 @@ import SampleGifImage from '../../../assets/images/sample.gif';
 const SampleGIF = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <Header title="GIF" hasGoback />
+      <Header title="GIF" />
       <View style={styles.main}>
         <View style={styles.spaceView}>
           <UIText style={textStyles.strong}>Sample GIF (200 X 200)</UIText>
