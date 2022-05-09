@@ -56,6 +56,13 @@ const SampleHome = ({ navigation }: SampleHomeProps) => {
             </UIText>
           </SampleButton>
         </View>
+        <View style={styles.buttonBox}>
+          <SampleButton onPress={() => navigation.navigate('SampleBiometric')}>
+            <UIText style={styles.buttonText}>
+              {t('sample.sample_biometric')}
+            </UIText>
+          </SampleButton>
+        </View>
       </View>
     </SafeAreaView>
   );

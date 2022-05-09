@@ -43,6 +43,7 @@ export type SampleStackParamList = {
   SampleBottomSheet: undefined;
   SampleBottomSheetModal: undefined;
   SampleMobx: undefined;
+  SampleBiometric: undefined;
 };
 export type SampleStackScreenProps<T extends keyof SampleStackParamList> =
   CompositeScreenProps<

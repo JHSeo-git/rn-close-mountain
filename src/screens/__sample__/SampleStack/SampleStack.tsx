@@ -4,6 +4,7 @@ import SampleGIF from '../SampleGIF';
 import SampleBottomSheet from '../SampleBottomSheet';
 import SampleBottomSheetModal from '../SampleBottomSheetModal';
 import SampleMobx from '../SampleMobx';
+import SampleBiometric from '../SampleBiometric';
 import type { SampleStackParamList } from '../../types';
 
 const Stack = createNativeStackNavigator<SampleStackParamList>();
@@ -24,6 +25,7 @@ const SampleStack = () => {
         component={SampleBottomSheetModal}
       />
       <Stack.Screen name="SampleMobx" component={SampleMobx} />
+      <Stack.Screen name="SampleBiometric" component={SampleBiometric} />
     </Stack.Navigator>
   );
 };
