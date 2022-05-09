@@ -7,10 +7,31 @@
     "search": "Search",
     "profile": "Profile",
     "more": "More",
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "login": "Login",
     "close": "Close",
     "increment": "Increment",
     "decrement": "Decrement",
-    "change_language": "Change Language"
+    "change_language": "Change Language",
+    "message": {
+      "signin_main": "Sign in to Close Mountain",
+      "profile_login": "Login for using all features"
+    }
+  },
+  "member": {
+    "email": "Email",
+    "password": "Password",
+    "message": {
+      "email_placeholder": "Email address *",
+      "email_error": "Please enter a valid email address",
+      "email_required": "Please enter your email address",
+      "password_placeholder": "Password *",
+      "password_error": "Please enter a valid password",
+      "password_required": "Please enter your password",
+      "forgot_password": "Forgot Password?",
+      "signin_response_data_empty": "Sign In failed. Please check your email and password"
+    }
   },
   "sample": {
     "main": "Main",
@@ -18,6 +39,7 @@
     "sample_code": "Sample Code",
     "sample_bottomsheet": "Bottom Sheet",
     "sample_bottomsheet_modal": "Bottom Sheet Modal",
+    "sample_biometric": "Biometric",
     "sample_snap_to": "Snap to {{percent}}%",
     "sample_present": "Present",
     "sample_dismiss": "Dismiss",
@@ -27,6 +49,19 @@
     "sample_backdrop_click_mode": "Backdrop click mode",
     "change_language": "Change Language",
     "develop_mode": "Develop Mode",
-    "product_mode": "Product Mode"
+    "product_mode": "Product Mode",
+    "facial_recognition": "Facial Recognition",
+    "fingerprint": "Fingerprint",
+    "iris": "Iris",
+    "message": {
+      "biometric_supported_question": "is compatible?",
+      "biometric_supported_true": "Your device is compatible with Biometrics",
+      "biometric_supported_false": "Face or Fingerprint scanner is not available on this device",
+      "biometric_enrolled_question": "is enrolled?",
+      "biometric_enrolled_true": "You have a saved biometrics",
+      "biometric_enrolled_false": "Biometric record not found",
+      "biometric_types_question": "supported biometric type?",
+      "biometric_authentication_question": "authentication result?"
+    }
   }
 }
