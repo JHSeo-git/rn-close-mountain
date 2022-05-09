@@ -1,12 +1,12 @@
 import { View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { observer } from 'mobx-react-lite';
 import Header from '../../components/Header';
 import UIText from '../../components/UIText';
+import { useStore } from '../../contexts/StoreContext';
 import * as viewStyles from '../../constants/global-styles/viewStyles';
 import type { HomeStackScreenProps } from '../types';
-import { observer } from 'mobx-react-lite';
-import { useStore } from '../../contexts/StoreContext';
 
 type HomeScreenProps = {} & HomeStackScreenProps<'Home'>;
 
