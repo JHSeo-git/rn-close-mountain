@@ -231,3 +231,45 @@ b. `store action`에서 catch문을 통해 Error를 AppError로 감싸서 throw 
 c. `screen(or component)`에서 catch문을 통해 AppError를 무시할지 snackbar를 호출할지 navigate할지 또 다른 비지니스 로직을 호출할지를 결정합니다.
 
 기본적인 룰은 위와 같으나 사각에서 발생한 에러를 잡기 위해 추후에 global Error boundary를 추가해서 처리할 생각입니다.
+
+### 14. biometric-auth
+
+> face id, touch id
+
+> https://stackoverflow.com/a/64929151
+
+안드로이드(touch id), iOS(face id)에서 사용할 생체인증을 지원해보려고 합니다.
+
+expo-local-authentication 라이브러리를 이용합니다.
+
+다만 RN에서 사용하기 위해서는 expo로 migration이 필요합니다.
+
+1. react-native-unimodules
+2. expo migration
+
+1번인 expo에서 제공하는 라이브러리로 RN에서 문제없이 expo 라이브러리를 사용할 수 있게 해줍니다. 그러나 deprecated되었기 때문에 사용하지 않습니다.(아직까지 npm trend에는 10,000 정도의 다운로드 수가 있었...)
+
+2번인 expo로 migration하는 것으로 방향을 잡았습니다.
+
+> https://dev.to/wbroek/migrate-from-react-native-unimodules-to-expo-modules-25c6
+
+위 글을 참고삼아 expo로 migration하는 것을 진행합니다.
+(공식 문서에서는 냅다 expo로 설치해버렷! 듯한 느낌이어서 겁먹었었는데 설정도 자동으로 해주고 간단하게 적용가능합니다, 다만 iOS는 12버전부터 적용된다던지 등등이 있긴 한데 그 아래 버전은 저도 아직...잘 모르겠습니다.)
+
+> https://github.com/expo/expo/tree/main/packages/expo-local-authentication#installation-in-bare-react-native-projects
+
+expo-local-authentication을 설치, 설정합니다.
+
+validation, authenticate를 포함해서 총 4개 정도 method를 제공합니다.
+사용법은 어려움은 거의 없기 때문에 설정만 잘 한다면 무리없이 사용할 수 있습니다.
+
+만약 에뮬레이터를 사용하시면 안드로이드/iOS 지문설정, 페이스아이디 설정 등 필요할 수 있는데 구글링 하시면 금방 설정 할 수 있습니다.
+
+다만 처음 생체 인증을 사용하기에 어떤식으로 validation을 처리할지 고민이 됩니다.
+
+1. 사용가능한 생체 인증 방식이 없을 경우
+2. 사용가능한 생체 인증 방식이 있지만, 등록된 생체 인증이 없을 경우
+3. 생체 인증을 등록했지만, 생체 인증에 실패했을 경우
+4. 생체 인증에 실패했지만 비밀번호입력을 통해 인증을 성공한 경우(이 경우도 생체인증을 성공했다고 봐야하는건가?)
+
+등등 케이스가 여러개 있으므로 적절하게 플로우를 만들어서 적용하는게 사용자 경험에 좋을 것 같다는 생각이 듭니다.
