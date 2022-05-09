@@ -31,26 +31,7 @@
 
 ## third-party library
 
-```bash
-yarn add mobx mobx-react \
-  axios \
-  react-native-config \
-  react-native-svg \
-  @react-native-async-storage/async-storage \
-  @react-navigation/bottom-tabs \
-  @react-navigation/drawer \
-  @react-navigation/native \
-  @react-navigation/native-stack \
-  react-native-get-random-values uuid \
-  react-native-safe-area-context \
-  react-native-screens \
-  @gorhom/bottom-sheet \
-  react-native-reanimated react-native-gesture-handler \
-  i18next react-i18next \
-  mobx mobx-react \
-
-yarn add -D @types/uuid react-native-svg-transformer
-```
+- [package.json](../package.json) 참고
 
 설치 후 Native에서 잘 동작하도록 안드로이드 설정, IOS 설정을 해야합니다.
 
