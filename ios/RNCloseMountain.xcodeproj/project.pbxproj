@@ -19,10 +19,12 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		21724CE085E346BCBF57C8FF /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F65E1744CE4429097A45847 /* Poppins-Black.ttf */; };
+		324B82E51250366AAFCE6293 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD25DA04295E2DEF751362BE /* ExpoModulesProvider.swift */; };
 		436FE0342822BE7E00CC0FBB /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 436FE0242822BE7E00CC0FBB /* MaterialCommunityIcons.ttf */; };
 		4886BE81C3F147278ED94039 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3356BC532F04AF593D925D9 /* Poppins-Light.ttf */; };
 		51E9FC5B03F04355A3D99007 /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = EE43CF5285B843B3A4848130 /* Pretendard-Thin.otf */; };
 		551CD0FF1C3B4114954B3D8E /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5029FB277BD64CDB950464D5 /* Poppins-Bold.ttf */; };
+		56A971E68FEB3E34E012FD97 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD1FAF5672F072DF8E0618C /* ExpoModulesProvider.swift */; };
 		59081D86F71B4B75966A5A9B /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = EFC1150D555C431EB211C1DA /* Pretendard-ExtraLight.otf */; };
 		5CCEDBA711334013B7C0D970 /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 258B8AB331C849D6842DC3D7 /* Pretendard-ExtraBold.otf */; };
 		64055EC3701B434EA0E0437B /* Poppins-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BCA10415AD44FED8C3D8D94 /* Poppins-MediumItalic.ttf */; };
@@ -68,6 +70,7 @@
 		222AD259B2FA4E78B5E639BC /* Poppins-SemiBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-SemiBoldItalic.ttf"; path = "../src/assets/fonts/Poppins-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		258B8AB331C849D6842DC3D7 /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Pretendard-ExtraBold.otf"; path = "../src/assets/fonts/Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
 		2CFDBE2D41814F10B2D9A208 /* Pretendard-Black.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Pretendard-Black.otf"; path = "../src/assets/fonts/Pretendard-Black.otf"; sourceTree = "<group>"; };
+		3AD1FAF5672F072DF8E0618C /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-RNCloseMountain-RNCloseMountainTests/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-RNCloseMountain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNCloseMountain.debug.xcconfig"; path = "Target Support Files/Pods-RNCloseMountain/Pods-RNCloseMountain.debug.xcconfig"; sourceTree = "<group>"; };
 		3BCA10415AD44FED8C3D8D94 /* Poppins-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-MediumItalic.ttf"; path = "../src/assets/fonts/Poppins-MediumItalic.ttf"; sourceTree = "<group>"; };
 		436FE0242822BE7E00CC0FBB /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialCommunityIcons.ttf; sourceTree = "<group>"; };
@@ -90,6 +93,7 @@
 		AE00B57F1824428393D7FA7A /* Poppins-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-LightItalic.ttf"; path = "../src/assets/fonts/Poppins-LightItalic.ttf"; sourceTree = "<group>"; };
 		BADB8CCBDF104DB381109464 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Pretendard-Regular.otf"; path = "../src/assets/fonts/Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		C64A7457E3CA4638B92615A7 /* Poppins-BlackItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-BlackItalic.ttf"; path = "../src/assets/fonts/Poppins-BlackItalic.ttf"; sourceTree = "<group>"; };
+		CD25DA04295E2DEF751362BE /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-RNCloseMountain/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 		D157E2F7B46E46078DEE5444 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Pretendard-SemiBold.otf"; path = "../src/assets/fonts/Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		D47CA873385B413C8D49AB38 /* Poppins-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Thin.ttf"; path = "../src/assets/fonts/Poppins-Thin.ttf"; sourceTree = "<group>"; };
 		D52052CF63FF412794C1C7C1 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Medium.ttf"; path = "../src/assets/fonts/Poppins-Medium.ttf"; sourceTree = "<group>"; };
@@ -171,6 +175,14 @@
 			path = "../node_modules/react-native-vector-icons/Fonts";
 			sourceTree = "<group>";
 		};
+		757BAA528BC485E502DE2A99 /* RNCloseMountain */ = {
+			isa = PBXGroup;
+			children = (
+				CD25DA04295E2DEF751362BE /* ExpoModulesProvider.swift */,
+			);
+			name = RNCloseMountain;
+			sourceTree = "<group>";
+		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +201,7 @@
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
 				968BA929C3CF485BAE1E1C6D /* Resources */,
+				E9A01582D44AA3B17691D97F /* ExpoModulesProviders */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -247,6 +260,23 @@
 				89C6BE57DB24E9ADA2F236DE /* Pods-RNCloseMountain-RNCloseMountainTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		E2E88EC891849BDEB0CCA8B9 /* RNCloseMountainTests */ = {
+			isa = PBXGroup;
+			children = (
+				3AD1FAF5672F072DF8E0618C /* ExpoModulesProvider.swift */,
+			);
+			name = RNCloseMountainTests;
+			sourceTree = "<group>";
+		};
+		E9A01582D44AA3B17691D97F /* ExpoModulesProviders */ = {
+			isa = PBXGroup;
+			children = (
+				757BAA528BC485E502DE2A99 /* RNCloseMountain */,
+				E2E88EC891849BDEB0CCA8B9 /* RNCloseMountainTests */,
+			);
+			name = ExpoModulesProviders;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -532,6 +562,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00E356F31AD99517003FC87E /* RNCloseMountainTests.m in Sources */,
+				56A971E68FEB3E34E012FD97 /* ExpoModulesProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -541,6 +572,7 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				324B82E51250366AAFCE6293 /* ExpoModulesProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,7 +597,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = RNCloseMountainTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -576,6 +608,7 @@
 					"-lc++",
 					"$(inherited)",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RNCloseMountain.app/RNCloseMountain";
@@ -589,7 +622,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = RNCloseMountainTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -600,6 +633,7 @@
 					"-lc++",
 					"$(inherited)",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RNCloseMountain.app/RNCloseMountain";
@@ -624,6 +658,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jhseo.reactnative.rnclosemountain;
 				PRODUCT_NAME = RNCloseMountain;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -649,6 +684,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jhseo.reactnative.rnclosemountain;
 				PRODUCT_NAME = RNCloseMountain;
 				SWIFT_VERSION = 5.0;
@@ -705,7 +741,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
@@ -769,7 +805,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
