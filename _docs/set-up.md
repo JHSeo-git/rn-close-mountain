@@ -207,9 +207,10 @@ Error를 상속받는 AppError를 만들어서 에러처리를 하려고 합니�
 일단 비지니스 로직을 가진 store action에서 에러관리를 하기위해 집중할 것입니다.
 
 만약 axios 실행이 error 라면 다음과 같이 처리합니다.
-a. `api function`에서 try/catch없이 그대로 throw 됩니다.
-b. `store action`에서 catch문을 통해 Error를 AppError로 감싸서 throw AppError;
-c. `screen(or component)`에서 catch문을 통해 AppError를 무시할지 snackbar를 호출할지 navigate할지 또 다른 비지니스 로직을 호출할지를 결정합니다.
+
+- `api function`에서 try/catch없이 그대로 throw 됩니다.
+- `store action`에서 catch문을 통해 Error를 AppError로 감싸서 throw AppError;
+- `screen(or component)`에서 catch문을 통해 AppError를 무시할지 snackbar를 호출할지 navigate할지 또 다른 비지니스 로직을 호출할지를 결정합니다.
 
 기본적인 룰은 위와 같으나 사각에서 발생한 에러를 잡기 위해 추후에 global Error boundary를 추가해서 처리할 생각입니다.
 
