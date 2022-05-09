@@ -25,9 +25,9 @@
 앱은 android, ios 각각 빌드되어야 하며 store에 배포되어야 합니다.
 
 [android의 경우](https://reactnative.dev/docs/signed-apk-android) keystore를 통해 key generate하여 configuration해야 하며 빌드 테스트를 위해 `--variant=release` 옵션을 추가하여 `run-android` 스트립트를 호출하면 됩니다.
-[ios의 경우](https://reactnative.dev/docs/publishing-to-app-store) `--configuration Release` 옵션을 추가하여 `run-ios` 스트립트를 호출하면 됩니다.
+[ios의 경우](https://reactnative.dev/docs/publishing-to-app-store) `--scheme`을 이용해서 `run-ios` 스트립트를 호출하면 됩니다.
 
-자세한 내용은 해당 링크를 참조하세요.
+자세한 내용은 해당 링크와 아래 [.env](#6-env) 부분을 참고하세요.
 
 ## third-party library
 
@@ -137,7 +137,7 @@ src
 
 처음인 경우 조금 까다롭습니다.
 android의 경우 autolink나 manuallink를 진행하고
-ios의 경우 `cd ios; pod install` 하면 일단 package import는 완료됩니다.
+ios의 경우 `cd ios; pod install` or `npx pod-install` 하면 일단 package import는 완료됩니다.
 
 추가로 local, dev, stage ... 등 env 파일을 나눠서 사용하는 경우
 android의 경우 app/build.gradle에 위 문서에서 안내한대로 코드를 추가하고
