@@ -9,14 +9,14 @@ const theme: typeof DefaultTheme = {
     primary: COLORS.primary,
     background: COLORS.loContrast,
     // surface: '',
-    // accent: '',
+    accent: COLORS.primary,
     error: COLORS.error,
     text: COLORS.hiContrast,
     // onSurface: '',
     disabled: COLORS.disabled,
     placeholder: COLORS.gray11,
     backdrop: COLORS.shadow,
-    // notification: '',
+    // notification: COLORS.primary,
   },
   fonts: {
     medium: {
