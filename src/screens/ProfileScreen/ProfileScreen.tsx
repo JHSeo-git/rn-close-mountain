@@ -58,7 +58,7 @@ const ProfileScreen = observer(({ navigation }: ProfileScreenProps) => {
       <Header
         title={t('common.profile')}
         rightIcon="setting"
-        onRightIconPress={() => {}}
+        onRightIconPress={() => navigation.navigate('Setting')}
       />
       <View style={viewStyles.flex_1_padding_x_20}>
         <View style={styles.avatarBox}>
