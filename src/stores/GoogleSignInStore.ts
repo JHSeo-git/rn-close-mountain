@@ -64,22 +64,21 @@ class GoogleSignInStore extends BaseStore {
         throw new AppError({
           label: 'API',
           name: 'GOOGLE_SIGN_IN_CANCELLED',
-          message: e.message ?? 'Google signin cancelled',
+          message: 'Google signin user cancelled', // e.message
         });
       } else if (e.code === statusCodes.IN_PROGRESS) {
         // operation (e.g. sign in) is in progress already
         throw new AppError({
           label: 'API',
           name: 'GOOGLE_IN_PROGRESS',
-          message: e.message ?? 'Google signin is in progress already',
+          message: 'Google signin is in progress already', // e.message
         });
       } else if (e.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
         // play services not available or outdated
         throw new AppError({
           label: 'API',
           name: 'GOOGLE_PLAY_SERVICES_NOT_AVAILABLE',
-          message:
-            e.message ?? 'Google play services not available or outdated',
+          message: 'Google play services not available or outdated', // e.message
         });
       } else {
         throw this.errorHandler(e);
