@@ -4,6 +4,7 @@ import EmailSignInStore from './EmailSignInStore';
 import SampleStore from './__sample__/SampleStore';
 import LoaderStore from './LoaderStore';
 import SnackbarStore from './SnackbarStore';
+import AppSettingStore from './AppSettingStore';
 
 class RootStore {
   sampleStore: SampleStore;
@@ -12,6 +13,7 @@ class RootStore {
   googleSignInStore: GoogleSignInStore;
   loaderStore: LoaderStore;
   snackbarStore: SnackbarStore;
+  appSettingStore: AppSettingStore;
 
   constructor() {
     // sample
@@ -22,6 +24,7 @@ class RootStore {
     this.googleSignInStore = new GoogleSignInStore(this);
     this.loaderStore = new LoaderStore(this);
     this.snackbarStore = new SnackbarStore(this);
+    this.appSettingStore = new AppSettingStore(this);
   }
 }
 
