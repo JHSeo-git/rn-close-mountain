@@ -62,3 +62,19 @@ export const primary: TextStyle = {
 export const contrast: TextStyle = {
   color: COLORS.loContrast,
 };
+
+export const small_primary: TextStyle = {
+  ...small,
+  ...primary,
+};
+
+export const small_bold: TextStyle = {
+  ...small,
+  fontFamily: FONTS.poppins.bold,
+};
+
+export const small_bold_primary: TextStyle = {
+  ...small,
+  ...primary,
+  fontFamily: FONTS.poppins.bold,
+};

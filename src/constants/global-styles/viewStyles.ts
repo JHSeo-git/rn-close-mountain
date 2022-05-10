@@ -11,6 +11,11 @@ export const flex_1_bg_white: ViewStyle = {
   backgroundColor: COLORS.white,
 };
 
+export const flex_1_bg_gray2: ViewStyle = {
+  flex: 1,
+  backgroundColor: COLORS.gray2,
+};
+
 export const flex_1_padding_x_20: ViewStyle = {
   flex: 1,
   paddingHorizontal: SPACE.$5,
