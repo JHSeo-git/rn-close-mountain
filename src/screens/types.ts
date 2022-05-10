@@ -6,6 +6,7 @@ export type RootStackParamList = {
   MainTab: undefined;
   SignIn: undefined;
   SignUp: undefined;
+  Setting: undefined;
   Sample: undefined;
 };
 
