@@ -11,9 +11,12 @@ import { COLORS } from './constants/design-token';
 import { StoreContextProvider } from './contexts/StoreContext';
 import './i18n';
 import CustomSnackbar from './components/CustomSnackbar';
+import GestureBottomSheetModalProvider from './components/GestureBottomSheetModalProvider';
+import BiometricAuth from './components/BiometricAuth';
 
 // TODO: add a global error boundary
 // import { ErrorBoundary } from 'react-error-boundary';
+// import ErrorFallback from './components/ErrorFallback';
 
 const App = () => {
   const theme = useTheme();
@@ -22,13 +25,16 @@ const App = () => {
   return (
     <StoreContextProvider>
       <PaperProvider theme={muiTheme}>
-        <SafeAreaProvider initialMetrics={initialWindowMetrics}>
-          <Loader />
-          <CustomSnackbar />
-          <NavigationContainer theme={theme}>
-            <RootStack />
-          </NavigationContainer>
-        </SafeAreaProvider>
+        <GestureBottomSheetModalProvider>
+          <SafeAreaProvider initialMetrics={initialWindowMetrics}>
+            <Loader />
+            <CustomSnackbar />
+            <NavigationContainer theme={theme}>
+              <BiometricAuth />
+              <RootStack />
+            </NavigationContainer>
+          </SafeAreaProvider>
+        </GestureBottomSheetModalProvider>
       </PaperProvider>
     </StoreContextProvider>
   );
