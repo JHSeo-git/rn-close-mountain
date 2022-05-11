@@ -24,7 +24,19 @@
     "title": "Setting",
     "faceId": "Face ID",
     "touchId": "Touch ID",
-    "payment": "Payment"
+    "payment": "Payment",
+    "message": {
+      "logout_message": "Are you sure you want to logout?",
+      "not_now": "Not now"
+    }
+  },
+  "profile": {
+    "signup_inform": "Don't you have an account?"
+  },
+  "biometric": {
+    "message": {
+      "authenticate_fail": "Not recognized"
+    }
   },
   "member": {
     "email": "Email",

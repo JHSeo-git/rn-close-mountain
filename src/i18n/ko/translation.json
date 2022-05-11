@@ -24,7 +24,19 @@
     "title": "셋팅",
     "faceId": "페이스 아이디",
     "touchId": "터치 아이디",
-    "payment": "결제 수단"
+    "payment": "결제 수단",
+    "message": {
+      "logout_message": "로그아웃 하실건가요?",
+      "not_now": "나중에 할게요"
+    }
+  },
+  "biometric": {
+    "message": {
+      "authenticate_fail": "인증이 실패하였습니다"
+    }
+  },
+  "profile": {
+    "signup_inform": "계정이 없으신가요?"
   },
   "member": {
     "email": "이메일",
