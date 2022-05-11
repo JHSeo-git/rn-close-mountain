@@ -12,6 +12,7 @@ class AppSettingStore extends BaseStore {
     makeObservable(this, {
       isUseBiometric: observable,
       toggleUseBiometric: action,
+      setUseBiometric: action,
       init: action,
     });
 
@@ -36,6 +37,11 @@ class AppSettingStore extends BaseStore {
 
   async toggleUseBiometric() {
     this.isUseBiometric = !this.isUseBiometric;
+    await AppSettingStorage.set('biometric', this.isUseBiometric);
+  }
+
+  async setUseBiometric(isUseBiometric: boolean) {
+    this.isUseBiometric = isUseBiometric;
     await AppSettingStorage.set('biometric', this.isUseBiometric);
   }
 }
