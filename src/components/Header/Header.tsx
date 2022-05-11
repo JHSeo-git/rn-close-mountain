@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
     ...StyleSheet.absoluteFillObject,
     ...viewStyles.center,
     zIndex: -1,
-    paddingTop: Platform.OS === 'android' ? SPACE.$2 : SPACE.$1,
+    paddingTop: Platform.OS === 'android' ? SPACE.$2 : 0,
   },
   rightBox: {
     ...viewStyles.center,
