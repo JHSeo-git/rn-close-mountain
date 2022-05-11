@@ -33,11 +33,11 @@ class AuthStore extends BaseStore {
 
   private init = async () => {
     try {
-      const token = await sessionStorage.get();
-      if (!token) {
+      const session = await sessionStorage.get();
+      if (!session?.token || !session?.provider) {
         return;
       }
-      applyToken(token);
+      applyToken(session.token);
       const result = await me();
 
       // if authenticated then sessionIn
@@ -47,7 +47,7 @@ class AuthStore extends BaseStore {
         return;
       }
 
-      this.sessionIn({ token });
+      this.sessionIn({ token: session.token, provider: session.provider });
     } catch (e) {
       this.error = e;
       throw this.errorHandler(e);
@@ -60,13 +60,32 @@ class AuthStore extends BaseStore {
   sessionIn = async (sessionInfo: SessionInfo) => {
     this.setSessionInfo(sessionInfo);
     applyToken(sessionInfo.token);
-    await sessionStorage.set(sessionInfo.token);
+    await sessionStorage.set({
+      token: sessionInfo.token,
+      provider: sessionInfo.provider,
+    });
   };
 
   sessionOut = async () => {
     this.setSessionInfo(null);
     removeToken();
     await sessionStorage.clear();
+  };
+
+  signOut = async () => {
+    // 앱 통합 로그아웃
+    if (!this.isAuthenticated) {
+      return false;
+    }
+    if (!this.sessionInfo?.token || !this.sessionInfo?.provider) {
+      return false;
+    }
+    if (this.sessionInfo.provider === 'google') {
+      await this.root.googleSignInStore.signOut();
+    }
+
+    await this.sessionOut();
+    return true;
   };
 }
 

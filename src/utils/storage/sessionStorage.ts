@@ -1,14 +1,16 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { SessionInfo } from '../../stores/types';
 
 const sessionKey = '@session';
 
 const sessionStorage = {
-  async set(value: string) {
-    await AsyncStorage.setItem(sessionKey, value);
+  async set(value: SessionInfo) {
+    await AsyncStorage.setItem(sessionKey, JSON.stringify(value));
   },
 
   async get() {
-    return await AsyncStorage.getItem(sessionKey);
+    const value = await AsyncStorage.getItem(sessionKey);
+    return value ? (JSON.parse(value) as SessionInfo) : null;
   },
 
   async clear() {

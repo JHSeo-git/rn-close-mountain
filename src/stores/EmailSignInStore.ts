@@ -10,7 +10,6 @@ class EmailSignInStore extends BaseStore {
       loading: override,
       error: override,
       signIn: action,
-      signOut: action,
       reset: action,
     });
   }
@@ -32,8 +31,6 @@ class EmailSignInStore extends BaseStore {
       this.loading = false;
     }
   };
-
-  signOut = async () => {};
 
   reset = () => {
     this.loading = false;

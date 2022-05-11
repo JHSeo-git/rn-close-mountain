@@ -1,4 +1,4 @@
-import { StyleSheet, TextInput } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { useEffect, useRef } from 'react';
 import { Formik } from 'formik';
 import * as yup from 'yup';
@@ -6,12 +6,13 @@ import { useTranslation } from 'react-i18next';
 import { observer } from 'mobx-react-lite';
 import { useNavigation } from '@react-navigation/native';
 import CustomButton from '../../components/CustomButton';
-import CustomTextInput from '../../components/CustomTextInput';
+import CustomTextInput, {
+  CustomTextInputRef,
+} from '../../components/CustomTextInput';
 import { SPACE } from '../../constants/design-token';
 import { useStore } from '../../contexts/StoreContext';
 import * as textStyles from '../../constants/global-styles/textStyles';
 import AppError from '../../utils/error/AppError';
-
 import type { MainTabScreenProps } from '../types';
 
 const SignInForm = observer(() => {
@@ -19,7 +20,7 @@ const SignInForm = observer(() => {
   const navigation =
     useNavigation<MainTabScreenProps<'Profile'>['navigation']>();
   const { emailSignInStore, snackbarStore, authStore } = useStore();
-  const passwordRef: React.Ref<TextInput> = useRef(null);
+  const passwordRef = useRef<CustomTextInputRef>(null);
 
   const initialValues = {
     email: undefined,
@@ -78,7 +79,7 @@ const SignInForm = observer(() => {
 
           // if result exists, set session in sessionStorage.
           // and then, navigate home screen
-          await authStore.sessionIn({ token: result.jwt });
+          await authStore.sessionIn({ token: result.jwt, provider: 'email' });
           navigation.navigate('HomeStack');
         } catch (e: unknown) {
           if (e instanceof AppError) {
