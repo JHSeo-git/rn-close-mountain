@@ -5,9 +5,10 @@ import { COLORS } from '../../constants/design-token';
 
 type CustomTextInputProps = {
   errorText?: string;
-} & React.ComponentPropsWithRef<typeof TextInput>;
+} & React.ComponentPropsWithoutRef<typeof TextInput>;
+export type CustomTextInputRef = RNTextInput;
 
-const CustomTextInput = forwardRef<RNTextInput, CustomTextInputProps>(
+const CustomTextInput = forwardRef<CustomTextInputRef, CustomTextInputProps>(
   (
     {
       errorText,
@@ -22,12 +23,12 @@ const CustomTextInput = forwardRef<RNTextInput, CustomTextInputProps>(
     return (
       <>
         <TextInput
-          ref={forwardedRef as any}
+          {...props}
+          ref={forwardedRef}
           mode={mode}
           style={[styles.defaultStyle, style]}
           outlineColor={outlineColor}
           autoCapitalize={autoCapitalize}
-          {...props}
         />
         {errorText && (
           <HelperText type="error" visible={!!errorText}>
