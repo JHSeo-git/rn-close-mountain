@@ -5,6 +5,7 @@ import SampleStore from './__sample__/SampleStore';
 import LoaderStore from './LoaderStore';
 import SnackbarStore from './SnackbarStore';
 import AppSettingStore from './AppSettingStore';
+import BiometricStore from './BiometricStore';
 
 class RootStore {
   sampleStore: SampleStore;
@@ -14,6 +15,7 @@ class RootStore {
   loaderStore: LoaderStore;
   snackbarStore: SnackbarStore;
   appSettingStore: AppSettingStore;
+  biometricStore: BiometricStore;
 
   constructor() {
     // sample
@@ -25,6 +27,7 @@ class RootStore {
     this.loaderStore = new LoaderStore(this);
     this.snackbarStore = new SnackbarStore(this);
     this.appSettingStore = new AppSettingStore(this);
+    this.biometricStore = new BiometricStore(this);
   }
 }
 
