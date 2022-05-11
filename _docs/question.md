@@ -40,3 +40,14 @@ mobx-react-lite는 필요한 것만 간추리고 react functional component를 �
 ## mobx observer wrapped memo?
 
 observer는 memo를 내장하고 있어서 memo로 다시 감쌀필요가 없습니다.
+
+## react navigation pop vs goback
+
+> https://stackoverflow.com/a/66138382
+
+- pop: stack navigator에 특화된 기능입니다. navigator에 쌓인 스크린의 수 만큼 pop할 수 있습니다.
+- goBack: pop에 비해 더 전형적입니다. 어떤 navigator에서나 사용할 수 있습니다.
+
+두 개가 완전하게 동치되는 것은 아닙니다. 만약 stack navigator안에 tab navigator가 있다고 가정해봅시다. tab 스크린에서 만약 pop()을 호출한다면 stack navigator로 돌아가게 됩니다. 그러나 만약 goBack()을 호출한다면 이전 tab 스크린이 history에 존재한다면 이전 tab 스크린으로 돌아가게 됩니다.
+
+대부분의 경우는 goBack()을 사용하면 문제 없습니다. 다만 특별한 케이스는 위의 기능을 이해하고 거기에 맞게 사용하면 될 것 같습니다.
