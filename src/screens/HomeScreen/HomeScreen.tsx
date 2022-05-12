@@ -18,9 +18,7 @@ const HomeScreen = observer(({}: HomeScreenProps) => {
     <SafeAreaView style={viewStyles.flex_1_bg_white}>
       <Header title={t('common.home')} />
       <View style={viewStyles.flex_1_padding_20}>
-        <UIText>
-          {authStore.isAuthenticated ? 'Welcome My Lord' : 'Not Logged in'}
-        </UIText>
+        <UIText>{authStore.isAuthenticated ? 'Welcome My Lord' : 'Not Logged in'}</UIText>
       </View>
     </SafeAreaView>
   );

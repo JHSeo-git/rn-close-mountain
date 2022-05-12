@@ -13,9 +13,9 @@ import * as viewStyles from '../../../constants/global-styles/viewStyles';
 const SampleBottomSheet = () => {
   const { t } = useTranslation();
   const [bottomSheetIndex, setBottomSheetIndex] = useState(-1);
-  const [backdropPressBehavior, setBackdropPressBehavior] = useState<
-    'none' | 'close' | 'collapse'
-  >('collapse');
+  const [backdropPressBehavior, setBackdropPressBehavior] = useState<'none' | 'close' | 'collapse'>(
+    'collapse',
+  );
 
   const bottomSheetRef = useRef<BottomSheet>(null);
 
@@ -66,9 +66,7 @@ const SampleBottomSheet = () => {
       <Header title={t('sample.sample_bottomsheet')} />
       <View style={styles.main}>
         <UIText style={textStyles.strong}>Sample Bottom Sheet</UIText>
-        <UIText style={textStyles.small}>
-          Bottom Sheet Index: {bottomSheetIndex}
-        </UIText>
+        <UIText style={textStyles.small}>Bottom Sheet Index: {bottomSheetIndex}</UIText>
         <View style={styles.buttonBox}>
           <SampleButton onPress={() => handleSnapPress(2)}>
             <UIText style={styles.buttonText}>
@@ -92,23 +90,17 @@ const SampleBottomSheet = () => {
         </View>
         <View style={styles.buttonBox}>
           <SampleButton onPress={() => handleExpandPress()}>
-            <UIText style={styles.buttonText}>
-              {t('sample.sample_expand')}
-            </UIText>
+            <UIText style={styles.buttonText}>{t('sample.sample_expand')}</UIText>
           </SampleButton>
         </View>
         <View style={styles.buttonBox}>
           <SampleButton onPress={() => handleCollapsePress()}>
-            <UIText style={styles.buttonText}>
-              {t('sample.sample_collapse')}
-            </UIText>
+            <UIText style={styles.buttonText}>{t('sample.sample_collapse')}</UIText>
           </SampleButton>
         </View>
         <View style={styles.buttonBox}>
           <SampleButton onPress={() => handleClosePress()}>
-            <UIText style={styles.buttonText}>
-              {t('sample.sample_close')}
-            </UIText>
+            <UIText style={styles.buttonText}>{t('sample.sample_close')}</UIText>
           </SampleButton>
         </View>
         <View style={styles.buttonBox}>

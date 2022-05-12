@@ -12,8 +12,7 @@ class BiometricStore extends BaseStore {
   isCompatible = false;
   isEnrolled = false;
   biometricTypes: BiometricType[] = [];
-  authenticateResult: LocalAuthentication.LocalAuthenticationResult | null =
-    null;
+  authenticateResult: LocalAuthentication.LocalAuthenticationResult | null = null;
 
   constructor(root: RootStore) {
     super(root);

@@ -4,6 +4,7 @@ export type SignInResponse = {
   jwt: string;
   user: User;
 };
+export type SignUpResponse = SignInResponse;
 
 export type User = {
   id: number;

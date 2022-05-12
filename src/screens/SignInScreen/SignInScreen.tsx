@@ -21,7 +21,7 @@ const SignInScreen = ({ navigation }: SignInScreenProps) => {
   return (
     <DismissKeyboard>
       <SafeAreaView style={viewStyles.flex_1_bg_white}>
-        <Header rightIcon="close" onRightIconPress={() => navigation.pop()} />
+        <Header rightIcon="close" onRightIconPress={() => navigation.goBack()} />
         <View style={viewStyles.flex_1_padding_20}>
           <View style={styles.titleBox}>
             <UIText as="h2">{t('common.signIn')}</UIText>

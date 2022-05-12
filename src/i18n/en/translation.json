@@ -38,6 +38,7 @@
       "authenticate_fail": "Not recognized"
     }
   },
+  "signUp": {},
   "member": {
     "email": "Email",
     "password": "Password",

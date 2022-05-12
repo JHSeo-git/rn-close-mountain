@@ -57,14 +57,10 @@ const SampleBottomSheetModal = () => {
         <Header title={t('sample.sample_bottomsheet_modal')} />
         <View style={styles.main}>
           <UIText style={textStyles.strong}>Sample Bottom Sheet Modal</UIText>
-          <UIText style={textStyles.small}>
-            Bottom Sheet Modal Index: {bottomSheetIndex}
-          </UIText>
+          <UIText style={textStyles.small}>Bottom Sheet Modal Index: {bottomSheetIndex}</UIText>
           <View style={styles.buttonBox}>
             <SampleButton onPress={handlePresentPress}>
-              <UIText style={styles.buttonText}>
-                {t('sample.sample_present')}
-              </UIText>
+              <UIText style={styles.buttonText}>{t('sample.sample_present')}</UIText>
             </SampleButton>
           </View>
         </View>
@@ -83,16 +79,12 @@ const SampleBottomSheetModal = () => {
             </View>
             <View style={styles.closeButtonBox}>
               <SampleButton onPress={handleDismissPress}>
-                <UIText style={styles.buttonText}>
-                  {t('sample.sample_dismiss')}
-                </UIText>
+                <UIText style={styles.buttonText}>{t('sample.sample_dismiss')}</UIText>
               </SampleButton>
             </View>
             <View style={styles.closeButtonBox}>
               <SampleButton onPress={handleClosePress}>
-                <UIText style={styles.buttonText}>
-                  {t('sample.sample_close')}
-                </UIText>
+                <UIText style={styles.buttonText}>{t('sample.sample_close')}</UIText>
               </SampleButton>
             </View>
           </View>

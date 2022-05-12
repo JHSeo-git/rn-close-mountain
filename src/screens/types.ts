@@ -10,8 +10,10 @@ export type RootStackParamList = {
   Sample: undefined;
 };
 
-export type RootStackScreenProps<T extends keyof RootStackParamList> =
-  NativeStackScreenProps<RootStackParamList, T>;
+export type RootStackScreenProps<T extends keyof RootStackParamList> = NativeStackScreenProps<
+  RootStackParamList,
+  T
+>;
 
 export type MainTabParamList = {
   HomeStack: undefined;
@@ -21,21 +23,19 @@ export type MainTabParamList = {
   More: undefined;
 };
 
-export type MainTabScreenProps<T extends keyof MainTabParamList> =
-  CompositeScreenProps<
-    BottomTabScreenProps<MainTabParamList, T>,
-    RootStackScreenProps<keyof RootStackParamList>
-  >;
+export type MainTabScreenProps<T extends keyof MainTabParamList> = CompositeScreenProps<
+  BottomTabScreenProps<MainTabParamList, T>,
+  RootStackScreenProps<keyof RootStackParamList>
+>;
 
 export type HomeStackParamList = {
   Home: undefined;
 };
 
-export type HomeStackScreenProps<T extends keyof HomeStackParamList> =
-  CompositeScreenProps<
-    NativeStackScreenProps<HomeStackParamList, T>,
-    MainTabScreenProps<keyof MainTabParamList>
-  >;
+export type HomeStackScreenProps<T extends keyof HomeStackParamList> = CompositeScreenProps<
+  NativeStackScreenProps<HomeStackParamList, T>,
+  MainTabScreenProps<keyof MainTabParamList>
+>;
 
 // -------------- SAMPLE ----------------
 export type SampleStackParamList = {
@@ -46,11 +46,10 @@ export type SampleStackParamList = {
   SampleMobx: undefined;
   SampleBiometric: undefined;
 };
-export type SampleStackScreenProps<T extends keyof SampleStackParamList> =
-  CompositeScreenProps<
-    NativeStackScreenProps<SampleStackParamList, T>,
-    RootStackScreenProps<keyof RootStackParamList>
-  >;
+export type SampleStackScreenProps<T extends keyof SampleStackParamList> = CompositeScreenProps<
+  NativeStackScreenProps<SampleStackParamList, T>,
+  RootStackScreenProps<keyof RootStackParamList>
+>;
 
 declare global {
   namespace ReactNavigation {

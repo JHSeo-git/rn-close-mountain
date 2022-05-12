@@ -6,9 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { observer } from 'mobx-react-lite';
 import { useNavigation } from '@react-navigation/native';
 import CustomButton from '../../components/CustomButton';
-import CustomTextInput, {
-  CustomTextInputRef,
-} from '../../components/CustomTextInput';
+import CustomTextInput, { CustomTextInputRef } from '../../components/CustomTextInput';
 import { SPACE } from '../../constants/design-token';
 import { useStore } from '../../contexts/StoreContext';
 import * as textStyles from '../../constants/global-styles/textStyles';
@@ -17,8 +15,7 @@ import type { MainTabScreenProps } from '../types';
 
 const SignInForm = observer(() => {
   const { t } = useTranslation();
-  const navigation =
-    useNavigation<MainTabScreenProps<'Profile'>['navigation']>();
+  const navigation = useNavigation<MainTabScreenProps<'Profile'>['navigation']>();
   const { emailSignInStore, snackbarStore, authStore } = useStore();
   const passwordRef = useRef<CustomTextInputRef>(null);
 
@@ -54,24 +51,15 @@ const SignInForm = observer(() => {
             return;
           }
           if (!values.password) {
-            action.setFieldError(
-              'password',
-              t('member.message.password_required'),
-            );
+            action.setFieldError('password', t('member.message.password_required'));
             return;
           }
 
-          const result = await emailSignInStore.signIn(
-            values.email,
-            values.password,
-          );
+          const result = await emailSignInStore.signIn(values.email, values.password);
 
           if (!result?.jwt || !result?.user) {
             // TODO: 회원가입 안내 창 띄우기
-            snackbarStore.showSnackbar(
-              t('member.message.signin_response_data_empty'),
-              'error',
-            );
+            snackbarStore.showSnackbar(t('member.message.signin_response_data_empty'), 'error');
             return;
           }
 
@@ -88,14 +76,7 @@ const SignInForm = observer(() => {
         }
       }}
     >
-      {({
-        errors,
-        handleSubmit,
-        handleChange,
-        handleBlur,
-        touched,
-        values,
-      }) => (
+      {({ errors, handleSubmit, handleChange, handleBlur, touched, values }) => (
         <>
           {/** TODO: move focusing when enter */}
           <CustomTextInput

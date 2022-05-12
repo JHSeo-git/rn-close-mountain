@@ -1,8 +1,5 @@
 import { NavigationContainer, useTheme } from '@react-navigation/native';
-import {
-  SafeAreaProvider,
-  initialWindowMetrics,
-} from 'react-native-safe-area-context';
+import { SafeAreaProvider, initialWindowMetrics } from 'react-native-safe-area-context';
 import { Provider as PaperProvider } from 'react-native-paper';
 import RootStack from './screens/RootStack';
 import Loader from './components/Loader';

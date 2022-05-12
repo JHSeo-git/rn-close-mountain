@@ -7,13 +7,7 @@ import SearchScreen from '../SearchScreen';
 import ProfileScreen from '../ProfileScreen';
 import MoreScreen from '../MoreScreen';
 import UIText from '../../components/UIText';
-import {
-  COLORS,
-  FONTSIZES,
-  RADII,
-  SHADOWS,
-  SPACE,
-} from '../../constants/design-token';
+import { COLORS, FONTSIZES, RADII, SHADOWS, SPACE } from '../../constants/design-token';
 import * as textStyles from '../../constants/global-styles/textStyles';
 
 import type { MainTabParamList } from '../types';

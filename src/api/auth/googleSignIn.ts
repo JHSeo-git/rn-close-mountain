@@ -7,11 +7,7 @@ type GoogleSignInProps = {
   email: string;
 };
 
-export default async function googleSignIn({
-  oauthToken,
-  accessToken,
-  email,
-}: GoogleSignInProps) {
+export default async function googleSignIn({ oauthToken, accessToken, email }: GoogleSignInProps) {
   const { data } = await client.post<SignInResponse>('/api/auth/oauth/login', {
     oauthToken,
     accessToken,

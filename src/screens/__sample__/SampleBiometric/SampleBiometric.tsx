@@ -18,15 +18,13 @@ const SampleBiometric = () => {
   const { t } = useTranslation();
   const [isBiometricSupported, setIsBiometricSupported] = useState(false);
   const [savedBiometrics, setSavedBiometrics] = useState(false);
-  const [biometricTypes, setBiometricTypes] = useState<
-    LocalAuthentication.AuthenticationType[]
-  >([]);
+  const [biometricTypes, setBiometricTypes] = useState<LocalAuthentication.AuthenticationType[]>(
+    [],
+  );
   const [biometricAuthResult, setBiometricAuthResult] =
     useState<LocalAuthentication.LocalAuthenticationResult | null>(null);
 
-  const matchedBiometricType = (
-    biometricType: LocalAuthentication.AuthenticationType,
-  ) => {
+  const matchedBiometricType = (biometricType: LocalAuthentication.AuthenticationType) => {
     switch (biometricType) {
       case LocalAuthentication.AuthenticationType.FACIAL_RECOGNITION:
         return t('sample.facial_recognition');
@@ -45,8 +43,7 @@ const SampleBiometric = () => {
       const isEnrolled = await LocalAuthentication.isEnrolledAsync();
       setSavedBiometrics(isEnrolled);
 
-      const types =
-        await LocalAuthentication.supportedAuthenticationTypesAsync();
+      const types = await LocalAuthentication.supportedAuthenticationTypesAsync();
       setBiometricTypes(types);
     })();
   }, []);
@@ -70,9 +67,7 @@ const SampleBiometric = () => {
       <Header title={t('sample.sample_biometric')} />
       <View style={styles.main}>
         <View style={styles.labelBox}>
-          <UIText as="strong">
-            {t('sample.message.biometric_supported_question')}
-          </UIText>
+          <UIText as="strong">{t('sample.message.biometric_supported_question')}</UIText>
           <UIText>
             {isBiometricSupported
               ? t('sample.message.biometric_supported_true')
@@ -80,9 +75,7 @@ const SampleBiometric = () => {
           </UIText>
         </View>
         <View style={styles.labelBox}>
-          <UIText as="strong">
-            {t('sample.message.biometric_enrolled_question')}
-          </UIText>
+          <UIText as="strong">{t('sample.message.biometric_enrolled_question')}</UIText>
           <UIText>
             {savedBiometrics
               ? t('sample.message.biometric_enrolled_true')
@@ -90,24 +83,18 @@ const SampleBiometric = () => {
           </UIText>
         </View>
         <View style={styles.labelBox}>
-          <UIText as="strong">
-            {t('sample.message.biometric_types_question')}
-          </UIText>
+          <UIText as="strong">{t('sample.message.biometric_types_question')}</UIText>
           {biometricTypes.map(type => (
             <UIText key={type}>{matchedBiometricType(type)}</UIText>
           ))}
         </View>
         <View style={styles.labelBox}>
           <SampleButton onPress={handleBiometricAuth}>
-            <UIText style={styles.buttonText}>
-              {t('sample.sample_biometric')}
-            </UIText>
+            <UIText style={styles.buttonText}>{t('sample.sample_biometric')}</UIText>
           </SampleButton>
         </View>
         <View style={styles.labelBox}>
-          <UIText as="strong">
-            {t('sample.message.biometric_authentication_question')}
-          </UIText>
+          <UIText as="strong">{t('sample.message.biometric_authentication_question')}</UIText>
           <UIText>{JSON.stringify(biometricAuthResult, null, 2)}</UIText>
         </View>
       </View>

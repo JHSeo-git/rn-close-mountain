@@ -15,11 +15,7 @@ const Loader = observer(() => {
   return (
     <Portal>
       <View style={styles.container}>
-        <ActivityIndicator
-          animating={loaderStore.loading}
-          size="large"
-          color={COLORS.primary}
-        />
+        <ActivityIndicator animating={loaderStore.loading} size="large" color={COLORS.primary} />
       </View>
     </Portal>
   );

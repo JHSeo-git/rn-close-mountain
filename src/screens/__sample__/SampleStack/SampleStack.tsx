@@ -20,10 +20,7 @@ const SampleStack = () => {
       <Stack.Screen name="SampleHome" component={SampleHome} />
       <Stack.Screen name="SampleGIF" component={SampleGIF} />
       <Stack.Screen name="SampleBottomSheet" component={SampleBottomSheet} />
-      <Stack.Screen
-        name="SampleBottomSheetModal"
-        component={SampleBottomSheetModal}
-      />
+      <Stack.Screen name="SampleBottomSheetModal" component={SampleBottomSheetModal} />
       <Stack.Screen name="SampleMobx" component={SampleMobx} />
       <Stack.Screen name="SampleBiometric" component={SampleBiometric} />
     </Stack.Navigator>

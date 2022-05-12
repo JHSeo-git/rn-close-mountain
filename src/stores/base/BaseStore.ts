@@ -28,9 +28,7 @@ class BaseStore {
 
       const message = errorResponse?.error.message ?? e.message;
       const name = errorResponse?.error.name ?? e.name;
-      const status =
-        errorResponse?.error.status ??
-        (e.status ? parseInt(e.status, 10) : undefined);
+      const status = errorResponse?.error.status ?? (e.status ? parseInt(e.status, 10) : undefined);
       const stack = e.stack;
 
       throw new AppError({ message, name, label: 'API', status, stack });

@@ -22,20 +22,12 @@ const CustomSnackbar = observer(({}: CustomSnackbarProps) => {
       <View style={styles.contentBox}>
         {snackbarStore.type === 'info' && (
           <View style={styles.iconBox}>
-            <UIIcon
-              name="alert-circle-outline"
-              size={24}
-              color={COLORS.loContrast}
-            />
+            <UIIcon name="alert-circle-outline" size={24} color={COLORS.loContrast} />
           </View>
         )}
         {snackbarStore.type === 'success' && (
           <View style={styles.iconBox}>
-            <UIIcon
-              name="check-circle-outline"
-              size={24}
-              color={COLORS.success}
-            />
+            <UIIcon name="check-circle-outline" size={24} color={COLORS.success} />
           </View>
         )}
         {snackbarStore.type === 'error' && (

@@ -9,9 +9,7 @@ type GestureBottomSheetModalProviderProps = {
   children: React.ReactNode;
 };
 
-const GestureBottomSheetModalProvider = ({
-  children,
-}: GestureBottomSheetModalProviderProps) => {
+const GestureBottomSheetModalProvider = ({ children }: GestureBottomSheetModalProviderProps) => {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <BottomSheetModalProvider>{children}</BottomSheetModalProvider>

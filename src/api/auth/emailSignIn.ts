@@ -6,10 +6,7 @@ type EmailSignInProps = {
   password: string;
 };
 
-export default async function emailSignIn({
-  email,
-  password,
-}: EmailSignInProps) {
+export default async function emailSignIn({ email, password }: EmailSignInProps) {
   const { data } = await client.post<SignInResponse>('/api/auth/local', {
     identifier: email,
     password,

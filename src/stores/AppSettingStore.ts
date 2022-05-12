@@ -21,9 +21,7 @@ class AppSettingStore extends BaseStore {
 
   async init() {
     try {
-      const [biometric] = await Promise.all([
-        AppSettingStorage.get('biometric'),
-      ]);
+      const [biometric] = await Promise.all([AppSettingStorage.get('biometric')]);
 
       runInAction(() => {
         this.isUseBiometric = biometric;

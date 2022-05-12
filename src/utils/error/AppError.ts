@@ -11,13 +11,7 @@ type AppConstructorParams = {
 class AppError extends Error {
   label: AppErrorLabel;
   status: number | undefined;
-  constructor({
-    message,
-    name,
-    label = 'UNKNOWN',
-    status,
-    stack,
-  }: AppConstructorParams) {
+  constructor({ message, name, label = 'UNKNOWN', status, stack }: AppConstructorParams) {
     super(message);
     this.name = name;
     this.label = label;

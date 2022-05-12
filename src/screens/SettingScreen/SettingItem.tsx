@@ -45,10 +45,7 @@ type BottomAddon = {
   addonComponent: React.ReactNode;
 };
 
-type SettingItemProps = LeftSide &
-  CenterSide &
-  RightSide &
-  AllOrNone<BottomAddon>;
+type SettingItemProps = LeftSide & CenterSide & RightSide & AllOrNone<BottomAddon>;
 
 const SettingItem = ({
   leftIcon,
@@ -76,9 +73,7 @@ const SettingItem = ({
         {leftIcon === 'payment' && (
           <UIIcon name="credit-card-outline" size={24} color={COLORS.gray11} />
         )}
-        {leftIcon === 'logout' && (
-          <UIIcon name="logout" size={24} color={COLORS.gray11} />
-        )}
+        {leftIcon === 'logout' && <UIIcon name="logout" size={24} color={COLORS.gray11} />}
       </View>
     );
   };
@@ -90,9 +85,7 @@ const SettingItem = ({
 
     return (
       <View style={styles.right}>
-        {rightType === 'toggle' && (
-          <Switch value={toggleState} onValueChange={onTogglePress} />
-        )}
+        {rightType === 'toggle' && <Switch value={toggleState} onValueChange={onTogglePress} />}
         {rightType === 'link' && (
           <CustomButton
             labelStyle={{

@@ -1,12 +1,5 @@
 import * as React from 'react';
-import {
-  Animated,
-  SafeAreaView,
-  StyleProp,
-  StyleSheet,
-  ViewStyle,
-  View,
-} from 'react-native';
+import { Animated, SafeAreaView, StyleProp, StyleSheet, ViewStyle, View } from 'react-native';
 import { Button, Surface, withTheme } from 'react-native-paper';
 
 export type SnackbarProps = React.ComponentProps<typeof Surface> & {
@@ -109,9 +102,7 @@ const Snackbar = ({
   theme,
   ...rest
 }: SnackbarProps) => {
-  const { current: opacity } = React.useRef<Animated.Value>(
-    new Animated.Value(0.0),
-  );
+  const { current: opacity } = React.useRef<Animated.Value>(new Animated.Value(0.0));
   const [hidden, setHidden] = React.useState<boolean>(!visible);
 
   const hideTimeout = React.useRef<NodeJS.Timeout | undefined>(undefined);
@@ -140,14 +131,10 @@ const Snackbar = ({
       }).start(({ finished }) => {
         if (finished) {
           const isInfinity =
-            duration === Number.POSITIVE_INFINITY ||
-            duration === Number.NEGATIVE_INFINITY;
+            duration === Number.POSITIVE_INFINITY || duration === Number.NEGATIVE_INFINITY;
 
           if (finished && !isInfinity) {
-            hideTimeout.current = setTimeout(
-              onDismiss,
-              duration,
-            ) as unknown as NodeJS.Timeout;
+            hideTimeout.current = setTimeout(onDismiss, duration) as unknown as NodeJS.Timeout;
           }
         }
       });
@@ -183,10 +170,7 @@ const Snackbar = ({
   } = action || {};
 
   return (
-    <SafeAreaView
-      pointerEvents="box-none"
-      style={[styles.wrapper, wrapperStyle]}
-    >
+    <SafeAreaView pointerEvents="box-none" style={[styles.wrapper, wrapperStyle]}>
       <Surface
         pointerEvents="box-none"
         accessibilityLiveRegion="polite"
@@ -213,9 +197,7 @@ const Snackbar = ({
         }
         {...rest}
       >
-        <View style={[styles.content, { marginRight: action ? 0 : 16 }]}>
-          {children}
-        </View>
+        <View style={[styles.content, { marginRight: action ? 0 : 16 }]}>{children}</View>
         {action ? (
           <Button
             onPress={() => {

@@ -6,9 +6,7 @@ import { observer } from 'mobx-react-lite';
 import SettingItem from './SettingItem';
 import Header from '../../components/Header';
 import UIText from '../../components/UIText';
-import UIBottomSheetModal, {
-  UIBottomSheetModalRef,
-} from '../../components/UIBottomSheetModal';
+import UIBottomSheetModal, { UIBottomSheetModalRef } from '../../components/UIBottomSheetModal';
 import { useStore } from '../../contexts/StoreContext';
 import { COLORS, SPACE } from '../../constants/design-token';
 import * as viewStyles from '../../constants/global-styles/viewStyles';
@@ -31,10 +29,7 @@ const SettingScreen = observer(({ navigation }: SettingScreenProps) => {
   };
 
   return (
-    <SafeAreaView
-      edges={['top', 'left', 'right']}
-      style={viewStyles.flex_1_bg_white}
-    >
+    <SafeAreaView edges={['top', 'left', 'right']} style={viewStyles.flex_1_bg_white}>
       <Header
         title={t('setting.title')}
         leftIcon="back"
@@ -49,9 +44,7 @@ const SettingScreen = observer(({ navigation }: SettingScreenProps) => {
             onTogglePress={() => appSettingStore.toggleUseBiometric()}
           >
             <UIText as="h4">
-              {Platform.OS === 'android'
-                ? t('setting.touchId')
-                : t('setting.faceId')}
+              {Platform.OS === 'android' ? t('setting.touchId') : t('setting.faceId')}
             </UIText>
           </SettingItem>
         </View>
@@ -65,10 +58,7 @@ const SettingScreen = observer(({ navigation }: SettingScreenProps) => {
             <UIText as="h4">{t('setting.payment')}</UIText>
           </SettingItem>
         </View>
-        <CustomTouchableRipple
-          style={styles.mt}
-          onPress={() => bottomSheetRef.current?.present()}
-        >
+        <CustomTouchableRipple style={styles.mt} onPress={() => bottomSheetRef.current?.present()}>
           <SettingItem leftIcon="logout">
             <UIText as="h4">{t('common.logout')}</UIText>
           </SettingItem>

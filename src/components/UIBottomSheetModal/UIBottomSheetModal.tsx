@@ -18,62 +18,54 @@ type UIBottomSheetModalProps = {
 } & Omit<BottomSheetModalProps, 'snapPoints'>;
 export type UIBottomSheetModalRef = BottomSheetModal;
 
-const UIBottomSheetModal = forwardRef<
-  UIBottomSheetModalRef,
-  UIBottomSheetModalProps
->(({ title, children, ...props }, forwardedRef) => {
-  const { dismiss } = useBottomSheetModal();
-  const { bottom: safeBottomArea } = useSafeAreaInsets();
+const UIBottomSheetModal = forwardRef<UIBottomSheetModalRef, UIBottomSheetModalProps>(
+  ({ title, children, ...props }, forwardedRef) => {
+    const { dismiss } = useBottomSheetModal();
+    const { bottom: safeBottomArea } = useSafeAreaInsets();
 
-  const initialSnapPoints = useMemo(() => ['CONTENT_HEIGHT'], []);
-  const {
-    animatedHandleHeight,
-    animatedSnapPoints,
-    animatedContentHeight,
-    handleContentLayout,
-  } = useBottomSheetDynamicSnapPoints(initialSnapPoints);
+    const initialSnapPoints = useMemo(() => ['CONTENT_HEIGHT'], []);
+    const { animatedHandleHeight, animatedSnapPoints, animatedContentHeight, handleContentLayout } =
+      useBottomSheetDynamicSnapPoints(initialSnapPoints);
 
-  const contentContainerStyle = useMemo(
-    () => ({
-      paddingBottom: safeBottomArea || 6,
-    }),
-    [safeBottomArea],
-  );
+    const contentContainerStyle = useMemo(
+      () => ({
+        paddingBottom: safeBottomArea || 6,
+      }),
+      [safeBottomArea],
+    );
 
-  const renderBackdrop = useCallback(
-    (backdropProps: BottomSheetBackdropProps) => (
-      <BottomSheetBackdrop
-        appearsOnIndex={0}
-        disappearsOnIndex={-1}
-        {...backdropProps}
-        pressBehavior="close"
-      />
-    ),
-    [],
-  );
+    const renderBackdrop = useCallback(
+      (backdropProps: BottomSheetBackdropProps) => (
+        <BottomSheetBackdrop
+          appearsOnIndex={0}
+          disappearsOnIndex={-1}
+          {...backdropProps}
+          pressBehavior="close"
+        />
+      ),
+      [],
+    );
 
-  return (
-    <BottomSheetModal
-      {...props}
-      ref={forwardedRef}
-      snapPoints={animatedSnapPoints}
-      handleHeight={animatedHandleHeight}
-      contentHeight={animatedContentHeight}
-      backdropComponent={renderBackdrop}
-      enablePanDownToClose
-    >
-      <BottomSheetView
-        style={contentContainerStyle}
-        onLayout={handleContentLayout}
+    return (
+      <BottomSheetModal
+        {...props}
+        ref={forwardedRef}
+        snapPoints={animatedSnapPoints}
+        handleHeight={animatedHandleHeight}
+        contentHeight={animatedContentHeight}
+        backdropComponent={renderBackdrop}
+        enablePanDownToClose
       >
-        <View style={styles.titleBox}>
-          <UIText as="h3">{title}</UIText>
-        </View>
-        {children}
-      </BottomSheetView>
-    </BottomSheetModal>
-  );
-});
+        <BottomSheetView style={contentContainerStyle} onLayout={handleContentLayout}>
+          <View style={styles.titleBox}>
+            <UIText as="h3">{title}</UIText>
+          </View>
+          {children}
+        </BottomSheetView>
+      </BottomSheetModal>
+    );
+  },
+);
 
 const styles = StyleSheet.create({
   container: {

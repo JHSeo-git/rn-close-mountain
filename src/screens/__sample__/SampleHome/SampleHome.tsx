@@ -27,16 +27,12 @@ const SampleHome = ({ navigation }: SampleHomeProps) => {
           </SampleButton>
         </View>
         <View style={styles.buttonBox}>
-          <SampleButton
-            onPress={() => navigation.navigate('SampleBottomSheet')}
-          >
+          <SampleButton onPress={() => navigation.navigate('SampleBottomSheet')}>
             <UIText style={styles.buttonText}>Bottom Sheet</UIText>
           </SampleButton>
         </View>
         <View style={styles.buttonBox}>
-          <SampleButton
-            onPress={() => navigation.navigate('SampleBottomSheetModal')}
-          >
+          <SampleButton onPress={() => navigation.navigate('SampleBottomSheetModal')}>
             <UIText style={styles.buttonText}>Bottom Sheet Modal</UIText>
           </SampleButton>
         </View>
@@ -46,21 +42,13 @@ const SampleHome = ({ navigation }: SampleHomeProps) => {
           </SampleButton>
         </View>
         <View style={styles.buttonBox}>
-          <SampleButton
-            onPress={() =>
-              i18n.changeLanguage(i18n.language === 'en' ? 'ko' : 'en')
-            }
-          >
-            <UIText style={styles.buttonText}>
-              {t('sample.change_language')}
-            </UIText>
+          <SampleButton onPress={() => i18n.changeLanguage(i18n.language === 'en' ? 'ko' : 'en')}>
+            <UIText style={styles.buttonText}>{t('sample.change_language')}</UIText>
           </SampleButton>
         </View>
         <View style={styles.buttonBox}>
           <SampleButton onPress={() => navigation.navigate('SampleBiometric')}>
-            <UIText style={styles.buttonText}>
-              {t('sample.sample_biometric')}
-            </UIText>
+            <UIText style={styles.buttonText}>{t('sample.sample_biometric')}</UIText>
           </SampleButton>
         </View>
       </View>

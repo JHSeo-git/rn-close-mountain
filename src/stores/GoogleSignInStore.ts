@@ -1,7 +1,4 @@
-import {
-  GoogleSignin,
-  statusCodes,
-} from '@react-native-google-signin/google-signin';
+import { GoogleSignin, statusCodes } from '@react-native-google-signin/google-signin';
 import { action, makeObservable, override } from 'mobx';
 import Config from 'react-native-config';
 import googleSignIn from '../api/auth/googleSignIn';

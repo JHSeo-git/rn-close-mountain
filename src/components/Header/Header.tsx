@@ -22,17 +22,9 @@ type RightButtonProps = {
   onRightIconPress: () => void;
 };
 
-type HeaderProps = DefaultProps &
-  AllOrNone<LeftButtonProps> &
-  AllOrNone<RightButtonProps>;
+type HeaderProps = DefaultProps & AllOrNone<LeftButtonProps> & AllOrNone<RightButtonProps>;
 
-const Header = ({
-  title,
-  leftIcon,
-  onLeftIconPress,
-  rightIcon,
-  onRightIconPress,
-}: HeaderProps) => {
+const Header = ({ title, leftIcon, onLeftIconPress, rightIcon, onRightIconPress }: HeaderProps) => {
   const renderLeft = () => {
     return (
       <>
@@ -55,20 +47,10 @@ const Header = ({
     return (
       <>
         {rightIcon === 'setting' && (
-          <IconButton
-            icon="cog"
-            size={24}
-            color={COLORS.hiContrast}
-            onPress={onRightIconPress}
-          />
+          <IconButton icon="cog" size={24} color={COLORS.hiContrast} onPress={onRightIconPress} />
         )}
         {rightIcon === 'hamberger-menu' && (
-          <IconButton
-            icon="menu"
-            size={24}
-            color={COLORS.hiContrast}
-            onPress={onRightIconPress}
-          />
+          <IconButton icon="menu" size={24} color={COLORS.hiContrast} onPress={onRightIconPress} />
         )}
         {rightIcon === 'search' && (
           <IconButton
@@ -79,12 +61,7 @@ const Header = ({
           />
         )}
         {rightIcon === 'close' && (
-          <IconButton
-            icon="close"
-            size={24}
-            color={COLORS.hiContrast}
-            onPress={onRightIconPress}
-          />
+          <IconButton icon="close" size={24} color={COLORS.hiContrast} onPress={onRightIconPress} />
         )}
       </>
     );
@@ -93,9 +70,7 @@ const Header = ({
   return (
     <View style={styles.container}>
       <View style={styles.leftBox}>{renderLeft()}</View>
-      <View style={styles.centerBox}>
-        {title && <UIText as="h2">{title}</UIText>}
-      </View>
+      <View style={styles.centerBox}>{title && <UIText as="h2">{title}</UIText>}</View>
       <View style={styles.rightBox}>{renderRight()}</View>
     </View>
   );

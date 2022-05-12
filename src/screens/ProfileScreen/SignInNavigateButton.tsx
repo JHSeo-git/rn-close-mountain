@@ -13,10 +13,7 @@ type SignInNavigateButtonProps = {
   provider: 'email' | 'google' | 'apple';
 } & Omit<React.ComponentProps<typeof CustomTouchableRipple>, 'children'>;
 
-const SignInNavigateButton = ({
-  provider,
-  ...props
-}: SignInNavigateButtonProps) => {
+const SignInNavigateButton = ({ provider, ...props }: SignInNavigateButtonProps) => {
   const providerName = useMemo(() => {
     switch (provider) {
       case 'email':

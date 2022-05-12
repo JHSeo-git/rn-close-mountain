@@ -10,9 +10,7 @@ type Props = {
 export function StoreContextProvider({ children }: Props) {
   const store = new RootStore();
 
-  return (
-    <StoreContext.Provider value={store}>{children}</StoreContext.Provider>
-  );
+  return <StoreContext.Provider value={store}>{children}</StoreContext.Provider>;
 }
 
 export function useStore() {

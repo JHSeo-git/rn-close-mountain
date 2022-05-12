@@ -6,9 +6,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import SignInNavigateButton from './SignInNavigateButton';
 import Header from '../../components/Header';
 import UIText from '../../components/UIText';
-import UIBottomSheetModal, {
-  UIBottomSheetModalRef,
-} from '../../components/UIBottomSheetModal';
+import UIBottomSheetModal, { UIBottomSheetModalRef } from '../../components/UIBottomSheetModal';
 import { useStore } from '../../contexts/StoreContext';
 import * as viewStyles from '../../constants/global-styles/viewStyles';
 import { COLORS, SPACE } from '../../constants/design-token';
@@ -32,10 +30,7 @@ const ProfileScreen = observer(({ navigation }: ProfileScreenProps) => {
       if (!result?.jwt || !result?.user) {
         // TODO: if sign in failed, show sign up information
         // 회원가입 안내 창 띄우기
-        snackbarStore.showSnackbar(
-          t('member.message.signin_response_data_empty'),
-          'error',
-        );
+        snackbarStore.showSnackbar(t('member.message.signin_response_data_empty'), 'error');
         return;
       }
 
@@ -79,10 +74,7 @@ const ProfileScreen = observer(({ navigation }: ProfileScreenProps) => {
         </View>
         <View style={styles.listBox}>
           <View>
-            <SignInNavigateButton
-              provider="email"
-              onPress={() => navigation.navigate('SignIn')}
-            />
+            <SignInNavigateButton provider="email" onPress={() => navigation.navigate('SignIn')} />
           </View>
           <View style={styles.mt}>
             <SignInNavigateButton provider="google" onPress={onGoogleSignIn} />
@@ -94,10 +86,7 @@ const ProfileScreen = observer(({ navigation }: ProfileScreenProps) => {
           )}
         </View>
         <View style={styles.bottomBox}>
-          <CustomButton
-            mode="text"
-            onPress={() => bottomSheetRef.current?.present()}
-          >
+          <CustomButton mode="text" onPress={() => bottomSheetRef.current?.present()}>
             {t('common.signUp')}
           </CustomButton>
         </View>
@@ -107,7 +96,10 @@ const ProfileScreen = observer(({ navigation }: ProfileScreenProps) => {
           <View>
             <SignInNavigateButton
               provider="email"
-              onPress={() => navigation.navigate('SignUp')}
+              onPress={() => {
+                bottomSheetRef.current?.close();
+                navigation.navigate('SignUp');
+              }}
             />
           </View>
           <View style={styles.mt}>
