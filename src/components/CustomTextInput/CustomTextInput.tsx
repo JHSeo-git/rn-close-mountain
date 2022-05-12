@@ -11,6 +11,7 @@ export type CustomTextInputRef = RNTextInput;
 const CustomTextInput = forwardRef<CustomTextInputRef, CustomTextInputProps>(
   (
     {
+      error,
       errorText,
       mode = 'outlined',
       outlineColor = COLORS.gray6,
@@ -26,11 +27,12 @@ const CustomTextInput = forwardRef<CustomTextInputRef, CustomTextInputProps>(
           {...props}
           ref={forwardedRef}
           mode={mode}
+          error={error}
           style={[styles.defaultStyle, style]}
           outlineColor={outlineColor}
           autoCapitalize={autoCapitalize}
         />
-        {errorText && (
+        {error && (
           <HelperText type="error" visible={!!errorText}>
             {errorText}
           </HelperText>
