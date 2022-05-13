@@ -15,4 +15,5 @@ export const SPACE = {
   $14: 56,
   $16: 64,
   $20: 80,
+  $100: 100,
 } as const;
