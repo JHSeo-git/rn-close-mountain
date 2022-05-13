@@ -10,7 +10,7 @@ export type User = {
   id: number;
   username: string;
   email: string;
-  provider: string;
+  provider: Provider;
   confirmed: boolean;
   blocked: boolean;
   createdAt: string;
