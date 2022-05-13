@@ -9,11 +9,11 @@ import GoogleSvg from '../../assets/icons/google.svg';
 import AppleSvg from '../../assets/icons/apple.svg';
 import ChevronRightSvg from '../../assets/icons/chevron-right.svg';
 
-type SignInNavigateButtonProps = {
+type ProviderButtonProps = {
   provider: 'email' | 'google' | 'apple';
 } & Omit<React.ComponentProps<typeof CustomTouchableRipple>, 'children'>;
 
-const SignInNavigateButton = ({ provider, ...props }: SignInNavigateButtonProps) => {
+const ProviderButton = ({ provider, onPress, ...props }: ProviderButtonProps) => {
   const providerName = useMemo(() => {
     switch (provider) {
       case 'email':
@@ -66,4 +66,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SignInNavigateButton;
+export default ProviderButton;
