@@ -13,7 +13,7 @@ type ProviderButtonProps = {
   provider: 'email' | 'google' | 'apple';
 } & Omit<React.ComponentProps<typeof CustomTouchableRipple>, 'children'>;
 
-const ProviderButton = ({ provider, onPress, ...props }: ProviderButtonProps) => {
+const ProviderButton = ({ provider, ...props }: ProviderButtonProps) => {
   const providerName = useMemo(() => {
     switch (provider) {
       case 'email':
