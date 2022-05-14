@@ -47,7 +47,14 @@ class AuthStore extends BaseStore {
         return;
       }
 
-      this.sessionIn({ token: session.token, provider: session.provider });
+      this.sessionIn({
+        token: session.token,
+        provider: result.oauthProvider,
+        email: result.email,
+        username: result.username,
+        // TODO: add avatarUrl
+        avatarUrl: undefined,
+      });
     } catch (e) {
       this.error = e;
       throw this.errorHandler(e);
@@ -60,10 +67,7 @@ class AuthStore extends BaseStore {
   sessionIn = async (sessionInfo: SessionInfo) => {
     this.setSessionInfo(sessionInfo);
     applyToken(sessionInfo.token);
-    await sessionStorage.set({
-      token: sessionInfo.token,
-      provider: sessionInfo.provider,
-    });
+    await sessionStorage.set(sessionInfo);
   };
 
   sessionOut = async () => {

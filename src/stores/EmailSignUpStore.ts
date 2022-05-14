@@ -1,48 +1,65 @@
-import { action, computed, makeObservable, observable, override } from 'mobx';
+import { action, makeObservable, observable, override } from 'mobx';
 import BaseStore from './base/BaseStore';
 import RootStore from './RootStore';
+import emailSignUp, { EmailSignUpRequest } from '../api/auth/emailSignUp';
 
 class EmailSignUpStore extends BaseStore {
-  currentStep: number = 1;
+  email: string | undefined;
+  emailVerificationCode: string | undefined;
+  password: string | undefined;
 
   constructor(root: RootStore) {
     super(root);
     makeObservable(this, {
       loading: override,
       error: override,
-      currentStep: observable,
+      email: observable,
+      emailVerificationCode: observable,
+      password: observable,
+      setEmail: action,
+      setEmailVerificationCode: action,
       signUp: action,
-      goNextStep: action,
-      goPrevStep: action,
-      totalSteps: computed,
       reset: action,
     });
+
+    this.reset();
   }
 
-  get totalSteps() {
-    return 3;
-  }
+  init = () => {
+    this.reset();
+  };
 
-  goNextStep = () => {
-    this.currentStep += 1;
+  reset = () => {
+    this.loading = false;
+    this.error = null;
+    this.email = undefined;
+    this.emailVerificationCode = undefined;
+    this.password = undefined;
   };
-  goPrevStep = () => {
-    this.currentStep -= 1;
+
+  setEmail = (email: string) => {
+    this.email = email;
   };
-  signUp = async ({}) => {
+  setEmailVerificationCode = (emailVerificationCode: string) => {
+    this.emailVerificationCode = emailVerificationCode;
+  };
+  setPassword = (password: string) => {
+    this.password = password;
+  };
+
+  signUp = async (requestData: EmailSignUpRequest) => {
     this.loading = true;
 
     try {
+      const result = await emailSignUp(requestData);
+
+      return result;
     } catch (e: any) {
       this.error = e;
       throw this.errorHandler(e);
     } finally {
       this.loading = false;
     }
-  };
-  reset = () => {
-    this.loading = false;
-    this.error = null;
   };
 }
 
