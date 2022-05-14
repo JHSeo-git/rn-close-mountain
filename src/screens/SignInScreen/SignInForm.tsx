@@ -20,8 +20,8 @@ const SignInForm = observer(() => {
   const passwordRef = useRef<CustomTextInputRef>(null);
 
   const initialValues = {
-    email: undefined,
-    password: undefined,
+    email: emailSignInStore.email,
+    password: emailSignInStore.password,
   };
 
   const validationSchema = yup.object().shape({
@@ -55,7 +55,10 @@ const SignInForm = observer(() => {
             return;
           }
 
-          const result = await emailSignInStore.signIn(values.email, values.password);
+          const result = await emailSignInStore.signIn({
+            email: values.email,
+            password: values.password,
+          });
 
           if (!result?.jwt || !result?.user) {
             // TODO: 회원가입 안내 창 띄우기
@@ -67,7 +70,14 @@ const SignInForm = observer(() => {
 
           // if result exists, set session in sessionStorage.
           // and then, navigate home screen
-          await authStore.sessionIn({ token: result.jwt, provider: 'email' });
+          await authStore.sessionIn({
+            token: result.jwt,
+            provider: result.user.oauthProvider,
+            email: result.user.email,
+            username: result.user.username,
+            // TODO: add avatarUrl
+            avatarUrl: undefined,
+          });
           navigation.navigate('HomeStack');
         } catch (e: unknown) {
           if (e instanceof AppError) {
@@ -76,7 +86,7 @@ const SignInForm = observer(() => {
         }
       }}
     >
-      {({ errors, handleSubmit, handleChange, handleBlur, touched, values }) => (
+      {({ errors, handleSubmit, handleChange, handleBlur, touched, values, dirty, isValid }) => (
         <>
           {/** TODO: move focusing when enter */}
           <CustomTextInput
@@ -115,8 +125,8 @@ const SignInForm = observer(() => {
             style={styles.buttonStyle}
             labelStyle={styles.buttonLabelStyle}
             onPress={handleSubmit}
+            disabled={!dirty || !isValid || emailSignInStore.loading}
             loading={emailSignInStore.loading}
-            disabled={emailSignInStore.loading}
           >
             {t('common.signIn')}
           </CustomButton>
