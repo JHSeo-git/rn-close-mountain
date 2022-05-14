@@ -1,5 +1,12 @@
 import { useRef, useState } from 'react';
 
+/**
+ * Time is required only less then a day.
+ */
+const formatTimerDate = (time: number) => {
+  return new Date(time).toISOString().substring(14, 19);
+};
+
 type TimerRef = {
   timer?: NodeJS.Timeout;
   timeLeft?: number;
@@ -7,6 +14,7 @@ type TimerRef = {
 
 export default function useCountdown(initialTime = 3 * 60 * 1000, interval = 1000) {
   const [timeLeft, setTimeLeft] = useState(initialTime);
+  const [isZero, setIsZero] = useState(false);
   const ref = useRef<TimerRef>({});
 
   const localStop = () => {
@@ -19,12 +27,13 @@ export default function useCountdown(initialTime = 3 * 60 * 1000, interval = 100
     localStop();
 
     ref.current.timer = setInterval(() => {
-      const localInterval = Math.min(interval, timeLeft);
+      const localInterval = Math.min(interval, ref.current.timeLeft ?? Infinity);
       setTimeLeft(prev => {
-        if (localInterval === 0) {
-          localStop();
-        }
         ref.current.timeLeft = prev - localInterval;
+        if (ref.current.timeLeft === 0) {
+          localStop();
+          setIsZero(true);
+        }
         return ref.current.timeLeft;
       });
     }, interval);
@@ -44,6 +53,7 @@ export default function useCountdown(initialTime = 3 * 60 * 1000, interval = 100
     localStop();
     ref.current.timeLeft = initialTime;
     setTimeLeft(initialTime);
+    setIsZero(false);
   };
 
   const restart = () => {
@@ -52,6 +62,9 @@ export default function useCountdown(initialTime = 3 * 60 * 1000, interval = 100
   };
 
   return {
+    timeLeft,
+    timeLeftPad: formatTimerDate(timeLeft),
+    isZero,
     start,
     pause,
     stop,
