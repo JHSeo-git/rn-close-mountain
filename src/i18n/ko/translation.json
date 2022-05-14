@@ -11,13 +11,24 @@
     "signUp": "회원가입",
     "login": "로그인",
     "logout": "로그아웃",
+    "submit": "제출",
+    "save": "저장",
+    "cancel": "취소",
+    "edit": "수정",
+    "delete": "삭제",
     "close": "닫기",
+    "ok": "OK",
+    "ng": "NG",
+    "yes": "네",
+    "no": "아니오",
     "increment": "더하기",
     "decrement": "빼기",
     "change_language": "언어 변경",
     "message": {
       "signin_main": "Close Mountain에 로그인하세요",
-      "profile_login": "로그인해서 프로필을 볼 수 있습니다"
+      "profile_login": "로그인해서 프로필을 볼 수 있습니다",
+      "failed_msg": "{{msg}} 실패했습니다",
+      "success_msg": "{{msg}} 성공했습니다"
     }
   },
   "setting": {
@@ -33,6 +44,17 @@
   "biometric": {
     "message": {
       "authenticate_fail": "인증이 실패하였습니다"
+    }
+  },
+  "verification": {
+    "send_email": "이메일 보내기",
+    "resend": "다시 보내기",
+    "check_code": "코드 확인",
+    "message": {
+      "email_input_information": "이메일 주소를 입력해주세요",
+      "password_input_information": "안전한 비밀번호를 입력해주세요",
+      "code_input_information": "{{type}}에 받은 코드를 입력해주세요",
+      "send_success": "코드가 성공적으로 보내졌습니다"
     }
   },
   "profile": {

@@ -11,13 +11,24 @@
     "signUp": "Sign Up",
     "login": "Login",
     "logout": "Logout",
+    "submit": "Submit",
+    "save": "Save",
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "delete": "Delete",
     "close": "Close",
+    "ok": "OK",
+    "ng": "NG",
+    "yes": "Yes",
+    "no": "No",
     "increment": "Increment",
     "decrement": "Decrement",
     "change_language": "Change Language",
     "message": {
       "signin_main": "Sign in to Close Mountain",
-      "profile_login": "Login for using all features"
+      "profile_login": "Login for using all features",
+      "failed_msg": "Failed to {{msg}}",
+      "success_msg": "Success to {{msg}}"
     }
   },
   "setting": {
@@ -38,7 +49,21 @@
       "authenticate_fail": "Not recognized"
     }
   },
-  "signUp": {},
+  "verification": {
+    "send_email": "Send Email",
+    "resend": "Resend",
+    "check_code": "Check code",
+    "message": {
+      "email_input_information": "Please input your e-mail address",
+      "password_input_information": "Please input your secure password",
+      "code_input_information": "Please input your code recieved from {{type}}",
+      "send_success": "Success sending a code"
+    },
+    "validate": {
+      "password_length_error": "Password must be at least {{min}} characters long",
+      "password_special_error": "Password must contain at least one special character"
+    }
+  },
   "member": {
     "email": "Email",
     "password": "Password",
