@@ -2,10 +2,11 @@ import { CompositeScreenProps } from '@react-navigation/native';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import type { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
 
+export type SignUpProvider = 'email' | 'google' | 'apple';
 export type RootStackParamList = {
   MainTab: undefined;
   SignIn: undefined;
-  SignUp: undefined;
+  SignUp: { provider?: SignUpProvider } | undefined;
   Setting: undefined;
   Sample: undefined;
 };

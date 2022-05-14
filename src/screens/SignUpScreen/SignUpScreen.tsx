@@ -1,18 +1,15 @@
-import { useTranslation } from 'react-i18next';
-import { View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import Header from '../../components/Header';
-import UIText from '../../components/UIText';
+import EmailSignUp from './email/EmailSignUp';
 import * as viewStyles from '../../constants/global-styles/viewStyles';
+import type { RootStackScreenProps } from '../types';
 
-const SignUpScreen = () => {
-  const { t } = useTranslation();
+type SignUpScreenProps = RootStackScreenProps<'SignUp'>;
+
+const SignUpScreen = ({ route }: SignUpScreenProps) => {
+  const provider = route.params?.provider ? route.params.provider : 'email';
   return (
     <SafeAreaView style={viewStyles.flex_1_bg_white}>
-      <Header title={t('common.signUp')} />
-      <View style={viewStyles.flex_1_padding_20}>
-        <UIText>SignUp</UIText>
-      </View>
+      {provider === 'email' && <EmailSignUp />}
     </SafeAreaView>
   );
 };
