@@ -1,12 +1,12 @@
 import client from '../client';
 import type { SignInResponse } from './types';
 
-type EmailSignInProps = {
+export type EmailSignInRequest = {
   email: string;
   password: string;
 };
 
-export default async function emailSignIn({ email, password }: EmailSignInProps) {
+export default async function emailSignIn({ email, password }: EmailSignInRequest) {
   const { data } = await client.post<SignInResponse>('/api/auth/local', {
     identifier: email,
     password,
