@@ -1,12 +1,11 @@
 import { useTranslation } from 'react-i18next';
 import { Image, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-
 import SignInForm from './SignInForm';
 import Header from '../../components/Header';
-import UIText from '../../components/UIText';
 import DismissKeyboard from '../../components/DismissKeyboard';
 import CustomButton from '../../components/CustomButton';
+import UIScreenTitleView from '../../components/UIScreenTitleView';
 import { SPACE } from '../../constants/design-token';
 import * as viewStyles from '../../constants/global-styles/viewStyles';
 import type { RootStackScreenProps } from '../types';
@@ -23,13 +22,9 @@ const SignInScreen = ({ navigation }: SignInScreenProps) => {
       <SafeAreaView style={viewStyles.flex_1_bg_white}>
         <Header rightIcon="close" onRightIconPress={() => navigation.goBack()} />
         <View style={viewStyles.flex_1_padding_20}>
-          <View style={styles.titleBox}>
-            <UIText as="h2">{t('common.signIn')}</UIText>
-            <UIText as="content" style={{ marginTop: SPACE.$2 }}>
-              {t('common.message.signin_main')}
-            </UIText>
+          <UIScreenTitleView title={t('common.signIn')} subTitle={t('common.message.signin_main')}>
             <Image source={LockGIF} style={styles.titleImage} />
-          </View>
+          </UIScreenTitleView>
           <View style={styles.formBox}>
             <SignInForm />
           </View>
@@ -45,9 +40,6 @@ const SignInScreen = ({ navigation }: SignInScreenProps) => {
 };
 
 const styles = StyleSheet.create({
-  titleBox: {
-    alignItems: 'center',
-  },
   titleImage: {
     width: 156,
     height: 156,
