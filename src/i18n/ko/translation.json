@@ -21,6 +21,7 @@
     "ng": "NG",
     "yes": "네",
     "no": "아니오",
+    "next": "다음",
     "increment": "더하기",
     "decrement": "빼기",
     "change_language": "언어 변경",
@@ -54,6 +55,7 @@
       "email_input_information": "이메일 주소를 입력해주세요",
       "password_input_information": "안전한 비밀번호를 입력해주세요",
       "code_input_information": "{{type}}에 받은 코드를 입력해주세요",
+      "username_input_information": "사용할 이름을 입력해주세요",
       "send_success": "코드가 성공적으로 보내졌습니다"
     }
   },
@@ -70,6 +72,11 @@
       "password_placeholder": "비밀번호 *",
       "password_error": "유효한 비밀번호를 입력해주세요",
       "password_required": "비밀번호를 입력해주세요",
+      "username_placeholder": "사용할 이름 *",
+      "username_error": "유효한 이름을 입력해주세요",
+      "username_required": "이름을 입력해주세요",
+      "code_error": "유효한 코드를 입력해주세요",
+      "code_required": "전달받은 코드를 입력해주세요",
       "forgot_password": "비밀번호를 잊어버리셨나요?",
       "signin_response_data_empty": "로그인이 실패했습니다. 이메일과 비밀번호를 다시 한 번 확인해주세요"
     }
