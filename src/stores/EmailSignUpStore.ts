@@ -7,6 +7,7 @@ class EmailSignUpStore extends BaseStore {
   email: string | undefined;
   emailVerificationCode: string | undefined;
   password: string | undefined;
+  username: string | undefined;
 
   constructor(root: RootStore) {
     super(root);
@@ -16,8 +17,11 @@ class EmailSignUpStore extends BaseStore {
       email: observable,
       emailVerificationCode: observable,
       password: observable,
+      username: observable,
       setEmail: action,
       setEmailVerificationCode: action,
+      setPassword: action,
+      setUsername: action,
       signUp: action,
       reset: action,
     });
@@ -35,6 +39,7 @@ class EmailSignUpStore extends BaseStore {
     this.email = undefined;
     this.emailVerificationCode = undefined;
     this.password = undefined;
+    this.username = undefined;
   };
 
   setEmail = (email: string) => {
@@ -45,6 +50,9 @@ class EmailSignUpStore extends BaseStore {
   };
   setPassword = (password: string) => {
     this.password = password;
+  };
+  setUsername = (username: string) => {
+    this.username = username;
   };
 
   signUp = async (requestData: EmailSignUpRequest) => {
