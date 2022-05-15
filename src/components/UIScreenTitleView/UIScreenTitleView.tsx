@@ -17,7 +17,7 @@ const UIScreenTitleView = ({ title, subTitle, children }: UIScreenTitleViewProps
       <UIText as="content" style={[styles.textStyle, styles.mt]}>
         {subTitle}
       </UIText>
-      {children && <View style={styles.mt}>{children}</View>}
+      {children && <View style={[styles.mt, styles.childBox]}>{children}</View>}
     </View>
   );
 };
@@ -29,6 +29,9 @@ const styles = StyleSheet.create({
   },
   mt: {
     marginTop: SPACE.$2,
+  },
+  childBox: {
+    alignItems: 'center',
   },
 });
 
