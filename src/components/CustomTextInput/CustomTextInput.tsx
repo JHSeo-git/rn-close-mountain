@@ -32,7 +32,7 @@ const CustomTextInput = forwardRef<CustomTextInputRef, CustomTextInputProps>(
           outlineColor={outlineColor}
           autoCapitalize={autoCapitalize}
         />
-        {error && (
+        {!!errorText && (
           <HelperText type="error" visible={!!errorText}>
             {errorText}
           </HelperText>
