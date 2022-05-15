@@ -2,12 +2,13 @@ import { useEffect, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { observer } from 'mobx-react-lite';
 import { useNavigation } from '@react-navigation/native';
-import EmailSignUpStep1 from './EmailSignUpStep1';
-import EmailSignUpStep2 from './EmailSignUpStep2';
+import SignUpStep1 from './SignUpStep1';
+import SignUpStep2 from './SignUpStep2';
+import SignUpStep3 from './SignUpStep3';
+import SignUpStep4 from './SignUpStep4';
 import Header from '../../../components/Header';
 import { useStore } from '../../../contexts/StoreContext';
 import type { RootStackScreenProps } from '../../types';
-import EmailSignUpStep3 from './EmailSignUpStep3';
 
 const EmailSignUp = observer(() => {
   const { emailSignUpStore } = useStore();
@@ -16,6 +17,14 @@ const EmailSignUp = observer(() => {
 
   const handleNextStep = () => {
     setStep(step + 1);
+  };
+
+  const onBackPress = () => {
+    if (step > 1) {
+      setStep(step - 1);
+    } else {
+      navigation.goBack();
+    }
   };
 
   useEffect(() => {
@@ -28,12 +37,15 @@ const EmailSignUp = observer(() => {
     <View style={styles.container}>
       <Header
         // title={t('common.signUp')}
+        leftIcon="back"
+        onLeftIconPress={onBackPress}
         rightIcon="close"
         onRightIconPress={() => navigation.goBack()}
       />
-      {step === 1 && <EmailSignUpStep1 handleNextStep={handleNextStep} />}
-      {step === 2 && <EmailSignUpStep2 handleNextStep={handleNextStep} />}
-      {step === 3 && <EmailSignUpStep3 handleNextStep={handleNextStep} />}
+      {step === 1 && <SignUpStep1 handleNextStep={handleNextStep} />}
+      {step === 2 && <SignUpStep2 handleNextStep={handleNextStep} />}
+      {step === 3 && <SignUpStep3 handleNextStep={handleNextStep} />}
+      {step === 4 && <SignUpStep4 handleNextStep={handleNextStep} />}
     </View>
   );
 });

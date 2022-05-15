@@ -15,29 +15,25 @@ import { useStore } from '../../../contexts/StoreContext';
 import styles from './EmailSignUp.styles';
 import * as viewStyles from '../../../constants/global-styles/viewStyles';
 
-type EmailSignUpStep3 = {
+type SignUpStep1Props = {
   handleNextStep: () => void;
 };
 
-const EmailSignUpStep3 = observer(({ handleNextStep }: EmailSignUpStep3) => {
+const SignUpStep1 = observer(({ handleNextStep }: SignUpStep1Props) => {
   const { t } = useTranslation();
   const { emailStore, emailSignUpStore, snackbarStore } = useStore();
 
-  const passwordRef = useRef<CustomTextInputRef>(null);
+  const emailRef = useRef<CustomTextInputRef>(null);
 
   const initialValues = {
-    password: emailSignUpStore.password,
+    email: '',
   };
 
   const validationSchema = yup.object().shape({
-    password: yup
+    email: yup
       .string()
-      .required(t('member.message.password_required'))
-      .min(8, t('verification.validate.password_length_error', { min: 8 }))
-      .matches(
-        /[~`!@#$%^&*()-_=+[\]\\|{};:'",<.>/?]+/,
-        t('verification.validate.password_length_error'),
-      ),
+      .email(t('member.message.email_error'))
+      .required(t('member.message.email_required')),
   });
 
   useEffect(() => {
@@ -55,24 +51,24 @@ const EmailSignUpStep3 = observer(({ handleNextStep }: EmailSignUpStep3) => {
           enableReinitialize
           onSubmit={async (values, action) => {
             try {
-              // if (!values.email) {
-              //   action.setFieldError('email', t('member.message.email_required'));
-              //   return;
-              // }
+              if (!values.email) {
+                action.setFieldError('email', t('member.message.email_required'));
+                return;
+              }
 
-              // emailSignUpStore.setEmail(values.email);
+              emailSignUpStore.setEmail(values.email);
 
-              // const result = await emailStore.sendEmail({
-              //   email: values.email,
-              // });
+              const result = await emailStore.sendEmail({
+                email: values.email,
+              });
 
-              // if (!result.success) {
-              //   snackbarStore.showSnackbar(
-              //     t('common.message.failed_msg', { msg: t('verification.send_email') }),
-              //     'error',
-              //   );
-              //   return;
-              // }
+              if (!result.success) {
+                snackbarStore.showSnackbar(
+                  t('common.message.failed_msg', { msg: t('verification.send_email') }),
+                  'error',
+                );
+                return;
+              }
               // if success then go next step
               handleNextStep();
             } catch (e: unknown) {
@@ -96,23 +92,23 @@ const EmailSignUpStep3 = observer(({ handleNextStep }: EmailSignUpStep3) => {
               <ScrollView>
                 <UIScreenTitleView
                   title={t('common.signUp')}
-                  subTitle={t('verification.message.password_input_information')}
+                  subTitle={t('verification.message.email_input_information')}
                 />
                 <View style={styles.inputBox}>
                   <CustomTextInput
-                    ref={passwordRef}
-                    label={t('member.message.password_placeholder')}
-                    placeholder={t('member.message.password_placeholder')}
-                    onChangeText={handleChange('password')}
-                    onBlur={handleBlur('password')}
-                    value={values.password}
-                    error={touched.password && !!errors.password}
-                    errorText={touched.password ? errors.password : undefined}
-                    textContentType="password"
+                    ref={emailRef}
+                    label={t('member.message.email_placeholder')}
+                    placeholder={t('member.message.email_placeholder')}
+                    onChangeText={handleChange('email')}
+                    onBlur={handleBlur('email')}
+                    value={values.email}
+                    error={touched.email && !!errors.email}
+                    errorText={touched.email ? errors.email : undefined}
+                    keyboardType="email-address"
+                    textContentType="emailAddress"
                     returnKeyType="done"
-                    secureTextEntry={true}
                     onSubmitEditing={handleSubmit}
-                    // disabled={emailSignInStore.loading}
+                    disabled={emailStore.loading}
                   />
                 </View>
               </ScrollView>
@@ -136,4 +132,4 @@ const EmailSignUpStep3 = observer(({ handleNextStep }: EmailSignUpStep3) => {
   );
 });
 
-export default EmailSignUpStep3;
+export default SignUpStep1;

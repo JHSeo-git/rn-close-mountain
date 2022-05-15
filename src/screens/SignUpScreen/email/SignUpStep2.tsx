@@ -15,30 +15,38 @@ import styles from './EmailSignUp.styles';
 import * as viewStyles from '../../../constants/global-styles/viewStyles';
 import useCountdown from '../../../hooks/useCountdown';
 
-type EmailSignUpStep2 = {
+type SignUpStep2 = {
   handleNextStep: () => void;
 };
 
-const EmailSignUpStep2 = observer(({ handleNextStep }: EmailSignUpStep2) => {
+const SignUpStep2 = observer(({ handleNextStep }: SignUpStep2) => {
   const { verificationStore, emailSignUpStore, snackbarStore } = useStore();
   const { t } = useTranslation();
   const countdown = useCountdown();
 
   const onResend = async () => {
-    // TODO: resend
+    try {
+      // TODO: resend
 
-    countdown.restart();
-    emailSignUpStore.setEmailVerificationCode('');
+      countdown.restart();
+      emailSignUpStore.setEmailVerificationCode('');
 
-    snackbarStore.showSnackbar(t('verification.message.send_success'), 'success');
+      snackbarStore.showSnackbar(t('verification.message.send_success'), 'success');
+    } catch (e: unknown) {
+      if (e instanceof AppError) {
+        snackbarStore.showSnackbar(e.message, 'error');
+      }
+    }
   };
 
   const onSubmit = async () => {
     try {
       if (!emailSignUpStore.email) {
+        snackbarStore.showSnackbar(t('member.message.email_required'), 'error');
         return;
       }
       if (!emailSignUpStore.emailVerificationCode) {
+        snackbarStore.showSnackbar(t('member.message.code_required'), 'error');
         return;
       }
 
@@ -67,6 +75,8 @@ const EmailSignUpStep2 = observer(({ handleNextStep }: EmailSignUpStep2) => {
 
   useEffect(() => {
     countdown.start();
+    emailSignUpStore.setEmailVerificationCode('');
+
     return () => {
       countdown.reset();
       snackbarStore.reset();
@@ -118,7 +128,7 @@ const EmailSignUpStep2 = observer(({ handleNextStep }: EmailSignUpStep2) => {
                 labelStyle={{ marginVertical: 15 }}
                 onPress={onSubmit}
               >
-                <UIText as="h4_contrast">{t('common.submit')}</UIText>
+                <UIText as="h4_contrast">{t('common.next')}</UIText>
               </CustomButton>
             </View>
           </View>
@@ -128,4 +138,4 @@ const EmailSignUpStep2 = observer(({ handleNextStep }: EmailSignUpStep2) => {
   );
 });
 
-export default EmailSignUpStep2;
+export default SignUpStep2;

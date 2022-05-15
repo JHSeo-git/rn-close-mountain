@@ -25,6 +25,9 @@ const styles = StyleSheet.create({
   buttonBox: {
     paddingTop: SPACE.$5,
   },
+  helperBox: {
+    marginTop: SPACE.$2,
+  },
   textButtonLabel: {
     marginVertical: SPACE.$2,
     marginHorizontal: SPACE.$3,

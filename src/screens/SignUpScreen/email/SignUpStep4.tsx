@@ -15,25 +15,25 @@ import { useStore } from '../../../contexts/StoreContext';
 import styles from './EmailSignUp.styles';
 import * as viewStyles from '../../../constants/global-styles/viewStyles';
 
-type SignUpStep1Props = {
+type SignUpStep4Props = {
   handleNextStep: () => void;
 };
 
-const SignUpStep1 = observer(({ handleNextStep }: SignUpStep1Props) => {
+const SignUpStep4 = observer(({ handleNextStep }: SignUpStep4Props) => {
   const { t } = useTranslation();
-  const { emailStore, emailSignUpStore, snackbarStore } = useStore();
+  const { authStore, emailSignUpStore, snackbarStore } = useStore();
 
-  const emailRef = useRef<CustomTextInputRef>(null);
+  const usernameRef = useRef<CustomTextInputRef>(null);
 
   const initialValues = {
-    email: emailSignUpStore.email,
+    username: '',
   };
 
   const validationSchema = yup.object().shape({
-    email: yup
+    username: yup
       .string()
-      .email(t('member.message.email_error'))
-      .required(t('member.message.email_required')),
+      .min(4, t('member.message.username_error'))
+      .required(t('member.message.username_required')),
   });
 
   useEffect(() => {
@@ -51,24 +51,49 @@ const SignUpStep1 = observer(({ handleNextStep }: SignUpStep1Props) => {
           enableReinitialize
           onSubmit={async (values, action) => {
             try {
-              if (!values.email) {
-                action.setFieldError('email', t('member.message.email_required'));
+              if (!values.username) {
+                action.setFieldError('username', t('member.message.username_required'));
                 return;
               }
 
-              emailSignUpStore.setEmail(values.email);
+              emailSignUpStore.setUsername(values.username);
 
-              const result = await emailStore.sendEmail({
-                email: values.email,
+              // Last validation
+              if (!emailSignUpStore.email) {
+                snackbarStore.showSnackbar(t('member.message.email_required'), 'error');
+                return;
+              }
+              if (!emailSignUpStore.username) {
+                snackbarStore.showSnackbar(t('member.message.username_required'), 'error');
+                return;
+              }
+              if (!emailSignUpStore.password) {
+                return;
+              }
+
+              const result = await emailSignUpStore.signUp({
+                email: emailSignUpStore.email,
+                username: emailSignUpStore.username,
+                password: emailSignUpStore.password,
               });
 
-              if (!result.success) {
-                snackbarStore.showSnackbar(
-                  t('common.message.failed_msg', { msg: t('verification.send_email') }),
-                  'error',
-                );
+              if (!result?.jwt || !result?.user) {
+                // TODO: message
+                // snackbarStore.showSnackbar(t('member.message.signin_response_data_empty'), 'error');
                 return;
               }
+
+              // if result exists, set session in sessionStorage.
+              // and then, navigate home screen
+              await authStore.sessionIn({
+                token: result.jwt,
+                provider: result.user.oauthProvider,
+                email: result.user.email,
+                username: result.user.username,
+                // TODO: add avatarUrl
+                avatarUrl: undefined,
+              });
+
               // if success then go next step
               handleNextStep();
             } catch (e: unknown) {
@@ -92,35 +117,35 @@ const SignUpStep1 = observer(({ handleNextStep }: SignUpStep1Props) => {
               <ScrollView>
                 <UIScreenTitleView
                   title={t('common.signUp')}
-                  subTitle={t('verification.message.email_input_information')}
+                  subTitle={t('verification.message.username_input_information')}
                 />
                 <View style={styles.inputBox}>
                   <CustomTextInput
-                    ref={emailRef}
-                    label={t('member.message.email_placeholder')}
-                    placeholder={t('member.message.email_placeholder')}
-                    onChangeText={handleChange('email')}
-                    onBlur={handleBlur('email')}
-                    value={values.email}
-                    error={touched.email && !!errors.email}
-                    errorText={touched.email ? errors.email : undefined}
+                    ref={usernameRef}
+                    label={t('member.message.username_placeholder')}
+                    placeholder={t('member.message.username_placeholder')}
+                    onChangeText={handleChange('username')}
+                    onBlur={handleBlur('username')}
+                    value={values.username}
+                    error={touched.username && !!errors.username}
+                    errorText={touched.username ? errors.username : undefined}
                     keyboardType="email-address"
                     textContentType="emailAddress"
                     returnKeyType="done"
                     onSubmitEditing={handleSubmit}
-                    disabled={emailStore.loading}
+                    disabled={emailSignUpStore.loading}
                   />
                 </View>
               </ScrollView>
               <View style={styles.footerBox}>
                 <View style={styles.buttonBox}>
                   <CustomButton
-                    disabled={!dirty || !isValid || emailStore.loading}
-                    loading={emailStore.loading}
+                    disabled={!dirty || !isValid || emailSignUpStore.loading}
+                    loading={emailSignUpStore.loading}
                     labelStyle={{ marginVertical: 15 }}
                     onPress={handleSubmit}
                   >
-                    <UIText as="h4_contrast">{t('verification.send_email')}</UIText>
+                    <UIText as="h4_contrast">{t('common.submit')}</UIText>
                   </CustomButton>
                 </View>
               </View>
@@ -132,4 +157,4 @@ const SignUpStep1 = observer(({ handleNextStep }: SignUpStep1Props) => {
   );
 });
 
-export default SignUpStep1;
+export default SignUpStep4;
