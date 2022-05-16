@@ -42,6 +42,9 @@
       "not_now": "나중에 할게요"
     }
   },
+  "profile": {
+    "signup_inform": "계정이 없으신가요?"
+  },
   "biometric": {
     "message": {
       "authenticate_fail": "인증이 실패하였습니다"
@@ -57,10 +60,12 @@
       "code_input_information": "{{type}}에 받은 코드를 입력해주세요",
       "username_input_information": "사용할 이름을 입력해주세요",
       "send_success": "코드가 성공적으로 보내졌습니다"
+    },
+    "validate": {
+      "password_length_error": "비밀번호는 {{min}}글자 이상이 필요합니다",
+      "password_special_error": "비밀번호는 최소한 하나 이상의 특수문자가 필요합니다",
+      "password_confirm_error": "비밀번호와 비밀번호 확인이 일치해야 합니다"
     }
-  },
-  "profile": {
-    "signup_inform": "계정이 없으신가요?"
   },
   "member": {
     "email": "이메일",
@@ -72,13 +77,17 @@
       "password_placeholder": "비밀번호 *",
       "password_error": "유효한 비밀번호를 입력해주세요",
       "password_required": "비밀번호를 입력해주세요",
+      "password_confirm_placeholder": "비밀번호 확인 *",
       "username_placeholder": "사용할 이름 *",
       "username_error": "유효한 이름을 입력해주세요",
       "username_required": "이름을 입력해주세요",
+      "username_min": "이름은 {{min}}글자 이상이 필요합니다",
+      "username_max": "이름은 {{max}}글자 이상이 될 수 없습니다",
       "code_error": "유효한 코드를 입력해주세요",
       "code_required": "전달받은 코드를 입력해주세요",
       "forgot_password": "비밀번호를 잊어버리셨나요?",
-      "signin_response_data_empty": "로그인이 실패했습니다. 이메일과 비밀번호를 다시 한 번 확인해주세요"
+      "signin_response_data_empty": "로그인이 실패했습니다. 이메일과 비밀번호를 다시 한 번 확인해주세요",
+      "signup_response_data_empty": "회원가입이 실패했습니다. 입력 정보를 다시 한 번 확인해주세요"
     }
   },
   "sample": {

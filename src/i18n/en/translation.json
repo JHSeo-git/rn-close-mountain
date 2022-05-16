@@ -63,7 +63,8 @@
     },
     "validate": {
       "password_length_error": "Password must be at least {{min}} characters long",
-      "password_special_error": "Password must contain at least one special character"
+      "password_special_error": "Password must contain at least one special character",
+      "password_confirm_error": "Password and confirm password must match"
     }
   },
   "member": {
@@ -76,9 +77,12 @@
       "password_placeholder": "Password *",
       "password_error": "Please enter a valid password",
       "password_required": "Please enter your password",
+      "password_confirm_placeholder": "Password Confirm *",
       "username_placeholder": "Username *",
       "username_error": "Please enter a valid username",
       "username_required": "Please enter your username",
+      "username_min": "Username must be at least {{min}} characters long",
+      "username_max": "Username must be at most {{max}} characters long",
       "code_error": "Please enter a right code",
       "code_required": "Please enter a recieved code",
       "forgot_password": "Forgot Password?",
