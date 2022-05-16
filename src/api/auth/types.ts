@@ -1,6 +1,7 @@
 export type StrapiProvider = 'local';
 export type Provider = 'email' | 'google' | 'apple';
-export type VerificationType = 'email' | 'sms' | 'otp';
+export type VerificationProvider = 'email'; // | 'sms' | 'otp';
+export type VerificationUseType = 'reset-password' | 'signup' | 'two-factor';
 
 export type SignInResponse = {
   jwt: string;
