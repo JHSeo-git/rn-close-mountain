@@ -20,13 +20,22 @@ type SignUpStep2 = {
 };
 
 const SignUpStep2 = observer(({ handleNextStep }: SignUpStep2) => {
-  const { verificationStore, emailSignUpStore, snackbarStore } = useStore();
+  const { emailStore, verificationStore, emailSignUpStore, snackbarStore } = useStore();
   const { t } = useTranslation();
   const countdown = useCountdown();
 
   const onResend = async () => {
     try {
-      // TODO: resend
+      if (!emailSignUpStore.email) {
+        snackbarStore.showSnackbar(t('member.message.email_required'), 'error');
+        return;
+      }
+
+      await emailStore.sendEmail({
+        email: emailSignUpStore.email,
+        verifyUseType: 'signup',
+        verifyProvider: 'email',
+      });
 
       countdown.restart();
       emailSignUpStore.setEmailVerificationCode('');
@@ -50,19 +59,12 @@ const SignUpStep2 = observer(({ handleNextStep }: SignUpStep2) => {
         return;
       }
 
-      const result = await verificationStore.checkVerification({
-        type: 'email',
-        target: emailSignUpStore.email,
+      await verificationStore.checkVerifyCode({
+        email: emailSignUpStore.email,
+        verifyUseType: 'signup',
         code: emailSignUpStore.emailVerificationCode,
+        verifyProvider: 'email',
       });
-
-      if (!result.success) {
-        snackbarStore.showSnackbar(
-          t('common.message.failed_msg', { msg: t('verification.check_code') }),
-          'error',
-        );
-        return;
-      }
 
       // if success then go next step
       handleNextStep();

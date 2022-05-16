@@ -58,17 +58,11 @@ const SignUpStep1 = observer(({ handleNextStep }: SignUpStep1Props) => {
 
               emailSignUpStore.setEmail(values.email);
 
-              const result = await emailStore.sendEmail({
+              await emailStore.sendEmail({
                 email: values.email,
+                verifyUseType: 'signup',
+                verifyProvider: 'email',
               });
-
-              if (!result.success) {
-                snackbarStore.showSnackbar(
-                  t('common.message.failed_msg', { msg: t('verification.send_email') }),
-                  'error',
-                );
-                return;
-              }
               // if success then go next step
               handleNextStep();
             } catch (e: unknown) {
