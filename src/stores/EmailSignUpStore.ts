@@ -1,7 +1,8 @@
-import { action, makeObservable, observable, override } from 'mobx';
+import { action, makeObservable, observable } from 'mobx';
 import BaseStore from './base/BaseStore';
 import RootStore from './RootStore';
 import emailSignUp, { EmailSignUpRequest } from '../api/auth/emailSignUp';
+import checkUsername, { CheckUsernameRequest } from '../api/auth/checkUsername';
 
 class EmailSignUpStore extends BaseStore {
   email: string | undefined;
@@ -12,8 +13,6 @@ class EmailSignUpStore extends BaseStore {
   constructor(root: RootStore) {
     super(root);
     makeObservable(this, {
-      loading: override,
-      error: override,
       email: observable,
       emailVerificationCode: observable,
       password: observable,
@@ -23,6 +22,7 @@ class EmailSignUpStore extends BaseStore {
       setPassword: action,
       setUsername: action,
       signUp: action,
+      checkUsername: action,
       reset: action,
     });
 
@@ -34,8 +34,6 @@ class EmailSignUpStore extends BaseStore {
   };
 
   reset = () => {
-    this.loading = false;
-    this.error = null;
     this.email = undefined;
     this.emailVerificationCode = undefined;
     this.password = undefined;
@@ -56,17 +54,24 @@ class EmailSignUpStore extends BaseStore {
   };
 
   signUp = async (requestData: EmailSignUpRequest) => {
-    this.loading = true;
-
     try {
-      const result = await emailSignUp(requestData);
+      const result = await this.callAPI(emailSignUp(requestData));
 
       return result;
     } catch (e: any) {
       this.error = e;
       throw this.errorHandler(e);
-    } finally {
-      this.loading = false;
+    }
+  };
+
+  checkUsername = async (requestData: CheckUsernameRequest) => {
+    try {
+      const result = await this.callAPI(checkUsername(requestData));
+
+      return result;
+    } catch (e: any) {
+      this.error = e;
+      throw this.errorHandler(e);
     }
   };
 }

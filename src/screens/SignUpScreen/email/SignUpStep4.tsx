@@ -21,7 +21,7 @@ type SignUpStep4Props = {
 
 const SignUpStep4 = observer(({ handleNextStep }: SignUpStep4Props) => {
   const { t } = useTranslation();
-  const { authStore, emailSignUpStore, snackbarStore } = useStore();
+  const { emailSignUpStore, snackbarStore } = useStore();
 
   const usernameRef = useRef<CustomTextInputRef>(null);
 
@@ -32,7 +32,8 @@ const SignUpStep4 = observer(({ handleNextStep }: SignUpStep4Props) => {
   const validationSchema = yup.object().shape({
     username: yup
       .string()
-      .min(4, t('member.message.username_error'))
+      .min(4, t('member.message.username_min', { min: 4 }))
+      .max(32, t('member.message.username_max', { max: 32 }))
       .required(t('member.message.username_required')),
   });
 
@@ -58,41 +59,43 @@ const SignUpStep4 = observer(({ handleNextStep }: SignUpStep4Props) => {
 
               emailSignUpStore.setUsername(values.username);
 
+              await emailSignUpStore.checkUsername({ username: values.username });
+
               // Last validation
-              if (!emailSignUpStore.email) {
-                snackbarStore.showSnackbar(t('member.message.email_required'), 'error');
-                return;
-              }
-              if (!emailSignUpStore.username) {
-                snackbarStore.showSnackbar(t('member.message.username_required'), 'error');
-                return;
-              }
-              if (!emailSignUpStore.password) {
-                return;
-              }
+              // if (!emailSignUpStore.email) {
+              //   snackbarStore.showSnackbar(t('member.message.email_required'), 'error');
+              //   return;
+              // }
+              // if (!emailSignUpStore.username) {
+              //   snackbarStore.showSnackbar(t('member.message.username_required'), 'error');
+              //   return;
+              // }
+              // if (!emailSignUpStore.password) {
+              //   return;
+              // }
 
-              const result = await emailSignUpStore.signUp({
-                email: emailSignUpStore.email,
-                username: emailSignUpStore.username,
-                password: emailSignUpStore.password,
-              });
+              // const result = await emailSignUpStore.signUp({
+              //   email: emailSignUpStore.email,
+              //   username: emailSignUpStore.username,
+              //   password: emailSignUpStore.password,
+              // });
 
-              if (!result?.jwt || !result?.user) {
-                // TODO: message
-                // snackbarStore.showSnackbar(t('member.message.signin_response_data_empty'), 'error');
-                return;
-              }
+              // if (!result?.jwt || !result?.user) {
+              //   // TODO: message
+              //   // snackbarStore.showSnackbar(t('member.message.signin_response_data_empty'), 'error');
+              //   return;
+              // }
 
-              // if result exists, set session in sessionStorage.
-              // and then, navigate home screen
-              await authStore.sessionIn({
-                token: result.jwt,
-                provider: result.user.oauthProvider,
-                email: result.user.email,
-                username: result.user.username,
-                // TODO: add avatarUrl
-                avatarUrl: undefined,
-              });
+              // // if result exists, set session in sessionStorage.
+              // // and then, navigate home screen
+              // await authStore.sessionIn({
+              //   token: result.jwt,
+              //   provider: result.user.oauthProvider,
+              //   email: result.user.email,
+              //   username: result.user.username,
+              //   // TODO: add avatarUrl
+              //   avatarUrl: undefined,
+              // });
 
               // if success then go next step
               handleNextStep();
@@ -122,6 +125,7 @@ const SignUpStep4 = observer(({ handleNextStep }: SignUpStep4Props) => {
                 <View style={styles.inputBox}>
                   <CustomTextInput
                     ref={usernameRef}
+                    maxLength={32}
                     label={t('member.message.username_placeholder')}
                     placeholder={t('member.message.username_placeholder')}
                     onChangeText={handleChange('username')}
@@ -145,7 +149,7 @@ const SignUpStep4 = observer(({ handleNextStep }: SignUpStep4Props) => {
                     labelStyle={{ marginVertical: 15 }}
                     onPress={handleSubmit}
                   >
-                    <UIText as="h4_contrast">{t('common.submit')}</UIText>
+                    <UIText as="h4_contrast">{t('common.next')}</UIText>
                   </CustomButton>
                 </View>
               </View>

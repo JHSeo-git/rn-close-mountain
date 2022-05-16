@@ -21,6 +21,9 @@ type PasswordValidateError = {
     min: boolean;
     special: boolean;
   };
+  passwordConfirm?: {
+    matched: boolean;
+  };
 };
 
 type SignUpStep3 = {
@@ -29,12 +32,14 @@ type SignUpStep3 = {
 
 const SignUpStep3 = observer(({ handleNextStep }: SignUpStep3) => {
   const { t } = useTranslation();
-  const { emailStore, emailSignUpStore, snackbarStore } = useStore();
+  const { emailSignUpStore, snackbarStore } = useStore();
 
   const passwordRef = useRef<CustomTextInputRef>(null);
+  const passwordConfirmRef = useRef<CustomTextInputRef>(null);
 
   const initialValues = {
     password: '',
+    passwordConfirm: '',
   };
 
   // const validationSchema = yup.object().shape({
@@ -48,7 +53,10 @@ const SignUpStep3 = observer(({ handleNextStep }: SignUpStep3) => {
   //     ),
   // });
 
-  const validate = (values: { password: string | undefined }) => {
+  const validate = (values: {
+    password: string | undefined;
+    passwordConfirm: string | undefined;
+  }) => {
     let errors: PasswordValidateError = {};
 
     if (!values.password) {
@@ -58,19 +66,26 @@ const SignUpStep3 = observer(({ handleNextStep }: SignUpStep3) => {
           min: true,
           special: true,
         },
+        passwordConfirm: {
+          matched: true,
+        },
       };
       return errors;
     }
 
     const min = values.password.length < 8;
     const special = !/[~`!@#$%^&*()\-_=+[\]\\|{};:'",<.>/?]+/.test(values.password);
+    const matched = values.password !== values.passwordConfirm;
 
-    if (min || special) {
+    if (min || special || matched) {
       errors = {
         password: {
           required: false,
           min,
           special,
+        },
+        passwordConfirm: {
+          matched,
         },
       };
       return errors;
@@ -101,6 +116,7 @@ const SignUpStep3 = observer(({ handleNextStep }: SignUpStep3) => {
                 return;
               }
 
+              // 3. 비밀번호
               emailSignUpStore.setPassword(values.password);
 
               // if success then go next step
@@ -114,9 +130,12 @@ const SignUpStep3 = observer(({ handleNextStep }: SignUpStep3) => {
         >
           {({ errors, handleSubmit, handleChange, handleBlur, values, dirty, isValid }) => {
             const validatedErrors = errors as unknown as ReturnType<typeof validate>;
-            const isError =
+            const isErrorPassword =
               validatedErrors.password &&
               Object.values(validatedErrors.password).some(errored => !!errored);
+            const isErrorPasswordConfirm =
+              validatedErrors.passwordConfirm &&
+              Object.values(validatedErrors.passwordConfirm).some(errored => !!errored);
 
             return (
               <View style={styles.mainBox}>
@@ -133,11 +152,13 @@ const SignUpStep3 = observer(({ handleNextStep }: SignUpStep3) => {
                       onChangeText={handleChange('password')}
                       onBlur={handleBlur('password')}
                       value={values.password}
-                      error={isError}
+                      error={isErrorPassword}
                       textContentType="password"
-                      returnKeyType="done"
+                      returnKeyType="next"
                       secureTextEntry={true}
-                      onSubmitEditing={handleSubmit}
+                      onSubmitEditing={() => {
+                        passwordConfirmRef.current?.focus();
+                      }}
                       // disabled={emailSignInStore.loading}
                     />
                     <View style={styles.helperBox}>
@@ -151,12 +172,34 @@ const SignUpStep3 = observer(({ handleNextStep }: SignUpStep3) => {
                         {t('verification.validate.password_special_error')}
                       </UIHelperText>
                     </View>
+                    <CustomTextInput
+                      style={{ marginTop: 8 }}
+                      ref={passwordConfirmRef}
+                      label={t('member.message.password_confirm_placeholder')}
+                      placeholder={t('member.message.password_confirm_placeholder')}
+                      onChangeText={handleChange('passwordConfirm')}
+                      onBlur={handleBlur('passwordConfirm')}
+                      value={values.passwordConfirm}
+                      error={isErrorPasswordConfirm}
+                      textContentType="password"
+                      returnKeyType="done"
+                      secureTextEntry={true}
+                      onSubmitEditing={handleSubmit}
+                    />
+                    <View style={styles.helperBox}>
+                      <UIHelperText
+                        touched={dirty}
+                        error={validatedErrors.passwordConfirm?.matched}
+                      >
+                        {t('verification.validate.password_confirm_error')}
+                      </UIHelperText>
+                    </View>
                   </View>
                 </ScrollView>
                 <View style={styles.footerBox}>
                   <View style={styles.buttonBox}>
                     <CustomButton
-                      disabled={!dirty || !isValid || emailStore.loading}
+                      disabled={!dirty || !isValid}
                       labelStyle={{ marginVertical: 15 }}
                       onPress={handleSubmit}
                     >

@@ -21,7 +21,7 @@ type SignUpStep1Props = {
 
 const SignUpStep1 = observer(({ handleNextStep }: SignUpStep1Props) => {
   const { t } = useTranslation();
-  const { emailStore, emailSignUpStore, snackbarStore } = useStore();
+  const { verificationStore, emailSignUpStore, snackbarStore } = useStore();
 
   const emailRef = useRef<CustomTextInputRef>(null);
 
@@ -56,9 +56,10 @@ const SignUpStep1 = observer(({ handleNextStep }: SignUpStep1Props) => {
                 return;
               }
 
+              // 1. 이메일
               emailSignUpStore.setEmail(values.email);
 
-              await emailStore.sendEmail({
+              await verificationStore.sendVerifyCode({
                 email: values.email,
                 verifyUseType: 'signup',
                 verifyProvider: 'email',
@@ -102,15 +103,15 @@ const SignUpStep1 = observer(({ handleNextStep }: SignUpStep1Props) => {
                     textContentType="emailAddress"
                     returnKeyType="done"
                     onSubmitEditing={handleSubmit}
-                    disabled={emailStore.loading}
+                    disabled={verificationStore.loading}
                   />
                 </View>
               </ScrollView>
               <View style={styles.footerBox}>
                 <View style={styles.buttonBox}>
                   <CustomButton
-                    disabled={!dirty || !isValid || emailStore.loading}
-                    loading={emailStore.loading}
+                    disabled={!dirty || !isValid || verificationStore.loading}
+                    loading={verificationStore.loading}
                     labelStyle={{ marginVertical: 15 }}
                     onPress={handleSubmit}
                   >

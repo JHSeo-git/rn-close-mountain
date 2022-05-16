@@ -8,7 +8,10 @@ import SignUpStep3 from './SignUpStep3';
 import SignUpStep4 from './SignUpStep4';
 import Header from '../../../components/Header';
 import { useStore } from '../../../contexts/StoreContext';
+import { ProgressBar } from 'react-native-paper';
+import { COLORS } from '../../../constants/design-token';
 import type { RootStackScreenProps } from '../../types';
+import SignUpStep5 from './SignUpStep5';
 
 const EmailSignUp = observer(() => {
   const { emailSignUpStore } = useStore();
@@ -19,14 +22,6 @@ const EmailSignUp = observer(() => {
     setStep(step + 1);
   };
 
-  const onBackPress = () => {
-    if (step > 1) {
-      setStep(step - 1);
-    } else {
-      navigation.goBack();
-    }
-  };
-
   useEffect(() => {
     return () => {
       emailSignUpStore.reset();
@@ -35,17 +30,18 @@ const EmailSignUp = observer(() => {
 
   return (
     <View style={styles.container}>
-      <Header
-        // title={t('common.signUp')}
-        leftIcon="back"
-        onLeftIconPress={onBackPress}
-        rightIcon="close"
-        onRightIconPress={() => navigation.goBack()}
+      <ProgressBar
+        visible={true}
+        progress={step / 5}
+        color={COLORS.primary}
+        style={styles.progressBar}
       />
+      <Header rightIcon="close" onRightIconPress={() => navigation.goBack()} />
       {step === 1 && <SignUpStep1 handleNextStep={handleNextStep} />}
       {step === 2 && <SignUpStep2 handleNextStep={handleNextStep} />}
       {step === 3 && <SignUpStep3 handleNextStep={handleNextStep} />}
       {step === 4 && <SignUpStep4 handleNextStep={handleNextStep} />}
+      {step === 5 && <SignUpStep5 />}
     </View>
   );
 });
@@ -53,6 +49,10 @@ const EmailSignUp = observer(() => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  progressBar: {
+    height: 3,
+    backgroundColor: COLORS.gray3,
   },
 });
 

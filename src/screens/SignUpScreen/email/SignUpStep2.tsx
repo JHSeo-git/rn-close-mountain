@@ -20,7 +20,7 @@ type SignUpStep2 = {
 };
 
 const SignUpStep2 = observer(({ handleNextStep }: SignUpStep2) => {
-  const { emailStore, verificationStore, emailSignUpStore, snackbarStore } = useStore();
+  const { verificationStore, emailSignUpStore, snackbarStore } = useStore();
   const { t } = useTranslation();
   const countdown = useCountdown();
 
@@ -31,7 +31,7 @@ const SignUpStep2 = observer(({ handleNextStep }: SignUpStep2) => {
         return;
       }
 
-      await emailStore.sendEmail({
+      await verificationStore.sendVerifyCode({
         email: emailSignUpStore.email,
         verifyUseType: 'signup',
         verifyProvider: 'email',
