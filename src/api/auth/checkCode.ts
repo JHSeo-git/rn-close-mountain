@@ -1,5 +1,5 @@
 import client from '../client';
-import type { SignUpResponse, VerificationProvider, VerificationUseType } from './types';
+import type { NoContent204Response, VerificationProvider, VerificationUseType } from './types';
 
 export type CheckCodeRequest = {
   email: string;
@@ -14,7 +14,7 @@ export default async function checkCode({
   code,
   verifyProvider,
 }: CheckCodeRequest) {
-  const { data } = await client.post<SignUpResponse>('/api/auth/verify/check-code', {
+  const { data } = await client.post<NoContent204Response>('/api/auth/verify/check-code', {
     email,
     type: verifyUseType,
     code,
