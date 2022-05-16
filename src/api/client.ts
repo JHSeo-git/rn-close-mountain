@@ -7,6 +7,7 @@ const client = axios.create();
 const baseURL = Config.API_URL ?? 'http://localhost:1337';
 client.defaults.baseURL = baseURL;
 client.defaults.withCredentials = true;
+client.defaults.headers.common['Content-Type'] = 'application/json';
 
 export function applyToken(token: string) {
   client.defaults.headers.common.Authorization = `Bearer ${token}`;
