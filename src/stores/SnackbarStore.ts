@@ -1,8 +1,7 @@
 import { action, makeObservable, observable } from 'mobx';
 import BaseStore from './base/BaseStore';
 import RootStore from './RootStore';
-
-type SnackbarType = 'success' | 'error' | 'info' | 'default';
+import type { SnackbarType } from './types';
 
 class SnackbarStore extends BaseStore {
   visible: boolean = false;

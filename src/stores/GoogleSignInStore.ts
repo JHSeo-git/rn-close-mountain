@@ -1,5 +1,5 @@
 import { GoogleSignin, statusCodes } from '@react-native-google-signin/google-signin';
-import { action, makeObservable, override } from 'mobx';
+import { action, makeObservable } from 'mobx';
 import Config from 'react-native-config';
 import googleSignIn from '../api/auth/googleSignIn';
 import AppError from '../utils/error/AppError';
@@ -23,8 +23,6 @@ class GoogleSignInStore extends BaseStore {
   constructor(root: RootStore) {
     super(root);
     makeObservable(this, {
-      loading: override,
-      error: override,
       signIn: action,
       signOut: action,
       reset: action,
@@ -32,7 +30,6 @@ class GoogleSignInStore extends BaseStore {
   }
 
   signIn = async () => {
-    this.loading = true;
     try {
       await GoogleSignin.hasPlayServices();
       const googleUserInfo = await GoogleSignin.signIn();
@@ -47,11 +44,13 @@ class GoogleSignInStore extends BaseStore {
         return;
       }
 
-      const result = await googleSignIn({
-        oauthToken: googleUserInfo.idToken,
-        accessToken,
-        email: googleUserInfo.user.email,
-      });
+      const result = await this.callAPI(
+        googleSignIn({
+          oauthToken: googleUserInfo.idToken,
+          accessToken,
+          email: googleUserInfo.user.email,
+        }),
+      );
 
       return result;
     } catch (e: any) {
@@ -80,27 +79,19 @@ class GoogleSignInStore extends BaseStore {
       } else {
         throw this.errorHandler(e);
       }
-    } finally {
-      this.loading = false;
     }
   };
 
   signOut = async () => {
-    this.loading = true;
     try {
       // await GoogleSignin.revokeAccess();
-      await GoogleSignin.signOut();
+      await this.callAPI(GoogleSignin.signOut());
     } catch (e: unknown) {
       this.error = e;
-    } finally {
-      this.loading = false;
     }
   };
 
-  reset = () => {
-    this.loading = false;
-    this.error = null;
-  };
+  reset = () => {};
 }
 
 export default GoogleSignInStore;

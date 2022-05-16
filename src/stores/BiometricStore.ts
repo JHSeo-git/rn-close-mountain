@@ -3,8 +3,7 @@ import * as LocalAuthentication from 'expo-local-authentication';
 import BaseStore from './base/BaseStore';
 import RootStore from './RootStore';
 import AppError from '../utils/error/AppError';
-
-export type BiometricType = 'faceId' | 'touchId' | 'iris' | 'unknown';
+import type { BiometricType } from './types';
 
 class BiometricStore extends BaseStore {
   initialized = false;

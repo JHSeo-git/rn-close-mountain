@@ -4,6 +4,10 @@ import RootStore from '../RootStore';
 import AppError from '../../utils/error/AppError';
 import type { AxiosErrorResponse } from '../../api/types';
 
+type CallAPIOptions = {
+  useLoader?: boolean;
+};
+
 class BaseStore {
   root: RootStore;
   loading: boolean = false;
@@ -15,6 +19,21 @@ class BaseStore {
       loading: observable,
       error: observable,
     });
+  }
+
+  protected async callAPI<T>(request: Promise<T>) {
+    this.loading = true;
+
+    try {
+      const result = await request;
+
+      return result;
+    } catch (e: any) {
+      this.error = e;
+      throw this.errorHandler(e);
+    } finally {
+      this.loading = false;
+    }
   }
 
   protected errorHandler(e: any) {

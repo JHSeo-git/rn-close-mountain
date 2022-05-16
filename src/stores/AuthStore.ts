@@ -1,4 +1,4 @@
-import { action, makeObservable, observable, override } from 'mobx';
+import { action, makeObservable, observable } from 'mobx';
 import me from '../api/auth/me';
 import { applyToken, removeToken } from '../api/client';
 import sessionStorage from '../utils/storage/sessionStorage';
@@ -14,8 +14,6 @@ class AuthStore extends BaseStore {
   constructor(root: RootStore) {
     super(root);
     makeObservable(this, {
-      loading: override,
-      error: override,
       initialized: observable,
       isAuthenticated: observable,
       sessionInfo: observable,
