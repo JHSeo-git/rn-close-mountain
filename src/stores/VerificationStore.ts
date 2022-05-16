@@ -1,7 +1,5 @@
 import { action, makeObservable, override } from 'mobx';
-import checkVerificationCode, {
-  CheckVerificationCodeRequest,
-} from '../api/auth/checkVerificationCode';
+import checkCode, { CheckCodeRequest } from '../api/auth/checkCode';
 import BaseStore from './base/BaseStore';
 import RootStore from './RootStore';
 
@@ -11,19 +9,14 @@ class VerificationStore extends BaseStore {
     makeObservable(this, {
       loading: override,
       error: override,
-      checkVerification: action,
+      checkVerifyCode: action,
     });
   }
 
-  checkVerification(requestData: CheckVerificationCodeRequest) {
+  checkVerifyCode = async (requestData: CheckCodeRequest) => {
     this.loading = true;
-
     try {
-      // TODO: remove test code
-      const result = {
-        success: true,
-      };
-      // const result = await checkVerificationCode(requestData);
+      const result = await checkCode(requestData);
 
       return result;
     } catch (e: any) {
@@ -32,7 +25,7 @@ class VerificationStore extends BaseStore {
     } finally {
       this.loading = false;
     }
-  }
+  };
 }
 
 export default VerificationStore;

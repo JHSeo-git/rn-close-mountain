@@ -1,7 +1,5 @@
 import { action, makeObservable, override } from 'mobx';
-import sendEmailVerification, {
-  SendEmailVerificationRequest,
-} from '../api/auth/sendEmailVerification';
+import sendCode, { SendCodeRequest } from '../api/auth/sendCode';
 import BaseStore from './base/BaseStore';
 import RootStore from './RootStore';
 
@@ -15,15 +13,11 @@ class EmailStore extends BaseStore {
     });
   }
 
-  sendEmail = async (requestData: SendEmailVerificationRequest) => {
+  sendEmail = async (requestData: SendCodeRequest) => {
     this.loading = true;
 
     try {
-      // TODO: remove test code
-      const result = {
-        success: true,
-      };
-      // const result = await sendEmailVerification(requestData);
+      const result = await sendCode(requestData);
 
       return result;
     } catch (e: any) {
