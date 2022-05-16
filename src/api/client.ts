@@ -20,6 +20,7 @@ client.interceptors.request.use(
   config => {
     const requested = {
       url: `${config.baseURL}${config.url}`,
+      header: config.headers,
       method: config.method,
       params: config.params,
       data: config.data,
@@ -40,6 +41,11 @@ client.interceptors.response.use(
       const responsed = {
         url: response.config.url,
         ...response.data,
+      };
+      console.log('response: ', JSON.stringify(responsed, null, 2));
+    } else if (response.status === 204) {
+      const responsed = {
+        url: response.config.url,
       };
       console.log('response: ', JSON.stringify(responsed, null, 2));
     } else {
