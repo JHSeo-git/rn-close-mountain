@@ -11,10 +11,9 @@ import { useStore } from '../../../contexts/StoreContext';
 import { ProgressBar } from 'react-native-paper';
 import { COLORS } from '../../../constants/design-token';
 import type { RootStackScreenProps } from '../../types';
-import SignUpStep5 from './SignUpStep5';
 
 const EmailSignUp = observer(() => {
-  const { emailSignUpStore } = useStore();
+  const { signUpStore } = useStore();
   const navigation = useNavigation<RootStackScreenProps<'SignUp'>['navigation']>();
   const [step, setStep] = useState(1);
 
@@ -22,9 +21,16 @@ const EmailSignUp = observer(() => {
     setStep(step + 1);
   };
 
+  const onSuccess = () => {
+    navigation.replace('MainTab');
+  };
+
   useEffect(() => {
+    // setup email signup provider
+    signUpStore.setOAuthProvider('email');
+
     return () => {
-      emailSignUpStore.reset();
+      signUpStore.reset();
     };
   }, []);
 
@@ -40,8 +46,7 @@ const EmailSignUp = observer(() => {
       {step === 1 && <SignUpStep1 handleNextStep={handleNextStep} />}
       {step === 2 && <SignUpStep2 handleNextStep={handleNextStep} />}
       {step === 3 && <SignUpStep3 handleNextStep={handleNextStep} />}
-      {step === 4 && <SignUpStep4 handleNextStep={handleNextStep} />}
-      {step === 5 && <SignUpStep5 />}
+      {step === 4 && <SignUpStep4 handleNextStep={onSuccess} />}
     </View>
   );
 });

@@ -21,7 +21,7 @@ type SignUpStep1Props = {
 
 const SignUpStep1 = observer(({ handleNextStep }: SignUpStep1Props) => {
   const { t } = useTranslation();
-  const { verificationStore, emailSignUpStore, snackbarStore } = useStore();
+  const { verificationStore, signUpStore, snackbarStore } = useStore();
 
   const emailRef = useRef<CustomTextInputRef>(null);
 
@@ -56,16 +56,18 @@ const SignUpStep1 = observer(({ handleNextStep }: SignUpStep1Props) => {
                 return;
               }
 
-              // 1. 이메일
-              emailSignUpStore.setEmail(values.email);
-
-              await verificationStore.sendVerifyCode({
+              const result = await verificationStore.sendVerificationCode({
                 email: values.email,
-                verifyUseType: 'signup',
-                verifyProvider: 'email',
+                verificationProvider: 'email',
+                verificationUseType: 'signup',
               });
-              // if success then go next step
-              handleNextStep();
+
+              // if success then set up store
+              // and go next step
+              if (result) {
+                signUpStore.setEmail(values.email);
+                handleNextStep();
+              }
             } catch (e: unknown) {
               if (e instanceof AppError) {
                 snackbarStore.showSnackbar(e.message, 'error');

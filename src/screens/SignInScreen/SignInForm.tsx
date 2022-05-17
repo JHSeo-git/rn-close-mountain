@@ -72,7 +72,7 @@ const SignInForm = observer(() => {
           // and then, navigate home screen
           await authStore.sessionIn({
             token: result.jwt,
-            provider: result.user.oauthProvider,
+            oauthProvider: result.user.oauthProvider,
             email: result.user.email,
             username: result.user.username,
             // TODO: add avatarUrl

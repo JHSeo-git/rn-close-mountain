@@ -1,6 +1,10 @@
 import { action, makeObservable } from 'mobx';
-import checkCode, { CheckCodeRequest } from '../api/auth/checkCode';
-import sendCode, { SendCodeRequest } from '../api/auth/sendCode';
+import checkVerificationCode, {
+  CheckVerificationCodeRequest,
+} from '../api/auth/checkVerificationCode';
+import sendVerificationCode, {
+  SendVerificationCodeRequest,
+} from '../api/auth/sendVerificationCode';
 import BaseStore from './base/BaseStore';
 import RootStore from './RootStore';
 
@@ -8,27 +12,27 @@ class VerificationStore extends BaseStore {
   constructor(root: RootStore) {
     super(root);
     makeObservable(this, {
-      sendVerifyCode: action,
-      checkVerifyCode: action,
+      sendVerificationCode: action,
+      checkVerificationCode: action,
     });
   }
 
-  sendVerifyCode = async (requestData: SendCodeRequest) => {
+  checkVerificationCode = async (requestData: CheckVerificationCodeRequest) => {
     try {
-      const result = await this.callAPI(sendCode(requestData));
+      await this.callAPI(checkVerificationCode(requestData));
 
-      return result;
+      return true;
     } catch (e: any) {
       this.error = e;
       throw this.errorHandler(e);
     }
   };
 
-  checkVerifyCode = async (requestData: CheckCodeRequest) => {
+  sendVerificationCode = async (requestData: SendVerificationCodeRequest) => {
     try {
-      const result = await this.callAPI(checkCode(requestData));
+      await this.callAPI(sendVerificationCode(requestData));
 
-      return result;
+      return true;
     } catch (e: any) {
       this.error = e;
       throw this.errorHandler(e);

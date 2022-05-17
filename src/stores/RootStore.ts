@@ -1,7 +1,7 @@
 import AuthStore from './AuthStore';
 import GoogleSignInStore from './GoogleSignInStore';
 import EmailSignInStore from './EmailSignInStore';
-import EmailSignUpStore from './EmailSignUpStore';
+import SignUpStore from './SignUpStore';
 import SampleStore from './__sample__/SampleStore';
 import LoaderStore from './LoaderStore';
 import SnackbarStore from './SnackbarStore';
@@ -14,7 +14,7 @@ class RootStore {
   sampleStore: SampleStore;
   authStore: AuthStore;
   emailSignInStore: EmailSignInStore;
-  emailSignUpStore: EmailSignUpStore;
+  signUpStore: SignUpStore;
   googleSignInStore: GoogleSignInStore;
   loaderStore: LoaderStore;
   snackbarStore: SnackbarStore;
@@ -28,7 +28,7 @@ class RootStore {
 
     this.authStore = new AuthStore(this);
     this.emailSignInStore = new EmailSignInStore(this);
-    this.emailSignUpStore = new EmailSignUpStore(this);
+    this.signUpStore = new SignUpStore(this);
     this.googleSignInStore = new GoogleSignInStore(this);
     this.loaderStore = new LoaderStore(this);
     this.snackbarStore = new SnackbarStore(this);

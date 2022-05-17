@@ -1,50 +1,47 @@
 import { action, makeObservable, observable } from 'mobx';
 import BaseStore from './base/BaseStore';
 import RootStore from './RootStore';
-import emailSignUp, { EmailSignUpRequest } from '../api/auth/emailSignUp';
+import signUp, { SignUpRequest } from '../api/auth/signUp';
 import checkUsername, { CheckUsernameRequest } from '../api/auth/checkUsername';
+import AppError from '../utils/error/AppError';
+import type { OAuthProvider } from '../api/auth/types';
 
 class EmailSignUpStore extends BaseStore {
   email: string | undefined;
-  emailVerificationCode: string | undefined;
   password: string | undefined;
   username: string | undefined;
+  verificationCode: string | undefined;
+  oauthProvider: OAuthProvider | undefined;
 
   constructor(root: RootStore) {
     super(root);
     makeObservable(this, {
       email: observable,
-      emailVerificationCode: observable,
       password: observable,
       username: observable,
+      verificationCode: observable,
+      oauthProvider: observable,
       setEmail: action,
-      setEmailVerificationCode: action,
+      setVerificationCode: action,
       setPassword: action,
       setUsername: action,
+      setOAuthProvider: action,
       signUp: action,
       checkUsername: action,
       reset: action,
     });
-
-    this.reset();
   }
-
-  init = () => {
-    this.reset();
-  };
 
   reset = () => {
     this.email = undefined;
-    this.emailVerificationCode = undefined;
     this.password = undefined;
     this.username = undefined;
+    this.verificationCode = undefined;
+    this.oauthProvider = undefined;
   };
 
   setEmail = (email: string) => {
     this.email = email;
-  };
-  setEmailVerificationCode = (emailVerificationCode: string) => {
-    this.emailVerificationCode = emailVerificationCode;
   };
   setPassword = (password: string) => {
     this.password = password;
@@ -52,10 +49,16 @@ class EmailSignUpStore extends BaseStore {
   setUsername = (username: string) => {
     this.username = username;
   };
+  setVerificationCode = (verificationCode: string) => {
+    this.verificationCode = verificationCode;
+  };
+  setOAuthProvider = (oauthProvider: OAuthProvider) => {
+    this.oauthProvider = oauthProvider;
+  };
 
-  signUp = async (requestData: EmailSignUpRequest) => {
+  signUp = async (requestData: SignUpRequest) => {
     try {
-      const result = await this.callAPI(emailSignUp(requestData));
+      const result = await this.callAPI(signUp(requestData));
 
       return result;
     } catch (e: any) {
@@ -66,9 +69,9 @@ class EmailSignUpStore extends BaseStore {
 
   checkUsername = async (requestData: CheckUsernameRequest) => {
     try {
-      const result = await this.callAPI(checkUsername(requestData));
+      await this.callAPI(checkUsername(requestData));
 
-      return result;
+      return true;
     } catch (e: any) {
       this.error = e;
       throw this.errorHandler(e);

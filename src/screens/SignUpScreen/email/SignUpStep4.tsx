@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { View } from 'react-native';
 import * as yup from 'yup';
 import { Formik } from 'formik';
@@ -6,14 +6,15 @@ import { observer } from 'mobx-react-lite';
 import { useTranslation } from 'react-i18next';
 import { ScrollView } from 'react-native-gesture-handler';
 import UIText from '../../../components/UIText';
+import UIDialog from '../../../components/UIDialog';
 import CustomButton from '../../../components/CustomButton';
 import DismissKeyboard from '../../../components/DismissKeyboard';
 import UIScreenTitleView from '../../../components/UIScreenTitleView';
 import CustomTextInput, { CustomTextInputRef } from '../../../components/CustomTextInput';
-import AppError from '../../../utils/error/AppError';
 import { useStore } from '../../../contexts/StoreContext';
-import styles from './EmailSignUp.styles';
 import * as viewStyles from '../../../constants/global-styles/viewStyles';
+import AppError from '../../../utils/error/AppError';
+import styles from './EmailSignUp.styles';
 
 type SignUpStep4Props = {
   handleNextStep: () => void;
@@ -21,9 +22,15 @@ type SignUpStep4Props = {
 
 const SignUpStep4 = observer(({ handleNextStep }: SignUpStep4Props) => {
   const { t } = useTranslation();
-  const { emailSignUpStore, snackbarStore } = useStore();
+  const [visible, setVisible] = useState(false);
+  const { authStore, signUpStore, snackbarStore } = useStore();
 
   const usernameRef = useRef<CustomTextInputRef>(null);
+
+  const handleOK = () => {
+    setVisible(false);
+    handleNextStep();
+  };
 
   const initialValues = {
     username: '',
@@ -57,48 +64,61 @@ const SignUpStep4 = observer(({ handleNextStep }: SignUpStep4Props) => {
                 return;
               }
 
-              emailSignUpStore.setUsername(values.username);
+              const checkUserResult = await signUpStore.checkUsername({
+                username: values.username,
+              });
 
-              await emailSignUpStore.checkUsername({ username: values.username });
+              if (!checkUserResult) {
+                action.setFieldError('username', t('member.message.username_exists'));
+                return;
+              }
+
+              // 성공하면 setup store
+              // 그리고 바로 signup 진행
+              signUpStore.setUsername(values.username);
 
               // Last validation
-              // if (!emailSignUpStore.email) {
-              //   snackbarStore.showSnackbar(t('member.message.email_required'), 'error');
-              //   return;
-              // }
-              // if (!emailSignUpStore.username) {
-              //   snackbarStore.showSnackbar(t('member.message.username_required'), 'error');
-              //   return;
-              // }
-              // if (!emailSignUpStore.password) {
-              //   return;
-              // }
+              if (!signUpStore.email) {
+                snackbarStore.showSnackbar(t('member.message.email_required'), 'error');
+                return;
+              }
+              if (!signUpStore.username) {
+                snackbarStore.showSnackbar(t('member.message.username_required'), 'error');
+                return;
+              }
+              if (!signUpStore.password) {
+                snackbarStore.showSnackbar(t('member.message.password_required'), 'error');
+                return;
+              }
+              if (!signUpStore.oauthProvider) {
+                snackbarStore.showSnackbar(t('member.message.oauthprovider_required'), 'error');
+                return;
+              }
 
-              // const result = await emailSignUpStore.signUp({
-              //   email: emailSignUpStore.email,
-              //   username: emailSignUpStore.username,
-              //   password: emailSignUpStore.password,
-              // });
+              const signUpResult = await signUpStore.signUp({
+                email: signUpStore.email,
+                username: signUpStore.username,
+                password: signUpStore.password,
+                oauthProvider: signUpStore.oauthProvider,
+              });
 
-              // if (!result?.jwt || !result?.user) {
-              //   // TODO: message
-              //   // snackbarStore.showSnackbar(t('member.message.signin_response_data_empty'), 'error');
-              //   return;
-              // }
+              if (!signUpResult?.jwt || !signUpResult?.user) {
+                snackbarStore.showSnackbar(t('member.message.signup_response_data_empty'), 'error');
+                return;
+              }
 
-              // // if result exists, set session in sessionStorage.
-              // // and then, navigate home screen
-              // await authStore.sessionIn({
-              //   token: result.jwt,
-              //   provider: result.user.oauthProvider,
-              //   email: result.user.email,
-              //   username: result.user.username,
-              //   // TODO: add avatarUrl
-              //   avatarUrl: undefined,
-              // });
+              // if result exists, set session in sessionStorage.
+              await authStore.sessionIn({
+                token: signUpResult.jwt,
+                oauthProvider: signUpResult.user.oauthProvider,
+                email: signUpResult.user.email,
+                username: signUpResult.user.username,
+                // TODO: add avatarUrl
+                avatarUrl: undefined,
+              });
 
-              // if success then go next step
-              handleNextStep();
+              // if success then confetti and welcome modal
+              setVisible(true);
             } catch (e: unknown) {
               if (e instanceof AppError) {
                 snackbarStore.showSnackbar(e.message, 'error');
@@ -137,15 +157,15 @@ const SignUpStep4 = observer(({ handleNextStep }: SignUpStep4Props) => {
                     textContentType="emailAddress"
                     returnKeyType="done"
                     onSubmitEditing={handleSubmit}
-                    disabled={emailSignUpStore.loading}
+                    disabled={signUpStore.loading}
                   />
                 </View>
               </ScrollView>
               <View style={styles.footerBox}>
                 <View style={styles.buttonBox}>
                   <CustomButton
-                    disabled={!dirty || !isValid || emailSignUpStore.loading}
-                    loading={emailSignUpStore.loading}
+                    disabled={!dirty || !isValid || signUpStore.loading}
+                    loading={signUpStore.loading}
                     labelStyle={{ marginVertical: 15 }}
                     onPress={handleSubmit}
                   >
@@ -157,6 +177,9 @@ const SignUpStep4 = observer(({ handleNextStep }: SignUpStep4Props) => {
           )}
         </Formik>
       </View>
+      <UIDialog title={t('common.welcome')} action="ok" handleOK={handleOK} visible={visible}>
+        <UIText>{t('common.welcome')}</UIText>
+      </UIDialog>
     </DismissKeyboard>
   );
 });

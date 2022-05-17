@@ -41,7 +41,7 @@ const ProfileScreen = observer(({ navigation }: ProfileScreenProps) => {
         token: result.jwt,
         email: result.user.email,
         username: result.user.username,
-        provider: result.user.oauthProvider,
+        oauthProvider: result.user.oauthProvider,
         // TODO: add avatarUrl
         avatarUrl: undefined,
       });

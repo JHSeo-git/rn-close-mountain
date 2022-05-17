@@ -20,27 +20,30 @@ type SignUpStep2 = {
 };
 
 const SignUpStep2 = observer(({ handleNextStep }: SignUpStep2) => {
-  const { verificationStore, emailSignUpStore, snackbarStore } = useStore();
+  const { verificationStore, signUpStore, snackbarStore } = useStore();
   const { t } = useTranslation();
   const countdown = useCountdown();
 
   const onResend = async () => {
     try {
-      if (!emailSignUpStore.email) {
+      if (!signUpStore.email) {
         snackbarStore.showSnackbar(t('member.message.email_required'), 'error');
         return;
       }
 
-      await verificationStore.sendVerifyCode({
-        email: emailSignUpStore.email,
-        verifyUseType: 'signup',
-        verifyProvider: 'email',
+      const result = await verificationStore.sendVerificationCode({
+        email: signUpStore.email,
+        verificationProvider: 'email',
+        verificationUseType: 'signup',
       });
 
-      countdown.restart();
-      emailSignUpStore.setEmailVerificationCode('');
-
-      snackbarStore.showSnackbar(t('verification.message.send_success'), 'success');
+      if (result) {
+        // 성공시에 timer 재시작하고 input 초기화
+        // 그리고 toast
+        countdown.restart();
+        signUpStore.setVerificationCode('');
+        snackbarStore.showSnackbar(t('verification.message.send_success'), 'success');
+      }
     } catch (e: unknown) {
       if (e instanceof AppError) {
         snackbarStore.showSnackbar(e.message, 'error');
@@ -50,24 +53,26 @@ const SignUpStep2 = observer(({ handleNextStep }: SignUpStep2) => {
 
   const onSubmit = async () => {
     try {
-      if (!emailSignUpStore.email) {
+      if (!signUpStore.email) {
         snackbarStore.showSnackbar(t('member.message.email_required'), 'error');
         return;
       }
-      if (!emailSignUpStore.emailVerificationCode) {
+      if (!signUpStore.verificationCode) {
         snackbarStore.showSnackbar(t('member.message.code_required'), 'error');
         return;
       }
 
-      await verificationStore.checkVerifyCode({
-        email: emailSignUpStore.email,
-        verifyUseType: 'signup',
-        code: emailSignUpStore.emailVerificationCode,
-        verifyProvider: 'email',
+      const result = await verificationStore.checkVerificationCode({
+        email: signUpStore.email,
+        verificationUseType: 'signup',
+        code: signUpStore.verificationCode,
+        verificationProvider: 'email',
       });
 
       // if success then go next step
-      handleNextStep();
+      if (result) {
+        handleNextStep();
+      }
     } catch (e: unknown) {
       if (e instanceof AppError) {
         snackbarStore.showSnackbar(e.message, 'error');
@@ -76,8 +81,8 @@ const SignUpStep2 = observer(({ handleNextStep }: SignUpStep2) => {
   };
 
   useEffect(() => {
+    // 화면 렌더링 직후 countdown
     countdown.start();
-    emailSignUpStore.setEmailVerificationCode('');
 
     return () => {
       countdown.reset();
@@ -96,7 +101,7 @@ const SignUpStep2 = observer(({ handleNextStep }: SignUpStep2) => {
             >
               <View style={styles.chipBox}>
                 <Chip>
-                  <UIText as="content_primary">{emailSignUpStore.email}</UIText>
+                  <UIText as="content_primary">{signUpStore.email}</UIText>
                 </Chip>
               </View>
             </UIScreenTitleView>
@@ -105,8 +110,8 @@ const SignUpStep2 = observer(({ handleNextStep }: SignUpStep2) => {
                 cellCount={6}
                 disabled={countdown.isZero}
                 error={countdown.isZero}
-                value={emailSignUpStore.emailVerificationCode ?? ''}
-                setValue={text => emailSignUpStore.setEmailVerificationCode(text)}
+                value={signUpStore.verificationCode ?? ''}
+                setValue={text => signUpStore.setVerificationCode(text)}
               />
             </View>
             <View style={styles.inputBelowBox}>
@@ -122,7 +127,7 @@ const SignUpStep2 = observer(({ handleNextStep }: SignUpStep2) => {
             <View style={styles.buttonBox}>
               <CustomButton
                 disabled={
-                  emailSignUpStore.emailVerificationCode?.length !== 6 ||
+                  signUpStore.verificationCode?.length !== 6 ||
                   countdown.isZero ||
                   verificationStore.loading
                 }

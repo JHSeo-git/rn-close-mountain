@@ -1,5 +1,5 @@
 export type StrapiProvider = 'local';
-export type Provider = 'email' | 'google' | 'apple';
+export type OAuthProvider = 'email' | 'google' | 'apple';
 export type VerificationProvider = 'email'; // | 'sms' | 'otp';
 export type VerificationUseType = 'reset-password' | 'signup' | 'two-factor';
 
@@ -19,7 +19,7 @@ export type User = {
   blocked: boolean;
   createdAt: string;
   updatedAt: string;
-  oauthProvider: Provider;
+  oauthProvider: OAuthProvider;
 };
 
 export type MeResponse = User;

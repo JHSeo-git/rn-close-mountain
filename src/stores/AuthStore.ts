@@ -32,7 +32,7 @@ class AuthStore extends BaseStore {
   private init = async () => {
     try {
       const session = await sessionStorage.get();
-      if (!session?.token || !session?.provider) {
+      if (!session?.token || !session?.oauthProvider) {
         return;
       }
       applyToken(session.token);
@@ -47,7 +47,7 @@ class AuthStore extends BaseStore {
 
       this.sessionIn({
         token: session.token,
-        provider: result.oauthProvider,
+        oauthProvider: result.oauthProvider,
         email: result.email,
         username: result.username,
         // TODO: add avatarUrl
@@ -79,13 +79,14 @@ class AuthStore extends BaseStore {
     if (!this.isAuthenticated) {
       return false;
     }
-    if (!this.sessionInfo?.token || !this.sessionInfo?.provider) {
+    if (!this.sessionInfo?.token || !this.sessionInfo?.oauthProvider) {
       return false;
     }
-    if (this.sessionInfo.provider === 'google') {
+    if (this.sessionInfo.oauthProvider === 'google') {
       await this.root.googleSignInStore.signOut();
     }
 
+    // TODO: api server logout call
     await this.sessionOut();
     return true;
   };

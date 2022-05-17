@@ -32,7 +32,7 @@ type SignUpStep3 = {
 
 const SignUpStep3 = observer(({ handleNextStep }: SignUpStep3) => {
   const { t } = useTranslation();
-  const { emailSignUpStore, snackbarStore } = useStore();
+  const { signUpStore, snackbarStore } = useStore();
 
   const passwordRef = useRef<CustomTextInputRef>(null);
   const passwordConfirmRef = useRef<CustomTextInputRef>(null);
@@ -116,10 +116,8 @@ const SignUpStep3 = observer(({ handleNextStep }: SignUpStep3) => {
                 return;
               }
 
-              // 3. 비밀번호
-              emailSignUpStore.setPassword(values.password);
-
-              // if success then go next step
+              // if success then setup store and go next step
+              signUpStore.setPassword(values.password);
               handleNextStep();
             } catch (e: unknown) {
               if (e instanceof AppError) {
