@@ -71,6 +71,7 @@
     "email": "이메일",
     "password": "비밀번호",
     "message": {
+      "oauthprovider_required": "OAuth 제공자를 선택해주세요",
       "email_placeholder": "이메일 주소 *",
       "email_error": "유효한 이메일 주소를 입력해주세요",
       "email_required": "이메일 주소를 입력해주세요",
@@ -81,6 +82,7 @@
       "username_placeholder": "사용할 이름 *",
       "username_error": "유효한 이름을 입력해주세요",
       "username_required": "이름을 입력해주세요",
+      "username_exists": "중복된 이름입니다",
       "username_min": "이름은 {{min}}글자 이상이 필요합니다",
       "username_max": "이름은 {{max}}글자 이상이 될 수 없습니다",
       "code_error": "유효한 코드를 입력해주세요",

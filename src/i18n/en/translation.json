@@ -71,6 +71,7 @@
     "email": "Email",
     "password": "Password",
     "message": {
+      "oauthprovider_required": "Please select OAuth provider",
       "email_placeholder": "Email address *",
       "email_error": "Please enter a valid email address",
       "email_required": "Please enter your email address",
@@ -81,6 +82,7 @@
       "username_placeholder": "Username *",
       "username_error": "Please enter a valid username",
       "username_required": "Please enter your username",
+      "username_exists": "Username already exists",
       "username_min": "Username must be at least {{min}} characters long",
       "username_max": "Username must be at most {{max}} characters long",
       "code_error": "Please enter a right code",
