@@ -27,5 +27,5 @@ export const COLORS = {
   transparent: 'transparent',
 
   white: '#fff',
-  shadow: colors.gray.gray10,
+  shadow: colors.grayA.grayA10,
 } as const;
