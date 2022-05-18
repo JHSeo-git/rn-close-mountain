@@ -56,6 +56,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: COLORS.loContrast,
+    paddingRight: SPACE.$4,
   },
 });
 
