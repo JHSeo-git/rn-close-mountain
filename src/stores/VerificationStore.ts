@@ -1,4 +1,5 @@
 import { action, makeObservable } from 'mobx';
+import checkUsername, { CheckUsernameRequest } from '../api/auth/checkUsername';
 import checkVerificationCode, {
   CheckVerificationCodeRequest,
 } from '../api/auth/checkVerificationCode';
@@ -14,6 +15,7 @@ class VerificationStore extends BaseStore {
     makeObservable(this, {
       sendVerificationCode: action,
       checkVerificationCode: action,
+      checkUsername: action,
     });
   }
 
@@ -31,6 +33,17 @@ class VerificationStore extends BaseStore {
   sendVerificationCode = async (requestData: SendVerificationCodeRequest) => {
     try {
       await this.callAPI(sendVerificationCode(requestData));
+
+      return true;
+    } catch (e: any) {
+      this.error = e;
+      throw this.errorHandler(e);
+    }
+  };
+
+  checkUsername = async (requestData: CheckUsernameRequest) => {
+    try {
+      await this.callAPI(checkUsername(requestData));
 
       return true;
     } catch (e: any) {

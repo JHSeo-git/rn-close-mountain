@@ -2,8 +2,6 @@ import { action, makeObservable, observable } from 'mobx';
 import BaseStore from './base/BaseStore';
 import RootStore from './RootStore';
 import signUp, { SignUpRequest } from '../api/auth/signUp';
-import checkUsername, { CheckUsernameRequest } from '../api/auth/checkUsername';
-import AppError from '../utils/error/AppError';
 import type { OAuthProvider } from '../api/auth/types';
 
 class EmailSignUpStore extends BaseStore {
@@ -27,7 +25,6 @@ class EmailSignUpStore extends BaseStore {
       setUsername: action,
       setOAuthProvider: action,
       signUp: action,
-      checkUsername: action,
       reset: action,
     });
   }
@@ -58,20 +55,9 @@ class EmailSignUpStore extends BaseStore {
 
   signUp = async (requestData: SignUpRequest) => {
     try {
-      const result = await this.callAPI(signUp(requestData));
+      const result = await this.callAPI(signUp(requestData), { useLoader: true });
 
       return result;
-    } catch (e: any) {
-      this.error = e;
-      throw this.errorHandler(e);
-    }
-  };
-
-  checkUsername = async (requestData: CheckUsernameRequest) => {
-    try {
-      await this.callAPI(checkUsername(requestData));
-
-      return true;
     } catch (e: any) {
       this.error = e;
       throw this.errorHandler(e);

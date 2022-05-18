@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { makeObservable, observable } from 'mobx';
+import { action, makeObservable, observable } from 'mobx';
 import RootStore from '../RootStore';
 import AppError from '../../utils/error/AppError';
 import type { AxiosErrorResponse } from '../../api/types';
@@ -18,12 +18,23 @@ class BaseStore {
     makeObservable(this, {
       loading: observable,
       error: observable,
+      setLoading: action,
     });
   }
 
-  protected async callAPI<T>(request: Promise<T>) {
-    this.loading = true;
+  setLoading = (loading: boolean, useScreenLoader = false) => {
+    if (useScreenLoader) {
+      if (loading) {
+        this.root.loaderStore.showLoader();
+      } else {
+        this.root.loaderStore.hideLoader();
+      }
+    }
+    this.loading = loading;
+  };
 
+  protected async callAPI<T>(request: Promise<T>, options?: CallAPIOptions) {
+    this.setLoading(true, options?.useLoader);
     try {
       const result = await request;
 
@@ -32,7 +43,7 @@ class BaseStore {
       this.error = e;
       throw this.errorHandler(e);
     } finally {
-      this.loading = false;
+      this.setLoading(false, options?.useLoader);
     }
   }
 

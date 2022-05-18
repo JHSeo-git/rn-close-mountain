@@ -1,4 +1,4 @@
-import { action, makeObservable, observable } from 'mobx';
+import { action, computed, makeObservable, observable } from 'mobx';
 import me from '../api/auth/me';
 import { applyToken, removeToken } from '../api/client';
 import sessionStorage from '../utils/storage/sessionStorage';
@@ -8,24 +8,22 @@ import type { SessionInfo } from './types';
 
 class AuthStore extends BaseStore {
   initialized = false;
-  isAuthenticated = false;
   sessionInfo: SessionInfo | null = null;
 
   constructor(root: RootStore) {
     super(root);
     makeObservable(this, {
       initialized: observable,
-      isAuthenticated: observable,
       sessionInfo: observable,
       sessionIn: action,
       sessionOut: action,
+      isAuthenticated: computed,
     });
 
     this.init();
   }
 
   private setSessionInfo = (sessionInfo: SessionInfo | null) => {
-    this.isAuthenticated = !!sessionInfo;
     this.sessionInfo = sessionInfo;
   };
 
@@ -62,6 +60,10 @@ class AuthStore extends BaseStore {
     }
   };
 
+  get isAuthenticated() {
+    return this.sessionInfo !== null;
+  }
+
   sessionIn = async (sessionInfo: SessionInfo) => {
     this.setSessionInfo(sessionInfo);
     applyToken(sessionInfo.token);
@@ -75,20 +77,22 @@ class AuthStore extends BaseStore {
   };
 
   signOut = async () => {
+    let signOutResult = true;
+
     // 앱 통합 로그아웃
     if (!this.isAuthenticated) {
-      return false;
+      signOutResult = false;
     }
     if (!this.sessionInfo?.token || !this.sessionInfo?.oauthProvider) {
-      return false;
+      signOutResult = false;
     }
-    if (this.sessionInfo.oauthProvider === 'google') {
+    if (this.sessionInfo?.oauthProvider === 'google') {
       await this.root.googleSignInStore.signOut();
     }
 
     // TODO: api server logout call
     await this.sessionOut();
-    return true;
+    return signOutResult;
   };
 }
 
