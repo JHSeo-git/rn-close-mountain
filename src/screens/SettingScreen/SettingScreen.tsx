@@ -24,7 +24,8 @@ const SettingScreen = observer(({ navigation }: SettingScreenProps) => {
 
   const onLogoutPress = async () => {
     // 로그아웃 후 MainTab으로 이동
-    authStore.signOut();
+    const result = await authStore.signOut();
+    console.log('logout : ', result ? 'true success' : 'false success');
     navigation.navigate('MainTab');
   };
 
