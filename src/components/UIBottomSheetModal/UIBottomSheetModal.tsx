@@ -19,7 +19,7 @@ type UIBottomSheetModalProps = {
 export type UIBottomSheetModalRef = BottomSheetModal;
 
 const UIBottomSheetModal = forwardRef<UIBottomSheetModalRef, UIBottomSheetModalProps>(
-  ({ title, children, ...props }, forwardedRef) => {
+  ({ title, children, enablePanDownToClose = true, ...props }, forwardedRef) => {
     const { dismiss } = useBottomSheetModal();
     const { bottom: safeBottomArea } = useSafeAreaInsets();
 
@@ -54,7 +54,7 @@ const UIBottomSheetModal = forwardRef<UIBottomSheetModalRef, UIBottomSheetModalP
         handleHeight={animatedHandleHeight}
         contentHeight={animatedContentHeight}
         backdropComponent={renderBackdrop}
-        enablePanDownToClose
+        enablePanDownToClose={enablePanDownToClose}
       >
         <BottomSheetView style={contentContainerStyle} onLayout={handleContentLayout}>
           <View style={styles.titleBox}>
