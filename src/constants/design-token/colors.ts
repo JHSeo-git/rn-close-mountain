@@ -18,7 +18,7 @@ export const COLORS = {
   // semantic
   primary: colors.blue.blue10,
   secondary: colors.cyan.cyan10,
-  tertiary: colors.teal.teal10,
+  teritary: colors.teal.teal10,
 
   disabled: colors.gray.gray8,
   success: colors.green.green10,
@@ -34,7 +34,7 @@ export const COLORS = {
   text: {
     primary: colors.gray.gray12,
     secondary: colors.gray.gray11,
-    thirdary: colors.gray.gray10,
+    teritary: colors.gray.gray10,
   },
 
   white: '#fff',
