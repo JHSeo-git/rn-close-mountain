@@ -14,7 +14,7 @@ const theme: typeof DefaultTheme = {
     text: COLORS.hiContrast,
     // onSurface: '',
     disabled: COLORS.disabled,
-    placeholder: COLORS.gray11,
+    placeholder: COLORS.text.secondary,
     backdrop: COLORS.shadow,
     // notification: COLORS.primary,
   },

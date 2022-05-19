@@ -65,15 +65,15 @@ const SettingItem = ({
     return (
       <View style={styles.left}>
         {leftIcon === 'biometric' && Platform.OS === 'android' && (
-          <UIIcon name="fingerprint" size={24} color={COLORS.gray11} />
+          <UIIcon name="fingerprint" size={24} color={COLORS.text.secondary} />
         )}
         {leftIcon === 'biometric' && Platform.OS === 'ios' && (
-          <FaceIdSvg width={24} height={24} color={COLORS.gray11} />
+          <FaceIdSvg width={24} height={24} color={COLORS.text.secondary} />
         )}
         {leftIcon === 'payment' && (
-          <UIIcon name="credit-card-outline" size={24} color={COLORS.gray11} />
+          <UIIcon name="credit-card-outline" size={24} color={COLORS.text.secondary} />
         )}
-        {leftIcon === 'logout' && <UIIcon name="logout" size={24} color={COLORS.gray11} />}
+        {leftIcon === 'logout' && <UIIcon name="logout" size={24} color={COLORS.text.secondary} />}
       </View>
     );
   };

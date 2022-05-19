@@ -43,7 +43,7 @@ const ProviderButton = ({ provider, ...props }: ProviderButtonProps) => {
         <UIText as="strong" style={styles.buttonText}>
           {providerName}
         </UIText>
-        <ChevronRightSvg width={24} height={24} color={COLORS.gray11} />
+        <ChevronRightSvg width={24} height={24} color={COLORS.text.secondary} />
       </>
     </CustomTouchableRipple>
   );
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
 
     borderWidth: 1,
     borderRadius: RADII.base,
-    borderColor: COLORS.gray6,
+    borderColor: COLORS.borderColor,
   },
   buttonText: {
     flex: 1,

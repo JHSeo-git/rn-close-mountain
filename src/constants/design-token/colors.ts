@@ -1,3 +1,6 @@
+/**
+ * @see https://www.radix-ui.com/docs/colors/palette-composition/understanding-the-scale
+ */
 import * as colors from '@radix-ui/colors';
 
 export const COLORS = {
@@ -25,6 +28,14 @@ export const COLORS = {
   hiContrast: colors.gray.gray12,
   loContrast: '#fff',
   transparent: 'transparent',
+
+  borderColor: colors.gray.gray7,
+
+  text: {
+    primary: colors.gray.gray12,
+    secondary: colors.gray.gray11,
+    thirdary: colors.gray.gray10,
+  },
 
   white: '#fff',
   shadow: colors.grayA.grayA10,

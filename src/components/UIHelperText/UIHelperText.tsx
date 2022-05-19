@@ -12,7 +12,7 @@ type UIHelperTextProps = {
 const UIHelperText = ({ children, touched, error }: UIHelperTextProps) => {
   const color = (() => {
     if (!touched) {
-      return COLORS.gray11;
+      return COLORS.text.secondary;
     }
     return error ? COLORS.error : COLORS.success;
   })();

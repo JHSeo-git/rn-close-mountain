@@ -184,7 +184,7 @@ const styles = StyleSheet.create({
     alignContent: 'center',
   },
   timerText: {
-    color: COLORS.gray11,
+    color: COLORS.text.secondary,
     marginHorizontal: SPACE.$3,
   },
 });

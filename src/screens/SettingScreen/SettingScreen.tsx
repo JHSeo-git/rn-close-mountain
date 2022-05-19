@@ -68,7 +68,7 @@ const SettingScreen = observer(({ navigation }: SettingScreenProps) => {
       <UIBottomSheetModal title={t('common.logout')} ref={bottomSheetRef}>
         <View style={{ paddingTop: SPACE.$4, paddingHorizontal: SPACE.$4 }}>
           <View style={{ alignItems: 'center' }}>
-            <UIText as="p" style={{ color: COLORS.primary }}>
+            <UIText as="p" style={{ color: COLORS.text.secondary }}>
               {t('setting.message.logout_message')}
             </UIText>
           </View>

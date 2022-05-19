@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     height: 80,
     borderRadius: RADII.base,
     borderWidth: 2,
-    borderColor: COLORS.gray7,
+    borderColor: COLORS.borderColor,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
   disabledCell: {
     borderWidth: 2,
     backgroundColor: COLORS.gray3,
-    borderColor: COLORS.gray8,
+    borderColor: COLORS.borderColor,
   },
   disabledText: {
     color: COLORS.gray9,
