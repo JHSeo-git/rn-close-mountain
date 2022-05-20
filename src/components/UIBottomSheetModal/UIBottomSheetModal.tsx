@@ -1,4 +1,4 @@
-import { forwardRef, useCallback, useEffect, useMemo } from 'react';
+import { forwardRef, useCallback, useMemo } from 'react';
 import {
   BottomSheetBackdrop,
   BottomSheetBackdropProps,
@@ -12,14 +12,31 @@ import { StyleSheet, View } from 'react-native';
 import UIText from '../UIText';
 import { SPACE } from '../../constants/design-token';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { AllOrNone } from '../../utils/types/type-utils';
+import CustomButton from '../CustomButton';
 
+type UIBottomSheetModalRightTopButtonProps = {
+  rightTopbuttonText: string;
+  rightTopButtonOnPress: () => void;
+};
 type UIBottomSheetModalProps = {
   title: string;
-} & Omit<BottomSheetModalProps, 'snapPoints'>;
+} & AllOrNone<UIBottomSheetModalRightTopButtonProps> &
+  Omit<BottomSheetModalProps, 'snapPoints'>;
 export type UIBottomSheetModalRef = BottomSheetModal;
 
 const UIBottomSheetModal = forwardRef<UIBottomSheetModalRef, UIBottomSheetModalProps>(
-  ({ title, children, enablePanDownToClose = true, ...props }, forwardedRef) => {
+  (
+    {
+      title,
+      children,
+      enablePanDownToClose = true,
+      rightTopbuttonText,
+      rightTopButtonOnPress,
+      ...props
+    },
+    forwardedRef,
+  ) => {
     const { dismiss } = useBottomSheetModal();
     const { bottom: safeBottomArea } = useSafeAreaInsets();
 
@@ -33,6 +50,11 @@ const UIBottomSheetModal = forwardRef<UIBottomSheetModalRef, UIBottomSheetModalP
       }),
       [safeBottomArea],
     );
+
+    const onPressRightTopButton = useCallback(() => {
+      dismiss();
+      rightTopButtonOnPress?.();
+    }, [dismiss, rightTopButtonOnPress]);
 
     const renderBackdrop = useCallback(
       (backdropProps: BottomSheetBackdropProps) => (
@@ -59,6 +81,11 @@ const UIBottomSheetModal = forwardRef<UIBottomSheetModalRef, UIBottomSheetModalP
         <BottomSheetView style={contentContainerStyle} onLayout={handleContentLayout}>
           <View style={styles.titleBox}>
             <UIText as="h3">{title}</UIText>
+            {rightTopbuttonText && (
+              <CustomButton mode="text" onPress={onPressRightTopButton}>
+                {rightTopbuttonText}
+              </CustomButton>
+            )}
           </View>
           {children}
         </BottomSheetView>
@@ -72,6 +99,10 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   titleBox: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+
     paddingVertical: SPACE.$3,
     paddingHorizontal: SPACE.$4,
   },
