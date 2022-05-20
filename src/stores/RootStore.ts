@@ -1,39 +1,45 @@
-import AuthStore from './AuthStore';
-import GoogleSignInStore from './GoogleSignInStore';
-import EmailSignInStore from './EmailSignInStore';
-import SignUpStore from './SignUpStore';
 import SampleStore from './__sample__/SampleStore';
-import LoaderStore from './LoaderStore';
-import SnackbarStore from './SnackbarStore';
+
 import AppSettingStore from './AppSettingStore';
+import AuthStore from './AuthStore';
 import BiometricStore from './BiometricStore';
+import EmailSignInStore from './EmailSignInStore';
+import GoogleSignInStore from './GoogleSignInStore';
+import LoaderStore from './LoaderStore';
+import SignUpStore from './SignUpStore';
+import SnackbarStore from './SnackbarStore';
+import RankingsStore from './RankinsStore';
 import VerificationStore from './VerificationStore';
 
 // TODO: refactor this
 class RootStore {
+  // sample
   sampleStore: SampleStore;
+
+  appSettingStore: AppSettingStore;
   authStore: AuthStore;
+  biometricStore: BiometricStore;
   emailSignInStore: EmailSignInStore;
-  signUpStore: SignUpStore;
   googleSignInStore: GoogleSignInStore;
   loaderStore: LoaderStore;
+  rankingsStore: RankingsStore;
+  signUpStore: SignUpStore;
   snackbarStore: SnackbarStore;
-  appSettingStore: AppSettingStore;
-  biometricStore: BiometricStore;
   verificationStore: VerificationStore;
 
   constructor() {
     // sample
     this.sampleStore = new SampleStore();
 
+    this.appSettingStore = new AppSettingStore(this);
     this.authStore = new AuthStore(this);
+    this.biometricStore = new BiometricStore(this);
     this.emailSignInStore = new EmailSignInStore(this);
-    this.signUpStore = new SignUpStore(this);
     this.googleSignInStore = new GoogleSignInStore(this);
     this.loaderStore = new LoaderStore(this);
+    this.rankingsStore = new RankingsStore(this);
+    this.signUpStore = new SignUpStore(this);
     this.snackbarStore = new SnackbarStore(this);
-    this.appSettingStore = new AppSettingStore(this);
-    this.biometricStore = new BiometricStore(this);
     this.verificationStore = new VerificationStore(this);
   }
 }

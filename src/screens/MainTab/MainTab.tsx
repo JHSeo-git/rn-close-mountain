@@ -49,7 +49,7 @@ const MainTab = () => {
         }}
       />
       <Tab.Screen
-        name="Rankings"
+        name="RankingsStack"
         component={RankingsScreen}
         options={{
           tabBarLabel: ({ focused }) => (
