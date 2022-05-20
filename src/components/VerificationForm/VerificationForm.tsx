@@ -11,7 +11,6 @@ import UICodeFields from '../UICodeFields';
 import CustomButton from '../CustomButton';
 import AppError from '../../utils/error/AppError';
 import { useStore } from '../../contexts/StoreContext';
-import * as viewStyles from '../../constants/global-styles/viewStyles';
 import useCountdown from '../../hooks/useCountdown';
 import { COLORS, SPACE } from '../../constants/design-token';
 import { VerificationProvider, VerificationUseType } from '../../api/auth/types';

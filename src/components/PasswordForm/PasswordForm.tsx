@@ -12,8 +12,7 @@ import UIScreenTitleView from '..//UIScreenTitleView';
 import CustomTextInput, { CustomTextInputRef } from '..//CustomTextInput';
 import AppError from '../../utils/error/AppError';
 import { useStore } from '../../contexts/StoreContext';
-import * as viewStyles from '../../constants/global-styles/viewStyles';
-import { COLORS, SPACE } from '../../constants/design-token';
+import { SPACE } from '../../constants/design-token';
 
 const speiclaRegex = /[~`!@#$%^&*()\-_=+[\]\\|{};:'",<.>/?]+/;
 

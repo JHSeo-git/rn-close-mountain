@@ -1,20 +1,17 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { StyleSheet, View } from 'react-native';
 import * as yup from 'yup';
 import { Formik } from 'formik';
-import { observer } from 'mobx-react-lite';
 import { useTranslation } from 'react-i18next';
 import { ScrollView } from 'react-native-gesture-handler';
 import UIText from '../UIText';
-import UIDialog from '../UIDialog';
 import CustomButton from '../CustomButton';
 import DismissKeyboard from '../DismissKeyboard';
 import UIScreenTitleView from '../UIScreenTitleView';
 import CustomTextInput, { CustomTextInputRef } from '../CustomTextInput';
 import { useStore } from '../../contexts/StoreContext';
-import * as viewStyles from '../../constants/global-styles/viewStyles';
 import AppError from '../../utils/error/AppError';
-import { COLORS, SPACE } from '../../constants/design-token';
+import { SPACE } from '../../constants/design-token';
 
 type UsernameFormProps = {
   title: string;
