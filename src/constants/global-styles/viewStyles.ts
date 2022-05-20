@@ -21,6 +21,11 @@ export const flex_1_padding_x_20: ViewStyle = {
   paddingHorizontal: SPACE.$5,
 };
 
+export const flex_1_padding_y_20: ViewStyle = {
+  flex: 1,
+  paddingVertical: SPACE.$5,
+};
+
 export const flex_1_padding_20: ViewStyle = {
   flex: 1,
   padding: SPACE.$5,
