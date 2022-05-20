@@ -13,6 +13,7 @@
     "logout": "Logout",
     "submit": "Submit",
     "save": "Save",
+    "select": "Select",
     "cancel": "Cancel",
     "edit": "Edit",
     "delete": "Delete",
@@ -28,12 +29,19 @@
     "increment": "Increment",
     "decrement": "Decrement",
     "change_language": "Change Language",
+    "not_selected": "Not Selected",
+    "category": "Category",
+    "chain": "Chain",
     "message": {
       "signin_main": "Sign in to Close Mountain",
       "profile_login": "Login for using all features",
       "failed_msg": "Failed to {{msg}}",
       "success_msg": "Success to {{msg}}"
     }
+  },
+  "rankings": {
+    "title": "Top Rankings",
+    "subTitle": "The top rankings of the CloseMountain"
   },
   "setting": {
     "title": "Setting",

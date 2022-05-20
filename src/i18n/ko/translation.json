@@ -13,6 +13,7 @@
     "logout": "로그아웃",
     "submit": "제출",
     "save": "저장",
+    "select": "선택",
     "cancel": "취소",
     "edit": "수정",
     "delete": "삭제",
@@ -28,12 +29,19 @@
     "increment": "더하기",
     "decrement": "빼기",
     "change_language": "언어 변경",
+    "not_selected": "선택 안됨",
+    "Category": "카테고리",
+    "chain": "블록체인",
     "message": {
       "signin_main": "Close Mountain에 로그인하세요",
       "profile_login": "로그인해서 프로필을 볼 수 있습니다",
       "failed_msg": "{{msg}} 실패했습니다",
       "success_msg": "{{msg}} 성공했습니다"
     }
+  },
+  "rankings": {
+    "title": "NTF 순위",
+    "subTitle": "CloseMountain NTF 순위를 보여드립니다"
   },
   "setting": {
     "title": "셋팅",
