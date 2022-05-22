@@ -6,7 +6,7 @@ export default async function getCollectionRankings() {
   const query = qs.stringify({
     populate: {
       logo: '*',
-      ntfs: {
+      nfts: {
         sort: 'price:desc',
       },
     },

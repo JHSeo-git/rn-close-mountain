@@ -38,12 +38,14 @@ export type ImageInfo = {
   updatedAt: string;
 };
 
+export type NFTsData = Data<NFTInfo>;
 export type GetNFTsResponse = {
-  data: Data<NFTInfo>[];
+  data: NFTsData[];
   meta: Meta;
 };
 
+export type CollectionData = Data<CollectionInfo>;
 export type GetCollectionsResponse = {
-  data: Data<CollectionInfo>[];
+  data: CollectionData[];
   meta: Meta;
 };
