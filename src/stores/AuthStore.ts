@@ -52,7 +52,6 @@ class AuthStore extends BaseStore {
         avatarUrl: undefined,
       });
     } catch (e) {
-      this.error = e;
       throw this.errorHandler(e);
     } finally {
       this.initialized = true;

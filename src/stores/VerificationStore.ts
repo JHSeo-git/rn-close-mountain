@@ -20,36 +20,21 @@ class VerificationStore extends BaseStore {
   }
 
   checkVerificationCode = async (requestData: CheckVerificationCodeRequest) => {
-    try {
-      await this.callAPI(checkVerificationCode(requestData));
+    await this.callAPI(checkVerificationCode(requestData));
 
-      return true;
-    } catch (e: any) {
-      this.error = e;
-      throw this.errorHandler(e);
-    }
+    return true;
   };
 
   sendVerificationCode = async (requestData: SendVerificationCodeRequest) => {
-    try {
-      await this.callAPI(sendVerificationCode(requestData));
+    await this.callAPI(sendVerificationCode(requestData));
 
-      return true;
-    } catch (e: any) {
-      this.error = e;
-      throw this.errorHandler(e);
-    }
+    return true;
   };
 
   checkUsername = async (requestData: CheckUsernameRequest) => {
-    try {
-      await this.callAPI(checkUsername(requestData));
+    await this.callAPI(checkUsername(requestData));
 
-      return true;
-    } catch (e: any) {
-      this.error = e;
-      throw this.errorHandler(e);
-    }
+    return true;
   };
 }
 

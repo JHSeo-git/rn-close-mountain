@@ -18,14 +18,9 @@ class EmailSignInStore extends BaseStore {
   }
 
   signIn = async (requestData: EmailSignInRequest) => {
-    try {
-      const result = await this.callAPI(emailSignIn(requestData));
+    const result = await this.callAPI(emailSignIn(requestData));
 
-      return result;
-    } catch (e: any) {
-      this.error = e;
-      throw this.errorHandler(e);
-    }
+    return result;
   };
 
   reset = () => {};

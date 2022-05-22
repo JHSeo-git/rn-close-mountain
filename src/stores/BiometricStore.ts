@@ -61,7 +61,6 @@ class BiometricStore extends BaseStore {
 
       return false;
     } catch (e: any) {
-      this.error = e;
       throw new AppError({
         label: 'APP',
         name: 'CheckBiometricError',
@@ -80,7 +79,6 @@ class BiometricStore extends BaseStore {
 
       return result;
     } catch (e: any) {
-      this.error = e;
       throw new AppError({
         label: 'APP',
         name: 'BiometricAuthenticateError',

@@ -54,7 +54,6 @@ class GoogleSignInStore extends BaseStore {
 
       return result;
     } catch (e: any) {
-      this.error = e;
       if (e.code === statusCodes.SIGN_IN_CANCELLED) {
         // user cancelled the login flow
         throw new AppError({
@@ -83,12 +82,9 @@ class GoogleSignInStore extends BaseStore {
   };
 
   signOut = async () => {
-    try {
-      // await GoogleSignin.revokeAccess();
-      await this.callAPI(GoogleSignin.signOut());
-    } catch (e: unknown) {
-      this.error = e;
-    }
+    await this.callAPI(GoogleSignin.signOut());
+
+    return true;
   };
 
   reset = () => {};
