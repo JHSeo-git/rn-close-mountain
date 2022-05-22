@@ -1,5 +1,6 @@
 import client from '../client';
-import type { NoContent204Response, VerificationProvider, VerificationUseType } from './types';
+import type { VerificationProvider, VerificationUseType } from './types';
+import type { NoContent204Response } from '../types';
 
 export type SendVerificationCodeRequest = {
   targetForSendCode: string;

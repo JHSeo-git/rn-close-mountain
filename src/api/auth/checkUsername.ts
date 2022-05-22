@@ -1,5 +1,5 @@
 import client from '../client';
-import type { NoContent204Response } from './types';
+import type { NoContent204Response } from '../types';
 
 export type CheckUsernameRequest = {
   username: string;

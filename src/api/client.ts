@@ -16,6 +16,14 @@ export function removeToken() {
   delete client.defaults.headers.common.Authorization;
 }
 
+export function getImageUrl(url: string) {
+  if (url.startsWith('http')) {
+    return `${url}`;
+  }
+
+  return url.startsWith('/') ? `${baseURL}${url}` : `${baseURL}/${url}`;
+}
+
 // request
 client.interceptors.request.use(
   config => {

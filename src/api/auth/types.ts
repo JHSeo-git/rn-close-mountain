@@ -8,7 +8,6 @@ export type SignInResponse = {
   user: User;
 };
 export type SignUpResponse = SignInResponse;
-export type NoContent204Response = {};
 
 export type User = {
   id: number;
