@@ -62,7 +62,7 @@ client.interceptors.response.use(
         url: response.config.url,
         ...response.data,
       };
-      console.error('response true error: ', JSON.stringify(error, null, 2));
+      console.error('response false error: ', JSON.stringify(error, null, 2));
     }
 
     return response;
@@ -71,7 +71,7 @@ client.interceptors.response.use(
     // https://stackoverflow.com/questions/44806333/unable-to-catch-and-log-the-error-response-from-an-axios-request
     const errorMessage = error.response?.data ?? error;
 
-    console.error('response false error: ', JSON.stringify(errorMessage, null, 2));
+    console.error('response true error: ', JSON.stringify(errorMessage, null, 2));
 
     return Promise.reject(error);
   },
