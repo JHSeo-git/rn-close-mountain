@@ -18,4 +18,6 @@ export const SIZES = {
 
   // semantic
   headerHeight: 64,
+  iosBottomTabHeight: 90,
+  androidBottomTabHeight: 70,
 } as const;
