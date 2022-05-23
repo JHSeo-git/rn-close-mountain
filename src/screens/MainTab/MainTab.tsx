@@ -7,7 +7,7 @@ import SearchScreen from '../SearchScreen';
 import ProfileScreen from '../ProfileScreen';
 import MoreScreen from '../MoreScreen';
 import UIText from '../../components/UIText';
-import { COLORS, FONTSIZES, RADII, SHADOWS, SPACE } from '../../constants/design-token';
+import { COLORS, FONTSIZES, RADII, SHADOWS, SIZES, SPACE } from '../../constants/design-token';
 import * as textStyles from '../../constants/global-styles/textStyles';
 
 import type { MainTabParamList } from '../types';
@@ -118,7 +118,7 @@ const MainTab = () => {
 
 const styles = StyleSheet.create({
   tab: {
-    height: Platform.OS === 'android' ? 70 : 90,
+    height: Platform.OS === 'android' ? SIZES.androidBottomTabHeight : SIZES.iosBottomTabHeight,
     position: 'absolute',
     borderTopLeftRadius: RADII['2xl'],
     borderTopRightRadius: RADII['2xl'],
