@@ -1,5 +1,6 @@
 import type { Data, Meta, PupluateData } from '../types';
 
+export type PaymentAsset = 'ETH' | 'SOL';
 export type NFTInfo = {
   name: string;
   price: number;
@@ -7,6 +8,8 @@ export type NFTInfo = {
   createdAt: string;
   updatedAt: string;
   tokenId: number;
+  logo: string | null;
+  paymentAsset: PaymentAsset;
 };
 
 export type CollectionInfo = {
@@ -15,27 +18,8 @@ export type CollectionInfo = {
   slug: string;
   createdAt: string;
   updatedAt: string;
-  logo: PupluateData<Data<ImageInfo>>;
+  logo: string | null;
   nfts: PupluateData<Data<NFTInfo>[]>;
-};
-
-export type ImageInfo = {
-  name: string;
-  alternativeText: string;
-  caption: string;
-  width: number | null;
-  height: number | null;
-  formats: string | null;
-  hash: string;
-  ext: string;
-  mime: string;
-  size: number;
-  url: string;
-  previewUrl: string | null;
-  provider: string;
-  provider_metadata: string | null;
-  createdAt: string;
-  updatedAt: string;
 };
 
 export type NFTsData = Data<NFTInfo>;

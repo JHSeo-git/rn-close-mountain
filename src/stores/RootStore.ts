@@ -3,6 +3,7 @@ import SampleStore from './__sample__/SampleStore';
 import AppSettingStore from './AppSettingStore';
 import AuthStore from './AuthStore';
 import BiometricStore from './BiometricStore';
+import CollectionStore from './CollectionStore';
 import EmailSignInStore from './EmailSignInStore';
 import GoogleSignInStore from './GoogleSignInStore';
 import LoaderStore from './LoaderStore';
@@ -19,6 +20,7 @@ class RootStore {
   appSettingStore: AppSettingStore;
   authStore: AuthStore;
   biometricStore: BiometricStore;
+  collectionStore: CollectionStore;
   emailSignInStore: EmailSignInStore;
   googleSignInStore: GoogleSignInStore;
   loaderStore: LoaderStore;
@@ -34,6 +36,7 @@ class RootStore {
     this.appSettingStore = new AppSettingStore(this);
     this.authStore = new AuthStore(this);
     this.biometricStore = new BiometricStore(this);
+    this.collectionStore = new CollectionStore(this);
     this.emailSignInStore = new EmailSignInStore(this);
     this.googleSignInStore = new GoogleSignInStore(this);
     this.loaderStore = new LoaderStore(this);
