@@ -19,6 +19,7 @@ type UIPickerProps = {
   numberOfLines?: number;
   boxStyle?: StyleProp<ViewStyle>;
   leftIcon?: React.ReactNode;
+  selectedLabel?: string;
 } & PickerProps<string>;
 
 const UIAOSPicker = ({ style, boxStyle, children, ...props }: UIPickerProps) => {
@@ -40,6 +41,7 @@ const UIIOSPicker = ({
   numberOfLines = 1,
   children,
   selectedValue,
+  selectedLabel,
   onValueChange,
   boxStyle,
   style,
@@ -79,9 +81,9 @@ const UIIOSPicker = ({
                 ) : (
                   leftIcon
                 ))}
-              {selectedValue ? (
+              {selectedLabel ? (
                 <UIText numberOfLines={numberOfLines} as="p" style={{ flex: 1 }}>
-                  {selectedValue}
+                  {selectedLabel}
                 </UIText>
               ) : (
                 <UIText
@@ -105,7 +107,7 @@ const UIIOSPicker = ({
       <UIBottomSheetModal
         ref={ref}
         title={title}
-        rightTopbuttonText={t('common.save')}
+        rightTopbuttonText={t('common.select')}
         rightTopButtonOnPress={onSave}
       >
         <Picker
