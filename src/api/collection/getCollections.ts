@@ -1,13 +1,39 @@
 import qs from 'qs';
 import client from '../client';
-import type { GetCollectionsResponse } from './types';
+import { PeriodCode } from '../commonCode/types';
+import type { GetCollectionsResponse, PaymentAsset } from './types';
 
-// TODO: options
-export default async function getCollections() {
+export type GetCollectionsRequest = {
+  name?: string;
+  slug?: string;
+  nftName?: string;
+  nftPaymentAsset?: PaymentAsset;
+  period?: PeriodCode;
+};
+export default async function getCollections({
+  name,
+  slug,
+  nftName,
+  nftPaymentAsset,
+  period,
+}: GetCollectionsRequest) {
   const query = qs.stringify(
     {
-      populate: '*',
-      sort: 'id',
+      populate: {
+        nfts: {
+          filters: {
+            name: { $eq: nftName },
+            paymentAsset: { $eq: nftPaymentAsset },
+            createdAt: {
+              $gte: period === 'LAST_24_HOURS' ? '-1d' : '-1w',
+            },
+          },
+        },
+      },
+      filters: {
+        name: { $eq: name },
+        slug: { $eq: slug },
+      },
     },
     { encodeValuesOnly: true },
   );

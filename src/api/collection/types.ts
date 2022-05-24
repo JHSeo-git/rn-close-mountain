@@ -1,6 +1,7 @@
+import type { CategoryCode, ChainCode } from '../commonCode/types';
 import type { Data, Meta, PupluateData } from '../types';
 
-export type PaymentAsset = 'ETH' | 'SOL';
+export type PaymentAsset = ChainCode;
 export type NFTInfo = {
   name: string;
   price: number;
@@ -20,6 +21,7 @@ export type CollectionInfo = {
   updatedAt: string;
   logo: string | null;
   nfts: PupluateData<Data<NFTInfo>[]>;
+  category: CategoryCode;
 };
 
 export type NFTsData = Data<NFTInfo>;
