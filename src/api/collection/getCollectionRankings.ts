@@ -24,7 +24,7 @@ export default async function getCollectionRankings({
           filters: {
             paymentAsset: { $eq: nftPaymentAsset },
             createdAt: {
-              $gte: period && getDateByPeriod(period),
+              $gte: period ? getDateByPeriod(period) : undefined,
             },
           },
         },
