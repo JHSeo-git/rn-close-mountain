@@ -30,7 +30,8 @@
     "decrement": "빼기",
     "change_language": "언어 변경",
     "not_selected": "선택 안됨",
-    "Category": "카테고리",
+    "period": "기간",
+    "category": "카테고리",
     "chain": "블록체인",
     "message": {
       "signin_main": "Close Mountain에 로그인하세요",
