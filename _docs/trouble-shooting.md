@@ -67,3 +67,11 @@ mobx 사용 시 `[ "@babel/plugin-proposal-class-properties", { "loose": true } 
 
 RN Image 컴포넌트를 쓸 때 이미지 uri가 http라면 IOS에서 보여주지 않는 문제가 있습니다.
 https로 바꿔서 진행하는게 제일 깔끔합니다.
+
+## tab navigation 사용 시 useEffect cleanup not working
+
+> https://reactnavigation.org/docs/navigation-lifecycle/#react-navigation-lifecycle-events
+
+react navigation 라이프사이클에 따르면 다른 스크린으로 이동하는 것이 'focus' 'blur'에 해당하기에 cleanup이 실행되는 react 라이프사이클과 살짝 다릅니다.
+
+해당 문서에서는 cleanup을 사용하기 위해 `useFocusEffect`를 이용하라고 안내합니다.
