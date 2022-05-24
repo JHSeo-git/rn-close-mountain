@@ -11,6 +11,7 @@ import SignUpStore from './SignUpStore';
 import SnackbarStore from './SnackbarStore';
 import RankingsStore from './RankinsStore';
 import VerificationStore from './VerificationStore';
+import CommonCodeStore from './CommonCodeStore';
 
 // TODO: refactor this
 class RootStore {
@@ -21,6 +22,7 @@ class RootStore {
   authStore: AuthStore;
   biometricStore: BiometricStore;
   collectionStore: CollectionStore;
+  commonCodeStore: CommonCodeStore;
   emailSignInStore: EmailSignInStore;
   googleSignInStore: GoogleSignInStore;
   loaderStore: LoaderStore;
@@ -37,6 +39,7 @@ class RootStore {
     this.authStore = new AuthStore(this);
     this.biometricStore = new BiometricStore(this);
     this.collectionStore = new CollectionStore(this);
+    this.commonCodeStore = new CommonCodeStore(this);
     this.emailSignInStore = new EmailSignInStore(this);
     this.googleSignInStore = new GoogleSignInStore(this);
     this.loaderStore = new LoaderStore(this);

@@ -1,6 +1,8 @@
 import { action, makeObservable, observable, runInAction } from 'mobx';
-import getCollectionRankings from '../api/collection/getCollectionRankings';
-import getCollections from '../api/collection/getCollections';
+import getCollectionRankings, {
+  GetCollectionRankingsRequest,
+} from '../api/collection/getCollectionRankings';
+import getCollections, { GetCollectionsRequest } from '../api/collection/getCollections';
 import BaseStore from './base/BaseStore';
 import RootStore from './RootStore';
 import type { CollectionData } from '../api/collection/types';
@@ -12,22 +14,19 @@ class CollectionStore extends BaseStore {
     super(root);
     makeObservable(this, {
       collections: observable,
-      setCollections: action,
       retrieveCollection: action,
       retrieveCollectionRankings: action,
     });
   }
 
   reset = () => {
-    this.collections = [];
+    runInAction(() => {
+      this.collections = [];
+    });
   };
 
-  setCollections = (collections: CollectionData[]) => {
-    this.collections = collections;
-  };
-
-  retrieveCollection = async () => {
-    const result = await this.callAPI(getCollections());
+  retrieveCollection = async (requestData: GetCollectionsRequest) => {
+    const result = await this.callAPI(getCollections(requestData));
 
     runInAction(() => {
       this.collections = result.data;
@@ -36,8 +35,8 @@ class CollectionStore extends BaseStore {
     return result;
   };
 
-  retrieveCollectionRankings = async () => {
-    const result = await this.callAPI(getCollectionRankings());
+  retrieveCollectionRankings = async (requestData: GetCollectionRankingsRequest) => {
+    const result = await this.callAPI(getCollectionRankings(requestData));
 
     runInAction(() => {
       this.collections = result.data;
