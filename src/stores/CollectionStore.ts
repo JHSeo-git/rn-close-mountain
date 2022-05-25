@@ -25,8 +25,8 @@ class CollectionStore extends BaseStore {
     });
   };
 
-  retrieveCollection = async (requestData: GetCollectionsRequest) => {
-    const result = await this.callAPI(getCollections(requestData));
+  retrieveCollection = async (requestData?: GetCollectionsRequest) => {
+    const result = await this.callAPI(getCollections(requestData ?? {}));
 
     runInAction(() => {
       this.collections = result.data;
@@ -35,8 +35,8 @@ class CollectionStore extends BaseStore {
     return result;
   };
 
-  retrieveCollectionRankings = async (requestData: GetCollectionRankingsRequest) => {
-    const result = await this.callAPI(getCollectionRankings(requestData));
+  retrieveCollectionRankings = async (requestData?: GetCollectionRankingsRequest) => {
+    const result = await this.callAPI(getCollectionRankings(requestData ?? {}));
 
     runInAction(() => {
       this.collections = result.data;
