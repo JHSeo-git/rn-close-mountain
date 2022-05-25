@@ -46,25 +46,6 @@ const RankingsScreen = observer(({}: RankingsScreenProps) => {
     });
   };
 
-  // useEffect(() => {
-  //   // TODO: filters
-  //   const init = async () => {
-  //     await Promise.all([
-  //       rankingsStore.retrievePeriods(),
-  //       rankingsStore.retrieveCategories(),
-  //       rankingsStore.retrieveChains(),
-  //     ]);
-  //     await collectionStore.retrieveCollectionRankings({});
-  //   };
-
-  //   init();
-
-  //   return () => {
-  //     rankingsStore.reset();
-  //     collectionStore.reset();
-  //   };
-  // }, []);
-
   useFocusEffect(
     useCallback(() => {
       const init = async () => {
@@ -105,7 +86,7 @@ const RankingsScreen = observer(({}: RankingsScreenProps) => {
                 style={{ flexGrow: 0 }}
                 contentContainerStyle={styles.filtersWrapper}
               >
-                <View style={styles.filterBox}>
+                <View style={[styles.filterBox, styles.filterBoxHead]}>
                   <UIPicker
                     leftIcon="update"
                     title={t('common.period')}
@@ -153,7 +134,7 @@ const RankingsScreen = observer(({}: RankingsScreenProps) => {
                     ))}
                   </UIPicker>
                 </View>
-                <View style={[styles.filterBox, styles.mr]}>
+                <View style={[styles.filterBox, styles.filterBoxTail]}>
                   <UIPicker
                     leftIcon="link-variant"
                     title={t('common.chain')}
@@ -204,18 +185,20 @@ const styles = StyleSheet.create({
   },
   filtersWrapper: {
     marginTop: SPACE.$8,
-    marginBottom: SPACE.$2,
+    marginBottom: SPACE.$5,
   },
   filterBox: {
     flex: 1,
     marginLeft: SPACE.$2,
   },
-  mr: {
-    marginRight: SPACE.$2,
+  filterBoxHead: {
+    marginLeft: SPACE.$5,
+  },
+  filterBoxTail: {
+    marginRight: SPACE.$5,
   },
   main: {
     flex: 1,
-    marginTop: SPACE.$2,
   },
   bt: {
     borderTopWidth: 1,
