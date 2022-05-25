@@ -9,28 +9,15 @@ const Stack = createNativeStackNavigator();
 
 const RootStack = () => {
   return (
-    <Stack.Navigator
-      initialRouteName="MainTab"
-      screenOptions={{
-        headerShown: false,
-      }}
-    >
-      <Stack.Screen name="MainTab" component={MainTab} />
-      <Stack.Screen
-        name="SignIn"
-        component={SignInScreen}
-        options={{
-          presentation: 'containedModal',
-        }}
-      />
-      <Stack.Screen
-        name="SignUp"
-        component={SignUpScreen}
-        options={{
-          presentation: 'containedModal',
-        }}
-      />
-      <Stack.Screen name="Setting" component={SettingScreen} />
+    <Stack.Navigator initialRouteName="MainTab" screenOptions={{ headerShown: false }}>
+      <Stack.Group screenOptions={{ presentation: 'containedModal' }}>
+        <Stack.Screen name="SignIn" component={SignInScreen} />
+        <Stack.Screen name="SignUp" component={SignUpScreen} />
+      </Stack.Group>
+      <Stack.Group>
+        <Stack.Screen name="MainTab" component={MainTab} />
+        <Stack.Screen name="Setting" component={SettingScreen} />
+      </Stack.Group>
       <Stack.Screen name="Sample" component={SampleStackNavigation} />
     </Stack.Navigator>
   );
