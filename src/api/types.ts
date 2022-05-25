@@ -13,7 +13,7 @@ export type Data<AttributeT> = {
   id: number;
   attributes: AttributeT;
 };
-export type PupluateData<DataT> = {
+export type PopluateData<DataT> = {
   data: DataT;
 };
 export type Meta = {

@@ -1,5 +1,6 @@
+import type { User } from '../auth/types';
 import type { CategoryCode, ChainCode } from '../commonCode/types';
-import type { Data, Meta, PupluateData } from '../types';
+import type { Data, Meta, PopluateData } from '../types';
 
 export type PaymentAsset = ChainCode;
 export type NFTInfo = {
@@ -20,8 +21,9 @@ export type CollectionInfo = {
   createdAt: string;
   updatedAt: string;
   logo: string | null;
-  nfts: PupluateData<Data<NFTInfo>[]>;
   category: CategoryCode;
+  creator: PopluateData<Data<User>>;
+  nfts: PopluateData<Data<NFTInfo>[]>;
 };
 
 export type NFTsData = Data<NFTInfo>;

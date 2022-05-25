@@ -1,6 +1,7 @@
 import qs from 'qs';
 import client from '../client';
-import { PeriodCode } from '../commonCode/types';
+import { getDateByPeriod } from '../../utils/dateUtils';
+import type { PeriodCode } from '../commonCode/types';
 import type { GetCollectionsResponse, PaymentAsset } from './types';
 
 export type GetCollectionsRequest = {
@@ -21,13 +22,17 @@ export default async function getCollections({
     {
       populate: {
         nfts: {
+          sort: ['name:asc'],
           filters: {
             name: { $eq: nftName },
             paymentAsset: { $eq: nftPaymentAsset },
             createdAt: {
-              $gte: period === 'LAST_24_HOURS' ? '-1d' : '-1w',
+              $gte: period ? getDateByPeriod(period) : undefined,
             },
           },
+        },
+        creator: {
+          sort: ['username:asc'],
         },
       },
       filters: {

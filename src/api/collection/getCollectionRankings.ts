@@ -1,6 +1,6 @@
 import qs from 'qs';
-import { getDateByPeriod } from '../../utils/dateUtils';
 import client from '../client';
+import { getDateByPeriod } from '../../utils/dateUtils';
 import type { PeriodCode } from '../commonCode/types';
 import type { GetCollectionsResponse, PaymentAsset } from './types';
 
@@ -27,6 +27,9 @@ export default async function getCollectionRankings({
               $gte: period ? getDateByPeriod(period) : undefined,
             },
           },
+        },
+        creator: {
+          sort: ['username:asc'],
         },
       },
       filters: {
