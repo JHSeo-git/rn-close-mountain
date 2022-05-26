@@ -1,7 +1,7 @@
 import qs from 'qs';
 import client from '../client';
 import { getDateByPeriod } from '../../utils/dateUtils';
-import type { PeriodCode } from '../commonCode/types';
+import type { CategoryCode, PeriodCode } from '../commonCode/types';
 import type { GetCollectionsResponse, PaymentAsset } from './types';
 
 export type GetCollectionsRequest = {
@@ -10,6 +10,7 @@ export type GetCollectionsRequest = {
   nftName?: string;
   nftPaymentAsset?: PaymentAsset;
   period?: PeriodCode;
+  category?: CategoryCode;
 };
 export default async function getCollections({
   name,
@@ -17,6 +18,7 @@ export default async function getCollections({
   nftName,
   nftPaymentAsset,
   period,
+  category,
 }: GetCollectionsRequest) {
   const query = qs.stringify(
     {
@@ -38,6 +40,7 @@ export default async function getCollections({
       filters: {
         name: { $eq: name },
         slug: { $eq: slug },
+        category: { $eq: category },
       },
     },
     { encodeValuesOnly: true },

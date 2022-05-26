@@ -1,7 +1,7 @@
 import qs from 'qs';
 import client from '../client';
 import { getDateByPeriod } from '../../utils/dateUtils';
-import type { PeriodCode } from '../commonCode/types';
+import type { CategoryCode, PeriodCode } from '../commonCode/types';
 import type { GetCollectionsResponse, PaymentAsset } from './types';
 
 export type GetCollectionRankingsRequest = {
@@ -9,12 +9,14 @@ export type GetCollectionRankingsRequest = {
   slug?: string;
   nftPaymentAsset?: PaymentAsset;
   period?: PeriodCode;
+  category?: CategoryCode;
 };
 export default async function getCollectionRankings({
   name,
   slug,
   nftPaymentAsset,
   period,
+  category,
 }: GetCollectionRankingsRequest) {
   const query = qs.stringify(
     {
@@ -35,6 +37,7 @@ export default async function getCollectionRankings({
       filters: {
         name: { $eq: name },
         slug: { $eq: slug },
+        category: { $eq: category },
         nfts: {
           id: {
             $notNull: true,
