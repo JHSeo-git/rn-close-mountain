@@ -1,5 +1,5 @@
-import { Platform, StyleSheet, View } from 'react-native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Animated, Platform, StyleSheet, View } from 'react-native';
+import { BottomTabBar, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useTranslation } from 'react-i18next';
 import HomeStack from '../HomeStack';
 import RankingsScreen from '../RankingsScreen';
@@ -17,15 +17,52 @@ import BarChartSvg from '../../assets/icons/bar-chart.svg';
 import SearchSvg from '../../assets/icons/search.svg';
 import PersonSvg from '../../assets/icons/person.svg';
 import HamburgerMenuSvg from '../../assets/icons/hamburger-menu.svg';
+import { observer } from 'mobx-react-lite';
+import { useEffect, useRef } from 'react';
+import { useStore } from '../../contexts/StoreContext';
 
 const Tab = createBottomTabNavigator<MainTabParamList>();
 
-const MainTab = () => {
+const MainTab = observer(() => {
   const { t } = useTranslation();
+  const { bottomTabStore } = useStore();
+  const originY = 0;
+  const translateY = useRef(new Animated.Value(originY)).current;
+
+  useEffect(() => {
+    if (bottomTabStore.visible) {
+      Animated.timing(translateY, {
+        toValue: originY,
+        duration: 300,
+        useNativeDriver: true,
+      }).start();
+    } else {
+      Animated.timing(translateY, {
+        toValue: 100,
+        duration: 300,
+        useNativeDriver: true,
+      }).start();
+    }
+  }, [bottomTabStore.visible]);
 
   return (
     <Tab.Navigator
       initialRouteName="HomeStack"
+      tabBar={props => {
+        return (
+          <Animated.View
+            style={{
+              position: 'absolute',
+              bottom: 0,
+              left: 0,
+              right: 0,
+              transform: [{ translateY }],
+            }}
+          >
+            <BottomTabBar {...props} />
+          </Animated.View>
+        );
+      }}
       screenOptions={{
         headerShown: false,
         tabBarActiveTintColor: COLORS.primary,
@@ -114,7 +151,7 @@ const MainTab = () => {
       />
     </Tab.Navigator>
   );
-};
+});
 
 const styles = StyleSheet.create({
   tab: {
