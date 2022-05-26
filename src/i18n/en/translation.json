@@ -40,6 +40,11 @@
       "success_msg": "Success to {{msg}}"
     }
   },
+  "home": {
+    "notable_drops": "Notable Drops",
+    "featured_nfts": "Featured NFTs",
+    "browse_by_category": "Browse by Category"
+  },
   "rankings": {
     "title": "Top NFTs",
     "subTitle": "The top rankings of the CloseMountain"

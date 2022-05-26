@@ -40,6 +40,11 @@
       "success_msg": "{{msg}} 성공했습니다"
     }
   },
+  "home": {
+    "notable_drops": "주목할만한 콜렉션",
+    "featured_nfts": "추천 NFTs",
+    "browse_by_category": "카테고리별 보기"
+  },
   "rankings": {
     "title": "NTF 순위",
     "subTitle": "CloseMountain NTF 순위를 보여드립니다"
