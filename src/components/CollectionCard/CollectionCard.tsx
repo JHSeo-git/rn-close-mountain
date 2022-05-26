@@ -1,30 +1,35 @@
 import { View, StyleSheet } from 'react-native';
-import { Card, Chip } from 'react-native-paper';
+import { Card } from 'react-native-paper';
 import LinearGradient from 'react-native-linear-gradient';
 import UIText from '../UIText';
-import { COLORS, SPACE } from '../../constants/design-token';
+import { COLORS, SIZES, SPACE } from '../../constants/design-token';
+import type { CollectionInfo } from '../../api/collection/types';
 
 type CollectionCardProps = {
-  name: string;
-  creator: string;
-  category: string;
-  logo?: string;
+  collection: CollectionInfo;
 };
 
-const CollectionCard = ({ name, creator, category, logo }: CollectionCardProps) => {
+const CollectionCard = ({ collection }: CollectionCardProps) => {
+  const { name, creator, category, logo } = collection;
+
   return (
     <Card style={styles.card}>
-      <Card.Cover style={styles.cardCover} source={{ uri: logo }} />
+      <Card.Cover style={styles.cardCover} source={{ uri: logo ?? undefined }} />
       <View style={styles.cardContent}>
         <UIText as="h3_contrast">{name}</UIText>
-        <UIText as="h4_contrast">{creator}</UIText>
-        <View style={styles.category}>
-          <LinearGradient style={styles.gradientBorder} colors={[COLORS.amber9, COLORS.cyan9]}>
-            <Chip style={{ backgroundColor: COLORS.gray1 }}>
-              <UIText as="small">{category}</UIText>
-            </Chip>
-          </LinearGradient>
-        </View>
+        <UIText as="h4_contrast">{creator.data.attributes.username}</UIText>
+      </View>
+      <View style={styles.category}>
+        <LinearGradient
+          angle={90}
+          useAngle={true}
+          style={styles.gradientBorder}
+          colors={[COLORS.amber9, COLORS.cyan9]}
+        >
+          <View style={styles.chip}>
+            <UIText as="small_contrast">{category}</UIText>
+          </View>
+        </LinearGradient>
       </View>
     </Card>
   );
@@ -32,6 +37,7 @@ const CollectionCard = ({ name, creator, category, logo }: CollectionCardProps) 
 
 const styles = StyleSheet.create({
   card: {
+    // overflow: 'hidden',
     position: 'relative',
     height: 300,
   },
@@ -44,15 +50,26 @@ const styles = StyleSheet.create({
   cardContent: {
     position: 'absolute',
     left: SPACE.$4,
-    bottom: SPACE.$8,
+    bottom: SPACE.$4,
+  },
+  chip: {
+    borderRadius: 9999,
+    backgroundColor: COLORS.gray12,
+    paddingVertical: SPACE.$1,
+    paddingHorizontal: SPACE.$2,
   },
   category: {
+    position: 'absolute',
+    top: SPACE.$4,
+    right: SPACE.$4,
+    zIndex: 1,
+
     marginTop: SPACE.$1,
     flexDirection: 'row',
   },
   gradientBorder: {
     borderRadius: 9999,
-    padding: 2,
+    padding: SIZES.$1,
   },
 });
 
