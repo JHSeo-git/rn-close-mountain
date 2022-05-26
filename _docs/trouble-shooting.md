@@ -75,3 +75,17 @@ https로 바꿔서 진행하는게 제일 깔끔합니다.
 react navigation 라이프사이클에 따르면 다른 스크린으로 이동하는 것이 'focus' 'blur'에 해당하기에 cleanup이 실행되는 react 라이프사이클과 살짝 다릅니다.
 
 해당 문서에서는 cleanup을 사용하기 위해 `useFocusEffect`를 이용하라고 안내합니다.
+
+## onScroll: scrollEventThrottle in ios
+
+> https://reactnative.dev/docs/scrollview#scrolleventthrottle-ios
+
+scroll view에서 onScroll 이벤트 핸들러를 사용할 때 scrollEventThrottle 를 설정하지 않으면 ios에서는 경고가 나타납니다.
+
+스크롤 이벤트가 발생하는 빈도를 나타내는 값이고 숫자가 낮을 수록 더 자주 이벤트 정보를 전송하므로 스크롤 성능 문제가 나타날 수 있습니다.
+
+js run roop가 화면 리프레쉬 rate와 동기화 되기 때문에 1~16사이의 값을 설정하는 것은 렌더링에 차이를 느끼지 못할 것입니다.
+
+정확한 스크롤 위치 추적이 필요하지 않는 한 높은 숫자를 설정하는 것이 좋습니다.
+
+0인 경우에는 스크롤 할 때마다 이벤트가 한 번만 전송됩니다.
