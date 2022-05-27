@@ -24,28 +24,24 @@ const FeaturedNFTsSection = observer(() => {
 
   return (
     <SectionView title={t('home.featured_nfts')} titleViewStyle={styles.sectionHeader}>
-      <View>
-        <FlatList
-          showsHorizontalScrollIndicator={false}
-          horizontal
-          style={{ flexGrow: 0 }}
-          contentContainerStyle={styles.listWrapper}
-          keyExtractor={item => `${item.attributes.tokenId}`}
-          data={nftStore.nfts}
-          renderItem={({ item, index }) => (
-            <View
-              key={item.id}
-              style={[
-                styles.itemWrapper,
-                index === 0 && styles.itemHead,
-                index === nftStore.nfts.length - 1 && styles.itemTail,
-              ]}
-            >
-              <NFTCard nft={item.attributes} />
-            </View>
-          )}
-        />
-      </View>
+      <FlatList
+        showsHorizontalScrollIndicator={false}
+        horizontal
+        style={{ flexGrow: 0 }}
+        contentContainerStyle={styles.listWrapper}
+        keyExtractor={item => `${item.attributes.tokenId}`}
+        data={nftStore.nfts}
+        renderItem={({ item, index }) => (
+          <NFTCard
+            style={[
+              styles.itemWrapper,
+              index === 0 && styles.itemHead,
+              index === nftStore.nfts.length - 1 && styles.itemTail,
+            ]}
+            nft={item.attributes}
+          />
+        )}
+      />
     </SectionView>
   );
 });

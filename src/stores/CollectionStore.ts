@@ -1,11 +1,11 @@
 import { action, makeObservable, observable, runInAction } from 'mobx';
 import getCollectionRankings, {
   GetCollectionRankingsRequest,
-} from '../api/collection/getCollectionRankings';
-import getCollections, { GetCollectionsRequest } from '../api/collection/getCollections';
+} from '../api/strapi/collection/getCollectionRankings';
+import getCollections, { GetCollectionsRequest } from '../api/strapi/collection/getCollections';
 import BaseStore from './base/BaseStore';
 import RootStore from './RootStore';
-import type { CollectionData } from '../api/collection/types';
+import type { CollectionData } from '../api/strapi/collection/types';
 
 class CollectionStore extends BaseStore {
   collections: CollectionData[] = [];

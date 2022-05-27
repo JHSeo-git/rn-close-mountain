@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from 'react';
+import { useCallback } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -11,8 +11,8 @@ import UIScreenTitleView from '../../components/UIScreenTitleView';
 import { COLORS, SIZES, SPACE } from '../../constants/design-token';
 import { useStore } from '../../contexts/StoreContext';
 import * as viewStyles from '../../constants/global-styles/viewStyles';
-import type { PaymentAsset } from '../../api/collection/types';
-import type { PeriodCode } from '../../api/commonCode/types';
+import type { PaymentAsset } from '../../api/strapi/collection/types';
+import type { PeriodCode } from '../../api/strapi/commonCode/types';
 import type { RankingsStackScreenProps } from '../types';
 import { useFocusEffect } from '@react-navigation/native';
 

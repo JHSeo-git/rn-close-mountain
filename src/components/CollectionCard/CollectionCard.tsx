@@ -3,7 +3,7 @@ import { Card } from 'react-native-paper';
 import LinearGradient from 'react-native-linear-gradient';
 import UIText from '../UIText';
 import { COLORS, SIZES, SPACE } from '../../constants/design-token';
-import type { CollectionInfo } from '../../api/collection/types';
+import type { CollectionInfo } from '../../api/strapi/collection/types';
 
 type CollectionCardProps = {
   collection: CollectionInfo;

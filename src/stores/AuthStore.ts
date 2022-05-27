@@ -1,6 +1,6 @@
 import { action, computed, makeObservable, observable } from 'mobx';
-import me from '../api/auth/me';
-import { applyToken, removeToken } from '../api/client';
+import me from '../api/strapi/auth/me';
+import { applyToken, removeToken } from '../api/strapi/client';
 import sessionStorage from '../utils/storage/sessionStorage';
 import BaseStore from './base/BaseStore';
 import RootStore from './RootStore';

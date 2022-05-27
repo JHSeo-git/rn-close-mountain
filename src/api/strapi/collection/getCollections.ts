@@ -1,29 +1,32 @@
 import qs from 'qs';
 import client from '../client';
-import { getDateByPeriod } from '../../utils/dateUtils';
+import { getDateByPeriod } from '../../../utils/dateUtils';
 import type { CategoryCode, PeriodCode } from '../commonCode/types';
 import type { GetCollectionsResponse, PaymentAsset } from './types';
 
-export type GetCollectionRankingsRequest = {
+export type GetCollectionsRequest = {
   name?: string;
   slug?: string;
+  nftName?: string;
   nftPaymentAsset?: PaymentAsset;
   period?: PeriodCode;
   category?: CategoryCode;
 };
-export default async function getCollectionRankings({
+export default async function getCollections({
   name,
   slug,
+  nftName,
   nftPaymentAsset,
   period,
   category,
-}: GetCollectionRankingsRequest) {
+}: GetCollectionsRequest) {
   const query = qs.stringify(
     {
       populate: {
         nfts: {
-          sort: ['price:desc'],
+          sort: ['name:asc'],
           filters: {
+            name: { $eq: nftName },
             paymentAsset: { $eq: nftPaymentAsset },
             createdAt: {
               $gte: period ? getDateByPeriod(period) : undefined,
@@ -38,15 +41,11 @@ export default async function getCollectionRankings({
         name: { $eq: name },
         slug: { $eq: slug },
         category: { $eq: category },
-        nfts: {
-          id: {
-            $notNull: true,
-          },
-        },
       },
     },
     { encodeValuesOnly: true },
   );
+
   const { data } = await client.get<GetCollectionsResponse>(`/api/collections?${query}`);
 
   return data;

@@ -13,7 +13,7 @@ import AppError from '../../utils/error/AppError';
 import { useStore } from '../../contexts/StoreContext';
 import useCountdown from '../../hooks/useCountdown';
 import { COLORS, SPACE } from '../../constants/design-token';
-import { VerificationProvider, VerificationUseType } from '../../api/auth/types';
+import { VerificationProvider, VerificationUseType } from '../../api/strapi/auth/types';
 
 type VerificationFormProps = {
   title: string;

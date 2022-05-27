@@ -1,4 +1,4 @@
-import { OAuthProvider } from '../api/auth/types';
+import { OAuthProvider } from '../api/strapi/auth/types';
 
 export type BiometricType = 'faceId' | 'touchId' | 'iris' | 'unknown';
 export type SnackbarType = 'success' | 'error' | 'info' | 'default';

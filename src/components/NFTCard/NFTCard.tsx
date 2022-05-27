@@ -1,19 +1,20 @@
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, StyleProp, ViewStyle } from 'react-native';
 import { Card } from 'react-native-paper';
 import UIText from '../UIText';
 import UIIcon from '../UIIcon';
 import { COLORS, RADII, SPACE } from '../../constants/design-token';
 import SolanaSvg from '../../assets/icons/solana.svg';
-import type { NFTInfo } from '../../api/nft/types';
+import type { NFTInfo } from '../../api/strapi/nft/types';
 
 type NFTCardProps = {
+  style?: StyleProp<ViewStyle>;
   nft: NFTInfo;
 };
 
-const NFTCard = ({ nft }: NFTCardProps) => {
+const NFTCard = ({ style, nft }: NFTCardProps) => {
   const collection = nft.collection?.data.attributes;
   return (
-    <Card style={styles.card}>
+    <Card style={[styles.card, style]}>
       <Card.Cover source={{ uri: nft.logo ?? undefined }} style={styles.cardCover} />
       <Card.Content style={styles.cardContent}>
         <View style={styles.cardContentTop}>

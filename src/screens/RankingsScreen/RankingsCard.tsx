@@ -5,7 +5,7 @@ import CustomTouchableRipple from '../../components/CustomTouchableRipple';
 import { COLORS, SIZES, SPACE } from '../../constants/design-token';
 import UIIcon from '../../components/UIIcon';
 import SolanaSvg from '../../assets/icons/solana.svg';
-import type { CollectionInfo } from '../../api/collection/types';
+import type { CollectionInfo } from '../../api/strapi/collection/types';
 
 type RankingsCardProps = {
   rankNo: number;

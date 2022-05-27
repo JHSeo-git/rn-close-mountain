@@ -1,7 +1,7 @@
 import { GoogleSignin, statusCodes } from '@react-native-google-signin/google-signin';
 import { action, makeObservable } from 'mobx';
 import Config from 'react-native-config';
-import googleSignIn from '../api/auth/googleSignIn';
+import googleSignIn from '../api/strapi/auth/googleSignIn';
 import AppError from '../utils/error/AppError';
 import BaseStore from './base/BaseStore';
 import RootStore from './RootStore';

@@ -1,8 +1,8 @@
 import { action, makeObservable, observable, runInAction } from 'mobx';
-import getNFTs, { GetNFTsRequest } from '../api/nft/getNFTs';
+import getNFTs, { GetNFTsRequest } from '../api/strapi/nft/getNFTs';
 import BaseStore from './base/BaseStore';
 import RootStore from './RootStore';
-import type { NFTsData } from '../api/nft/types';
+import type { NFTsData } from '../api/strapi/nft/types';
 
 class NFTStore extends BaseStore {
   nfts: NFTsData[] = [];

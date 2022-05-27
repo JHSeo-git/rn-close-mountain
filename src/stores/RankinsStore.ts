@@ -1,8 +1,8 @@
 import { action, makeObservable, observable, runInAction } from 'mobx';
-import getCommonCode from '../api/commonCode/getCommonCode';
+import getCommonCode from '../api/strapi/commonCode/getCommonCode';
 import BaseStore from './base/BaseStore';
 import RootStore from './RootStore';
-import type { CommonCodeData } from '../api/commonCode/types';
+import type { CommonCodeData } from '../api/strapi/commonCode/types';
 
 class RankingsStore extends BaseStore {
   periods: CommonCodeData[] = [];

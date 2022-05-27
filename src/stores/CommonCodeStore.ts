@@ -1,6 +1,6 @@
 import { action, makeObservable, observable, runInAction } from 'mobx';
-import getCommonCode, { GetCommonCodeRequest } from '../api/commonCode/getCommonCode';
-import { CommonCodeData } from '../api/commonCode/types';
+import getCommonCode, { GetCommonCodeRequest } from '../api/strapi/commonCode/getCommonCode';
+import { CommonCodeData } from '../api/strapi/commonCode/types';
 import BaseStore from './base/BaseStore';
 import RootStore from './RootStore';
 

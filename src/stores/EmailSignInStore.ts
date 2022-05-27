@@ -1,5 +1,5 @@
 import { action, makeObservable, observable } from 'mobx';
-import emailSignIn, { EmailSignInRequest } from '../api/auth/emailSignIn';
+import emailSignIn, { EmailSignInRequest } from '../api/strapi/auth/emailSignIn';
 import BaseStore from './base/BaseStore';
 import RootStore from './RootStore';
 

@@ -1,8 +1,8 @@
 import { action, makeObservable, observable } from 'mobx';
 import BaseStore from './base/BaseStore';
 import RootStore from './RootStore';
-import signUp, { SignUpRequest } from '../api/auth/signUp';
-import type { OAuthProvider } from '../api/auth/types';
+import signUp, { SignUpRequest } from '../api/strapi/auth/signUp';
+import type { OAuthProvider } from '../api/strapi/auth/types';
 
 class EmailSignUpStore extends BaseStore {
   email: string | undefined;
