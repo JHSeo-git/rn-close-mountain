@@ -55,7 +55,6 @@ class AuthStore extends BaseStore {
       throw this.errorHandler(e);
     } finally {
       this.initialized = true;
-      console.log('complete');
     }
   };
 
