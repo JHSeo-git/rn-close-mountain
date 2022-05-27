@@ -3,7 +3,6 @@ import Config from 'react-native-config';
 
 const client = axios.create();
 
-// TODO: Add configurable base URL
 const baseURL = Config.API_URL ?? 'http://localhost:1337';
 client.defaults.baseURL = baseURL;
 client.defaults.withCredentials = true;

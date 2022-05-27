@@ -1,3 +1,4 @@
+export type NoContent204Response = {};
 export type Data<AttributeT> = {
   id: number;
   attributes: AttributeT;

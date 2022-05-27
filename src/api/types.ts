@@ -1,5 +1,4 @@
 type ErrorName = 'ValidationError';
-export type NoContent204Response = {};
 export type AxiosErrorResponse = {
   data: object | null;
   error: {
