@@ -14,6 +14,7 @@ import SignUpStore from './SignUpStore';
 import SnackbarStore from './SnackbarStore';
 import RankingsStore from './RankinsStore';
 import VerificationStore from './VerificationStore';
+import MainHomeStore from './MainHomeStore';
 
 // TODO: refactor this
 class RootStore {
@@ -29,6 +30,7 @@ class RootStore {
   emailSignInStore: EmailSignInStore;
   googleSignInStore: GoogleSignInStore;
   loaderStore: LoaderStore;
+  mainHomeStore: MainHomeStore;
   nftStore: NFTStore;
   rankingsStore: RankingsStore;
   signUpStore: SignUpStore;
@@ -48,6 +50,7 @@ class RootStore {
     this.emailSignInStore = new EmailSignInStore(this);
     this.googleSignInStore = new GoogleSignInStore(this);
     this.loaderStore = new LoaderStore(this);
+    this.mainHomeStore = new MainHomeStore(this);
     this.nftStore = new NFTStore(this);
     this.rankingsStore = new RankingsStore(this);
     this.signUpStore = new SignUpStore(this);
