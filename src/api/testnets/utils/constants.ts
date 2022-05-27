@@ -1,0 +1,6 @@
+const constants = {
+  NULL_ADDRESS: '0x0000000000000000000000000000000000000000',
+  INVERSE_BASIS_POINT: 10000,
+};
+
+export default constants;
