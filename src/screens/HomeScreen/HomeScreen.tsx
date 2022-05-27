@@ -5,14 +5,12 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { ScrollView } from 'react-native-gesture-handler';
 import { useFocusEffect } from '@react-navigation/native';
 import { observer } from 'mobx-react-lite';
-import NotableDropsSection from './sections/NotableDropsSection';
-import FeaturedNFTsSection from './sections/FeaturedNFTsSection';
-import BrowseByCategory from './sections/BrowseByCategory';
 import Header from '../../components/Header';
 import * as viewStyles from '../../constants/global-styles/viewStyles';
 import { SIZES, SPACE } from '../../constants/design-token';
 import { useStore } from '../../contexts/StoreContext';
 import type { HomeStackScreenProps } from '../types';
+import FeaturedAssetSecion from './sections/FeaturedAssetSecion';
 
 type HomeScreenProps = {} & HomeStackScreenProps<'Home'>;
 
@@ -49,9 +47,7 @@ const HomeScreen = observer(({}: HomeScreenProps) => {
         onScroll={onScroll}
         scrollEventThrottle={16}
       >
-        <NotableDropsSection />
-        <FeaturedNFTsSection />
-        <BrowseByCategory />
+        <FeaturedAssetSecion />
       </ScrollView>
     </SafeAreaView>
   );
@@ -59,7 +55,6 @@ const HomeScreen = observer(({}: HomeScreenProps) => {
 
 const styles = StyleSheet.create({
   scrollView: {
-    paddingTop: SPACE.$5,
     paddingBottom: SIZES.iosBottomTabHeight,
   },
 });
