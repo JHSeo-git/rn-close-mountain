@@ -1,9 +1,9 @@
 import { DefaultTheme } from 'react-native-paper';
-import { COLORS, FONTS } from '../design-token';
+import { COLORS, FONTS, RADII } from '../design-token';
 
 const theme: typeof DefaultTheme = {
   ...DefaultTheme,
-  roundness: 2,
+  roundness: RADII.base,
   colors: {
     ...DefaultTheme.colors,
     primary: COLORS.primary,
