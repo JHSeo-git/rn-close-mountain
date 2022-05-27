@@ -33,6 +33,7 @@
     "period": "Period",
     "category": "Category",
     "chain": "Chain",
+    "explore": "Explore",
     "message": {
       "signin_main": "Sign in to Close Mountain",
       "profile_login": "Login for using all features",
@@ -41,6 +42,8 @@
     }
   },
   "home": {
+    "featured_title": "Discover awesome NFTs",
+    "featured_description": "Close Mountain is a platform for NFTs and smallest NFT marketplace",
     "notable_drops": "Notable Drops",
     "featured_nfts": "Featured NFTs",
     "browse_by_category": "Browse by Category"
