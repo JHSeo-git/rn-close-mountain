@@ -5,10 +5,14 @@ import { useStore } from '../../contexts/StoreContext';
 import { COLORS } from '../../constants/design-token';
 import * as viewStyles from '../../constants/global-styles/viewStyles';
 
-const Loader = observer(() => {
+type LoaderProps = {
+  force?: boolean;
+};
+
+const Loader = observer(({ force = false }: LoaderProps) => {
   const { loaderStore } = useStore();
 
-  if (!loaderStore.loading) {
+  if (!force && !loaderStore.loading) {
     return null;
   }
 
