@@ -3,16 +3,19 @@ import { SPACE } from '../../constants/design-token';
 import UIText from '../UIText';
 
 type SectionViewProps = {
+  style?: StyleProp<ViewStyle>;
   title: string;
   titleViewStyle?: StyleProp<ViewStyle>;
   children: React.ReactNode;
 };
 
-const SectionView = ({ title, titleViewStyle, children }: SectionViewProps) => {
+const SectionView = ({ style, title, titleViewStyle, children }: SectionViewProps) => {
   return (
-    <View>
+    <View style={[styles.conatiner, style]}>
       <View style={[styles.header, titleViewStyle]}>
-        <UIText as="h3">{title}</UIText>
+        <UIText as="h3" style={{ textAlign: 'center' }}>
+          {title}
+        </UIText>
       </View>
       {children}
     </View>
@@ -20,8 +23,11 @@ const SectionView = ({ title, titleViewStyle, children }: SectionViewProps) => {
 };
 
 const styles = StyleSheet.create({
+  conatiner: {
+    paddingVertical: SPACE.$8,
+  },
   header: {
-    marginBottom: SPACE.$2,
+    marginBottom: SPACE.$5,
   },
 });
 
