@@ -20,7 +20,7 @@ class CommonCodeStore extends BaseStore {
   };
 
   getCommonCode = async (requestData: GetCommonCodeRequest) => {
-    const result = await this.callAPI(getCommonCode(requestData));
+    const result = await this.callAPI(() => getCommonCode(requestData));
 
     runInAction(() => {
       this.commonCodes = result.data;

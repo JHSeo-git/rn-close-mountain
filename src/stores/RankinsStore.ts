@@ -70,7 +70,7 @@ class RankingsStore extends BaseStore {
   };
 
   retrievePeriods = async () => {
-    const result = await this.callAPI(getCommonCode({ group: 'period' }));
+    const result = await this.callAPI(() => getCommonCode({ group: 'period' }));
 
     runInAction(() => {
       this.periods = result.data;
@@ -79,7 +79,7 @@ class RankingsStore extends BaseStore {
     return result;
   };
   retrieveCategories = async () => {
-    const result = await this.callAPI(getCommonCode({ group: 'category' }));
+    const result = await this.callAPI(() => getCommonCode({ group: 'category' }));
 
     runInAction(() => {
       this.categories = result.data;
@@ -88,7 +88,7 @@ class RankingsStore extends BaseStore {
     return result;
   };
   retrieveChains = async () => {
-    const result = await this.callAPI(getCommonCode({ group: 'chain' }));
+    const result = await this.callAPI(() => getCommonCode({ group: 'chain' }));
 
     runInAction(() => {
       this.chains = result.data;

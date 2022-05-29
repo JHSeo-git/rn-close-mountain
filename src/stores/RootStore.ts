@@ -9,7 +9,6 @@ import CollectionStore from './CollectionStore';
 import EmailSignInStore from './EmailSignInStore';
 import GoogleSignInStore from './GoogleSignInStore';
 import LoaderStore from './LoaderStore';
-import NFTStore from './NFTStore';
 import SignUpStore from './SignUpStore';
 import SnackbarStore from './SnackbarStore';
 import RankingsStore from './RankinsStore';
@@ -31,7 +30,6 @@ class RootStore {
   googleSignInStore: GoogleSignInStore;
   loaderStore: LoaderStore;
   mainHomeStore: MainHomeStore;
-  nftStore: NFTStore;
   rankingsStore: RankingsStore;
   signUpStore: SignUpStore;
   snackbarStore: SnackbarStore;
@@ -51,7 +49,6 @@ class RootStore {
     this.googleSignInStore = new GoogleSignInStore(this);
     this.loaderStore = new LoaderStore(this);
     this.mainHomeStore = new MainHomeStore(this);
-    this.nftStore = new NFTStore(this);
     this.rankingsStore = new RankingsStore(this);
     this.signUpStore = new SignUpStore(this);
     this.snackbarStore = new SnackbarStore(this);

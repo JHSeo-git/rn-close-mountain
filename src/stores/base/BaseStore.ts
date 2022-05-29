@@ -6,6 +6,7 @@ import type { AxiosErrorResponse } from '../../api/types';
 
 type CallAPIOptions = {
   useLoader?: boolean;
+  delay?: number;
 };
 
 class BaseStore {
@@ -33,10 +34,14 @@ class BaseStore {
     this.loading = loading;
   };
 
-  protected async callAPI<T>(request: Promise<T>, options?: CallAPIOptions) {
+  protected async callAPI<T>(request: () => Promise<T>, options?: CallAPIOptions) {
     this.setLoading(true, options?.useLoader);
     try {
-      const result = await request;
+      if (options?.delay) {
+        await new Promise(resolve => setTimeout(resolve, options.delay));
+      }
+
+      const result = await request();
 
       return result;
     } catch (e: any) {
@@ -56,9 +61,10 @@ class BaseStore {
        */
       const errorResponse = e.response.data as AxiosErrorResponse | undefined;
 
-      const message = errorResponse?.error.message ?? e.message;
-      const name = errorResponse?.error.name ?? e.name;
-      const status = errorResponse?.error.status ?? (e.status ? parseInt(e.status, 10) : undefined);
+      const message = errorResponse?.error?.message ?? e.message;
+      const name = errorResponse?.error?.name ?? e.name;
+      const status =
+        errorResponse?.error?.status ?? (e.status ? parseInt(e.status, 10) : undefined);
       const stack = e.stack;
 
       throw new AppError({ message, name, label: 'API', status, stack });
