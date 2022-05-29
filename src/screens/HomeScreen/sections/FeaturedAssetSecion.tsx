@@ -8,6 +8,7 @@ import CustomButton from '../../../components/CustomButton';
 import { COLORS, SIZES, SPACE } from '../../../constants/design-token';
 import * as viewStyle from '../../../constants/global-styles/viewStyles';
 import type { OpenSeaAsset } from '../../../utils/types/opensea/types';
+import FeaturedAssetCard from './FeaturedAssetCard';
 
 type FeaturedAssetSecionProps = {
   asset?: OpenSeaAsset;
@@ -21,7 +22,9 @@ const FeaturedAssetSecion = ({ asset }: FeaturedAssetSecionProps) => {
       {asset?.imageUrl && (
         <MaskedView
           style={styles.backdrop}
-          maskElement={<LinearGradient style={{ flex: 1 }} colors={['white', 'transparent']} />}
+          maskElement={
+            <LinearGradient style={styles.backgropGradient} colors={['white', 'transparent']} />
+          }
         >
           <Image style={styles.backdropImage} source={{ uri: asset.imageUrl }} blurRadius={8} />
         </MaskedView>
@@ -37,42 +40,16 @@ const FeaturedAssetSecion = ({ asset }: FeaturedAssetSecionProps) => {
           <UIText as="strong_contrast">{t('common.explore')}</UIText>
         </CustomButton>
         {asset ? (
-          <Card
-            style={styles.card}
-            // TODO: add onPress
+          <FeaturedAssetCard
+            coverImageUrl={asset.imageUrl}
+            profileImageUrl={asset.owner.profileImgUrl}
+            name={asset.name}
+            username={asset.owner.user?.username}
             onPress={() => {}}
-          >
-            <Card.Cover style={styles.cardCover} source={{ uri: asset.imageUrl }} />
-            <Card.Content style={styles.cardContent}>
-              <View style={styles.cardContentHead}>
-                <Avatar.Image size={SIZES.$10} source={{ uri: asset.owner.profileImgUrl }} />
-                <View style={styles.cardContentHeadInner}>
-                  <UIText as="small_bold" numberOfLines={1}>
-                    {asset.name}
-                  </UIText>
-                  <UIText as="small_primary" numberOfLines={1}>
-                    {asset.owner.user?.username}
-                  </UIText>
-                </View>
-              </View>
-              <View style={styles.cardContentTail}>
-                <IconButton
-                  size={SIZES.$6}
-                  icon="alert-circle-outline"
-                  color={COLORS.text.secondary}
-                  // TODO: add onPress
-                  onPress={() => {}}
-                />
-              </View>
-            </Card.Content>
-          </Card>
+            onIconPress={() => {}}
+          />
         ) : (
-          <Card style={styles.card}>
-            <Card.Cover style={styles.cardCover} source={{ uri: undefined }} />
-            <Card.Content style={[styles.cardContent, { height: 80 }]}>
-              {/* TODO: skeleton */}
-            </Card.Content>
-          </Card>
+          <FeaturedAssetCard.Skeleton />
         )}
       </View>
     </View>
@@ -90,6 +67,9 @@ const styles = StyleSheet.create({
   backdrop: {
     ...StyleSheet.absoluteFillObject,
     zIndex: -1,
+    flex: 1,
+  },
+  backgropGradient: {
     flex: 1,
   },
   backdropImage: {

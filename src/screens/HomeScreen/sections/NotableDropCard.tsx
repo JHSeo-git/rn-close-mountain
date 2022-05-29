@@ -1,9 +1,9 @@
-import { useEffect, useRef } from 'react';
 import { View, StyleSheet, StyleProp, ViewStyle, Animated } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { Card } from 'react-native-paper';
 import UIText from '../../../components/UIText';
 import { COLORS, RADII, SPACE } from '../../../constants/design-token';
+import useSkeleton from '../../../hooks/useSkeleton';
 
 type NotableDropCardProps = {
   style?: StyleProp<ViewStyle>;
@@ -46,40 +46,11 @@ const NotableDropCard = ({
 };
 
 const Skeleton = () => {
-  const opacity = useRef(new Animated.Value(1)).current;
-  const flash = Animated.loop(
-    Animated.sequence([
-      Animated.timing(opacity, {
-        toValue: 0,
-        duration: 1000,
-        useNativeDriver: true,
-      }),
-      Animated.timing(opacity, {
-        toValue: 1,
-        duration: 1000,
-        useNativeDriver: true,
-      }),
-    ]),
-  );
-
-  useEffect(() => {
-    flash.start();
-
-    return () => {
-      flash.stop();
-    };
-  }, []);
+  const { opacity } = useSkeleton();
 
   return (
     <Card style={styles.card}>
-      <Animated.View
-        style={[
-          styles.skeleton,
-          {
-            opacity,
-          },
-        ]}
-      />
+      <Animated.View style={[styles.skeleton, { opacity }]} />
     </Card>
   );
 };
