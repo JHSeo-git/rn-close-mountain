@@ -11,12 +11,13 @@ import { SIZES, SPACE } from '../../constants/design-token';
 import { useStore } from '../../contexts/StoreContext';
 import type { HomeStackScreenProps } from '../types';
 import FeaturedAssetSecion from './sections/FeaturedAssetSecion';
+import NotableDropsSection from './sections/NotableDropsSection';
 
 type HomeScreenProps = {} & HomeStackScreenProps<'Home'>;
 
 const HomeScreen = observer(({}: HomeScreenProps) => {
   const { t } = useTranslation();
-  const { bottomTabStore } = useStore();
+  const { bottomTabStore, mainHomeStore } = useStore();
   const prevOffset = useRef(0);
 
   const onScroll = (e: NativeSyntheticEvent<NativeScrollEvent>) => {
@@ -33,6 +34,15 @@ const HomeScreen = observer(({}: HomeScreenProps) => {
 
   useFocusEffect(
     useCallback(() => {
+      // 초당 4개(Get의 경우)까지 허용되는 testnets api를 호출하기 위해
+      // sequential 호출
+      const fetchData = async () => {
+        await mainHomeStore.retrieveFeaturedAsset();
+        await mainHomeStore.retrieveNotableDrops();
+      };
+
+      fetchData();
+
       return () => {
         bottomTabStore.reset();
       };
@@ -47,7 +57,8 @@ const HomeScreen = observer(({}: HomeScreenProps) => {
         onScroll={onScroll}
         scrollEventThrottle={16}
       >
-        <FeaturedAssetSecion />
+        <FeaturedAssetSecion asset={mainHomeStore.featuredAsset} />
+        <NotableDropsSection notableDrops={mainHomeStore.notableDrops} />
       </ScrollView>
     </SafeAreaView>
   );

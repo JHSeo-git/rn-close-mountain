@@ -1,28 +1,20 @@
-import { useCallback } from 'react';
 import { View, StyleSheet, Image } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { Avatar, Card, IconButton } from 'react-native-paper';
 import LinearGradient from 'react-native-linear-gradient';
 import MaskedView from '@react-native-masked-view/masked-view';
-import { observer } from 'mobx-react-lite';
 import UIText from '../../../components/UIText';
 import CustomButton from '../../../components/CustomButton';
-import { useStore } from '../../../contexts/StoreContext';
 import { COLORS, SIZES, SPACE } from '../../../constants/design-token';
 import * as viewStyle from '../../../constants/global-styles/viewStyles';
-import { useFocusEffect } from '@react-navigation/native';
+import type { OpenSeaAsset } from '../../../utils/types/opensea/types';
 
-const FeaturedAssetSecion = observer(() => {
+type FeaturedAssetSecionProps = {
+  asset?: OpenSeaAsset;
+};
+
+const FeaturedAssetSecion = ({ asset }: FeaturedAssetSecionProps) => {
   const { t } = useTranslation();
-  const { mainHomeStore } = useStore();
-
-  const asset = mainHomeStore.featuredAsset;
-
-  useFocusEffect(
-    useCallback(() => {
-      mainHomeStore.retrieveFeaturedAsset();
-    }, []),
-  );
 
   return (
     <View style={styles.container}>
@@ -45,7 +37,11 @@ const FeaturedAssetSecion = observer(() => {
           <UIText as="strong_contrast">{t('common.explore')}</UIText>
         </CustomButton>
         {asset ? (
-          <Card style={styles.card}>
+          <Card
+            style={styles.card}
+            // TODO: add onPress
+            onPress={() => {}}
+          >
             <Card.Cover style={styles.cardCover} source={{ uri: asset.imageUrl }} />
             <Card.Content style={styles.cardContent}>
               <View style={styles.cardContentHead}>
@@ -64,6 +60,7 @@ const FeaturedAssetSecion = observer(() => {
                   size={SIZES.$6}
                   icon="alert-circle-outline"
                   color={COLORS.text.secondary}
+                  // TODO: add onPress
                   onPress={() => {}}
                 />
               </View>
@@ -80,7 +77,7 @@ const FeaturedAssetSecion = observer(() => {
       </View>
     </View>
   );
-});
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -126,12 +123,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   cardContentHead: {
+    flex: 1,
+
     flexDirection: 'row',
     alignItems: 'center',
-
-    flex: 1,
   },
   cardContentHeadInner: {
+    flex: 1,
+
     marginLeft: SPACE.$4,
   },
   cardContentTail: {
