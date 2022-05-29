@@ -26,7 +26,7 @@ class CollectionStore extends BaseStore {
   };
 
   retrieveCollection = async (requestData?: GetCollectionsRequest) => {
-    const result = await this.callAPI(getCollections(requestData ?? {}));
+    const result = await this.callAPI(() => getCollections(requestData ?? {}));
 
     runInAction(() => {
       this.collections = result.data;
@@ -36,7 +36,7 @@ class CollectionStore extends BaseStore {
   };
 
   retrieveCollectionRankings = async (requestData?: GetCollectionRankingsRequest) => {
-    const result = await this.callAPI(getCollectionRankings(requestData ?? {}));
+    const result = await this.callAPI(() => getCollectionRankings(requestData ?? {}));
 
     runInAction(() => {
       this.collections = result.data;
