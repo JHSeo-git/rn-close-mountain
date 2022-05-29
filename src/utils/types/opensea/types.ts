@@ -339,6 +339,7 @@ export interface OpenSeaTraitStats {
  * Annotated asset spec with OpenSea metadata
  */
 export interface OpenSeaAsset extends Asset {
+  id: number;
   assetContract: OpenSeaAssetContract;
   collection: OpenSeaCollection;
   // The asset's given name
@@ -387,6 +388,15 @@ export interface OpenSeaAsset extends Asset {
   transferFee: BigNumber | string | null;
   // The transfer fee token for this asset in its transfer method
   transferFeePaymentToken: OpenSeaFungibleToken | null;
+}
+
+export interface OpenSeaEvent extends AssetEvent {
+  asset?: OpenSeaAsset;
+  assetBundle?: OpenSeaAssetBundle;
+  createdDate: Date;
+  quantity: number;
+
+  // TODO: add more fields
 }
 
 /**
