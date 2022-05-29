@@ -1,9 +1,10 @@
 import qs from 'qs';
-import client from './client';
-import { assetFromJSON } from './utils/utils';
-import type { OpenSeaBaseGetRequest, GetAssetsResponse } from './types';
+import client from '../client';
+import { assetFromJSON } from '../utils/utils';
+import type { GetAssetsResponse } from './types';
+import type { OpenSeaAssetQuery } from '../../../utils/types/opensea/types';
 
-export type GetAssetsRequest = { collection?: string } & OpenSeaBaseGetRequest;
+export type GetAssetsRequest = OpenSeaAssetQuery;
 
 export default async function getAssets(requestData: GetAssetsRequest) {
   const query = qs.stringify(requestData, { encodeValuesOnly: true });

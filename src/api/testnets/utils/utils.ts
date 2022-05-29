@@ -7,6 +7,7 @@ import {
   OpenSeaAssetBundle,
   OpenSeaAssetContract,
   OpenSeaCollection,
+  OpenSeaEvent,
   OpenSeaFungibleToken,
   OpenSeaTraitStats,
   OpenSeaUser,
@@ -78,6 +79,7 @@ export const assetFromJSON = (asset: any): OpenSeaAsset => {
   const isAnimated = asset.image_url && asset.image_url.endsWith('.gif');
   const isSvg = asset.image_url && asset.image_url.endsWith('.svg');
   const fromJSON: OpenSeaAsset = {
+    id: asset.id,
     tokenId: asset.token_id.toString(),
     tokenAddress: asset.asset_contract.address,
     name: asset.name,
@@ -229,6 +231,25 @@ export const orderFromJSON = (order: any): Order => {
   return fromJSON;
 };
 
+export const eventFromJSON = (event: any): OpenSeaEvent => {
+  const createdDate = new Date(`${event.created_date}Z`);
+
+  const fromJSON: OpenSeaEvent = {
+    eventType: event.event_type,
+    eventTimestamp: event.event_timestamp,
+    auctionType: event.auction_type,
+    totalPrice: event.total_price,
+    transaction: event.transaction ? transactionFromJSON(event.transaction) : null,
+    paymentToken: event.payment_token ? tokenFromJSON(event.payment_token) : null,
+    asset: event.asset ? assetFromJSON(event.asset) : undefined,
+    assetBundle: event.asset_bundle ? assetBundleFromJSON(event.asset_bundle) : undefined,
+    createdDate,
+    quantity: event.quantity,
+  };
+
+  return fromJSON;
+};
+
 export const assetEventFromJSON = (assetEvent: any): AssetEvent => {
   return {
     eventType: assetEvent.event_type,
@@ -289,10 +310,10 @@ export const assetBundleFromJSON = (asset_bundle: any): OpenSeaAssetBundle => {
 
 export const accountFromJSON = (account: any): OpenSeaAccount => {
   return {
-    address: account.address,
-    config: account.config,
-    profileImgUrl: account.profile_img_url,
-    user: account.user ? userFromJSON(account.user) : null,
+    address: account?.address,
+    config: account?.config,
+    profileImgUrl: account?.profile_img_url,
+    user: account?.user ? userFromJSON(account.user) : null,
   };
 };
 
