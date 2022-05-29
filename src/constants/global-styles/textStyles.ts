@@ -119,3 +119,7 @@ export const small_bold_primary: TextStyle = {
   ...small_bold,
   ...primary,
 };
+export const small_bold_contrast: TextStyle = {
+  ...small_bold,
+  ...contrast,
+};
