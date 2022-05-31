@@ -26,8 +26,7 @@ const HomeScreen = observer(({}: HomeScreenProps) => {
       // 초당 4개(Get의 경우)까지 허용되는 testnets api를 호출하기 위해
       // sequential 호출
       const fetchData = async () => {
-        await mainHomeStore.retrieveFeaturedAsset();
-        await mainHomeStore.retrieveNotableDrops();
+        Promise.all([mainHomeStore.retrieveFeaturedAsset(), mainHomeStore.retrieveNotableDrops()]);
       };
 
       fetchData();
@@ -42,8 +41,14 @@ const HomeScreen = observer(({}: HomeScreenProps) => {
         onScroll={onScroll}
         scrollEventThrottle={16}
       >
-        <FeaturedAssetSecion asset={mainHomeStore.featuredAsset} />
-        <NotableDropsSection notableDrops={mainHomeStore.notableDrops} />
+        <FeaturedAssetSecion
+          asset={mainHomeStore.featuredAsset}
+          loading={mainHomeStore.retrieveFeaturedAssetLoading}
+        />
+        <NotableDropsSection
+          notableDrops={mainHomeStore.notableDrops}
+          loading={mainHomeStore.retrieveNotableDropsLoading}
+        />
       </ScrollView>
     </SafeAreaView>
   );

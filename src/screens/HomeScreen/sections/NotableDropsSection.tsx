@@ -8,6 +8,7 @@ import UICarouselDots from '../../../components/UICarouselDots';
 import { SPACE } from '../../../constants/design-token';
 import { viewportWidth, widthByPercent } from '../../../utils/styleUtils';
 import { OpenSeaAsset } from '../../../utils/types/opensea/types';
+import UIText from '../../../components/UIText';
 
 const slideWidth = widthByPercent(100);
 const slideHorizontalMargin = SPACE.$5;
@@ -18,9 +19,10 @@ const itemWidth = slideWidth - itemHorizontalMargin * 2;
 
 type NotableDropsSectionProps = {
   notableDrops: OpenSeaAsset[];
+  loading: boolean;
 };
 
-const NotableDropsSection = ({ notableDrops }: NotableDropsSectionProps) => {
+const NotableDropsSection = ({ notableDrops, loading }: NotableDropsSectionProps) => {
   const { t } = useTranslation();
 
   const [activeSlide, setActiveSlide] = useState(0);
@@ -28,10 +30,20 @@ const NotableDropsSection = ({ notableDrops }: NotableDropsSectionProps) => {
 
   return (
     <SectionView title={t('home.notable_drops')} titleViewStyle={styles.sectionHeader}>
-      {notableDrops.length > 0 ? (
+      {loading ? (
+        <View style={{ marginHorizontal: SPACE.$5 }}>
+          <NotableDropCard.Skeleton />
+        </View>
+      ) : notableDrops.length > 0 ? (
         <>
           <Carousel
             ref={carouselRef}
+            sliderWidth={sliderWidth}
+            itemWidth={itemWidth}
+            inactiveSlideScale={1}
+            containerCustomStyle={styles.slider}
+            contentContainerCustomStyle={styles.sliderContentContainer}
+            onSnapToItem={index => setActiveSlide(index)}
             data={notableDrops}
             keyExtractor={item => `${item.id}`}
             renderItem={({ item }) => (
@@ -43,12 +55,6 @@ const NotableDropsSection = ({ notableDrops }: NotableDropsSectionProps) => {
                 onPress={() => {}}
               />
             )}
-            sliderWidth={sliderWidth}
-            itemWidth={itemWidth}
-            inactiveSlideScale={1}
-            containerCustomStyle={styles.slider}
-            contentContainerCustomStyle={styles.sliderContentContainer}
-            onSnapToItem={index => setActiveSlide(index)}
           />
           <UICarouselDots
             dotsLength={notableDrops.length}
@@ -57,9 +63,7 @@ const NotableDropsSection = ({ notableDrops }: NotableDropsSectionProps) => {
           />
         </>
       ) : (
-        <View style={{ marginHorizontal: SPACE.$5 }}>
-          <NotableDropCard.Skeleton />
-        </View>
+        <UIText>Empty</UIText>
       )}
     </SectionView>
   );

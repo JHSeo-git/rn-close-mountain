@@ -1,20 +1,20 @@
 import { View, StyleSheet, Image } from 'react-native';
 import { useTranslation } from 'react-i18next';
-import { Avatar, Card, IconButton } from 'react-native-paper';
 import LinearGradient from 'react-native-linear-gradient';
 import MaskedView from '@react-native-masked-view/masked-view';
+import FeaturedAssetCard from './FeaturedAssetCard';
 import UIText from '../../../components/UIText';
 import CustomButton from '../../../components/CustomButton';
-import { COLORS, SIZES, SPACE } from '../../../constants/design-token';
+import { SPACE } from '../../../constants/design-token';
 import * as viewStyle from '../../../constants/global-styles/viewStyles';
 import type { OpenSeaAsset } from '../../../utils/types/opensea/types';
-import FeaturedAssetCard from './FeaturedAssetCard';
 
 type FeaturedAssetSecionProps = {
   asset?: OpenSeaAsset;
+  loading: boolean;
 };
 
-const FeaturedAssetSecion = ({ asset }: FeaturedAssetSecionProps) => {
+const FeaturedAssetSecion = ({ asset, loading }: FeaturedAssetSecionProps) => {
   const { t } = useTranslation();
 
   return (
@@ -39,7 +39,9 @@ const FeaturedAssetSecion = ({ asset }: FeaturedAssetSecionProps) => {
         <CustomButton style={styles.button} onPress={() => {}}>
           <UIText as="strong_contrast">{t('common.explore')}</UIText>
         </CustomButton>
-        {asset ? (
+        {loading ? (
+          <FeaturedAssetCard.Skeleton />
+        ) : asset ? (
           <FeaturedAssetCard
             coverImageUrl={asset.imageUrl}
             profileImageUrl={asset.owner.profileImgUrl}
@@ -49,7 +51,7 @@ const FeaturedAssetSecion = ({ asset }: FeaturedAssetSecionProps) => {
             onIconPress={() => {}}
           />
         ) : (
-          <FeaturedAssetCard.Skeleton />
+          <UIText>empty</UIText>
         )}
       </View>
     </View>

@@ -2,8 +2,8 @@ import { View, StyleSheet, StyleProp, ViewStyle, Animated } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { Card } from 'react-native-paper';
 import UIText from '../../../components/UIText';
-import { COLORS, RADII, SPACE } from '../../../constants/design-token';
 import useSkeleton from '../../../hooks/useSkeleton';
+import { COLORS, RADII, SPACE } from '../../../constants/design-token';
 
 type NotableDropCardProps = {
   style?: StyleProp<ViewStyle>;
@@ -24,11 +24,7 @@ const NotableDropCard = ({
 }: NotableDropCardProps) => {
   return (
     <Card style={[styles.card, style]} onPress={onPress}>
-      <LinearGradient
-        style={styles.backdrop}
-        colors={['transparent', COLORS.grayA8]}
-        locations={[0.8, 1]}
-      />
+      <LinearGradient style={styles.backdrop} colors={['transparent', COLORS.grayA8]} />
       <View style={styles.chip}>
         <UIText as="small_bold_contrast">{chipText}</UIText>
       </View>
@@ -78,6 +74,7 @@ const styles = StyleSheet.create({
   backdrop: {
     ...StyleSheet.absoluteFillObject,
     zIndex: 1,
+    opacity: 0.5,
   },
   cardContent: {
     position: 'absolute',
