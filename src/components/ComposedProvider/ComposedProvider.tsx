@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react';
 import { initialWindowMetrics, SafeAreaProvider } from 'react-native-safe-area-context';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { ApolloProvider } from '@apollo/client';
-import { persistCache } from 'apollo3-cache-persist';
-import Loader from '../Loader';
-import client, { cache } from '../../graphql/client';
 import GestureBottomSheetModalProvider from '../GestureBottomSheetModalProvider';
+// import { useEffect, useState } from 'react';
+// import AsyncStorage from '@react-native-async-storage/async-storage';
+// import Loader from '../Loader';
+// import { ApolloProvider } from '@apollo/client';
+// import { persistCache } from 'apollo3-cache-persist';
+// import client, { cache } from '../../graphql/__apolloClient';
 
 type ComposedProviderProps = {
   children: React.ReactNode;
