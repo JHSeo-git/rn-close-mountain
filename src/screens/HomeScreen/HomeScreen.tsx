@@ -4,14 +4,13 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { ScrollView } from 'react-native-gesture-handler';
 import { observer } from 'mobx-react-lite';
 import Header from '../../components/Header';
-import FeaturedAssetSecion from './sections/FeaturedAssetSecion';
+import CategoriesSection from './sections/CategoriesSection';
 import NotableDropsSection from './sections/NotableDropsSection';
 import useOnScrollBottomTab from '../../hooks/useOnScrollBottomTab';
-import { COLORS, SIZES } from '../../constants/design-token';
+import { SIZES } from '../../constants/design-token';
 import * as viewStyles from '../../constants/global-styles/viewStyles';
 import type { HomeStackScreenProps } from '../types';
-import FooterSection from './sections/FooterSection';
-import BrowseByCategorySection from './sections/BrowseByCategorySection';
+import TrendingCollectionsSection from './sections/TrendingCollectionsSection';
 
 type HomeScreenProps = {} & HomeStackScreenProps<'Home'>;
 
@@ -27,10 +26,9 @@ const HomeScreen = observer(({}: HomeScreenProps) => {
         onScroll={onScroll}
         scrollEventThrottle={16}
       >
-        <FeaturedAssetSecion />
+        <CategoriesSection />
         <NotableDropsSection />
-        <BrowseByCategorySection />
-        <FooterSection />
+        <TrendingCollectionsSection />
       </ScrollView>
     </SafeAreaView>
   );
@@ -39,7 +37,6 @@ const HomeScreen = observer(({}: HomeScreenProps) => {
 const styles = StyleSheet.create({
   scrollView: {
     paddingBottom: SIZES.iosBottomTabHeight,
-    backgroundColor: COLORS.primary,
   },
 });
 

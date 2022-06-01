@@ -2,83 +2,38 @@ import { action, makeObservable, observable, runInAction } from 'mobx';
 import BaseStore from './base/BaseStore';
 import RootStore from './RootStore';
 import getEvents from '../api/testnets/event/getEvents';
-import getAssets from '../api/testnets/asset/getAssets';
+import getCategories from '../api/testnets/collection/getCategories';
+import getPromotion from '../api/testnets/promition/getPromotion';
 import type { OpenSeaAsset } from '../utils/types/opensea/types';
-
-type CategoryInfo = {
-  id: number;
-  coverImageUrl: string;
-  name: string;
-};
-
-// TODO: retreive api
-const categories: CategoryInfo[] = [
-  {
-    id: 1,
-    coverImageUrl: 'https://opensea.io/static/images/categories/art.png',
-    name: 'Art',
-  },
-  {
-    id: 2,
-    coverImageUrl: 'https://opensea.io/static/images/categories/collectibles.png',
-    name: 'Collectibles',
-  },
-  {
-    id: 3,
-    coverImageUrl: 'https://opensea.io/static/images/categories/domain-names.png',
-    name: 'Domain Names',
-  },
-  {
-    id: 4,
-    coverImageUrl: 'https://opensea.io/static/images/categories/music.png',
-    name: 'Music',
-  },
-  {
-    id: 5,
-    coverImageUrl: 'https://opensea.io/static/images/categories/photography-category.png',
-    name: 'Photography',
-  },
-  {
-    id: 6,
-    coverImageUrl: 'https://opensea.io/static/images/categories/sports.png',
-    name: 'Sports',
-  },
-  {
-    id: 7,
-    coverImageUrl: 'https://opensea.io/static/images/categories/trading-cards.png',
-    name: 'Trading Cards',
-  },
-  {
-    id: 8,
-    coverImageUrl: 'https://opensea.io/static/images/categories/utility.png',
-    name: 'Utility',
-  },
-  {
-    id: 9,
-    coverImageUrl: 'https://opensea.io/static/images/categories/virtual-worlds.png',
-    name: 'Virtual Worlds',
-  },
-];
+import type { Category, TrendingCollectionsNode } from '../api/testnets/collection/types';
+import type { Promotion } from '../api/testnets/promition/types';
+import getCollectionsScroller from '../api/testnets/collection/getCollectionsScroller';
 
 class MainHomeStore extends BaseStore {
   featuredAsset: OpenSeaAsset | undefined;
-  notableDrops: OpenSeaAsset[] = [];
-  categories: CategoryInfo[] = [];
+  notableDrops: Promotion[] = [];
+  categories: Category[] = [];
+  trendingCollections: TrendingCollectionsNode[] = [];
   retrieveFeaturedAssetLoading: boolean = false;
   retrieveNotableDropsLoading: boolean = false;
   retrieveCategoriesLoading: boolean = false;
+  retrieveTrendingCollectionsLoading: boolean = false;
 
   constructor(root: RootStore) {
     super(root);
     makeObservable(this, {
       featuredAsset: observable,
       notableDrops: observable,
+      categories: observable,
+      trendingCollections: observable,
       retrieveFeaturedAssetLoading: observable,
       retrieveNotableDropsLoading: observable,
       retrieveCategoriesLoading: observable,
+      retrieveTrendingCollectionsLoading: observable,
       retrieveFeaturedAsset: action,
       retrieveNotableDrops: action,
       retrieveCategories: action,
+      retrieveTrendingCollections: action,
     });
   }
 
@@ -117,25 +72,16 @@ class MainHomeStore extends BaseStore {
     }
   };
 
-  /**
-   * 판매 수로 정렬하여 상위 5개의 Asset을 조회한다.
-   */
   retrieveNotableDrops = async () => {
     runInAction(() => {
       this.retrieveNotableDropsLoading = true;
     });
     try {
-      const result = await this.callAPI(() =>
-        getAssets({
-          order_by: 'sale_count',
-          order_direction: 'desc',
-          offset: 0,
-          limit: 5,
-        }),
-      );
+      // TODO: remove delay when api is ready
+      const result = await this.callAPI(() => getPromotion(), { delay: 2000 });
 
       runInAction(() => {
-        this.notableDrops = result;
+        this.notableDrops = result.promotions;
       });
 
       return result;
@@ -153,7 +99,8 @@ class MainHomeStore extends BaseStore {
       this.retrieveCategoriesLoading = true;
     });
     try {
-      const result = categories;
+      // TODO: remove delay when api is ready
+      const result = await this.callAPI(() => getCategories());
 
       runInAction(() => {
         this.categories = result;
@@ -165,6 +112,28 @@ class MainHomeStore extends BaseStore {
     } finally {
       runInAction(() => {
         this.retrieveCategoriesLoading = false;
+      });
+    }
+  };
+
+  retrieveTrendingCollections = async () => {
+    runInAction(() => {
+      this.retrieveTrendingCollectionsLoading = true;
+    });
+    try {
+      // TODO: remove delay when api is ready
+      const result = await this.callAPI(() => getCollectionsScroller(), { delay: 2000 });
+
+      runInAction(() => {
+        this.trendingCollections = result;
+      });
+
+      return result;
+    } catch (e) {
+      throw e;
+    } finally {
+      runInAction(() => {
+        this.retrieveTrendingCollectionsLoading = false;
       });
     }
   };
