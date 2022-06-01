@@ -1,0 +1,96 @@
+{
+  "data": {
+    "promotions": [
+      {
+        "id": "UHJvbW90aW9uVHlwZTo4NTE=",
+        "promoCardImg": "https://openseauserdata.com/static/promocards/akumu-promocard.png",
+        "promoCardLink": "/collection/akumu-dragonz",
+        "promoCardVideo": null,
+        "promoCardVideoMimeType": "video/mp4",
+        "promoHeader": "Akumu Dragonz",
+        "cardColor": "#2b0049",
+        "promoSubtitle": "10,000 Dragonz on the Ethereum blockchain",
+        "saleStartTime": "2022-05-31T21:44:38",
+        "saleEndTime": "2022-06-09T21:44:47"
+      },
+      {
+        "id": "UHJvbW90aW9uVHlwZTo4NDk=",
+        "promoCardImg": "https://openseauserdata.com/static/promocards/goblintown-promocard.jpg",
+        "promoCardLink": "/collection/goblintownwtf",
+        "promoCardVideo": null,
+        "promoCardVideoMimeType": "video/mp4",
+        "promoHeader": "goblintown",
+        "cardColor": "#455337",
+        "promoSubtitle": "",
+        "saleStartTime": "2022-05-29T18:23:18",
+        "saleEndTime": "2022-06-09T18:23:19"
+      },
+      {
+        "id": "UHJvbW90aW9uVHlwZTo4NTA=",
+        "promoCardImg": "https://openseauserdata.com/static/promocards/boryoku-promocard.png",
+        "promoCardLink": "/collection/boryoku-dragonz",
+        "promoCardVideo": null,
+        "promoCardVideoMimeType": "video/mp4",
+        "promoHeader": "Boryoku Dragonz",
+        "cardColor": "#7f1eed",
+        "promoSubtitle": "1,111 Dragonz on the Solana blockchain",
+        "saleStartTime": "2022-05-31T21:41:42",
+        "saleEndTime": "2022-06-09T21:41:43"
+      },
+      {
+        "id": "UHJvbW90aW9uVHlwZTo4NDQ=",
+        "promoCardImg": "https://openseauserdata.com/static/promocards/greatjones-promocard.jpg",
+        "promoCardLink": "/collection/faceless-by-greatjones",
+        "promoCardVideo": null,
+        "promoCardVideoMimeType": "video/mp4",
+        "promoHeader": "Faceless by greatjones",
+        "cardColor": "#4e3859",
+        "promoSubtitle": "",
+        "saleStartTime": "2022-05-26T17:08:34",
+        "saleEndTime": "2022-06-02T17:08:36"
+      },
+      {
+        "id": "UHJvbW90aW9uVHlwZTo4NDM=",
+        "promoCardImg": "https://openseauserdata.com/static/promocards/stoneheads-promocard.jpg",
+        "promoCardLink": "/collection/the-stone-heads",
+        "promoCardVideo": null,
+        "promoCardVideoMimeType": "video/mp4",
+        "promoHeader": "The Stone Heads",
+        "cardColor": "#992b62",
+        "promoSubtitle": "5555 unique NFTs by Leo Caillard",
+        "saleStartTime": "2022-05-25T23:18:09",
+        "saleEndTime": "2022-06-02T23:18:15"
+      }
+    ],
+    "featuredAsset": {
+      "name": "Distance",
+      "imagePreviewUrl": "https://lh3.googleusercontent.com/XYrDUd8Kz4HLNdZql_Ebwk6vc2OCuaw0MeENa5k67kvDD_X7AEbmcbbHMbMZDDXH1WSUn9hUp2rQsOeTEN2NH9bbOe-3HC50qCrEMAI=s250",
+      "imageUrl": "https://lh3.googleusercontent.com/XYrDUd8Kz4HLNdZql_Ebwk6vc2OCuaw0MeENa5k67kvDD_X7AEbmcbbHMbMZDDXH1WSUn9hUp2rQsOeTEN2NH9bbOe-3HC50qCrEMAI",
+      "creator": {
+        "imageUrl": "https://lh3.googleusercontent.com/j1DQX3rpcWisEQKc_FK8GL4t-eDIA-vBKfY9jmlwWiq9hlt9cEPctg1ZiI7Gq-7I9uJI0iYt5IicUx36DdZKUqGDdYQG3vSjczaB8w=s100",
+        "user": {
+          "publicUsername": "GrayArtist",
+          "id": "VXNlclR5cGU6MzY5OTM4NA=="
+        },
+        "id": "QWNjb3VudFR5cGU6NDQwOTQ5NzQ="
+      },
+      "assetContract": {
+        "address": "0x495f947276749ce646f68ac8c248420045cb7b5e",
+        "chain": "ETHEREUM",
+        "id": "QXNzZXRDb250cmFjdFR5cGU6MTY3OTkw"
+      },
+      "tokenId": "26295466185321165399678017206049401268544401990002960745176610597860968235009",
+      "animationUrl": null,
+      "backgroundColor": null,
+      "collection": {
+        "displayData": {
+          "cardDisplayStyle": "CONTAIN"
+        },
+        "id": "Q29sbGVjdGlvblR5cGU6ODM0NTA1OQ=="
+      },
+      "isDelisted": false,
+      "displayImageUrl": "https://lh3.googleusercontent.com/XYrDUd8Kz4HLNdZql_Ebwk6vc2OCuaw0MeENa5k67kvDD_X7AEbmcbbHMbMZDDXH1WSUn9hUp2rQsOeTEN2NH9bbOe-3HC50qCrEMAI",
+      "id": "QXNzZXRUeXBlOjM4Mzc3NTY2Mg=="
+    }
+  }
+}

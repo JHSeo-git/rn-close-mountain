@@ -1,0 +1,377 @@
+{
+  "data": {
+    "trendingCollections": {
+      "edges": [
+        {
+          "node": {
+            "slug": "akumu-dragonz",
+            "logo": "https://lh3.googleusercontent.com/cDfIiQMlap3KmoLnlgridUvdhfGDCXVosa5zURHQNMES_r0otI8MEkUtqFUN7pKkr9U-3ItBTp1XKLg7ScxvziOBfbDd706q9eGS=s120",
+            "banner": "https://lh3.googleusercontent.com/yQ1FMRPJFILGQkGvpYryrmTipv8eJ2Vl2wJf7bQoSSkZK36kdJnrktQcm8huSWRpH4x1IHyR7MHleQ0Qc9I35o8UjgdXIiJysVgYpA=s300",
+            "description": "",
+            "name": "Akumu Dragonz",
+            "shortDescription": null,
+            "isVerified": false,
+            "owner": {
+              "address": "0x989584374182ea79a9c3cb7b55fbf78b5c725c25",
+              "config": null,
+              "isCompromised": false,
+              "user": {
+                "publicUsername": "Akumu-Dragonz",
+                "id": "VXNlclR5cGU6MjQ4Nzk2NzA="
+              },
+              "displayName": "Akumu-Dragonz",
+              "imageUrl": "https://lh3.googleusercontent.com/yQ1FMRPJFILGQkGvpYryrmTipv8eJ2Vl2wJf7bQoSSkZK36kdJnrktQcm8huSWRpH4x1IHyR7MHleQ0Qc9I35o8UjgdXIiJysVgYpA=s100",
+              "id": "QWNjb3VudFR5cGU6MTQ1NDI0NzUy"
+            },
+            "stats": {
+              "totalSupply": 4699,
+              "id": "Q29sbGVjdGlvblN0YXRzVHlwZToxNTg0MDkyOQ=="
+            },
+            "defaultChain": {
+              "identifier": "ETHEREUM"
+            },
+            "id": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk="
+          }
+        },
+        {
+          "node": {
+            "slug": "goofy-gorilla-gang",
+            "logo": "https://lh3.googleusercontent.com/8e7I4e_bRLiiTAxIWd94aHKzUPZtvT3ARUUfsm5jrghPag8NpXQfxvU2bwACsczyvWO_I6LKiMPR__wncFzMqjf-IzaUO3DLjqw9wA=s120",
+            "banner": "https://lh3.googleusercontent.com/8e7I4e_bRLiiTAxIWd94aHKzUPZtvT3ARUUfsm5jrghPag8NpXQfxvU2bwACsczyvWO_I6LKiMPR__wncFzMqjf-IzaUO3DLjqw9wA=s120",
+            "description": "5000 gorillas being stupid af on the blockchain \n",
+            "name": "Goofy Gorilla Gang",
+            "shortDescription": null,
+            "isVerified": false,
+            "owner": {
+              "address": "35DJ3DVZxP3Ws3fjy5E9vw8jWz4kBDtkBDT6R957nMrN",
+              "config": null,
+              "isCompromised": false,
+              "user": null,
+              "displayName": null,
+              "imageUrl": "https://storage.googleapis.com/opensea-static/opensea-profile/12.png",
+              "id": "QWNjb3VudFR5cGU6Mjc4Nzg1NDM4"
+            },
+            "stats": {
+              "totalSupply": 5000,
+              "id": "Q29sbGVjdGlvblN0YXRzVHlwZToxNTg4OTI0NQ=="
+            },
+            "defaultChain": {
+              "identifier": "SOLANA"
+            },
+            "id": "Q29sbGVjdGlvblR5cGU6MTU4ODkyNDU="
+          }
+        },
+        {
+          "node": {
+            "slug": "piggy-figgy",
+            "logo": "https://lh3.googleusercontent.com/b5_Zi7sUO9aRvGKBMxw2i55SU_8kLsLfoa27d2OI--YwDH_Dg5nPnw99rgyr9I0Z-ihtgud-AZrrY_2Ga_DEBKNdYiwZeRkViELv=s120",
+            "banner": "https://lh3.googleusercontent.com/ril_KK78GoPNo7t654OhN6aLLexakt2259v9Gb2Jwfw6scR64WrcGsxWUOMWfYrcNtCSnH8hQgVR4-cmHa0QFoAO0TtlnFV7CphqOg=s300",
+            "description": "Welcome to our aquarium! Check out various unique and beautiful tropical fish here. If you ever need to find a fish to keep you company or set up the best aquarium for your own, this may be the best spot to find one.",
+            "name": "Piggy! Figgy!",
+            "shortDescription": null,
+            "isVerified": false,
+            "owner": {
+              "address": "0x867dc2777017dfa1caa685b5c6e76dad8b1d717b",
+              "config": null,
+              "isCompromised": false,
+              "user": {
+                "publicUsername": "HancomLink",
+                "id": "VXNlclR5cGU6MzM4MDU1NTc="
+              },
+              "displayName": "HancomLink",
+              "imageUrl": "https://lh3.googleusercontent.com/IyNhb-DYF_bGx4P02WFwfRqs7_8o6pQUoQmMcVe_1p0bCmED_7nSbNzRCl4kBo7hbEDmabyT1XnM2fSnYpek8vPzvnMwXNAg7h57=s100",
+              "id": "QWNjb3VudFR5cGU6Mzk4MTMyODI5"
+            },
+            "stats": {
+              "totalSupply": 50,
+              "id": "Q29sbGVjdGlvblN0YXRzVHlwZToxNDk0NjA5NA=="
+            },
+            "defaultChain": {
+              "identifier": "ETHEREUM"
+            },
+            "id": "Q29sbGVjdGlvblR5cGU6MTQ5NDYwOTQ="
+          }
+        },
+        {
+          "node": {
+            "slug": "rarelandnft",
+            "logo": "https://lh3.googleusercontent.com/VRi-3l-Ge4ks65buP9Zh8DdHb690Xu_gugUK3nDaaS0sYUWoC2uSwwhfum_9TwWBSuYGPdkBsxF-g_3-5sqnn8kgkFCWC6DEWr4i8w=s120",
+            "banner": "https://lh3.googleusercontent.com/OQG5P0B56APEwLrADZqEYPSs-dzB24pQlWDxFYOymgKtULavoao3gBRrXVVrG1LmrDPzQtdCROj3rHGBDg43S3-_1KkzNd8wGrq6qA=s300",
+            "description": "Welcome to Rare Land.\r\nRare Land NFTs are the gateway to unlock our music game with 100+ songs and battle with friends: https://app.mlabs.land\r\n\r\nA collection of 10,000 Rare Land NFTs will grow into avatars and give you membership access to many rare places on Rare Land. It starts with exclusive interactive avatars, NFT drops, AR avatars, Rare Rooms in VR, and much more that will be revealed over time. Community ownership in Rare Land allows for a new genre of media which the world has yet to explore. A Rare Land NFT is your identity in the Rare Land — let's build together. Rare Land honors creativity and contribution, and encourages everyone to create art and engage with the community in any form. \r\n\r\nWelcome to Rare Land.",
+            "name": "Rare Land NFT",
+            "shortDescription": null,
+            "isVerified": false,
+            "owner": {
+              "address": "0x8747d05a7741ddeb81da648bc3307e7ecb1cc13a",
+              "config": null,
+              "isCompromised": false,
+              "user": {
+                "publicUsername": "rarelandnft",
+                "id": "VXNlclR5cGU6MzMyMjQxNTU="
+              },
+              "displayName": "rarelandnft",
+              "imageUrl": "https://lh3.googleusercontent.com/VRi-3l-Ge4ks65buP9Zh8DdHb690Xu_gugUK3nDaaS0sYUWoC2uSwwhfum_9TwWBSuYGPdkBsxF-g_3-5sqnn8kgkFCWC6DEWr4i8w=s100",
+              "id": "QWNjb3VudFR5cGU6MzY3MDYxMDM0"
+            },
+            "stats": {
+              "totalSupply": 10001,
+              "id": "Q29sbGVjdGlvblN0YXRzVHlwZToxNDE5NTczNA=="
+            },
+            "defaultChain": {
+              "identifier": "ETHEREUM"
+            },
+            "id": "Q29sbGVjdGlvblR5cGU6MTQxOTU3MzQ="
+          }
+        },
+        {
+          "node": {
+            "slug": "tom-sachs-mars-rocks",
+            "logo": "https://lh3.googleusercontent.com/ghfJZByjWPd3uLNObWtTFh5I1CReiQARoRjj0rzLnYA-HUAAjFFXQ580tnib1bub_PuHhx3O6asNQCZ4lzEPeedr-zrTWTqb1ysyZg=s120",
+            "banner": "https://lh3.googleusercontent.com/rX-eCIZ-fXEMlzJn0829TDK2yXEUMM5_k1Ej832RBcAddVdcbeSwqFpekEagMXzyS6FNmdWgrkB6SBccjHsv_xX56HZIXXPCKZDs=s300",
+            "description": "Links: [https://linktr.ee/TSRocketfactory](https://linktr.ee/TSRocketfactory)\n\nPublic Mint: May 31, 2022. 12:00PM ET.\nMars Rock NFTs will be revealed June 1, 2022.\n\nMars Rocks were Mined by Rocket Factory Personnel during the Mars Rock Mining Mission. [Rocket NFT](/collection/tom-sachs-rockets) and [Test Flight Crew Patch](/collection/tom-sachs-rocket-factory-patches-) Holders decided the final rarity of the Mars Rock NFT Collection, and were responsible for bringing the Collection back to us on Earth.\n\nTom Sachs Rocket Factory is a trans-dimensional manufacturing plant: we use NFTs to build new NFTs. Acquire all three Components – Nose Cone, Body, Tail Assembly – in your Rocket Factory Hangar to mint a completed Rocket NFT. Visit: [Rockets Collection](/collection/tom-sachs-rockets), [Components Collection](/collection/tom-sachs-rocket-factory), [Patches Collection](/collection/tom-sachs-rocket-factory-patches-) and [Tickets Collection](/collection/tom-sachs-mothership-tickets)",
+            "name": "Tom Sachs: Rocket Factory - Mars Rocks",
+            "shortDescription": null,
+            "isVerified": false,
+            "owner": {
+              "address": "0x76c54c77a58c376ff9533b3582b1f73c49049126",
+              "config": "VERIFIED",
+              "isCompromised": false,
+              "user": {
+                "publicUsername": "TomSachsDeployer",
+                "id": "VXNlclR5cGU6MTA2MzUzMg=="
+              },
+              "displayName": "TomSachsDeployer",
+              "imageUrl": "https://lh3.googleusercontent.com/19m-XD5qKuOuKsfWRxhbhIDzL1jTqb5khOnw-E0J5QqXfajRQOWXAYtkmStcW-HeIvv2tsbUq41Q9lHbs99KUAKsWH6I70C4x1cO=s100",
+              "id": "QWNjb3VudFR5cGU6NTc4MTYxNjU="
+            },
+            "stats": {
+              "totalSupply": 15,
+              "id": "Q29sbGVjdGlvblN0YXRzVHlwZToxNTIzMjk0OA=="
+            },
+            "defaultChain": {
+              "identifier": "ETHEREUM"
+            },
+            "id": "Q29sbGVjdGlvblR5cGU6MTUyMzI5NDg="
+          }
+        },
+        {
+          "node": {
+            "slug": "fluf-world-burrows",
+            "logo": "https://lh3.googleusercontent.com/K_C58JdU7Mmk7-Nlbq36q0X9lc7gMiB-LNPcknDDXbHcefGh1jMBuwnj-w6GdZxzOo78WRIKi2eLIK1SOYyO2y3QG-WKNDtUIOXd3NY=s120",
+            "banner": "https://lh3.googleusercontent.com/J8lqt02XhZ9KpMcERTPm1T4ePPINek3I1Kp6NKwxPnkqnb0JQBVl3ObxxMnFq82qOIRO586TW_X8CVF4GKlz6kGyF_PCruQti_E0JA=s300",
+            "description": "Every Fluf needs a place to call home... and you know they're all about living the high life.\n\nIn collaboration with [Beyond](https://beyond.fun/), Burrows are the hottest virtual metaspaces in all of FLUF World; yours to collect, trade and explore.\n\nWelcome home.\n\n---\n\n[**Official Collections:**](https://opensea.io/collection/fluf-world)\n\n[Flufs](https://opensea.io/collection/fluf)\n\n[Thingies](https://opensea.io/collection/fluf-world-thingies)\n\n[Party Bears](https://opensea.io/collection/partybear)\n\n[Seekers](https://opensea.io/collection/the-seekers)\n\n[EGGs](https://opensea.io/collection/fluf-world-eggs)\n\n[Scenes & Sounds](https://opensea.io/collection/fluf-world-scenes-and-sounds)\n\n[FLUF Haus](https://opensea.io/collection/fluf-haus)",
+            "name": "FLUF World: Burrows",
+            "shortDescription": null,
+            "isVerified": true,
+            "owner": {
+              "address": "0xf6cd7a935e3c339a68b7ccec1897284830af8ac7",
+              "config": null,
+              "isCompromised": false,
+              "user": {
+                "publicUsername": "FLUFxBEYOND",
+                "id": "VXNlclR5cGU6MjA1MTQ0NTA="
+              },
+              "displayName": "FLUFxBEYOND",
+              "imageUrl": "https://lh3.googleusercontent.com/jCVdnwIXFkWlsa_RK3-LDMrkQn8fu6IgQk4wFGx8cweiy1hmwKxz74b2v5jYlXEhxv2BoCeUpoCva9fqMkKn3cBf6VnuVnU5DnBD=s100",
+              "id": "QWNjb3VudFR5cGU6MjA0MDk4NjI5"
+            },
+            "stats": {
+              "totalSupply": 10500,
+              "id": "Q29sbGVjdGlvblN0YXRzVHlwZTo1NTU1Njc0"
+            },
+            "defaultChain": {
+              "identifier": "ETHEREUM"
+            },
+            "id": "Q29sbGVjdGlvblR5cGU6NTU1NTY3NA=="
+          }
+        },
+        {
+          "node": {
+            "slug": "tokenproof-founders-circle",
+            "logo": "https://lh3.googleusercontent.com/wXkmRjyNqx5aJlTIj4ROEqiiFt-fIRLnheeyMjSw5o6LUEYCUOKfDSwB4YcbKiz6JJXAOR9_YqoOZrIsiouA2YP1T79HDf7Tm2Lc1A=s120",
+            "banner": "https://lh3.googleusercontent.com/MjRCL5W81ImGTsFteFYhZPHxQIQZJgFS6MV19IuTQAoFI-WA5hWjUEOoi261mFDe5aMyJ--QrZ-dqhkTaCkXfszdjZoDIrPX1gYE=s300",
+            "description": "Tokenproof is a way to safely and securely prove ownership of your NFTs without the need to ever connect or carry your wallet again. The Founder's Circle NFT was a free claim for our early supporters and will have benefits and utility from time to time. This NFT is not required to have access to the tokenproof service, neither as a Consumer or Verifier.",
+            "name": "tokenproof Founder's Circle",
+            "shortDescription": null,
+            "isVerified": true,
+            "owner": {
+              "address": "0x91ad98ea7a539735b4dd331fac902eb4bcb590d7",
+              "config": "VERIFIED",
+              "isCompromised": false,
+              "user": {
+                "publicUsername": "tokenproof",
+                "id": "VXNlclR5cGU6MzAxNTk2NDc="
+              },
+              "displayName": "tokenproof",
+              "imageUrl": "https://lh3.googleusercontent.com/PcHD9xBNJ2XAEH6JTpdxiM-LxZt_4N3ZK7NahwOGbZbq6VeesGy3eYmBOwu09EdQvmf5f4YwyLcu5gRz2s4sB18spo8uzGbFKzOqWg=s100",
+              "id": "QWNjb3VudFR5cGU6MzA1NDAxOTY2"
+            },
+            "stats": {
+              "totalSupply": 1234,
+              "id": "Q29sbGVjdGlvblN0YXRzVHlwZToxMzczODU5Mg=="
+            },
+            "defaultChain": {
+              "identifier": "ETHEREUM"
+            },
+            "id": "Q29sbGVjdGlvblR5cGU6MTM3Mzg1OTI="
+          }
+        },
+        {
+          "node": {
+            "slug": "quantum-curated",
+            "logo": "https://lh3.googleusercontent.com/yPHxzvGqB3eASMX-N-L1gkUD0RKfURQsaKayPYq0dSK-cYcstd_TFuTj4Z_VmtQIoJNJSJCOB1PdpA0jUR4OBQ7VRDlXfUhT1zAy1A=s120",
+            "banner": "https://lh3.googleusercontent.com/P_xnEJLSrxfvLgPKjAkIAVI2G2M-b-zIFH5_MjmlxE5g1Wl7zNGS8FZBRYDh5rs8S9tuvbPMiTeakE9kw66zGG25UQeCvaDBcRPn=s2500",
+            "description": "Digital Culture, Curated. Quantum is an NFT platform for artists and collectors to share their work with the world.",
+            "name": "Quantum Curated",
+            "shortDescription": null,
+            "isVerified": true,
+            "owner": {
+              "address": "0xc5c721caa3cad959818e891b533a34c37946e9bf",
+              "config": "VERIFIED",
+              "isCompromised": false,
+              "user": {
+                "publicUsername": "Quantum-Art-Curator",
+                "id": "VXNlclR5cGU6MzI5MDQ5Mjg="
+              },
+              "displayName": "Quantum-Art-Curator",
+              "imageUrl": "https://lh3.googleusercontent.com/U58-YzpZZTR9_6UY11fTqspS8CWwXYBLvhtPA4diwsGFIE39KIbSwolBs_sHmaZWSaevPvzFkq44XCPhFAf1L62BsR2AJ2RkOHJf=s100",
+              "id": "QWNjb3VudFR5cGU6MzQ0MDE3MDIz"
+            },
+            "stats": {
+              "totalSupply": 3238,
+              "id": "Q29sbGVjdGlvblN0YXRzVHlwZToyNTI0MTE4"
+            },
+            "defaultChain": {
+              "identifier": "ETHEREUM"
+            },
+            "id": "Q29sbGVjdGlvblR5cGU6MjUyNDExOA=="
+          }
+        },
+        {
+          "node": {
+            "slug": "ether-orcs",
+            "logo": "https://lh3.googleusercontent.com/Rqt9abO3ajmblpelJjiWpmoNaIUKrHAJ4TMVicJW_ycx23UeTQgkOQKmqzkhj27k7fbyG0eMZtPpukuNkudv8HCrAxtghqgMkv3wwJ0=s120",
+            "banner": "https://lh3.googleusercontent.com/7dvxAeAvJ0RDtF_te0pLxzcYND-qzTRtCeBxXvJJTbwGh5SARtcQvSqc9RrMk9EbrykuHvEZ6NMSVuGG3rvHq3POAwaVYub3Duwz=s300",
+            "description": "ACTUAL OWNER COUNT: 1588 as of 5/14/22 with 96% staked in gameplay.\n\nEtherOrcs Allies: https://opensea.io/collection/etherorcsallies\n\nEtherOrcs Loot: https://opensea.io/collection/etherorcsloot\n\nEtherOrcs Items: https://opensea.io/collection/etherorcs-items\n\nEtherOrcs is a collection of 5050 Orcs ready to pillage the blockchain. With no IPFS or API, these Orcs are the very first game that takes place 100% on-chain. \n\nUse your Orc to take part in an ever evolving on-chain gaming experience. Pillage for new gear, raid for new allies, battle in the Arena for rewards, and much more. This Horde of Orcs will stand the test of time and live on the blockchain for eternity.\n\nVisit our site to learn more: https://etherorcs.com/",
+            "name": "EtherOrcs Genesis",
+            "shortDescription": null,
+            "isVerified": true,
+            "owner": {
+              "address": "0xe37da1e4632b94e601ac015be8db554e0456b01a",
+              "config": "VERIFIED",
+              "isCompromised": false,
+              "user": {
+                "publicUsername": "EtherOrcsOfficial",
+                "id": "VXNlclR5cGU6NDI4MTI2OQ=="
+              },
+              "displayName": "EtherOrcsOfficial",
+              "imageUrl": "https://lh3.googleusercontent.com/uP8ez-YCGgXNDvY98POiLGTcbDAI4hpGapqCYeMbYYrCrtCGxQNj4GW-19mrjA5D81eI-g8ENebdHgwOJigvdj_UuAWt7IHdPNkd0Q=s100",
+              "id": "QWNjb3VudFR5cGU6OTUyMzYxMDk="
+            },
+            "stats": {
+              "totalSupply": 5019,
+              "id": "Q29sbGVjdGlvblN0YXRzVHlwZToyMjEzOTgw"
+            },
+            "defaultChain": {
+              "identifier": "ETHEREUM"
+            },
+            "id": "Q29sbGVjdGlvblR5cGU6MjIxMzk4MA=="
+          }
+        },
+        {
+          "node": {
+            "slug": "apiens-main-collection",
+            "logo": "https://lh3.googleusercontent.com/5oXCEDeqfehomY8N6QUEOh4lAcYNxF7PxU9UbkTyGERBlK-2X0w5DDOzoRlWHPfEwabfULChzADNFgg0cywSpeXvhMm2Op0dGaALfw=s120",
+            "banner": "https://lh3.googleusercontent.com/JMX2Ai9_UO_O0DLoe1VvwvdWyF-5hdzup2xVtK3gKeU-UHY3pylCnJAt1IKVFDvQgic3IVm8YFyIL3KWHvv4XRPNkfziL5WiMOnc=s300",
+            "description": "Apiens is the collection of meta fashion 3D young apes that started with a vision to make blockchain integrated clothes for NFTs enthusiasts back in January 2022. Apiens characters are the combination of youthfulness, fashion, and dignity that going to inspire next generation fashion. \n\nGenesis collection:\nhttps://opensea.io/collection/genesis-apiens\n\nOfficial website:\nhttps://theapiens.com/",
+            "name": "APIENS",
+            "shortDescription": null,
+            "isVerified": false,
+            "owner": {
+              "address": "0x9632366504adc22df1eeaa6fb1ef89b771e1c8cd",
+              "config": "VERIFIED",
+              "isCompromised": false,
+              "user": {
+                "publicUsername": "TheApiensTeam",
+                "id": "VXNlclR5cGU6Mjk5NDAyMDU="
+              },
+              "displayName": "TheApiensTeam",
+              "imageUrl": "https://lh3.googleusercontent.com/kWgRA3Kxr3ebFdrjZ9A7BIHF_xL2WzaI4O0vVAuKKCtOSTtr2uCm768dM_PD3HhOFfwe56egANfNhQKmQ97HiE4zRBZ1HtJU5VxKRQ=s100",
+              "id": "QWNjb3VudFR5cGU6Mjk2NDM1ODky"
+            },
+            "stats": {
+              "totalSupply": 4229,
+              "id": "Q29sbGVjdGlvblN0YXRzVHlwZToxMzUyODI2Ng=="
+            },
+            "defaultChain": {
+              "identifier": "ETHEREUM"
+            },
+            "id": "Q29sbGVjdGlvblR5cGU6MTM1MjgyNjY="
+          }
+        },
+        {
+          "node": {
+            "slug": "whoopsiesdoopsies",
+            "logo": "https://lh3.googleusercontent.com/ndilWn66hjeQ8QufFS-DLJ9qB6jpMYB1iTeoUDi5LjNS7VaBG1m64C6ill0aaIgSGi2Gpnn6hroKmJGy5RIPIjT1P1gc5qlM9F1x=s120",
+            "banner": "https://lh3.googleusercontent.com/ndilWn66hjeQ8QufFS-DLJ9qB6jpMYB1iTeoUDi5LjNS7VaBG1m64C6ill0aaIgSGi2Gpnn6hroKmJGy5RIPIjT1P1gc5qlM9F1x=s300",
+            "description": "Whoopsies Doopsies is a community-driven NFT project featuring art by Aqua Studio. \r\nFour factions will enter the space to begin setting up settlements in metaverse: LANU; MANU; CASA; KELTA. Each WD alien allows its owner to vote for events and further WEB 3 development paid for by the Whoopsies Doopsies Community Wallet. More information on our roadmap and plans can be found on our discord. #whoopdoop",
+            "name": "Whoopsies Doopsies",
+            "shortDescription": null,
+            "isVerified": true,
+            "owner": {
+              "address": "0x1a5a345bc53e76bb876af788924e8cfd50bbf837",
+              "config": "VERIFIED",
+              "isCompromised": false,
+              "user": {
+                "publicUsername": "WDEPLOYER",
+                "id": "VXNlclR5cGU6MzMzMTczOTQ="
+              },
+              "displayName": "WDEPLOYER",
+              "imageUrl": "https://lh3.googleusercontent.com/ndilWn66hjeQ8QufFS-DLJ9qB6jpMYB1iTeoUDi5LjNS7VaBG1m64C6ill0aaIgSGi2Gpnn6hroKmJGy5RIPIjT1P1gc5qlM9F1x=s100",
+              "id": "QWNjb3VudFR5cGU6MjgyNDM1NTY5"
+            },
+            "stats": {
+              "totalSupply": 6125,
+              "id": "Q29sbGVjdGlvblN0YXRzVHlwZToxNDMwMDM0NQ=="
+            },
+            "defaultChain": {
+              "identifier": "ETHEREUM"
+            },
+            "id": "Q29sbGVjdGlvblR5cGU6MTQzMDAzNDU="
+          }
+        },
+        {
+          "node": {
+            "slug": "zenacademy",
+            "logo": "https://lh3.googleusercontent.com/fKKKLv31-nHRbNoecVUU_DUsOy5pVHWykO8vUgcCPjIMGVtYMSSzQ2OOqINiccnmIWN-E5rkQFrHFmKh5mcLlDf_x1aSnRWWnqNC9dQ=s120",
+            "banner": "https://lh3.googleusercontent.com/IaUEHOT78TUQ3SiinUGv829DeFVj7kht_kFMz2U6x6S6yxQlI_2V6KvSq9C25F5bxSi4gF8X0_Vbbigr17O-iDQiLhG9bXSyycnUJbQ=s300",
+            "description": "Welcome to ZenAcademy. These tokens grant lifetime membership to our sanctuary in this crazy NFT world. I encourage anyone interested in joining to visit our website at zenacademy.io and read all about the memberships -- here is a snippet from there: \n\nMy goal with ZenAcademy is to create a community of like-minded individuals that are here to learn, that are here to share, create, build, encourage. I don’t want it to be a place where one person is going to post “alpha calls” and get an army of followers to fomo into projects. I want it to be a place where we all help one another, by learning. I want to research projects and share what I think and then get feedback from everyone else and hear what you think too. I’m one tiny cog in this enormous wheel. I just hope to move the wheel forward, and I hope that some of you will join me and move the wheel forward with me.\n\nDiscord Server for ZenAcademy: https://discord.gg/zenacademy\nDiscord Server for The 333 Club: https://discord.gg/the333",
+            "name": "ZenAcademy",
+            "shortDescription": null,
+            "isVerified": false,
+            "owner": {
+              "address": "0xa42063eeb50dbc92e7c1e718ad9644b33a8ff8bc",
+              "config": "VERIFIED",
+              "isCompromised": false,
+              "user": {
+                "publicUsername": "ZenAcademyDeployer",
+                "id": "VXNlclR5cGU6NzU2NDA3OQ=="
+              },
+              "displayName": "ZenAcademyDeployer",
+              "imageUrl": "https://lh3.googleusercontent.com/ew5PicfQ8KUkhec7BTC9apZb4wo25RBd4FKQhHq0nnEbffXPT1pnAIgLgapGP0JcpU80CrCipo75og5eoOtbbp_oK1Kn7PrlwdIH=s100",
+              "id": "QWNjb3VudFR5cGU6MTIxMjg0MzUw"
+            },
+            "stats": {
+              "totalSupply": 2,
+              "id": "Q29sbGVjdGlvblN0YXRzVHlwZToyNjY0MjM1"
+            },
+            "defaultChain": {
+              "identifier": "ETHEREUM"
+            },
+            "id": "Q29sbGVjdGlvblR5cGU6MjY2NDIzNQ=="
+          }
+        }
+      ]
+    }
+  }
+}

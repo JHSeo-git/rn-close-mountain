@@ -1,0 +1,51 @@
+{
+  "data": {
+    "categories": [
+      {
+        "id": 1,
+        "coverImageUrl": "https://opensea.io/static/images/categories/art.png",
+        "name": "Art"
+      },
+      {
+        "id": 2,
+        "coverImageUrl": "https://opensea.io/static/images/categories/collectibles.png",
+        "name": "Collectibles"
+      },
+      {
+        "id": 3,
+        "coverImageUrl": "https://opensea.io/static/images/categories/domain-names.png",
+        "name": "Domain Names"
+      },
+      {
+        "id": 4,
+        "coverImageUrl": "https://opensea.io/static/images/categories/music.png",
+        "name": "Music"
+      },
+      {
+        "id": 5,
+        "coverImageUrl": "https://opensea.io/static/images/categories/photography-category.png",
+        "name": "Photography"
+      },
+      {
+        "id": 6,
+        "coverImageUrl": "https://opensea.io/static/images/categories/sports.png",
+        "name": "Sports"
+      },
+      {
+        "id": 7,
+        "coverImageUrl": "https://opensea.io/static/images/categories/trading-cards.png",
+        "name": "Trading Cards"
+      },
+      {
+        "id": 8,
+        "coverImageUrl": "https://opensea.io/static/images/categories/utility.png",
+        "name": "Utility"
+      },
+      {
+        "id": 9,
+        "coverImageUrl": "https://opensea.io/static/images/categories/virtual-worlds.png",
+        "name": "Virtual Worlds"
+      }
+    ]
+  }
+}
