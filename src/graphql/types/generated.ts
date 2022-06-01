@@ -102,7 +102,7 @@ export type QueryVariablesMap = {
   OrderManagerQuery: {};
   OrdersQuery: {};
   PartnershipPageQuery: {};
-  PaymentFilterQuery: {};
+  PaymentFilterQuery: PaymentFilterQueryVariables;
   PaymentSettingsQuery: {};
   PriceHistoryQuery: {};
   PrivateListingBannerQuery: {};
@@ -626,6 +626,14 @@ export interface CollectionsScrollerQuery {}
 
 export interface HomePageQueryVariables {}
 export interface HomePageQuery {}
+
+export interface PaymentFilterQuery {}
+export interface PaymentFilterQueryVariables {
+  collection: CollectionSlug;
+  count: number;
+  cursor: string | null;
+  query: string;
+}
 
 export interface TopCollectionsLazyQueryVariables {
   sortBy: CollectionSort;

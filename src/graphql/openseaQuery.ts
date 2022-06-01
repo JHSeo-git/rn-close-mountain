@@ -232,7 +232,7 @@ const openseaQuery: OpenseaQuery = {
     query: null,
   },
   CollectionsScrollerQuery: {
-    key: '2f10106346cc0ce4e0cabddcaebaa82fe717c311c4d0ab00e48acc1a8cf3aae3',
+    key: 'b9be9aa9b280fc490a3c4c6d70c71f625fbe0f4b9a63e38e99a635adb964b29d',
     query:
       'query CollectionsScrollerQuery(\n  $categories: [CategorySlug!]\n  $chains: [ChainScalar!]\n) {\n  trendingCollections(first: 12, categories: $categories, chains: $chains) {\n    edges {\n      node {\n        ...CollectionCard_data\n        id\n      }\n    }\n  }\n}\n\nfragment AccountLink_data on AccountType {\n  address\n  config\n  isCompromised\n  user {\n    publicUsername\n    id\n  }\n  displayName\n  ...ProfileImage_data\n  ...wallet_accountKey\n  ...accounts_url\n}\n\nfragment CollectionCardContextMenu_data on CollectionType {\n  ...collection_url\n}\n\nfragment CollectionCard_data on CollectionType {\n  ...CollectionCardContextMenu_data\n  ...CollectionCard_getShowCollectionCardData\n  ...collection_url\n  description\n  name\n  shortDescription\n  slug\n  logo\n  banner\n  isVerified\n  owner {\n    ...AccountLink_data\n    id\n  }\n  stats {\n    totalSupply\n    id\n  }\n  defaultChain {\n    identifier\n  }\n}\n\nfragment CollectionCard_getShowCollectionCardData on CollectionType {\n  logo\n  banner\n}\n\nfragment ProfileImage_data on AccountType {\n  imageUrl\n  user {\n    publicUsername\n    id\n  }\n  displayName\n}\n\nfragment accounts_url on AccountType {\n  address\n  user {\n    publicUsername\n    id\n  }\n}\n\nfragment collection_url on CollectionType {\n  slug\n}\n\nfragment wallet_accountKey on AccountType {\n  address\n}\n',
   },
@@ -273,7 +273,7 @@ const openseaQuery: OpenseaQuery = {
     query: null,
   },
   HomePageQuery: {
-    key: '8134d4fc96a14796329c62c3021be1f2b23fc2f9dd650411d92f8e644b25fbad',
+    key: 'a06b8a36ebf031093e0dccfe8b4b2d01bfc4d28a7c9583a1d37d112fbcca2b62',
     query:
       'query HomePageQuery {\n  promotions(promotionType: HOMEPAGE) {\n    ...Promotions_promotions\n    id\n  }\n  featuredAsset(featuredAssetType: HOMEPAGE) {\n    ...Featured_data\n    id\n  }\n}\n\nfragment AssetMedia_asset on AssetType {\n  animationUrl\n  backgroundColor\n  collection {\n    displayData {\n      cardDisplayStyle\n    }\n    id\n  }\n  isDelisted\n  imageUrl\n  displayImageUrl\n}\n\nfragment Featured_data on AssetType {\n  name\n  imagePreviewUrl\n  imageUrl\n  creator {\n    imageUrl\n    user {\n      publicUsername\n      id\n    }\n    id\n  }\n  ...asset_url\n  ...AssetMedia_asset\n  ...itemEvents_data\n}\n\nfragment Promotions_promotions on PromotionType {\n  id\n  promoCardImg\n  promoCardLink\n  promoCardVideo\n  promoCardVideoMimeType\n  promoHeader\n  cardColor\n  promoSubtitle\n  saleStartTime\n  saleEndTime\n}\n\nfragment asset_url on AssetType {\n  assetContract {\n    address\n    chain\n    id\n  }\n  tokenId\n}\n\nfragment itemEvents_data on AssetType {\n  assetContract {\n    address\n    chain\n    id\n  }\n  tokenId\n}\n',
   },
@@ -395,7 +395,8 @@ const openseaQuery: OpenseaQuery = {
   },
   PaymentFilterQuery: {
     key: '1a71e00a5a64c6565a1532e42005fec0c190c4d3078a979eb460c6c701ee4e7f',
-    query: null,
+    query:
+      'query PaymentFilterQuery(\n  $collection: CollectionSlug\n  $count: Int\n  $cursor: String\n  $query: String\n) {\n  query {\n    ...PaymentFilter_data_2ArDfe\n  }\n}\n\nfragment PaymentFilter_data_2ArDfe on Query {\n  paymentAssets(after: $cursor, symbolIcontains: $query, first: $count) {\n    edges {\n      node {\n        symbol\n        relayId\n        id\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n    }\n  }\n  PaymentFilter_collection: collection(collection: $collection) {\n    paymentAssets {\n      symbol\n      relayId\n      id\n    }\n    id\n  }\n}\n',
   },
   PaymentSettingsQuery: {
     key: '1f62c48aa3b54f15756485006a80bc6245aeddc4aca7000f78ec127e7850a09a',
