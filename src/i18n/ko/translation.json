@@ -1,5 +1,6 @@
 {
   "common": {
+    "closeMountain": "Close Mountain",
     "welcome": "Close Mountain에 오신 것을 환영합니다",
     "home": "홈",
     "main": "메인",
@@ -48,7 +49,13 @@
     "featured_nfts": "추천 NFTs",
     "browse_by_category": "카테고리별 보기",
     "empty_featured_message": "Featured NFTs을 준비중 입니다.",
-    "empty_notable_drops_message": "The Notable Drops 준비중 입니다."
+    "empty_notable_drops_message": "The Notable Drops 준비중 입니다.",
+    "empty_browse_by_category": "The Category 준비중 입니다."
+  },
+  "footer": {
+    "privacy_policy": "개인 정보 보호 정책",
+    "terms_of_use": "이용 약관",
+    "footer_description": "전 세계에서 가장 늦고 가장 작은 NFTs 디지털 마켓플레이스. 뛰어난 디지털 상품을 발견해보세요."
   },
   "rankings": {
     "title": "NTF 순위",
