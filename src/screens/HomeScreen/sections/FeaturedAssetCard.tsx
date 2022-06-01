@@ -3,6 +3,7 @@ import { Avatar, Card, IconButton } from 'react-native-paper';
 import { COLORS, SIZES, SPACE } from '../../../constants/design-token';
 import UIText from '../../../components/UIText';
 import useSkeleton from '../../../hooks/useSkeleton';
+import { useTranslation } from 'react-i18next';
 
 type FeaturedAssetCardProps = {
   style?: StyleProp<ViewStyle>;
@@ -24,11 +25,7 @@ const FeaturedAssetCard = ({
   onIconPress,
 }: FeaturedAssetCardProps) => {
   return (
-    <Card
-      style={[styles.card, style]}
-      // TODO: add onPress
-      onPress={onPress}
-    >
+    <Card style={[styles.card, style]} onPress={onPress}>
       <Card.Cover style={styles.cardCover} source={{ uri: coverImageUrl }} />
       <Card.Content style={styles.cardContent}>
         <View style={styles.cardContentHead}>
@@ -47,7 +44,6 @@ const FeaturedAssetCard = ({
             size={SIZES.$6}
             icon="alert-circle-outline"
             color={COLORS.text.secondary}
-            // TODO: add onPress
             onPress={onIconPress}
           />
         </View>
@@ -68,7 +64,20 @@ const Skeleton = () => {
   );
 };
 
+const Empty = () => {
+  const { t } = useTranslation();
+  return (
+    <Card style={styles.card}>
+      <View style={styles.skeleton} />
+      <Card.Content style={styles.cardContent}>
+        <UIText as="small_bold">{t('home.empty_featured_message')}</UIText>
+      </Card.Content>
+    </Card>
+  );
+};
+
 FeaturedAssetCard.Skeleton = Skeleton;
+FeaturedAssetCard.Empty = Empty;
 
 const styles = StyleSheet.create({
   card: {

@@ -1,14 +1,15 @@
-import { useRef, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import Carousel from 'react-native-snap-carousel';
+import { observer } from 'mobx-react-lite';
 import NotableDropCard from './NotableDropCard';
 import SectionView from '../../../components/SectionView';
 import UICarouselDots from '../../../components/UICarouselDots';
+import { useStore } from '../../../contexts/StoreContext';
 import { SPACE } from '../../../constants/design-token';
 import { viewportWidth, widthByPercent } from '../../../utils/styleUtils';
-import { OpenSeaAsset } from '../../../utils/types/opensea/types';
-import UIText from '../../../components/UIText';
+import { useFocusEffect } from '@react-navigation/native';
 
 const slideWidth = widthByPercent(100);
 const slideHorizontalMargin = SPACE.$5;
@@ -17,16 +18,20 @@ const sliderWidth = viewportWidth;
 const itemHorizontalMargin = slideHorizontalMargin / 2;
 const itemWidth = slideWidth - itemHorizontalMargin * 2;
 
-type NotableDropsSectionProps = {
-  notableDrops: OpenSeaAsset[];
-  loading: boolean;
-};
-
-const NotableDropsSection = ({ notableDrops, loading }: NotableDropsSectionProps) => {
+const NotableDropsSection = observer(() => {
   const { t } = useTranslation();
+  const { mainHomeStore } = useStore();
 
   const [activeSlide, setActiveSlide] = useState(0);
   const carouselRef = useRef<any>();
+
+  const { notableDrops, retrieveNotableDropsLoading: loading } = mainHomeStore;
+
+  useFocusEffect(
+    useCallback(() => {
+      mainHomeStore.retrieveNotableDrops();
+    }, []),
+  );
 
   return (
     <SectionView title={t('home.notable_drops')} titleViewStyle={styles.sectionHeader}>
@@ -63,11 +68,13 @@ const NotableDropsSection = ({ notableDrops, loading }: NotableDropsSectionProps
           />
         </>
       ) : (
-        <UIText>Empty</UIText>
+        <View style={{ marginHorizontal: SPACE.$5 }}>
+          <NotableDropCard.Empty />
+        </View>
       )}
     </SectionView>
   );
-};
+});
 
 const styles = StyleSheet.create({
   sectionHeader: {

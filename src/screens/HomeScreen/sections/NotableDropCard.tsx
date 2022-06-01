@@ -1,4 +1,5 @@
 import { View, StyleSheet, StyleProp, ViewStyle, Animated } from 'react-native';
+import { useTranslation } from 'react-i18next';
 import LinearGradient from 'react-native-linear-gradient';
 import { Card } from 'react-native-paper';
 import UIText from '../../../components/UIText';
@@ -51,7 +52,21 @@ const Skeleton = () => {
   );
 };
 
+const Empty = () => {
+  const { t } = useTranslation();
+
+  return (
+    <Card style={styles.card}>
+      <View style={styles.skeleton} />
+      <View style={styles.emptyContent}>
+        <UIText as="small_bold">{t('home.empty_notable_drops_message')}</UIText>
+      </View>
+    </Card>
+  );
+};
+
 NotableDropCard.Skeleton = Skeleton;
+NotableDropCard.Empty = Empty;
 
 const styles = StyleSheet.create({
   card: {
@@ -80,6 +95,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: SPACE.$4,
     left: SPACE.$4,
+    right: SPACE.$4,
     zIndex: 1,
   },
   chip: {
@@ -95,6 +111,11 @@ const styles = StyleSheet.create({
 
     backgroundColor: COLORS.grayA9,
     zIndex: 1,
+  },
+  emptyContent: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 

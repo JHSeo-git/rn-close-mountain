@@ -24,7 +24,7 @@ class MainHomeStore extends BaseStore {
   }
 
   /**
-   * 일주일 이내의 이벤트가 'successful'인 Asset 중 하나를 조회한다.
+   * 한달 이내의 이벤트가 'successful'인 Asset 중 하나를 조회한다.
    */
   retrieveFeaturedAsset = async () => {
     runInAction(() => {

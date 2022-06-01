@@ -1,21 +1,29 @@
+import { useCallback } from 'react';
 import { View, StyleSheet, Image } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import LinearGradient from 'react-native-linear-gradient';
 import MaskedView from '@react-native-masked-view/masked-view';
+import { useFocusEffect } from '@react-navigation/native';
+import { observer } from 'mobx-react-lite';
 import FeaturedAssetCard from './FeaturedAssetCard';
 import UIText from '../../../components/UIText';
 import CustomButton from '../../../components/CustomButton';
+import { useStore } from '../../../contexts/StoreContext';
 import { SPACE } from '../../../constants/design-token';
 import * as viewStyle from '../../../constants/global-styles/viewStyles';
-import type { OpenSeaAsset } from '../../../utils/types/opensea/types';
 
-type FeaturedAssetSecionProps = {
-  asset?: OpenSeaAsset;
-  loading: boolean;
-};
-
-const FeaturedAssetSecion = ({ asset, loading }: FeaturedAssetSecionProps) => {
+const FeaturedAssetSecion = observer(() => {
   const { t } = useTranslation();
+  const { mainHomeStore } = useStore();
+
+  const asset = mainHomeStore.featuredAsset;
+  const loading = mainHomeStore.retrieveFeaturedAssetLoading;
+
+  useFocusEffect(
+    useCallback(() => {
+      mainHomeStore.retrieveFeaturedAsset();
+    }, []),
+  );
 
   return (
     <View style={styles.container}>
@@ -51,12 +59,12 @@ const FeaturedAssetSecion = ({ asset, loading }: FeaturedAssetSecionProps) => {
             onIconPress={() => {}}
           />
         ) : (
-          <UIText>empty</UIText>
+          <FeaturedAssetCard.Empty />
         )}
       </View>
     </View>
   );
-};
+});
 
 const styles = StyleSheet.create({
   container: {
@@ -75,7 +83,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   backdropImage: {
-    opacity: 0.3,
+    opacity: 0.5,
     resizeMode: 'cover',
     height: '100%',
   },
