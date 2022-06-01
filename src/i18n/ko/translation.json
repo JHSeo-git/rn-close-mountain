@@ -46,7 +46,9 @@
     "featured_description": "Close Mountain NFT를 위한 플랫폼입니다. 그리고 가장 작은 NFT 마켓플레이스입니다.",
     "notable_drops": "주목할만한 콜렉션",
     "featured_nfts": "추천 NFTs",
-    "browse_by_category": "카테고리별 보기"
+    "browse_by_category": "카테고리별 보기",
+    "empty_featured_message": "Featured NFTs을 준비중 입니다.",
+    "empty_notable_drops_message": "The Notable Drops 준비중 입니다."
   },
   "rankings": {
     "title": "NTF 순위",
