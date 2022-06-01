@@ -25,11 +25,15 @@ const NotableDropsSection = observer(() => {
   const [activeSlide, setActiveSlide] = useState(0);
   const carouselRef = useRef<any>();
 
-  const { notableDrops, retrieveNotableDropsLoading: loading } = mainHomeStore;
+  const {
+    notableDrops,
+    retrieveNotableDrops,
+    retrieveNotableDropsLoading: loading,
+  } = mainHomeStore;
 
   useFocusEffect(
     useCallback(() => {
-      mainHomeStore.retrieveNotableDrops();
+      retrieveNotableDrops();
     }, []),
   );
 
@@ -78,6 +82,7 @@ const NotableDropsSection = observer(() => {
 
 const styles = StyleSheet.create({
   sectionHeader: {
+    flex: 1,
     paddingHorizontal: SPACE.$5,
   },
   slider: {},

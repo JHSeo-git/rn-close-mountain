@@ -9,19 +9,22 @@ import FeaturedAssetCard from './FeaturedAssetCard';
 import UIText from '../../../components/UIText';
 import CustomButton from '../../../components/CustomButton';
 import { useStore } from '../../../contexts/StoreContext';
-import { SPACE } from '../../../constants/design-token';
+import { COLORS, SPACE } from '../../../constants/design-token';
 import * as viewStyle from '../../../constants/global-styles/viewStyles';
 
 const FeaturedAssetSecion = observer(() => {
   const { t } = useTranslation();
   const { mainHomeStore } = useStore();
 
-  const asset = mainHomeStore.featuredAsset;
-  const loading = mainHomeStore.retrieveFeaturedAssetLoading;
+  const {
+    featuredAsset: asset,
+    retrieveFeaturedAsset,
+    retrieveFeaturedAssetLoading: loading,
+  } = mainHomeStore;
 
   useFocusEffect(
     useCallback(() => {
-      mainHomeStore.retrieveFeaturedAsset();
+      retrieveFeaturedAsset();
     }, []),
   );
 
@@ -68,7 +71,9 @@ const FeaturedAssetSecion = observer(() => {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     paddingVertical: SPACE.$8,
+    backgroundColor: COLORS.loContrast,
     position: 'relative',
   },
   inner: {

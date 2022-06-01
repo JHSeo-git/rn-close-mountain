@@ -5,11 +5,68 @@ import getEvents from '../api/testnets/event/getEvents';
 import getAssets from '../api/testnets/asset/getAssets';
 import type { OpenSeaAsset } from '../utils/types/opensea/types';
 
+type CategoryInfo = {
+  id: number;
+  coverImageUrl: string;
+  name: string;
+};
+
+// TODO: retreive api
+const categories: CategoryInfo[] = [
+  {
+    id: 1,
+    coverImageUrl: 'https://opensea.io/static/images/categories/art.png',
+    name: 'Art',
+  },
+  {
+    id: 2,
+    coverImageUrl: 'https://opensea.io/static/images/categories/collectibles.png',
+    name: 'Collectibles',
+  },
+  {
+    id: 3,
+    coverImageUrl: 'https://opensea.io/static/images/categories/domain-names.png',
+    name: 'Domain Names',
+  },
+  {
+    id: 4,
+    coverImageUrl: 'https://opensea.io/static/images/categories/music.png',
+    name: 'Music',
+  },
+  {
+    id: 5,
+    coverImageUrl: 'https://opensea.io/static/images/categories/photography-category.png',
+    name: 'Photography',
+  },
+  {
+    id: 6,
+    coverImageUrl: 'https://opensea.io/static/images/categories/sports.png',
+    name: 'Sports',
+  },
+  {
+    id: 7,
+    coverImageUrl: 'https://opensea.io/static/images/categories/trading-cards.png',
+    name: 'Trading Cards',
+  },
+  {
+    id: 8,
+    coverImageUrl: 'https://opensea.io/static/images/categories/utility.png',
+    name: 'Utility',
+  },
+  {
+    id: 9,
+    coverImageUrl: 'https://opensea.io/static/images/categories/virtual-worlds.png',
+    name: 'Virtual Worlds',
+  },
+];
+
 class MainHomeStore extends BaseStore {
   featuredAsset: OpenSeaAsset | undefined;
   notableDrops: OpenSeaAsset[] = [];
+  categories: CategoryInfo[] = [];
   retrieveFeaturedAssetLoading: boolean = false;
   retrieveNotableDropsLoading: boolean = false;
+  retrieveCategoriesLoading: boolean = false;
 
   constructor(root: RootStore) {
     super(root);
@@ -18,8 +75,10 @@ class MainHomeStore extends BaseStore {
       notableDrops: observable,
       retrieveFeaturedAssetLoading: observable,
       retrieveNotableDropsLoading: observable,
+      retrieveCategoriesLoading: observable,
       retrieveFeaturedAsset: action,
       retrieveNotableDrops: action,
+      retrieveCategories: action,
     });
   }
 
@@ -85,6 +144,27 @@ class MainHomeStore extends BaseStore {
     } finally {
       runInAction(() => {
         this.retrieveNotableDropsLoading = false;
+      });
+    }
+  };
+
+  retrieveCategories = async () => {
+    runInAction(() => {
+      this.retrieveCategoriesLoading = true;
+    });
+    try {
+      const result = categories;
+
+      runInAction(() => {
+        this.categories = result;
+      });
+
+      return result;
+    } catch (e) {
+      throw e;
+    } finally {
+      runInAction(() => {
+        this.retrieveCategoriesLoading = false;
       });
     }
   };

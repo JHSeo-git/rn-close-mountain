@@ -7,9 +7,11 @@ import Header from '../../components/Header';
 import FeaturedAssetSecion from './sections/FeaturedAssetSecion';
 import NotableDropsSection from './sections/NotableDropsSection';
 import useOnScrollBottomTab from '../../hooks/useOnScrollBottomTab';
-import { SIZES } from '../../constants/design-token';
+import { COLORS, SIZES } from '../../constants/design-token';
 import * as viewStyles from '../../constants/global-styles/viewStyles';
 import type { HomeStackScreenProps } from '../types';
+import FooterSection from './sections/FooterSection';
+import BrowseByCategorySection from './sections/BrowseByCategorySection';
 
 type HomeScreenProps = {} & HomeStackScreenProps<'Home'>;
 
@@ -18,7 +20,7 @@ const HomeScreen = observer(({}: HomeScreenProps) => {
   const { onScroll } = useOnScrollBottomTab();
 
   return (
-    <SafeAreaView style={viewStyles.flex_1_bg_white}>
+    <SafeAreaView edges={['top', 'left', 'right']} style={viewStyles.flex_1_bg_white}>
       <Header title={t('common.home')} />
       <ScrollView
         contentContainerStyle={styles.scrollView}
@@ -27,6 +29,8 @@ const HomeScreen = observer(({}: HomeScreenProps) => {
       >
         <FeaturedAssetSecion />
         <NotableDropsSection />
+        <BrowseByCategorySection />
+        <FooterSection />
       </ScrollView>
     </SafeAreaView>
   );
@@ -35,6 +39,7 @@ const HomeScreen = observer(({}: HomeScreenProps) => {
 const styles = StyleSheet.create({
   scrollView: {
     paddingBottom: SIZES.iosBottomTabHeight,
+    backgroundColor: COLORS.primary,
   },
 });
 
