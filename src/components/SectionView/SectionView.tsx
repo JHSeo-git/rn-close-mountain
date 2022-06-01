@@ -1,5 +1,5 @@
 import { View, StyleSheet, StyleProp, ViewStyle } from 'react-native';
-import { SPACE } from '../../constants/design-token';
+import { COLORS, SPACE } from '../../constants/design-token';
 import UIText from '../UIText';
 
 type SectionViewProps = {
@@ -25,6 +25,7 @@ const SectionView = ({ style, title, titleViewStyle, children }: SectionViewProp
 const styles = StyleSheet.create({
   conatiner: {
     paddingVertical: SPACE.$8,
+    backgroundColor: COLORS.loContrast,
   },
   header: {
     marginBottom: SPACE.$5,
