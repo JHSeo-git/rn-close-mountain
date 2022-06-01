@@ -30,6 +30,7 @@ export const COLORS = {
   transparent: 'transparent',
 
   borderColor: colors.gray.gray7,
+  skeleton: colors.grayA.grayA8,
 
   text: {
     primary: colors.gray.gray12,
