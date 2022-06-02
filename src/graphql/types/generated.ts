@@ -165,7 +165,7 @@ export type QueryVariablesMap = {
 };
 
 export type CollectionSlug = string;
-export type CollectionSort = 'ONE_DAY_VOLUME' | 'SEVEN_DAY_VOLUME'; // TODO
+export type CollectionSort = 'ONE_DAY_VOLUME' | 'SEVEN_DAY_VOLUME' | 'THIRTY_DAY_VOLUME';
 export type SearchResultModel = 'ASSETS' | 'BUNDLES'; // TODO
 export type AddressScalar = string;
 export type ChainScalar = 'ETHEREUM' | 'MATIC' | 'KLAYTN';
