@@ -7,3 +7,6 @@ export function widthByPercent(percentage: number) {
   const value = (percentage * viewportWidth) / 100;
   return Math.round(value);
 }
+
+export const generateSkeletonList = (length = 3) =>
+  Array.from({ length }).map((_, index) => ({ id: index }));

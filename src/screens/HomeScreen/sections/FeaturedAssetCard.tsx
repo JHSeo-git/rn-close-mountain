@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
   },
   skeleton: {
     flex: 1,
-    backgroundColor: COLORS.gray6,
+    backgroundColor: COLORS.skeleton,
   },
   cardCover: {
     flex: 1,

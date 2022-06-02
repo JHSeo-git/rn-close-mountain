@@ -4,20 +4,31 @@ import RootStore from './RootStore';
 import getEvents from '../api/testnets/event/getEvents';
 import getCategories from '../api/testnets/collection/getCategories';
 import getPromotion from '../api/testnets/promition/getPromotion';
-import type { OpenSeaAsset } from '../utils/types/opensea/types';
-import type { Category, TrendingCollectionsNode } from '../api/testnets/collection/types';
-import type { Promotion } from '../api/testnets/promition/types';
+import getTopCollections from '../api/testnets/collection/getTopCollections';
 import getCollectionsScroller from '../api/testnets/collection/getCollectionsScroller';
+import type { OpenSeaAsset } from '../utils/types/opensea/types';
+import type {
+  Category,
+  TopCollectionsNode,
+  TrendingCollectionsNode,
+} from '../api/testnets/collection/types';
+import type { Promotion } from '../api/testnets/promition/types';
+import { SearchEdgeNode } from '../api/testnets/asset/types';
+import getExpiredSoonAssets from '../api/testnets/asset/getExpiredSoonAssets';
 
 class MainHomeStore extends BaseStore {
   featuredAsset: OpenSeaAsset | undefined;
   notableDrops: Promotion[] = [];
   categories: Category[] = [];
   trendingCollections: TrendingCollectionsNode[] = [];
+  topCollections: TopCollectionsNode[] = [];
+  expiredSoonAssets: SearchEdgeNode[] = [];
   retrieveFeaturedAssetLoading: boolean = false;
   retrieveNotableDropsLoading: boolean = false;
   retrieveCategoriesLoading: boolean = false;
   retrieveTrendingCollectionsLoading: boolean = false;
+  retrieveTopCollectionsLoading: boolean = false;
+  retrieveExpiredSoonAssetsLoading: boolean = false;
 
   constructor(root: RootStore) {
     super(root);
@@ -26,14 +37,20 @@ class MainHomeStore extends BaseStore {
       notableDrops: observable,
       categories: observable,
       trendingCollections: observable,
+      topCollections: observable,
+      expiredSoonAssets: observable,
       retrieveFeaturedAssetLoading: observable,
       retrieveNotableDropsLoading: observable,
       retrieveCategoriesLoading: observable,
       retrieveTrendingCollectionsLoading: observable,
+      retrieveTopCollectionsLoading: observable,
+      retrieveExpiredSoonAssetsLoading: observable,
       retrieveFeaturedAsset: action,
       retrieveNotableDrops: action,
       retrieveCategories: action,
       retrieveTrendingCollections: action,
+      retrieveTopCollections: action,
+      retrieveExpiredSoonAssets: action,
     });
   }
 
@@ -134,6 +151,50 @@ class MainHomeStore extends BaseStore {
     } finally {
       runInAction(() => {
         this.retrieveTrendingCollectionsLoading = false;
+      });
+    }
+  };
+
+  retrieveTopCollections = async () => {
+    runInAction(() => {
+      this.retrieveTopCollectionsLoading = true;
+    });
+    try {
+      // TODO: remove delay when api is ready
+      const result = await this.callAPI(() => getTopCollections(), { delay: 2000 });
+
+      runInAction(() => {
+        this.topCollections = result;
+      });
+
+      return result;
+    } catch (e) {
+      throw e;
+    } finally {
+      runInAction(() => {
+        this.retrieveTopCollectionsLoading = false;
+      });
+    }
+  };
+
+  retrieveExpiredSoonAssets = async () => {
+    runInAction(() => {
+      this.retrieveExpiredSoonAssetsLoading = true;
+    });
+    try {
+      // TODO: remove delay when api is ready
+      const result = await this.callAPI(() => getExpiredSoonAssets(), { delay: 2000 });
+
+      runInAction(() => {
+        this.expiredSoonAssets = result;
+      });
+
+      return result;
+    } catch (e) {
+      throw e;
+    } finally {
+      runInAction(() => {
+        this.retrieveExpiredSoonAssetsLoading = false;
       });
     }
   };
