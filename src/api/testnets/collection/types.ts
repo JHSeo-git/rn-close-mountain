@@ -3,7 +3,9 @@ import type { OpenSeaCollection } from '../../../utils/types/opensea/types';
 export type GetCollectionsResponse = OpenSeaCollection[];
 export type GetCategoriesResponse = GetCategories;
 export type GetCollectionsScrollerResponse = GetCollectionsScroller;
+export type GetTopCollectionsResponse = GetTopCollections;
 
+// GetCategories
 export interface GetCategories {
   data: GetCategoriesData;
 }
@@ -18,6 +20,7 @@ export interface Category {
   name: string;
 }
 
+// GetCollectionsScroller
 export interface GetCollectionsScroller {
   data: GetCollectionsScrollerData;
 }
@@ -75,4 +78,62 @@ export interface User {
 export interface Stats {
   totalSupply: number;
   id: string;
+}
+
+// GetTopCollections
+export interface GetTopCollections {
+  data: GetTopCollectionsData;
+}
+
+export interface GetTopCollectionsData {
+  collections: TopCollections;
+}
+
+export interface TopCollections {
+  edges: TopCollectionsEdge[];
+}
+
+export interface TopCollectionsEdge {
+  node: TopCollectionsNode;
+}
+
+export interface TopCollectionsNode {
+  slug: string;
+  id: string;
+  name: string;
+  logo: string;
+  createdDate: string;
+  isVerified: boolean;
+  nativePaymentAsset: NativePaymentAsset;
+  statsV2: StatsV2;
+}
+
+export interface NativePaymentAsset {
+  symbol: Symbol;
+  asset: Asset;
+  id: string;
+}
+
+export interface Asset {
+  imageUrl: string;
+  id: string;
+}
+
+export enum Symbol {
+  Eth = 'ETH',
+  Sol = 'SOL',
+}
+
+export interface StatsV2 {
+  floorPrice: DayVolume | null;
+  oneDayChange: number;
+  oneDayVolume: DayVolume;
+  sevenDayChange: number;
+  sevenDayVolume: DayVolume;
+  thirtyDayChange: number;
+  thirtyDayVolume: DayVolume;
+}
+
+export interface DayVolume {
+  unit: string;
 }
