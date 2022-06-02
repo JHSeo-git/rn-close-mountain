@@ -18,7 +18,7 @@ const CategoryCard = ({ style, coverImageUrl, name, onPress }: CategoryCardProps
       <LinearGradient style={styles.backdrop} colors={['transparent', COLORS.grayA8]} />
       <Card.Cover source={{ uri: coverImageUrl }} style={styles.cardCover} />
       <View style={styles.cardContent}>
-        <UIText as="h4_contrast" numberOfLines={2}>
+        <UIText as="small_bold_contrast" numberOfLines={2}>
           {name}
         </UIText>
       </View>
@@ -41,11 +41,10 @@ CategoryCard.Skeleton = Skeleton;
 const styles = StyleSheet.create({
   skeleton: {
     flex: 1,
+    borderRadius: RADII.lg,
   },
   backdrop: {
     ...StyleSheet.absoluteFillObject,
-    width: '100%',
-    height: '100%',
     borderRadius: RADII.lg,
     zIndex: 1,
   },
