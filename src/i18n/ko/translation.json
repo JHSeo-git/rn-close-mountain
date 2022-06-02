@@ -35,6 +35,7 @@
     "category": "카테고리",
     "chain": "블록체인",
     "explore": "탐험하기",
+    "see_all": "전체 보기",
     "message": {
       "signin_main": "Close Mountain에 로그인하세요",
       "profile_login": "로그인해서 프로필을 볼 수 있습니다",
@@ -48,6 +49,8 @@
     "notable_drops": "주목할만한 콜렉션",
     "featured_nfts": "추천 NFTs",
     "trending_collection": "인기있는 콜렉션",
+    "most_active": "영향력있는 콜렉션",
+    "expired_soon": "곧 마감되요!",
     "browse_by_category": "카테고리별 보기",
     "empty_featured_message": "Featured NFTs을 준비중 입니다.",
     "empty_notable_drops_message": "The Notable Drops 준비중 입니다.",

@@ -35,6 +35,7 @@
     "category": "Category",
     "chain": "Chain",
     "explore": "Explore",
+    "see_all": "See All",
     "message": {
       "signin_main": "Sign in to Close Mountain",
       "profile_login": "Login for using all features",
@@ -48,6 +49,8 @@
     "notable_drops": "Notable Drops",
     "featured_nfts": "Featured NFTs",
     "trending_collection": "Trending Collection",
+    "most_active": "Most Active",
+    "expired_soon": "Expired Soon",
     "browse_by_category": "Browse by Category",
     "empty_featured_message": "The Featured NFTs are not available yet.",
     "empty_notable_drops_message": "The Notable Drops are not available yet.",
