@@ -47,6 +47,11 @@ export const small: TextStyle = {
   fontSize: FONTSIZES.sm,
   color: COLORS.hiContrast,
 };
+export const xsmall: TextStyle = {
+  fontFamily: FONTS.poppins.regular,
+  fontSize: FONTSIZES.xs,
+  color: COLORS.hiContrast,
+};
 export const h1_primary: TextStyle = {
   ...h1,
   ...primary,
@@ -121,5 +126,25 @@ export const small_bold_primary: TextStyle = {
 };
 export const small_bold_contrast: TextStyle = {
   ...small_bold,
+  ...contrast,
+};
+export const xsmall_bold: TextStyle = {
+  ...xsmall,
+  fontFamily: FONTS.poppins.bold,
+};
+export const xsmall_primary: TextStyle = {
+  ...xsmall,
+  ...primary,
+};
+export const xsmall_contrast: TextStyle = {
+  ...xsmall,
+  ...contrast,
+};
+export const xsmall_bold_primary: TextStyle = {
+  ...xsmall_bold,
+  ...primary,
+};
+export const xsmall_bold_contrast: TextStyle = {
+  ...xsmall_bold,
   ...contrast,
 };
