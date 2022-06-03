@@ -55,7 +55,7 @@ export type QueryVariablesMap = {
   CollectionFormCollectionConnectedNetworkDeleteMutation: {};
   CollectionFormDeleteMutation: {};
   CollectionNameInputQuery: {};
-  CollectionPageQuery: {};
+  CollectionPageQuery: CollectionPageQueryVariables;
   CollectionPayoutsPageQuery: {};
   CollectionSearchScrollerQuery: {};
   CollectionSelectQuery: {};
@@ -616,6 +616,28 @@ export interface AssetSearchQuery {
       pageInfo: PageInfo;
     };
   };
+}
+
+export interface CollectionPageQuery {}
+export interface CollectionPageQueryVariables {
+  collection: CollectionSlug;
+  collectionQuery: string | null;
+  collections: string[] | null;
+  includeCollectionFilter: boolean | null;
+  includeHiddenCollections: boolean | null;
+  numericTraits: any[] | null; // TODO:
+  query: string | null;
+  showContextMenu: boolean | null;
+  sortAscending: boolean | null;
+  sortBy: SearchSortBy;
+  stringTraits: {
+    key: string;
+    counts: {
+      count: number;
+      value: string;
+    }[];
+  };
+  toggles: SearchToggle[] | null;
 }
 
 export interface CollectionsScrollerQueryVariables {
