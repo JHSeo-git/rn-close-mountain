@@ -1,0 +1,3566 @@
+{
+  "data": {
+    "collection": {
+      "bannerImageUrl": "https://lh3.googleusercontent.com/BSggcaM3RbfXxiHnnWtO97FMZr6Amu8QgzQQI3xV8oTxj1tcMSOLEMdf_CtEwHaGiruYy9bVXKPa9LRSJcZD9kbKfMfPZicbk-KD=s2500",
+      "name": "Akumu Dragonz",
+      "description": "",
+      "imageUrl": "https://lh3.googleusercontent.com/cDfIiQMlap3KmoLnlgridUvdhfGDCXVosa5zURHQNMES_r0otI8MEkUtqFUN7pKkr9U-3ItBTp1XKLg7ScxvziOBfbDd706q9eGS=s120",
+      "relayId": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+      "connectedTwitterUsername": "AkumuDragonz",
+      "assetContracts": {
+        "edges": [
+          {
+            "node": {
+              "chain": "ETHEREUM",
+              "id": "QXNzZXRDb250cmFjdFR5cGU6ODMxMzg1",
+              "blockExplorerLink": "https://etherscan.io/address/0xc1ad47aeb274157e24a5f01b5857830aef962843",
+              "chainData": {
+                "blockExplorerName": "ETHERSCAN"
+              },
+              "address": "0xc1ad47aeb274157e24a5f01b5857830aef962843"
+            }
+          }
+        ]
+      },
+      "representativeAsset": {
+        "assetContract": {
+          "chain": "ETHEREUM",
+          "openseaVersion": null,
+          "id": "QXNzZXRDb250cmFjdFR5cGU6ODMxMzg1"
+        },
+        "id": "QXNzZXRUeXBlOjQ2MjA1Mzk0MQ=="
+      },
+      "slug": "akumu-dragonz",
+      "isMintable": false,
+      "isSafelisted": true,
+      "isVerified": true,
+      "owner": {
+        "address": "0x989584374182ea79a9c3cb7b55fbf78b5c725c25",
+        "config": "VERIFIED",
+        "isCompromised": false,
+        "user": {
+          "publicUsername": "Akumu-Dragonz",
+          "id": "VXNlclR5cGU6MjQ4Nzk2NzA="
+        },
+        "displayName": "Akumu-Dragonz",
+        "imageUrl": "https://lh3.googleusercontent.com/yQ1FMRPJFILGQkGvpYryrmTipv8eJ2Vl2wJf7bQoSSkZK36kdJnrktQcm8huSWRpH4x1IHyR7MHleQ0Qc9I35o8UjgdXIiJysVgYpA=s100",
+        "id": "QWNjb3VudFR5cGU6MTQ1NDI0NzUy"
+      },
+      "stats": {
+        "numOwners": 4273,
+        "totalSupply": 9213,
+        "id": "Q29sbGVjdGlvblN0YXRzVHlwZToxNTg0MDkyOQ=="
+      },
+      "nativePaymentAsset": {
+        "symbol": "ETH",
+        "asset": {
+          "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+          "id": "QXNzZXRUeXBlOjEzNjg5MDc3"
+        },
+        "id": "UGF5bWVudEFzc2V0VHlwZTo0Mg=="
+      },
+      "statsV2": {
+        "numOwners": 4273,
+        "totalSupply": 9213,
+        "totalVolume": {
+          "unit": "1963.889847437558046295"
+        },
+        "floorPrice": {
+          "unit": "0.638"
+        }
+      },
+      "discordUrl": "https://discord.gg/invite/jSUWCYm3rF",
+      "externalUrl": "https://akumudragonz.io",
+      "instagramUsername": null,
+      "mediumUsername": null,
+      "telegramUrl": null,
+      "twitterUsername": null,
+      "id": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk="
+    },
+    "assets": {
+      "collection": {
+        "numericTraits": [],
+        "stringTraits": [],
+        "defaultChain": {
+          "identifier": "ETHEREUM"
+        },
+        "id": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk="
+      },
+      "paymentAssets": {
+        "edges": [
+          {
+            "node": {
+              "symbol": "ETH",
+              "relayId": "UGF5bWVudEFzc2V0VHlwZTo0NTk=",
+              "id": "UGF5bWVudEFzc2V0VHlwZTo0NTk=",
+              "__typename": "PaymentAssetType"
+            },
+            "cursor": "YXJyYXljb25uZWN0aW9uOjA="
+          },
+          {
+            "node": {
+              "symbol": "ETH",
+              "relayId": "UGF5bWVudEFzc2V0VHlwZTo0Mg==",
+              "id": "UGF5bWVudEFzc2V0VHlwZTo0Mg==",
+              "__typename": "PaymentAssetType"
+            },
+            "cursor": "YXJyYXljb25uZWN0aW9uOjE="
+          },
+          {
+            "node": {
+              "symbol": "WETH",
+              "relayId": "UGF5bWVudEFzc2V0VHlwZTo3OQ==",
+              "id": "UGF5bWVudEFzc2V0VHlwZTo3OQ==",
+              "__typename": "PaymentAssetType"
+            },
+            "cursor": "YXJyYXljb25uZWN0aW9uOjI="
+          },
+          {
+            "node": {
+              "symbol": "APE",
+              "relayId": "UGF5bWVudEFzc2V0VHlwZTo2Mjk=",
+              "id": "UGF5bWVudEFzc2V0VHlwZTo2Mjk=",
+              "__typename": "PaymentAssetType"
+            },
+            "cursor": "YXJyYXljb25uZWN0aW9uOjM="
+          },
+          {
+            "node": {
+              "symbol": "ASH",
+              "relayId": "UGF5bWVudEFzc2V0VHlwZTo1MjU=",
+              "id": "UGF5bWVudEFzc2V0VHlwZTo1MjU=",
+              "__typename": "PaymentAssetType"
+            },
+            "cursor": "YXJyYXljb25uZWN0aW9uOjQ="
+          },
+          {
+            "node": {
+              "symbol": "BAT",
+              "relayId": "UGF5bWVudEFzc2V0VHlwZTo4NQ==",
+              "id": "UGF5bWVudEFzc2V0VHlwZTo4NQ==",
+              "__typename": "PaymentAssetType"
+            },
+            "cursor": "YXJyYXljb25uZWN0aW9uOjU="
+          },
+          {
+            "node": {
+              "symbol": "CUBE",
+              "relayId": "UGF5bWVudEFzc2V0VHlwZTo4OQ==",
+              "id": "UGF5bWVudEFzc2V0VHlwZTo4OQ==",
+              "__typename": "PaymentAssetType"
+            },
+            "cursor": "YXJyYXljb25uZWN0aW9uOjY="
+          },
+          {
+            "node": {
+              "symbol": "DAI",
+              "relayId": "UGF5bWVudEFzc2V0VHlwZTo0NTg=",
+              "id": "UGF5bWVudEFzc2V0VHlwZTo0NTg=",
+              "__typename": "PaymentAssetType"
+            },
+            "cursor": "YXJyYXljb25uZWN0aW9uOjc="
+          },
+          {
+            "node": {
+              "symbol": "DAI",
+              "relayId": "UGF5bWVudEFzc2V0VHlwZTo2NQ==",
+              "id": "UGF5bWVudEFzc2V0VHlwZTo2NQ==",
+              "__typename": "PaymentAssetType"
+            },
+            "cursor": "YXJyYXljb25uZWN0aW9uOjg="
+          },
+          {
+            "node": {
+              "symbol": "GALA",
+              "relayId": "UGF5bWVudEFzc2V0VHlwZToyMjQ=",
+              "id": "UGF5bWVudEFzc2V0VHlwZToyMjQ=",
+              "__typename": "PaymentAssetType"
+            },
+            "cursor": "YXJyYXljb25uZWN0aW9uOjk="
+          }
+        ],
+        "pageInfo": {
+          "endCursor": "YXJyYXljb25uZWN0aW9uOjk=",
+          "hasNextPage": true
+        }
+      },
+      "PaymentFilter_collection": {
+        "paymentAssets": [
+          {
+            "symbol": "ETH",
+            "relayId": "UGF5bWVudEFzc2V0VHlwZTo0Mg==",
+            "id": "UGF5bWVudEFzc2V0VHlwZTo0Mg=="
+          },
+          {
+            "symbol": "WETH",
+            "relayId": "UGF5bWVudEFzc2V0VHlwZTo3OQ==",
+            "id": "UGF5bWVudEFzc2V0VHlwZTo3OQ=="
+          }
+        ],
+        "id": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk="
+      },
+      "selectedCollections": {
+        "edges": [
+          {
+            "node": {
+              "imageUrl": "https://lh3.googleusercontent.com/cDfIiQMlap3KmoLnlgridUvdhfGDCXVosa5zURHQNMES_r0otI8MEkUtqFUN7pKkr9U-3ItBTp1XKLg7ScxvziOBfbDd706q9eGS=s120",
+              "name": "Akumu Dragonz",
+              "slug": "akumu-dragonz",
+              "description": "",
+              "id": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk="
+            }
+          }
+        ]
+      },
+      "search": {
+        "edges": [
+          {
+            "node": {
+              "asset": {
+                "assetContract": {
+                  "address": "0xc1ad47aeb274157e24a5f01b5857830aef962843",
+                  "chain": "ETHEREUM",
+                  "id": "QXNzZXRDb250cmFjdFR5cGU6ODMxMzg1",
+                  "openseaVersion": null
+                },
+                "collection": {
+                  "isVerified": true,
+                  "relayId": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "id": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "displayData": {
+                    "cardDisplayStyle": "COVER"
+                  },
+                  "imageUrl": "https://lh3.googleusercontent.com/cDfIiQMlap3KmoLnlgridUvdhfGDCXVosa5zURHQNMES_r0otI8MEkUtqFUN7pKkr9U-3ItBTp1XKLg7ScxvziOBfbDd706q9eGS=s120",
+                  "slug": "akumu-dragonz",
+                  "isAuthorizedEditor": false,
+                  "name": "Akumu Dragonz"
+                },
+                "relayId": "QXNzZXRUeXBlOjQ2NTk4MTY5NQ==",
+                "tokenId": "6892",
+                "backgroundColor": null,
+                "imageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "name": "Akumu Dragonz #6892",
+                "id": "QXNzZXRUeXBlOjQ2NTk4MTY5NQ==",
+                "isDelisted": false,
+                "animationUrl": null,
+                "displayImageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "decimals": 0,
+                "favoritesCount": 2,
+                "isFavorite": false,
+                "isFrozen": false,
+                "hasUnlockableContent": false,
+                "orderData": {
+                  "bestAsk": {
+                    "relayId": "T3JkZXJWMlR5cGU6NTc1OTY4MjQxNQ==",
+                    "decimals": null,
+                    "paymentAssetQuantity": {
+                      "asset": {
+                        "usdSpotPrice": 1812.87,
+                        "decimals": 18,
+                        "id": "QXNzZXRUeXBlOjQ2NDU2ODE=",
+                        "imageUrl": "https://openseauserdata.com/files/accae6b6fb3888cbff27a013729c22dc.svg",
+                        "symbol": "WETH",
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzOA=="
+                        }
+                      },
+                      "quantity": "490000000000000000",
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6MjEwOTcxNjQ4Mjk3NDI4NDY4NTU3NTUxNzg1ODUwNTU2OTY1NTMx",
+                      "quantityInEth": "490000000000000000"
+                    },
+                    "orderType": "ENGLISH",
+                    "maker": {
+                      "address": "0x4ce21c543c0cfb33bfb750831f6177c97950c054",
+                      "id": "QWNjb3VudFR5cGU6MzAzNjkwMTA0"
+                    },
+                    "closedAt": "2022-06-10T08:06:59",
+                    "dutchAuctionFinalPrice": null,
+                    "openedAt": "2022-06-03T08:08:11.833037",
+                    "priceFnEndedAt": "2022-06-17T08:06:59",
+                    "quantity": "1"
+                  },
+                  "bestBid": null
+                },
+                "isEditable": {
+                  "value": false,
+                  "reason": "Unauthorized"
+                },
+                "isListable": true,
+                "ownership": null,
+                "creator": {
+                  "address": "0x989584374182ea79a9c3cb7b55fbf78b5c725c25",
+                  "id": "QWNjb3VudFR5cGU6MTQ1NDI0NzUy"
+                },
+                "ownedQuantity": null,
+                "assetEventData": {
+                  "lastSale": {
+                    "unitPriceQuantity": {
+                      "asset": {
+                        "decimals": 18,
+                        "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+                        "symbol": "ETH",
+                        "usdSpotPrice": 1812.87,
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+                        },
+                        "id": "QXNzZXRUeXBlOjEzNjg5MDc3"
+                      },
+                      "quantity": "620000000000000000",
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6MTIzMDQ5NDQzNjExMDc3NDY2MzAxNzU5MjU3OTgyNjE5MDA5Njg5"
+                    }
+                  }
+                }
+              },
+              "assetBundle": null,
+              "__typename": "SearchResultType"
+            },
+            "cursor": "YXJyYXljb25uZWN0aW9uOjA="
+          },
+          {
+            "node": {
+              "asset": {
+                "assetContract": {
+                  "address": "0xc1ad47aeb274157e24a5f01b5857830aef962843",
+                  "chain": "ETHEREUM",
+                  "id": "QXNzZXRDb250cmFjdFR5cGU6ODMxMzg1",
+                  "openseaVersion": null
+                },
+                "collection": {
+                  "isVerified": true,
+                  "relayId": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "id": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "displayData": {
+                    "cardDisplayStyle": "COVER"
+                  },
+                  "imageUrl": "https://lh3.googleusercontent.com/cDfIiQMlap3KmoLnlgridUvdhfGDCXVosa5zURHQNMES_r0otI8MEkUtqFUN7pKkr9U-3ItBTp1XKLg7ScxvziOBfbDd706q9eGS=s120",
+                  "slug": "akumu-dragonz",
+                  "isAuthorizedEditor": false,
+                  "name": "Akumu Dragonz"
+                },
+                "relayId": "QXNzZXRUeXBlOjQ2NTQ5NDkwNQ==",
+                "tokenId": "5506",
+                "backgroundColor": null,
+                "imageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "name": "Akumu Dragonz #5506",
+                "id": "QXNzZXRUeXBlOjQ2NTQ5NDkwNQ==",
+                "isDelisted": false,
+                "animationUrl": null,
+                "displayImageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "decimals": 0,
+                "favoritesCount": 22,
+                "isFavorite": false,
+                "isFrozen": false,
+                "hasUnlockableContent": false,
+                "orderData": {
+                  "bestAsk": {
+                    "relayId": "T3JkZXJWMlR5cGU6NTc1NjQ4NjQ1Mw==",
+                    "decimals": null,
+                    "paymentAssetQuantity": {
+                      "asset": {
+                        "usdSpotPrice": 1812.87,
+                        "decimals": 18,
+                        "id": "QXNzZXRUeXBlOjQ2NDU2ODE=",
+                        "imageUrl": "https://openseauserdata.com/files/accae6b6fb3888cbff27a013729c22dc.svg",
+                        "symbol": "WETH",
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzOA=="
+                        }
+                      },
+                      "quantity": "480000000000000000",
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6MzUwMjM1Nzk4MzY1MDA0MTkwNjA3MTU2Nzg4NzAwNTUyNDM5NTA=",
+                      "quantityInEth": "480000000000000000"
+                    },
+                    "orderType": "ENGLISH",
+                    "maker": {
+                      "address": "0x347d9c6ea6accda235bcee056c649d891ff08fd0",
+                      "id": "QWNjb3VudFR5cGU6NzcwNzEyMzM="
+                    },
+                    "closedAt": "2022-06-03T21:46:11",
+                    "dutchAuctionFinalPrice": null,
+                    "openedAt": "2022-06-02T21:47:23.928280",
+                    "priceFnEndedAt": "2022-06-10T21:46:11",
+                    "quantity": "1"
+                  },
+                  "bestBid": {
+                    "orderType": "BASIC",
+                    "paymentAssetQuantity": {
+                      "quantity": "504000000000000000",
+                      "asset": {
+                        "decimals": 18,
+                        "imageUrl": "https://openseauserdata.com/files/accae6b6fb3888cbff27a013729c22dc.svg",
+                        "symbol": "WETH",
+                        "usdSpotPrice": 1812.87,
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzOA=="
+                        },
+                        "id": "QXNzZXRUeXBlOjQ2NDU2ODE="
+                      },
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6MjQ1MTk4NDcxNzU1NzczNjAwNTU2OTg2NzYxNTYzNTgxMzcxODk5"
+                    }
+                  }
+                },
+                "isEditable": {
+                  "value": false,
+                  "reason": "Unauthorized"
+                },
+                "isListable": true,
+                "ownership": null,
+                "creator": {
+                  "address": "0x989584374182ea79a9c3cb7b55fbf78b5c725c25",
+                  "id": "QWNjb3VudFR5cGU6MTQ1NDI0NzUy"
+                },
+                "ownedQuantity": null,
+                "assetEventData": {
+                  "lastSale": null
+                }
+              },
+              "assetBundle": null,
+              "__typename": "SearchResultType"
+            },
+            "cursor": "YXJyYXljb25uZWN0aW9uOjE="
+          },
+          {
+            "node": {
+              "asset": {
+                "assetContract": {
+                  "address": "0xc1ad47aeb274157e24a5f01b5857830aef962843",
+                  "chain": "ETHEREUM",
+                  "id": "QXNzZXRDb250cmFjdFR5cGU6ODMxMzg1",
+                  "openseaVersion": null
+                },
+                "collection": {
+                  "isVerified": true,
+                  "relayId": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "id": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "displayData": {
+                    "cardDisplayStyle": "COVER"
+                  },
+                  "imageUrl": "https://lh3.googleusercontent.com/cDfIiQMlap3KmoLnlgridUvdhfGDCXVosa5zURHQNMES_r0otI8MEkUtqFUN7pKkr9U-3ItBTp1XKLg7ScxvziOBfbDd706q9eGS=s120",
+                  "slug": "akumu-dragonz",
+                  "isAuthorizedEditor": false,
+                  "name": "Akumu Dragonz"
+                },
+                "relayId": "QXNzZXRUeXBlOjQ2MjA1MTU2Nw==",
+                "tokenId": "1033",
+                "backgroundColor": null,
+                "imageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "name": "Akumu Dragonz #1033",
+                "id": "QXNzZXRUeXBlOjQ2MjA1MTU2Nw==",
+                "isDelisted": false,
+                "animationUrl": null,
+                "displayImageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "decimals": 0,
+                "favoritesCount": 133,
+                "isFavorite": false,
+                "isFrozen": false,
+                "hasUnlockableContent": false,
+                "orderData": {
+                  "bestAsk": {
+                    "relayId": "T3JkZXJWMlR5cGU6NTcxNjM2ODMzOQ==",
+                    "decimals": null,
+                    "paymentAssetQuantity": {
+                      "asset": {
+                        "usdSpotPrice": 1812.87,
+                        "decimals": 18,
+                        "id": "QXNzZXRUeXBlOjQ2NDU2ODE=",
+                        "imageUrl": "https://openseauserdata.com/files/accae6b6fb3888cbff27a013729c22dc.svg",
+                        "symbol": "WETH",
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzOA=="
+                        }
+                      },
+                      "quantity": "500000000000000000",
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6MTQwMzM4MTQxMzAyMzA5MzI0MjQ2Nzc2Njg3NTI3Nzc1Njk2MjY3",
+                      "quantityInEth": "500000000000000000"
+                    },
+                    "orderType": "ENGLISH",
+                    "maker": {
+                      "address": "0xa9bbe88d93d249b877c1384fa77e215634c97bf4",
+                      "id": "QWNjb3VudFR5cGU6MzgzNTYyMzgz"
+                    },
+                    "closedAt": "2022-06-08T07:24:49",
+                    "dutchAuctionFinalPrice": null,
+                    "openedAt": "2022-06-01T07:25:49.983212",
+                    "priceFnEndedAt": "2022-06-15T07:24:49",
+                    "quantity": "1"
+                  },
+                  "bestBid": {
+                    "orderType": "BASIC",
+                    "paymentAssetQuantity": {
+                      "quantity": "525000000000000000",
+                      "asset": {
+                        "decimals": 18,
+                        "imageUrl": "https://openseauserdata.com/files/accae6b6fb3888cbff27a013729c22dc.svg",
+                        "symbol": "WETH",
+                        "usdSpotPrice": 1812.87,
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzOA=="
+                        },
+                        "id": "QXNzZXRUeXBlOjQ2NDU2ODE="
+                      },
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6Mjg4MDE0NDY5Mjc1NDA4NTM3NjQ4NTM5OTg2NjU2Nzk5ODU2NzQ1"
+                    }
+                  }
+                },
+                "isEditable": {
+                  "value": false,
+                  "reason": "Unauthorized"
+                },
+                "isListable": true,
+                "ownership": null,
+                "creator": {
+                  "address": "0x989584374182ea79a9c3cb7b55fbf78b5c725c25",
+                  "id": "QWNjb3VudFR5cGU6MTQ1NDI0NzUy"
+                },
+                "ownedQuantity": null,
+                "assetEventData": {
+                  "lastSale": {
+                    "unitPriceQuantity": {
+                      "asset": {
+                        "decimals": 18,
+                        "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+                        "symbol": "ETH",
+                        "usdSpotPrice": 1812.87,
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+                        },
+                        "id": "QXNzZXRUeXBlOjEzNjg5MDc3"
+                      },
+                      "quantity": "710000000000000000",
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6NDIyNDE1NjU2ODk2Mjg4MzY2NzExNjQ5MjIwMTE4MzQ0MTk0OTc="
+                    }
+                  }
+                }
+              },
+              "assetBundle": null,
+              "__typename": "SearchResultType"
+            },
+            "cursor": "YXJyYXljb25uZWN0aW9uOjI="
+          },
+          {
+            "node": {
+              "asset": {
+                "assetContract": {
+                  "address": "0xc1ad47aeb274157e24a5f01b5857830aef962843",
+                  "chain": "ETHEREUM",
+                  "id": "QXNzZXRDb250cmFjdFR5cGU6ODMxMzg1",
+                  "openseaVersion": null
+                },
+                "collection": {
+                  "isVerified": true,
+                  "relayId": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "id": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "displayData": {
+                    "cardDisplayStyle": "COVER"
+                  },
+                  "imageUrl": "https://lh3.googleusercontent.com/cDfIiQMlap3KmoLnlgridUvdhfGDCXVosa5zURHQNMES_r0otI8MEkUtqFUN7pKkr9U-3ItBTp1XKLg7ScxvziOBfbDd706q9eGS=s120",
+                  "slug": "akumu-dragonz",
+                  "isAuthorizedEditor": false,
+                  "name": "Akumu Dragonz"
+                },
+                "relayId": "QXNzZXRUeXBlOjQ2MjA1MzY4Nw==",
+                "tokenId": "1145",
+                "backgroundColor": null,
+                "imageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "name": "Akumu Dragonz #1145",
+                "id": "QXNzZXRUeXBlOjQ2MjA1MzY4Nw==",
+                "isDelisted": false,
+                "animationUrl": null,
+                "displayImageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "decimals": 0,
+                "favoritesCount": 26,
+                "isFavorite": false,
+                "isFrozen": false,
+                "hasUnlockableContent": false,
+                "orderData": {
+                  "bestAsk": {
+                    "relayId": "T3JkZXJWMlR5cGU6NTc0NTY0NzcyNQ==",
+                    "decimals": null,
+                    "paymentAssetQuantity": {
+                      "asset": {
+                        "usdSpotPrice": 1812.87,
+                        "decimals": 18,
+                        "id": "QXNzZXRUeXBlOjQ2NDU2ODE=",
+                        "imageUrl": "https://openseauserdata.com/files/accae6b6fb3888cbff27a013729c22dc.svg",
+                        "symbol": "WETH",
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzOA=="
+                        }
+                      },
+                      "quantity": "600000000000000000",
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6MjA1NTc3MjMwNzA0NjU0Mzg2NzQzNzk3Nzk4NTAwNTc1NjkyNTU2",
+                      "quantityInEth": "600000000000000000"
+                    },
+                    "orderType": "ENGLISH",
+                    "maker": {
+                      "address": "0x4241d560ecacc5a86fb42971f33b91f47f1e23a6",
+                      "id": "QWNjb3VudFR5cGU6MTgyNTMwMzA3"
+                    },
+                    "closedAt": "2022-06-05T07:43:00",
+                    "dutchAuctionFinalPrice": null,
+                    "openedAt": "2022-06-02T07:43:37.514391",
+                    "priceFnEndedAt": "2022-06-12T07:43:00",
+                    "quantity": "1"
+                  },
+                  "bestBid": {
+                    "orderType": "BASIC",
+                    "paymentAssetQuantity": {
+                      "quantity": "100000000000000",
+                      "asset": {
+                        "decimals": 18,
+                        "imageUrl": "https://openseauserdata.com/files/accae6b6fb3888cbff27a013729c22dc.svg",
+                        "symbol": "WETH",
+                        "usdSpotPrice": 1812.87,
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzOA=="
+                        },
+                        "id": "QXNzZXRUeXBlOjQ2NDU2ODE="
+                      },
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6MTE1ODI3MTYxMDAxNTk2NDQ2NTIxMjc3MDczODQ1OTA3MzYwODM2"
+                    }
+                  }
+                },
+                "isEditable": {
+                  "value": false,
+                  "reason": "Unauthorized"
+                },
+                "isListable": true,
+                "ownership": null,
+                "creator": {
+                  "address": "0x989584374182ea79a9c3cb7b55fbf78b5c725c25",
+                  "id": "QWNjb3VudFR5cGU6MTQ1NDI0NzUy"
+                },
+                "ownedQuantity": null,
+                "assetEventData": {
+                  "lastSale": {
+                    "unitPriceQuantity": {
+                      "asset": {
+                        "decimals": 18,
+                        "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+                        "symbol": "ETH",
+                        "usdSpotPrice": 1812.87,
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+                        },
+                        "id": "QXNzZXRUeXBlOjEzNjg5MDc3"
+                      },
+                      "quantity": "523000000000000000",
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6MzA2NTU3NTY1MDY3MjQ5MzMzNTI4Mzk0NzExMDYxODA1OTU5MDYz"
+                    }
+                  }
+                }
+              },
+              "assetBundle": null,
+              "__typename": "SearchResultType"
+            },
+            "cursor": "YXJyYXljb25uZWN0aW9uOjM="
+          },
+          {
+            "node": {
+              "asset": {
+                "assetContract": {
+                  "address": "0xc1ad47aeb274157e24a5f01b5857830aef962843",
+                  "chain": "ETHEREUM",
+                  "id": "QXNzZXRDb250cmFjdFR5cGU6ODMxMzg1",
+                  "openseaVersion": null
+                },
+                "collection": {
+                  "isVerified": true,
+                  "relayId": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "id": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "displayData": {
+                    "cardDisplayStyle": "COVER"
+                  },
+                  "imageUrl": "https://lh3.googleusercontent.com/cDfIiQMlap3KmoLnlgridUvdhfGDCXVosa5zURHQNMES_r0otI8MEkUtqFUN7pKkr9U-3ItBTp1XKLg7ScxvziOBfbDd706q9eGS=s120",
+                  "slug": "akumu-dragonz",
+                  "isAuthorizedEditor": false,
+                  "name": "Akumu Dragonz"
+                },
+                "relayId": "QXNzZXRUeXBlOjQ2MjA1NTg4MA==",
+                "tokenId": "1253",
+                "backgroundColor": null,
+                "imageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "name": "Akumu Dragonz #1253",
+                "id": "QXNzZXRUeXBlOjQ2MjA1NTg4MA==",
+                "isDelisted": false,
+                "animationUrl": null,
+                "displayImageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "decimals": 0,
+                "favoritesCount": 24,
+                "isFavorite": false,
+                "isFrozen": false,
+                "hasUnlockableContent": false,
+                "orderData": {
+                  "bestAsk": {
+                    "relayId": "T3JkZXJWMlR5cGU6NTc0NTYyNzIxMg==",
+                    "decimals": null,
+                    "paymentAssetQuantity": {
+                      "asset": {
+                        "usdSpotPrice": 1812.87,
+                        "decimals": 18,
+                        "id": "QXNzZXRUeXBlOjQ2NDU2ODE=",
+                        "imageUrl": "https://openseauserdata.com/files/accae6b6fb3888cbff27a013729c22dc.svg",
+                        "symbol": "WETH",
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzOA=="
+                        }
+                      },
+                      "quantity": "600000000000000000",
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6MTg0NDUyOTE2ODAzMTc3NTYwMzMzNTM1NTIxMzUwMjgwODg1MjY4",
+                      "quantityInEth": "600000000000000000"
+                    },
+                    "orderType": "ENGLISH",
+                    "maker": {
+                      "address": "0x4241d560ecacc5a86fb42971f33b91f47f1e23a6",
+                      "id": "QWNjb3VudFR5cGU6MTgyNTMwMzA3"
+                    },
+                    "closedAt": "2022-06-05T07:39:49",
+                    "dutchAuctionFinalPrice": null,
+                    "openedAt": "2022-06-02T07:42:44.531266",
+                    "priceFnEndedAt": "2022-06-12T07:39:49",
+                    "quantity": "1"
+                  },
+                  "bestBid": {
+                    "orderType": "BASIC",
+                    "paymentAssetQuantity": {
+                      "quantity": "100000000000000",
+                      "asset": {
+                        "decimals": 18,
+                        "imageUrl": "https://openseauserdata.com/files/accae6b6fb3888cbff27a013729c22dc.svg",
+                        "symbol": "WETH",
+                        "usdSpotPrice": 1812.87,
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzOA=="
+                        },
+                        "id": "QXNzZXRUeXBlOjQ2NDU2ODE="
+                      },
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6MzM0OTEwMDQ3MjExNTg5NjM2NzAyMDAzOTI2MDMxODY2NzczNjk2"
+                    }
+                  }
+                },
+                "isEditable": {
+                  "value": false,
+                  "reason": "Unauthorized"
+                },
+                "isListable": true,
+                "ownership": null,
+                "creator": {
+                  "address": "0x989584374182ea79a9c3cb7b55fbf78b5c725c25",
+                  "id": "QWNjb3VudFR5cGU6MTQ1NDI0NzUy"
+                },
+                "ownedQuantity": null,
+                "assetEventData": {
+                  "lastSale": {
+                    "unitPriceQuantity": {
+                      "asset": {
+                        "decimals": 18,
+                        "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+                        "symbol": "ETH",
+                        "usdSpotPrice": 1812.87,
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+                        },
+                        "id": "QXNzZXRUeXBlOjEzNjg5MDc3"
+                      },
+                      "quantity": "724000000000000000",
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6MjY3MDM2MDU0MjE0Mjc4OTk1MTUyOTc5NTAzMDc0OTc1MzYxMjY4"
+                    }
+                  }
+                }
+              },
+              "assetBundle": null,
+              "__typename": "SearchResultType"
+            },
+            "cursor": "YXJyYXljb25uZWN0aW9uOjQ="
+          },
+          {
+            "node": {
+              "asset": {
+                "assetContract": {
+                  "address": "0xc1ad47aeb274157e24a5f01b5857830aef962843",
+                  "chain": "ETHEREUM",
+                  "id": "QXNzZXRDb250cmFjdFR5cGU6ODMxMzg1",
+                  "openseaVersion": null
+                },
+                "collection": {
+                  "isVerified": true,
+                  "relayId": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "id": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "displayData": {
+                    "cardDisplayStyle": "COVER"
+                  },
+                  "imageUrl": "https://lh3.googleusercontent.com/cDfIiQMlap3KmoLnlgridUvdhfGDCXVosa5zURHQNMES_r0otI8MEkUtqFUN7pKkr9U-3ItBTp1XKLg7ScxvziOBfbDd706q9eGS=s120",
+                  "slug": "akumu-dragonz",
+                  "isAuthorizedEditor": false,
+                  "name": "Akumu Dragonz"
+                },
+                "relayId": "QXNzZXRUeXBlOjQ2NTUwMDI2MA==",
+                "tokenId": "5940",
+                "backgroundColor": null,
+                "imageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "name": "Akumu Dragonz #5940",
+                "id": "QXNzZXRUeXBlOjQ2NTUwMDI2MA==",
+                "isDelisted": false,
+                "animationUrl": null,
+                "displayImageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "decimals": null,
+                "favoritesCount": 3,
+                "isFavorite": false,
+                "isFrozen": false,
+                "hasUnlockableContent": false,
+                "orderData": {
+                  "bestAsk": {
+                    "relayId": "T3JkZXJWMlR5cGU6NTc1OTExNzkwNQ==",
+                    "decimals": null,
+                    "paymentAssetQuantity": {
+                      "asset": {
+                        "usdSpotPrice": 1812.87,
+                        "decimals": 18,
+                        "id": "QXNzZXRUeXBlOjEzNjg5MDc3",
+                        "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+                        "symbol": "ETH",
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+                        }
+                      },
+                      "quantity": "638000000000000000",
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6ODcyOTc2NDk5NDQ3ODQ2MDQzNTE0MTQ5MDcxODU1MDI3NzgzMDA=",
+                      "quantityInEth": "638000000000000000"
+                    },
+                    "orderType": "BASIC",
+                    "maker": {
+                      "address": "0x5905096f0926dccdf68361f6ce40b21b3433d437",
+                      "id": "QWNjb3VudFR5cGU6MjYwMDA2NTYx"
+                    },
+                    "closedAt": "2022-06-10T06:18:33",
+                    "dutchAuctionFinalPrice": null,
+                    "openedAt": "2022-06-03T06:18:35.919840",
+                    "priceFnEndedAt": null,
+                    "quantity": "1"
+                  },
+                  "bestBid": null
+                },
+                "isEditable": {
+                  "value": false,
+                  "reason": "Unauthorized"
+                },
+                "isListable": true,
+                "ownership": null,
+                "creator": {
+                  "address": "0x989584374182ea79a9c3cb7b55fbf78b5c725c25",
+                  "id": "QWNjb3VudFR5cGU6MTQ1NDI0NzUy"
+                },
+                "ownedQuantity": null,
+                "assetEventData": {
+                  "lastSale": {
+                    "unitPriceQuantity": {
+                      "asset": {
+                        "decimals": 18,
+                        "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+                        "symbol": "ETH",
+                        "usdSpotPrice": 1812.87,
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+                        },
+                        "id": "QXNzZXRUeXBlOjEzNjg5MDc3"
+                      },
+                      "quantity": "540000000000000000",
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6MzYxNDk3MjcyODkyMTU3MTIxNzY0ODQzMDk2NTczOTg2MzU4Mw=="
+                    }
+                  }
+                }
+              },
+              "assetBundle": null,
+              "__typename": "SearchResultType"
+            },
+            "cursor": "YXJyYXljb25uZWN0aW9uOjU="
+          },
+          {
+            "node": {
+              "asset": {
+                "assetContract": {
+                  "address": "0xc1ad47aeb274157e24a5f01b5857830aef962843",
+                  "chain": "ETHEREUM",
+                  "id": "QXNzZXRDb250cmFjdFR5cGU6ODMxMzg1",
+                  "openseaVersion": null
+                },
+                "collection": {
+                  "isVerified": true,
+                  "relayId": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "id": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "displayData": {
+                    "cardDisplayStyle": "COVER"
+                  },
+                  "imageUrl": "https://lh3.googleusercontent.com/cDfIiQMlap3KmoLnlgridUvdhfGDCXVosa5zURHQNMES_r0otI8MEkUtqFUN7pKkr9U-3ItBTp1XKLg7ScxvziOBfbDd706q9eGS=s120",
+                  "slug": "akumu-dragonz",
+                  "isAuthorizedEditor": false,
+                  "name": "Akumu Dragonz"
+                },
+                "relayId": "QXNzZXRUeXBlOjQ2NTQ4NDU3NQ==",
+                "tokenId": "5337",
+                "backgroundColor": null,
+                "imageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "name": "Akumu Dragonz #5337",
+                "id": "QXNzZXRUeXBlOjQ2NTQ4NDU3NQ==",
+                "isDelisted": false,
+                "animationUrl": null,
+                "displayImageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "decimals": null,
+                "favoritesCount": 1,
+                "isFavorite": false,
+                "isFrozen": false,
+                "hasUnlockableContent": false,
+                "orderData": {
+                  "bestAsk": {
+                    "relayId": "T3JkZXJWMlR5cGU6NTc1OTExODA3OA==",
+                    "decimals": null,
+                    "paymentAssetQuantity": {
+                      "asset": {
+                        "usdSpotPrice": 1812.87,
+                        "decimals": 18,
+                        "id": "QXNzZXRUeXBlOjEzNjg5MDc3",
+                        "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+                        "symbol": "ETH",
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+                        }
+                      },
+                      "quantity": "638000000000000000",
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6MTI5NzA1NDQ2MTY5MzQxMjUzOTg0MDc2OTA3ODA5ODk5MTgxMjc1",
+                      "quantityInEth": "638000000000000000"
+                    },
+                    "orderType": "BASIC",
+                    "maker": {
+                      "address": "0x5905096f0926dccdf68361f6ce40b21b3433d437",
+                      "id": "QWNjb3VudFR5cGU6MjYwMDA2NTYx"
+                    },
+                    "closedAt": "2022-06-10T06:18:36",
+                    "dutchAuctionFinalPrice": null,
+                    "openedAt": "2022-06-03T06:18:37.928873",
+                    "priceFnEndedAt": null,
+                    "quantity": "1"
+                  },
+                  "bestBid": {
+                    "orderType": "BASIC",
+                    "paymentAssetQuantity": {
+                      "quantity": "350000000000000000",
+                      "asset": {
+                        "decimals": 18,
+                        "imageUrl": "https://openseauserdata.com/files/accae6b6fb3888cbff27a013729c22dc.svg",
+                        "symbol": "WETH",
+                        "usdSpotPrice": 1812.87,
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzOA=="
+                        },
+                        "id": "QXNzZXRUeXBlOjQ2NDU2ODE="
+                      },
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6MjU4MjUwMDQ0NTc3MjE5NjYyNDU3OTg1ODYzNTAzMTQ1Nzk2ODg3"
+                    }
+                  }
+                },
+                "isEditable": {
+                  "value": false,
+                  "reason": "Unauthorized"
+                },
+                "isListable": true,
+                "ownership": null,
+                "creator": {
+                  "address": "0x989584374182ea79a9c3cb7b55fbf78b5c725c25",
+                  "id": "QWNjb3VudFR5cGU6MTQ1NDI0NzUy"
+                },
+                "ownedQuantity": null,
+                "assetEventData": {
+                  "lastSale": null
+                }
+              },
+              "assetBundle": null,
+              "__typename": "SearchResultType"
+            },
+            "cursor": "YXJyYXljb25uZWN0aW9uOjY="
+          },
+          {
+            "node": {
+              "asset": {
+                "assetContract": {
+                  "address": "0xc1ad47aeb274157e24a5f01b5857830aef962843",
+                  "chain": "ETHEREUM",
+                  "id": "QXNzZXRDb250cmFjdFR5cGU6ODMxMzg1",
+                  "openseaVersion": null
+                },
+                "collection": {
+                  "isVerified": true,
+                  "relayId": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "id": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "displayData": {
+                    "cardDisplayStyle": "COVER"
+                  },
+                  "imageUrl": "https://lh3.googleusercontent.com/cDfIiQMlap3KmoLnlgridUvdhfGDCXVosa5zURHQNMES_r0otI8MEkUtqFUN7pKkr9U-3ItBTp1XKLg7ScxvziOBfbDd706q9eGS=s120",
+                  "slug": "akumu-dragonz",
+                  "isAuthorizedEditor": false,
+                  "name": "Akumu Dragonz"
+                },
+                "relayId": "QXNzZXRUeXBlOjQ2NTUwNDczMA==",
+                "tokenId": "6744",
+                "backgroundColor": null,
+                "imageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "name": "Akumu Dragonz #6744",
+                "id": "QXNzZXRUeXBlOjQ2NTUwNDczMA==",
+                "isDelisted": false,
+                "animationUrl": null,
+                "displayImageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "decimals": null,
+                "favoritesCount": 4,
+                "isFavorite": false,
+                "isFrozen": false,
+                "hasUnlockableContent": false,
+                "orderData": {
+                  "bestAsk": {
+                    "relayId": "T3JkZXJWMlR5cGU6NTc1ODYwMDg4Ng==",
+                    "decimals": null,
+                    "paymentAssetQuantity": {
+                      "asset": {
+                        "usdSpotPrice": 1812.87,
+                        "decimals": 18,
+                        "id": "QXNzZXRUeXBlOjEzNjg5MDc3",
+                        "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+                        "symbol": "ETH",
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+                        }
+                      },
+                      "quantity": "640000000000000000",
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6MTg3MDA0MDI2OTQ5MzgwMjAzMzgyMDIzODA2NzQ0NjE4MTM5ODU4",
+                      "quantityInEth": "640000000000000000"
+                    },
+                    "orderType": "BASIC",
+                    "maker": {
+                      "address": "0x385cf024ae9f563c60412c154b4fe212567aff18",
+                      "id": "QWNjb3VudFR5cGU6NTk4NzgxMDc="
+                    },
+                    "closedAt": "2022-06-04T04:38:11",
+                    "dutchAuctionFinalPrice": null,
+                    "openedAt": "2022-06-03T04:38:35.044947",
+                    "priceFnEndedAt": null,
+                    "quantity": "1"
+                  },
+                  "bestBid": {
+                    "orderType": "BASIC",
+                    "paymentAssetQuantity": {
+                      "quantity": "508900000000000000",
+                      "asset": {
+                        "decimals": 18,
+                        "imageUrl": "https://openseauserdata.com/files/accae6b6fb3888cbff27a013729c22dc.svg",
+                        "symbol": "WETH",
+                        "usdSpotPrice": 1812.87,
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzOA=="
+                        },
+                        "id": "QXNzZXRUeXBlOjQ2NDU2ODE="
+                      },
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6MzEwMzUyMDE0NTYzOTMwNzA4OTU0MDA0NDI1NzgyMTU5MTg4NzE2"
+                    }
+                  }
+                },
+                "isEditable": {
+                  "value": false,
+                  "reason": "Unauthorized"
+                },
+                "isListable": true,
+                "ownership": null,
+                "creator": {
+                  "address": "0x989584374182ea79a9c3cb7b55fbf78b5c725c25",
+                  "id": "QWNjb3VudFR5cGU6MTQ1NDI0NzUy"
+                },
+                "ownedQuantity": null,
+                "assetEventData": {
+                  "lastSale": {
+                    "unitPriceQuantity": {
+                      "asset": {
+                        "decimals": 18,
+                        "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+                        "symbol": "ETH",
+                        "usdSpotPrice": 1812.87,
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+                        },
+                        "id": "QXNzZXRUeXBlOjEzNjg5MDc3"
+                      },
+                      "quantity": "659000000000000000",
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6MzMwMTU1MzA1NjQ0MjIwMzI1NjgwNjM5ODAyNTcxOTQ2Mzc0MTk2"
+                    }
+                  }
+                }
+              },
+              "assetBundle": null,
+              "__typename": "SearchResultType"
+            },
+            "cursor": "YXJyYXljb25uZWN0aW9uOjc="
+          },
+          {
+            "node": {
+              "asset": {
+                "assetContract": {
+                  "address": "0xc1ad47aeb274157e24a5f01b5857830aef962843",
+                  "chain": "ETHEREUM",
+                  "id": "QXNzZXRDb250cmFjdFR5cGU6ODMxMzg1",
+                  "openseaVersion": null
+                },
+                "collection": {
+                  "isVerified": true,
+                  "relayId": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "id": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "displayData": {
+                    "cardDisplayStyle": "COVER"
+                  },
+                  "imageUrl": "https://lh3.googleusercontent.com/cDfIiQMlap3KmoLnlgridUvdhfGDCXVosa5zURHQNMES_r0otI8MEkUtqFUN7pKkr9U-3ItBTp1XKLg7ScxvziOBfbDd706q9eGS=s120",
+                  "slug": "akumu-dragonz",
+                  "isAuthorizedEditor": false,
+                  "name": "Akumu Dragonz"
+                },
+                "relayId": "QXNzZXRUeXBlOjQ2NTQ5OTQ0Mg==",
+                "tokenId": "5852",
+                "backgroundColor": null,
+                "imageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "name": "Akumu Dragonz #5852",
+                "id": "QXNzZXRUeXBlOjQ2NTQ5OTQ0Mg==",
+                "isDelisted": false,
+                "animationUrl": null,
+                "displayImageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "decimals": null,
+                "favoritesCount": 1,
+                "isFavorite": false,
+                "isFrozen": false,
+                "hasUnlockableContent": false,
+                "orderData": {
+                  "bestAsk": {
+                    "relayId": "T3JkZXJWMlR5cGU6NTc1ODYxMTQ5Nw==",
+                    "decimals": null,
+                    "paymentAssetQuantity": {
+                      "asset": {
+                        "usdSpotPrice": 1812.87,
+                        "decimals": 18,
+                        "id": "QXNzZXRUeXBlOjEzNjg5MDc3",
+                        "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+                        "symbol": "ETH",
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+                        }
+                      },
+                      "quantity": "640000000000000000",
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6MTk5OTY2MTU1MTA2ODE0OTE3NzA2NjA4ODUzNTAxNDEzMzQ2NDU2",
+                      "quantityInEth": "640000000000000000"
+                    },
+                    "orderType": "BASIC",
+                    "maker": {
+                      "address": "0xf3bc40921dd96cdac4f027d6d429b4e014f11b69",
+                      "id": "QWNjb3VudFR5cGU6MTczNjAyNTE="
+                    },
+                    "closedAt": "2022-06-03T21:21:51",
+                    "dutchAuctionFinalPrice": null,
+                    "openedAt": "2022-06-03T04:40:39.952812",
+                    "priceFnEndedAt": null,
+                    "quantity": "1"
+                  },
+                  "bestBid": {
+                    "orderType": "BASIC",
+                    "paymentAssetQuantity": {
+                      "quantity": "472500000000000000",
+                      "asset": {
+                        "decimals": 18,
+                        "imageUrl": "https://openseauserdata.com/files/accae6b6fb3888cbff27a013729c22dc.svg",
+                        "symbol": "WETH",
+                        "usdSpotPrice": 1812.87,
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzOA=="
+                        },
+                        "id": "QXNzZXRUeXBlOjQ2NDU2ODE="
+                      },
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6MjE2ODUzOTk5MDA4MTc4MjU3NjUwNjg3MTE3NTc2MTY2OTM4MjA4"
+                    }
+                  }
+                },
+                "isEditable": {
+                  "value": false,
+                  "reason": "Unauthorized"
+                },
+                "isListable": true,
+                "ownership": null,
+                "creator": {
+                  "address": "0x989584374182ea79a9c3cb7b55fbf78b5c725c25",
+                  "id": "QWNjb3VudFR5cGU6MTQ1NDI0NzUy"
+                },
+                "ownedQuantity": null,
+                "assetEventData": {
+                  "lastSale": null
+                }
+              },
+              "assetBundle": null,
+              "__typename": "SearchResultType"
+            },
+            "cursor": "YXJyYXljb25uZWN0aW9uOjg="
+          },
+          {
+            "node": {
+              "asset": {
+                "assetContract": {
+                  "address": "0xc1ad47aeb274157e24a5f01b5857830aef962843",
+                  "chain": "ETHEREUM",
+                  "id": "QXNzZXRDb250cmFjdFR5cGU6ODMxMzg1",
+                  "openseaVersion": null
+                },
+                "collection": {
+                  "isVerified": true,
+                  "relayId": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "id": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "displayData": {
+                    "cardDisplayStyle": "COVER"
+                  },
+                  "imageUrl": "https://lh3.googleusercontent.com/cDfIiQMlap3KmoLnlgridUvdhfGDCXVosa5zURHQNMES_r0otI8MEkUtqFUN7pKkr9U-3ItBTp1XKLg7ScxvziOBfbDd706q9eGS=s120",
+                  "slug": "akumu-dragonz",
+                  "isAuthorizedEditor": false,
+                  "name": "Akumu Dragonz"
+                },
+                "relayId": "QXNzZXRUeXBlOjQ2NTUwMDA4OQ==",
+                "tokenId": "5916",
+                "backgroundColor": null,
+                "imageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "name": "Akumu Dragonz #5916",
+                "id": "QXNzZXRUeXBlOjQ2NTUwMDA4OQ==",
+                "isDelisted": false,
+                "animationUrl": null,
+                "displayImageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "decimals": 0,
+                "favoritesCount": 1,
+                "isFavorite": false,
+                "isFrozen": false,
+                "hasUnlockableContent": false,
+                "orderData": {
+                  "bestAsk": {
+                    "relayId": "T3JkZXJWMlR5cGU6NTc1OTExMzMyMQ==",
+                    "decimals": null,
+                    "paymentAssetQuantity": {
+                      "asset": {
+                        "usdSpotPrice": 1812.87,
+                        "decimals": 18,
+                        "id": "QXNzZXRUeXBlOjEzNjg5MDc3",
+                        "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+                        "symbol": "ETH",
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+                        }
+                      },
+                      "quantity": "645000000000000000",
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6MTkwMjY4MTExOTk0Nzk1NTQ3OTQ4NDY5OTMwMjk0NzAwNTc3NTU3",
+                      "quantityInEth": "645000000000000000"
+                    },
+                    "orderType": "BASIC",
+                    "maker": {
+                      "address": "0x5905096f0926dccdf68361f6ce40b21b3433d437",
+                      "id": "QWNjb3VudFR5cGU6MjYwMDA2NTYx"
+                    },
+                    "closedAt": "2022-06-10T06:17:40",
+                    "dutchAuctionFinalPrice": null,
+                    "openedAt": "2022-06-03T06:17:43.240803",
+                    "priceFnEndedAt": null,
+                    "quantity": "1"
+                  },
+                  "bestBid": {
+                    "orderType": "BASIC",
+                    "paymentAssetQuantity": {
+                      "quantity": "472600000000000000",
+                      "asset": {
+                        "decimals": 18,
+                        "imageUrl": "https://openseauserdata.com/files/accae6b6fb3888cbff27a013729c22dc.svg",
+                        "symbol": "WETH",
+                        "usdSpotPrice": 1812.87,
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzOA=="
+                        },
+                        "id": "QXNzZXRUeXBlOjQ2NDU2ODE="
+                      },
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6NzI5MzI4MjEzNjE4OTQxMDc5MTkxNjkzMjM0MDU5OTM3OTgzOTQ="
+                    }
+                  }
+                },
+                "isEditable": {
+                  "value": false,
+                  "reason": "Unauthorized"
+                },
+                "isListable": true,
+                "ownership": null,
+                "creator": {
+                  "address": "0x989584374182ea79a9c3cb7b55fbf78b5c725c25",
+                  "id": "QWNjb3VudFR5cGU6MTQ1NDI0NzUy"
+                },
+                "ownedQuantity": null,
+                "assetEventData": {
+                  "lastSale": {
+                    "unitPriceQuantity": {
+                      "asset": {
+                        "decimals": 18,
+                        "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+                        "symbol": "ETH",
+                        "usdSpotPrice": 1812.87,
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+                        },
+                        "id": "QXNzZXRUeXBlOjEzNjg5MDc3"
+                      },
+                      "quantity": "450000000000000000",
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6NDEyNDI4MzAxOTE0NTM4Njk2MjY4OTM0MDE4MjI5NjY4ODQxMzg="
+                    }
+                  }
+                }
+              },
+              "assetBundle": null,
+              "__typename": "SearchResultType"
+            },
+            "cursor": "YXJyYXljb25uZWN0aW9uOjk="
+          },
+          {
+            "node": {
+              "asset": {
+                "assetContract": {
+                  "address": "0xc1ad47aeb274157e24a5f01b5857830aef962843",
+                  "chain": "ETHEREUM",
+                  "id": "QXNzZXRDb250cmFjdFR5cGU6ODMxMzg1",
+                  "openseaVersion": null
+                },
+                "collection": {
+                  "isVerified": true,
+                  "relayId": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "id": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "displayData": {
+                    "cardDisplayStyle": "COVER"
+                  },
+                  "imageUrl": "https://lh3.googleusercontent.com/cDfIiQMlap3KmoLnlgridUvdhfGDCXVosa5zURHQNMES_r0otI8MEkUtqFUN7pKkr9U-3ItBTp1XKLg7ScxvziOBfbDd706q9eGS=s120",
+                  "slug": "akumu-dragonz",
+                  "isAuthorizedEditor": false,
+                  "name": "Akumu Dragonz"
+                },
+                "relayId": "QXNzZXRUeXBlOjQ2NTQ5OTU3OA==",
+                "tokenId": "5799",
+                "backgroundColor": null,
+                "imageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "name": "Akumu Dragonz #5799",
+                "id": "QXNzZXRUeXBlOjQ2NTQ5OTU3OA==",
+                "isDelisted": false,
+                "animationUrl": null,
+                "displayImageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "decimals": null,
+                "favoritesCount": 4,
+                "isFavorite": false,
+                "isFrozen": false,
+                "hasUnlockableContent": false,
+                "orderData": {
+                  "bestAsk": {
+                    "relayId": "T3JkZXJWMlR5cGU6NTc1ODU4OTg2OQ==",
+                    "decimals": null,
+                    "paymentAssetQuantity": {
+                      "asset": {
+                        "usdSpotPrice": 1812.87,
+                        "decimals": 18,
+                        "id": "QXNzZXRUeXBlOjEzNjg5MDc3",
+                        "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+                        "symbol": "ETH",
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+                        }
+                      },
+                      "quantity": "645000000000000000",
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6NDUxMzI0ODUyNzExNDQwMTUxODQ4MTI3MTk3MDc5NDI5MzE4ODA=",
+                      "quantityInEth": "645000000000000000"
+                    },
+                    "orderType": "BASIC",
+                    "maker": {
+                      "address": "0xde270dd37103351cd45610539648ff9d0b32bb50",
+                      "id": "QWNjb3VudFR5cGU6Mzg1MDM="
+                    },
+                    "closedAt": "2022-07-03T04:35:13",
+                    "dutchAuctionFinalPrice": null,
+                    "openedAt": "2022-06-03T04:36:31.666968",
+                    "priceFnEndedAt": null,
+                    "quantity": "1"
+                  },
+                  "bestBid": {
+                    "orderType": "BASIC",
+                    "paymentAssetQuantity": {
+                      "quantity": "508900000000000000",
+                      "asset": {
+                        "decimals": 18,
+                        "imageUrl": "https://openseauserdata.com/files/accae6b6fb3888cbff27a013729c22dc.svg",
+                        "symbol": "WETH",
+                        "usdSpotPrice": 1812.87,
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzOA=="
+                        },
+                        "id": "QXNzZXRUeXBlOjQ2NDU2ODE="
+                      },
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6MzIxMDk4OTA5OTIwMzIxNjgzODg3MjA2MDg2ODcxMTg0ODYzNTg1"
+                    }
+                  }
+                },
+                "isEditable": {
+                  "value": false,
+                  "reason": "Unauthorized"
+                },
+                "isListable": true,
+                "ownership": null,
+                "creator": {
+                  "address": "0x989584374182ea79a9c3cb7b55fbf78b5c725c25",
+                  "id": "QWNjb3VudFR5cGU6MTQ1NDI0NzUy"
+                },
+                "ownedQuantity": null,
+                "assetEventData": {
+                  "lastSale": null
+                }
+              },
+              "assetBundle": null,
+              "__typename": "SearchResultType"
+            },
+            "cursor": "YXJyYXljb25uZWN0aW9uOjEw"
+          },
+          {
+            "node": {
+              "asset": {
+                "assetContract": {
+                  "address": "0xc1ad47aeb274157e24a5f01b5857830aef962843",
+                  "chain": "ETHEREUM",
+                  "id": "QXNzZXRDb250cmFjdFR5cGU6ODMxMzg1",
+                  "openseaVersion": null
+                },
+                "collection": {
+                  "isVerified": true,
+                  "relayId": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "id": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "displayData": {
+                    "cardDisplayStyle": "COVER"
+                  },
+                  "imageUrl": "https://lh3.googleusercontent.com/cDfIiQMlap3KmoLnlgridUvdhfGDCXVosa5zURHQNMES_r0otI8MEkUtqFUN7pKkr9U-3ItBTp1XKLg7ScxvziOBfbDd706q9eGS=s120",
+                  "slug": "akumu-dragonz",
+                  "isAuthorizedEditor": false,
+                  "name": "Akumu Dragonz"
+                },
+                "relayId": "QXNzZXRUeXBlOjQ2NTQ5OTM5Mg==",
+                "tokenId": "5846",
+                "backgroundColor": null,
+                "imageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "name": "Akumu Dragonz #5846",
+                "id": "QXNzZXRUeXBlOjQ2NTQ5OTM5Mg==",
+                "isDelisted": false,
+                "animationUrl": null,
+                "displayImageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "decimals": 0,
+                "favoritesCount": 3,
+                "isFavorite": false,
+                "isFrozen": false,
+                "hasUnlockableContent": false,
+                "orderData": {
+                  "bestAsk": {
+                    "relayId": "T3JkZXJWMlR5cGU6NTc1OTExMzUzMA==",
+                    "decimals": null,
+                    "paymentAssetQuantity": {
+                      "asset": {
+                        "usdSpotPrice": 1812.87,
+                        "decimals": 18,
+                        "id": "QXNzZXRUeXBlOjEzNjg5MDc3",
+                        "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+                        "symbol": "ETH",
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+                        }
+                      },
+                      "quantity": "645000000000000000",
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6Mjc5MDUxNzYxOTMxNDU0MzUzNDkyOTU3Njg3MTkwODQ4NTMxMzI=",
+                      "quantityInEth": "645000000000000000"
+                    },
+                    "orderType": "BASIC",
+                    "maker": {
+                      "address": "0x5905096f0926dccdf68361f6ce40b21b3433d437",
+                      "id": "QWNjb3VudFR5cGU6MjYwMDA2NTYx"
+                    },
+                    "closedAt": "2022-06-10T06:17:43",
+                    "dutchAuctionFinalPrice": null,
+                    "openedAt": "2022-06-03T06:17:45.547677",
+                    "priceFnEndedAt": null,
+                    "quantity": "1"
+                  },
+                  "bestBid": null
+                },
+                "isEditable": {
+                  "value": false,
+                  "reason": "Unauthorized"
+                },
+                "isListable": true,
+                "ownership": null,
+                "creator": {
+                  "address": "0x989584374182ea79a9c3cb7b55fbf78b5c725c25",
+                  "id": "QWNjb3VudFR5cGU6MTQ1NDI0NzUy"
+                },
+                "ownedQuantity": null,
+                "assetEventData": {
+                  "lastSale": {
+                    "unitPriceQuantity": {
+                      "asset": {
+                        "decimals": 18,
+                        "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+                        "symbol": "ETH",
+                        "usdSpotPrice": 1812.87,
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+                        },
+                        "id": "QXNzZXRUeXBlOjEzNjg5MDc3"
+                      },
+                      "quantity": "510000000000000000",
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6OTA3NTA4NjQ3NzI2ODM0MDg4MDM0NTI5NDEwODU5OTQ2MjM0Mg=="
+                    }
+                  }
+                }
+              },
+              "assetBundle": null,
+              "__typename": "SearchResultType"
+            },
+            "cursor": "YXJyYXljb25uZWN0aW9uOjEx"
+          },
+          {
+            "node": {
+              "asset": {
+                "assetContract": {
+                  "address": "0xc1ad47aeb274157e24a5f01b5857830aef962843",
+                  "chain": "ETHEREUM",
+                  "id": "QXNzZXRDb250cmFjdFR5cGU6ODMxMzg1",
+                  "openseaVersion": null
+                },
+                "collection": {
+                  "isVerified": true,
+                  "relayId": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "id": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "displayData": {
+                    "cardDisplayStyle": "COVER"
+                  },
+                  "imageUrl": "https://lh3.googleusercontent.com/cDfIiQMlap3KmoLnlgridUvdhfGDCXVosa5zURHQNMES_r0otI8MEkUtqFUN7pKkr9U-3ItBTp1XKLg7ScxvziOBfbDd706q9eGS=s120",
+                  "slug": "akumu-dragonz",
+                  "isAuthorizedEditor": false,
+                  "name": "Akumu Dragonz"
+                },
+                "relayId": "QXNzZXRUeXBlOjQ2MjA3NjcyNA==",
+                "tokenId": "3215",
+                "backgroundColor": null,
+                "imageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "name": "Akumu Dragonz #3215",
+                "id": "QXNzZXRUeXBlOjQ2MjA3NjcyNA==",
+                "isDelisted": false,
+                "animationUrl": null,
+                "displayImageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "decimals": 0,
+                "favoritesCount": 144,
+                "isFavorite": false,
+                "isFrozen": false,
+                "hasUnlockableContent": false,
+                "orderData": {
+                  "bestAsk": {
+                    "relayId": "T3JkZXJWMlR5cGU6NTc1NjkxMDIzMg==",
+                    "decimals": null,
+                    "paymentAssetQuantity": {
+                      "asset": {
+                        "usdSpotPrice": 1812.87,
+                        "decimals": 18,
+                        "id": "QXNzZXRUeXBlOjQ2NDU2ODE=",
+                        "imageUrl": "https://openseauserdata.com/files/accae6b6fb3888cbff27a013729c22dc.svg",
+                        "symbol": "WETH",
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzOA=="
+                        }
+                      },
+                      "quantity": "0",
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6ODEwNDkzMjg1NTYxNDY2MzI3NjE2OTc2MjY5OTg3NTM2MTYwNTk=",
+                      "quantityInEth": "0"
+                    },
+                    "orderType": "ENGLISH",
+                    "maker": {
+                      "address": "0x1985bde6f68ff743907d147ead62da65ab651714",
+                      "id": "QWNjb3VudFR5cGU6MzQ2NTg2Mjk="
+                    },
+                    "closedAt": "2022-06-03T13:00:04",
+                    "dutchAuctionFinalPrice": null,
+                    "openedAt": "2022-06-02T23:05:38.421358",
+                    "priceFnEndedAt": "2022-06-10T13:00:04",
+                    "quantity": "1"
+                  },
+                  "bestBid": {
+                    "orderType": "BASIC",
+                    "paymentAssetQuantity": {
+                      "quantity": "648270000000000000",
+                      "asset": {
+                        "decimals": 18,
+                        "imageUrl": "https://openseauserdata.com/files/accae6b6fb3888cbff27a013729c22dc.svg",
+                        "symbol": "WETH",
+                        "usdSpotPrice": 1812.87,
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzOA=="
+                        },
+                        "id": "QXNzZXRUeXBlOjQ2NDU2ODE="
+                      },
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6MjA1OTYyMTA1NDM4NTA5ODYxNTM0MjE0NjIxMDQyNjMwMjAyOTA3"
+                    }
+                  }
+                },
+                "isEditable": {
+                  "value": false,
+                  "reason": "Unauthorized"
+                },
+                "isListable": true,
+                "ownership": null,
+                "creator": {
+                  "address": "0x989584374182ea79a9c3cb7b55fbf78b5c725c25",
+                  "id": "QWNjb3VudFR5cGU6MTQ1NDI0NzUy"
+                },
+                "ownedQuantity": null,
+                "assetEventData": {
+                  "lastSale": null
+                }
+              },
+              "assetBundle": null,
+              "__typename": "SearchResultType"
+            },
+            "cursor": "YXJyYXljb25uZWN0aW9uOjEy"
+          },
+          {
+            "node": {
+              "asset": {
+                "assetContract": {
+                  "address": "0xc1ad47aeb274157e24a5f01b5857830aef962843",
+                  "chain": "ETHEREUM",
+                  "id": "QXNzZXRDb250cmFjdFR5cGU6ODMxMzg1",
+                  "openseaVersion": null
+                },
+                "collection": {
+                  "isVerified": true,
+                  "relayId": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "id": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "displayData": {
+                    "cardDisplayStyle": "COVER"
+                  },
+                  "imageUrl": "https://lh3.googleusercontent.com/cDfIiQMlap3KmoLnlgridUvdhfGDCXVosa5zURHQNMES_r0otI8MEkUtqFUN7pKkr9U-3ItBTp1XKLg7ScxvziOBfbDd706q9eGS=s120",
+                  "slug": "akumu-dragonz",
+                  "isAuthorizedEditor": false,
+                  "name": "Akumu Dragonz"
+                },
+                "relayId": "QXNzZXRUeXBlOjQ2NTUwNDU2Nw==",
+                "tokenId": "6560",
+                "backgroundColor": null,
+                "imageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "name": "Akumu Dragonz #6560",
+                "id": "QXNzZXRUeXBlOjQ2NTUwNDU2Nw==",
+                "isDelisted": false,
+                "animationUrl": null,
+                "displayImageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "decimals": null,
+                "favoritesCount": 2,
+                "isFavorite": false,
+                "isFrozen": false,
+                "hasUnlockableContent": false,
+                "orderData": {
+                  "bestAsk": {
+                    "relayId": "T3JkZXJWMlR5cGU6NTc1ODUwMDc4MA==",
+                    "decimals": null,
+                    "paymentAssetQuantity": {
+                      "asset": {
+                        "usdSpotPrice": 1812.87,
+                        "decimals": 18,
+                        "id": "QXNzZXRUeXBlOjEzNjg5MDc3",
+                        "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+                        "symbol": "ETH",
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+                        }
+                      },
+                      "quantity": "649000000000000000",
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6MzA1ODg3Mjg0ODAxNTA1MjQ5NzYyODg3Mjg4ODAwMjg4NzQ3MDQx",
+                      "quantityInEth": "649000000000000000"
+                    },
+                    "orderType": "BASIC",
+                    "maker": {
+                      "address": "0xb3998f626d14290d4f522489bcab0409e8e7e7c0",
+                      "id": "QWNjb3VudFR5cGU6Mjg0NzgzMzM="
+                    },
+                    "closedAt": "2022-07-03T04:19:31",
+                    "dutchAuctionFinalPrice": null,
+                    "openedAt": "2022-06-03T04:20:04.069597",
+                    "priceFnEndedAt": null,
+                    "quantity": "1"
+                  },
+                  "bestBid": null
+                },
+                "isEditable": {
+                  "value": false,
+                  "reason": "Unauthorized"
+                },
+                "isListable": true,
+                "ownership": null,
+                "creator": {
+                  "address": "0x989584374182ea79a9c3cb7b55fbf78b5c725c25",
+                  "id": "QWNjb3VudFR5cGU6MTQ1NDI0NzUy"
+                },
+                "ownedQuantity": null,
+                "assetEventData": {
+                  "lastSale": null
+                }
+              },
+              "assetBundle": null,
+              "__typename": "SearchResultType"
+            },
+            "cursor": "YXJyYXljb25uZWN0aW9uOjEz"
+          },
+          {
+            "node": {
+              "asset": {
+                "assetContract": {
+                  "address": "0xc1ad47aeb274157e24a5f01b5857830aef962843",
+                  "chain": "ETHEREUM",
+                  "id": "QXNzZXRDb250cmFjdFR5cGU6ODMxMzg1",
+                  "openseaVersion": null
+                },
+                "collection": {
+                  "isVerified": true,
+                  "relayId": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "id": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "displayData": {
+                    "cardDisplayStyle": "COVER"
+                  },
+                  "imageUrl": "https://lh3.googleusercontent.com/cDfIiQMlap3KmoLnlgridUvdhfGDCXVosa5zURHQNMES_r0otI8MEkUtqFUN7pKkr9U-3ItBTp1XKLg7ScxvziOBfbDd706q9eGS=s120",
+                  "slug": "akumu-dragonz",
+                  "isAuthorizedEditor": false,
+                  "name": "Akumu Dragonz"
+                },
+                "relayId": "QXNzZXRUeXBlOjQ2NTUwMDg1Mw==",
+                "tokenId": "6164",
+                "backgroundColor": null,
+                "imageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "name": "Akumu Dragonz #6164",
+                "id": "QXNzZXRUeXBlOjQ2NTUwMDg1Mw==",
+                "isDelisted": false,
+                "animationUrl": null,
+                "displayImageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "decimals": null,
+                "favoritesCount": 0,
+                "isFavorite": false,
+                "isFrozen": false,
+                "hasUnlockableContent": false,
+                "orderData": {
+                  "bestAsk": {
+                    "relayId": "T3JkZXJWMlR5cGU6NTc1OTE0NjQwMQ==",
+                    "decimals": null,
+                    "paymentAssetQuantity": {
+                      "asset": {
+                        "usdSpotPrice": 1812.87,
+                        "decimals": 18,
+                        "id": "QXNzZXRUeXBlOjEzNjg5MDc3",
+                        "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+                        "symbol": "ETH",
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+                        }
+                      },
+                      "quantity": "649800000000000000",
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6MzE4NjczMjQ3NDI3NDM3OTU4ODEwMjk2ODE3MTQwMTYyNzU5Mjk3",
+                      "quantityInEth": "649800000000000000"
+                    },
+                    "orderType": "BASIC",
+                    "maker": {
+                      "address": "0x74334b413325f126bd5e36f4773bc114b6725952",
+                      "id": "QWNjb3VudFR5cGU6MTczOTUwOTU1"
+                    },
+                    "closedAt": "2022-06-03T12:00:54",
+                    "dutchAuctionFinalPrice": null,
+                    "openedAt": "2022-06-03T06:24:14.424448",
+                    "priceFnEndedAt": null,
+                    "quantity": "1"
+                  },
+                  "bestBid": null
+                },
+                "isEditable": {
+                  "value": false,
+                  "reason": "Unauthorized"
+                },
+                "isListable": true,
+                "ownership": null,
+                "creator": {
+                  "address": "0x989584374182ea79a9c3cb7b55fbf78b5c725c25",
+                  "id": "QWNjb3VudFR5cGU6MTQ1NDI0NzUy"
+                },
+                "ownedQuantity": null,
+                "assetEventData": {
+                  "lastSale": null
+                }
+              },
+              "assetBundle": null,
+              "__typename": "SearchResultType"
+            },
+            "cursor": "YXJyYXljb25uZWN0aW9uOjE0"
+          },
+          {
+            "node": {
+              "asset": {
+                "assetContract": {
+                  "address": "0xc1ad47aeb274157e24a5f01b5857830aef962843",
+                  "chain": "ETHEREUM",
+                  "id": "QXNzZXRDb250cmFjdFR5cGU6ODMxMzg1",
+                  "openseaVersion": null
+                },
+                "collection": {
+                  "isVerified": true,
+                  "relayId": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "id": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "displayData": {
+                    "cardDisplayStyle": "COVER"
+                  },
+                  "imageUrl": "https://lh3.googleusercontent.com/cDfIiQMlap3KmoLnlgridUvdhfGDCXVosa5zURHQNMES_r0otI8MEkUtqFUN7pKkr9U-3ItBTp1XKLg7ScxvziOBfbDd706q9eGS=s120",
+                  "slug": "akumu-dragonz",
+                  "isAuthorizedEditor": false,
+                  "name": "Akumu Dragonz"
+                },
+                "relayId": "QXNzZXRUeXBlOjQ2NTUwNjczMg==",
+                "tokenId": "7205",
+                "backgroundColor": null,
+                "imageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "name": "Akumu Dragonz #7205",
+                "id": "QXNzZXRUeXBlOjQ2NTUwNjczMg==",
+                "isDelisted": false,
+                "animationUrl": null,
+                "displayImageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "decimals": null,
+                "favoritesCount": 0,
+                "isFavorite": false,
+                "isFrozen": false,
+                "hasUnlockableContent": false,
+                "orderData": {
+                  "bestAsk": {
+                    "relayId": "T3JkZXJWMlR5cGU6NTc1OTQxNzM0OA==",
+                    "decimals": null,
+                    "paymentAssetQuantity": {
+                      "asset": {
+                        "usdSpotPrice": 1812.87,
+                        "decimals": 18,
+                        "id": "QXNzZXRUeXBlOjEzNjg5MDc3",
+                        "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+                        "symbol": "ETH",
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+                        }
+                      },
+                      "quantity": "650000000000000000",
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6MzIxMDE0NDUyOTYzNzM1NzUwMTUxMzk5ODk5ODY4Mzc2ODEzNjc1",
+                      "quantityInEth": "650000000000000000"
+                    },
+                    "orderType": "BASIC",
+                    "maker": {
+                      "address": "0x5f2787e7fe87b740ee3fe859963fa3b51f485eba",
+                      "id": "QWNjb3VudFR5cGU6NzY4NDg4MDk="
+                    },
+                    "closedAt": "2022-06-06T07:15:20",
+                    "dutchAuctionFinalPrice": null,
+                    "openedAt": "2022-06-03T07:16:12.458440",
+                    "priceFnEndedAt": null,
+                    "quantity": "1"
+                  },
+                  "bestBid": null
+                },
+                "isEditable": {
+                  "value": false,
+                  "reason": "Unauthorized"
+                },
+                "isListable": true,
+                "ownership": null,
+                "creator": {
+                  "address": "0x989584374182ea79a9c3cb7b55fbf78b5c725c25",
+                  "id": "QWNjb3VudFR5cGU6MTQ1NDI0NzUy"
+                },
+                "ownedQuantity": null,
+                "assetEventData": {
+                  "lastSale": null
+                }
+              },
+              "assetBundle": null,
+              "__typename": "SearchResultType"
+            },
+            "cursor": "YXJyYXljb25uZWN0aW9uOjE1"
+          },
+          {
+            "node": {
+              "asset": {
+                "assetContract": {
+                  "address": "0xc1ad47aeb274157e24a5f01b5857830aef962843",
+                  "chain": "ETHEREUM",
+                  "id": "QXNzZXRDb250cmFjdFR5cGU6ODMxMzg1",
+                  "openseaVersion": null
+                },
+                "collection": {
+                  "isVerified": true,
+                  "relayId": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "id": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "displayData": {
+                    "cardDisplayStyle": "COVER"
+                  },
+                  "imageUrl": "https://lh3.googleusercontent.com/cDfIiQMlap3KmoLnlgridUvdhfGDCXVosa5zURHQNMES_r0otI8MEkUtqFUN7pKkr9U-3ItBTp1XKLg7ScxvziOBfbDd706q9eGS=s120",
+                  "slug": "akumu-dragonz",
+                  "isAuthorizedEditor": false,
+                  "name": "Akumu Dragonz"
+                },
+                "relayId": "QXNzZXRUeXBlOjQ2NTUwNTM2OA==",
+                "tokenId": "7228",
+                "backgroundColor": null,
+                "imageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "name": "Akumu Dragonz #7228",
+                "id": "QXNzZXRUeXBlOjQ2NTUwNTM2OA==",
+                "isDelisted": false,
+                "animationUrl": null,
+                "displayImageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "decimals": null,
+                "favoritesCount": 1,
+                "isFavorite": false,
+                "isFrozen": false,
+                "hasUnlockableContent": false,
+                "orderData": {
+                  "bestAsk": {
+                    "relayId": "T3JkZXJWMlR5cGU6NTc1ODU4NDI5Nw==",
+                    "decimals": null,
+                    "paymentAssetQuantity": {
+                      "asset": {
+                        "usdSpotPrice": 1812.87,
+                        "decimals": 18,
+                        "id": "QXNzZXRUeXBlOjEzNjg5MDc3",
+                        "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+                        "symbol": "ETH",
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+                        }
+                      },
+                      "quantity": "650000000000000000",
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6MjQ2MzQyOTI1MjE5NTU1MzE5MzA2NzUxNDE0MTg2OTU2MDIyODA5",
+                      "quantityInEth": "650000000000000000"
+                    },
+                    "orderType": "BASIC",
+                    "maker": {
+                      "address": "0xbfe59ff420cb2045f0f4e9cca266415a485f1f48",
+                      "id": "QWNjb3VudFR5cGU6MTM5OTYyNTUw"
+                    },
+                    "closedAt": "2022-06-04T04:34:40",
+                    "dutchAuctionFinalPrice": null,
+                    "openedAt": "2022-06-03T04:35:29.917234",
+                    "priceFnEndedAt": null,
+                    "quantity": "1"
+                  },
+                  "bestBid": null
+                },
+                "isEditable": {
+                  "value": false,
+                  "reason": "Unauthorized"
+                },
+                "isListable": true,
+                "ownership": null,
+                "creator": {
+                  "address": "0x989584374182ea79a9c3cb7b55fbf78b5c725c25",
+                  "id": "QWNjb3VudFR5cGU6MTQ1NDI0NzUy"
+                },
+                "ownedQuantity": null,
+                "assetEventData": {
+                  "lastSale": null
+                }
+              },
+              "assetBundle": null,
+              "__typename": "SearchResultType"
+            },
+            "cursor": "YXJyYXljb25uZWN0aW9uOjE2"
+          },
+          {
+            "node": {
+              "asset": {
+                "assetContract": {
+                  "address": "0xc1ad47aeb274157e24a5f01b5857830aef962843",
+                  "chain": "ETHEREUM",
+                  "id": "QXNzZXRDb250cmFjdFR5cGU6ODMxMzg1",
+                  "openseaVersion": null
+                },
+                "collection": {
+                  "isVerified": true,
+                  "relayId": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "id": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "displayData": {
+                    "cardDisplayStyle": "COVER"
+                  },
+                  "imageUrl": "https://lh3.googleusercontent.com/cDfIiQMlap3KmoLnlgridUvdhfGDCXVosa5zURHQNMES_r0otI8MEkUtqFUN7pKkr9U-3ItBTp1XKLg7ScxvziOBfbDd706q9eGS=s120",
+                  "slug": "akumu-dragonz",
+                  "isAuthorizedEditor": false,
+                  "name": "Akumu Dragonz"
+                },
+                "relayId": "QXNzZXRUeXBlOjQ2MjA1MzAwNg==",
+                "tokenId": "1348",
+                "backgroundColor": null,
+                "imageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "name": "Akumu Dragonz #1348",
+                "id": "QXNzZXRUeXBlOjQ2MjA1MzAwNg==",
+                "isDelisted": false,
+                "animationUrl": null,
+                "displayImageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "decimals": 0,
+                "favoritesCount": 4,
+                "isFavorite": false,
+                "isFrozen": false,
+                "hasUnlockableContent": false,
+                "orderData": {
+                  "bestAsk": {
+                    "relayId": "T3JkZXJWMlR5cGU6NTc1OTAzODM1Mg==",
+                    "decimals": null,
+                    "paymentAssetQuantity": {
+                      "asset": {
+                        "usdSpotPrice": 1812.87,
+                        "decimals": 18,
+                        "id": "QXNzZXRUeXBlOjEzNjg5MDc3",
+                        "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+                        "symbol": "ETH",
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+                        }
+                      },
+                      "quantity": "650000000000000000",
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6ODAyMzUyNDY2NTczNzM0ODM3NjMyODY2MzU4NDE5NTkxMjE3OTE=",
+                      "quantityInEth": "650000000000000000"
+                    },
+                    "orderType": "BASIC",
+                    "maker": {
+                      "address": "0x3683661b565a6f6daaa7a94ecd1fd73a74c5df1d",
+                      "id": "QWNjb3VudFR5cGU6MzE2Nzc2MzY5"
+                    },
+                    "closedAt": "2022-06-03T11:30:41",
+                    "dutchAuctionFinalPrice": null,
+                    "openedAt": "2022-06-03T06:03:11.478365",
+                    "priceFnEndedAt": null,
+                    "quantity": "1"
+                  },
+                  "bestBid": {
+                    "orderType": "BASIC",
+                    "paymentAssetQuantity": {
+                      "quantity": "100000000000000",
+                      "asset": {
+                        "decimals": 18,
+                        "imageUrl": "https://openseauserdata.com/files/accae6b6fb3888cbff27a013729c22dc.svg",
+                        "symbol": "WETH",
+                        "usdSpotPrice": 1812.87,
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzOA=="
+                        },
+                        "id": "QXNzZXRUeXBlOjQ2NDU2ODE="
+                      },
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6MjMxNjkwNTA0NDY0MjY3MjYwOTAwOTczMDU0MjA5MTYxMzEwNDk2"
+                    }
+                  }
+                },
+                "isEditable": {
+                  "value": false,
+                  "reason": "Unauthorized"
+                },
+                "isListable": true,
+                "ownership": null,
+                "creator": {
+                  "address": "0x989584374182ea79a9c3cb7b55fbf78b5c725c25",
+                  "id": "QWNjb3VudFR5cGU6MTQ1NDI0NzUy"
+                },
+                "ownedQuantity": null,
+                "assetEventData": {
+                  "lastSale": {
+                    "unitPriceQuantity": {
+                      "asset": {
+                        "decimals": 18,
+                        "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+                        "symbol": "ETH",
+                        "usdSpotPrice": 1812.87,
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+                        },
+                        "id": "QXNzZXRUeXBlOjEzNjg5MDc3"
+                      },
+                      "quantity": "599990000000000000",
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6NjczMTQ3MDc1MjI2Mzc4ODE3NTE5MDQ0OTI3MDc5ODAxMTIwNjE="
+                    }
+                  }
+                }
+              },
+              "assetBundle": null,
+              "__typename": "SearchResultType"
+            },
+            "cursor": "YXJyYXljb25uZWN0aW9uOjE3"
+          },
+          {
+            "node": {
+              "asset": {
+                "assetContract": {
+                  "address": "0xc1ad47aeb274157e24a5f01b5857830aef962843",
+                  "chain": "ETHEREUM",
+                  "id": "QXNzZXRDb250cmFjdFR5cGU6ODMxMzg1",
+                  "openseaVersion": null
+                },
+                "collection": {
+                  "isVerified": true,
+                  "relayId": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "id": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "displayData": {
+                    "cardDisplayStyle": "COVER"
+                  },
+                  "imageUrl": "https://lh3.googleusercontent.com/cDfIiQMlap3KmoLnlgridUvdhfGDCXVosa5zURHQNMES_r0otI8MEkUtqFUN7pKkr9U-3ItBTp1XKLg7ScxvziOBfbDd706q9eGS=s120",
+                  "slug": "akumu-dragonz",
+                  "isAuthorizedEditor": false,
+                  "name": "Akumu Dragonz"
+                },
+                "relayId": "QXNzZXRUeXBlOjQ2NTQ5OTI4OQ==",
+                "tokenId": "5758",
+                "backgroundColor": null,
+                "imageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "name": "Akumu Dragonz #5758",
+                "id": "QXNzZXRUeXBlOjQ2NTQ5OTI4OQ==",
+                "isDelisted": false,
+                "animationUrl": null,
+                "displayImageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "decimals": 0,
+                "favoritesCount": 2,
+                "isFavorite": false,
+                "isFrozen": false,
+                "hasUnlockableContent": false,
+                "orderData": {
+                  "bestAsk": {
+                    "relayId": "T3JkZXJWMlR5cGU6NTc1ODk2NTAwNA==",
+                    "decimals": null,
+                    "paymentAssetQuantity": {
+                      "asset": {
+                        "usdSpotPrice": 1812.87,
+                        "decimals": 18,
+                        "id": "QXNzZXRUeXBlOjEzNjg5MDc3",
+                        "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+                        "symbol": "ETH",
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+                        }
+                      },
+                      "quantity": "650000000000000000",
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6MTM0NzY2NDc0OTkxMDY0OTIyMTQ1NjQyMDQ2OTU4MDYxNTU5NTUy",
+                      "quantityInEth": "650000000000000000"
+                    },
+                    "orderType": "BASIC",
+                    "maker": {
+                      "address": "0x394121764d4bc5c7995ecf44edfffe7af0cdff15",
+                      "id": "QWNjb3VudFR5cGU6MzYxNzYwOTU="
+                    },
+                    "closedAt": "2022-06-04T05:00:54",
+                    "dutchAuctionFinalPrice": null,
+                    "openedAt": "2022-06-03T05:48:42.518535",
+                    "priceFnEndedAt": null,
+                    "quantity": "1"
+                  },
+                  "bestBid": {
+                    "orderType": "BASIC",
+                    "paymentAssetQuantity": {
+                      "quantity": "60000000000000000",
+                      "asset": {
+                        "decimals": 18,
+                        "imageUrl": "https://openseauserdata.com/files/accae6b6fb3888cbff27a013729c22dc.svg",
+                        "symbol": "WETH",
+                        "usdSpotPrice": 1812.87,
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzOA=="
+                        },
+                        "id": "QXNzZXRUeXBlOjQ2NDU2ODE="
+                      },
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6MzI5OTk0ODA2ODM1NjMyMzY0MjAyODg1NTUyNjc3MzM5NjM3NzI3"
+                    }
+                  }
+                },
+                "isEditable": {
+                  "value": false,
+                  "reason": "Unauthorized"
+                },
+                "isListable": true,
+                "ownership": null,
+                "creator": {
+                  "address": "0x989584374182ea79a9c3cb7b55fbf78b5c725c25",
+                  "id": "QWNjb3VudFR5cGU6MTQ1NDI0NzUy"
+                },
+                "ownedQuantity": null,
+                "assetEventData": {
+                  "lastSale": null
+                }
+              },
+              "assetBundle": null,
+              "__typename": "SearchResultType"
+            },
+            "cursor": "YXJyYXljb25uZWN0aW9uOjE4"
+          },
+          {
+            "node": {
+              "asset": {
+                "assetContract": {
+                  "address": "0xc1ad47aeb274157e24a5f01b5857830aef962843",
+                  "chain": "ETHEREUM",
+                  "id": "QXNzZXRDb250cmFjdFR5cGU6ODMxMzg1",
+                  "openseaVersion": null
+                },
+                "collection": {
+                  "isVerified": true,
+                  "relayId": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "id": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "displayData": {
+                    "cardDisplayStyle": "COVER"
+                  },
+                  "imageUrl": "https://lh3.googleusercontent.com/cDfIiQMlap3KmoLnlgridUvdhfGDCXVosa5zURHQNMES_r0otI8MEkUtqFUN7pKkr9U-3ItBTp1XKLg7ScxvziOBfbDd706q9eGS=s120",
+                  "slug": "akumu-dragonz",
+                  "isAuthorizedEditor": false,
+                  "name": "Akumu Dragonz"
+                },
+                "relayId": "QXNzZXRUeXBlOjQ2NTQ5ODEyMA==",
+                "tokenId": "5649",
+                "backgroundColor": null,
+                "imageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "name": "Akumu Dragonz #5649",
+                "id": "QXNzZXRUeXBlOjQ2NTQ5ODEyMA==",
+                "isDelisted": false,
+                "animationUrl": null,
+                "displayImageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "decimals": null,
+                "favoritesCount": 1,
+                "isFavorite": false,
+                "isFrozen": false,
+                "hasUnlockableContent": false,
+                "orderData": {
+                  "bestAsk": {
+                    "relayId": "T3JkZXJWMlR5cGU6NTc1ODc0NTE1Nw==",
+                    "decimals": null,
+                    "paymentAssetQuantity": {
+                      "asset": {
+                        "usdSpotPrice": 1812.87,
+                        "decimals": 18,
+                        "id": "QXNzZXRUeXBlOjEzNjg5MDc3",
+                        "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+                        "symbol": "ETH",
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+                        }
+                      },
+                      "quantity": "650000000000000000",
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6MTU3NDkzMDU3NTIzNTk1Njc3OTc4MTYzNzEwOTI5Njg3NTE1ODMx",
+                      "quantityInEth": "650000000000000000"
+                    },
+                    "orderType": "BASIC",
+                    "maker": {
+                      "address": "0x6dc213998be11ca07ac5875c65cec7db5f328ccc",
+                      "id": "QWNjb3VudFR5cGU6MjQzNTY2OTI="
+                    },
+                    "closedAt": "2022-06-03T11:51:03",
+                    "dutchAuctionFinalPrice": null,
+                    "openedAt": "2022-06-03T05:06:10.022534",
+                    "priceFnEndedAt": null,
+                    "quantity": "1"
+                  },
+                  "bestBid": null
+                },
+                "isEditable": {
+                  "value": false,
+                  "reason": "Unauthorized"
+                },
+                "isListable": true,
+                "ownership": null,
+                "creator": {
+                  "address": "0x989584374182ea79a9c3cb7b55fbf78b5c725c25",
+                  "id": "QWNjb3VudFR5cGU6MTQ1NDI0NzUy"
+                },
+                "ownedQuantity": null,
+                "assetEventData": {
+                  "lastSale": null
+                }
+              },
+              "assetBundle": null,
+              "__typename": "SearchResultType"
+            },
+            "cursor": "YXJyYXljb25uZWN0aW9uOjE5"
+          },
+          {
+            "node": {
+              "asset": {
+                "assetContract": {
+                  "address": "0xc1ad47aeb274157e24a5f01b5857830aef962843",
+                  "chain": "ETHEREUM",
+                  "id": "QXNzZXRDb250cmFjdFR5cGU6ODMxMzg1",
+                  "openseaVersion": null
+                },
+                "collection": {
+                  "isVerified": true,
+                  "relayId": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "id": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "displayData": {
+                    "cardDisplayStyle": "COVER"
+                  },
+                  "imageUrl": "https://lh3.googleusercontent.com/cDfIiQMlap3KmoLnlgridUvdhfGDCXVosa5zURHQNMES_r0otI8MEkUtqFUN7pKkr9U-3ItBTp1XKLg7ScxvziOBfbDd706q9eGS=s120",
+                  "slug": "akumu-dragonz",
+                  "isAuthorizedEditor": false,
+                  "name": "Akumu Dragonz"
+                },
+                "relayId": "QXNzZXRUeXBlOjQ2MjA2NTg1MQ==",
+                "tokenId": "2626",
+                "backgroundColor": null,
+                "imageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "name": "Akumu Dragonz #2626",
+                "id": "QXNzZXRUeXBlOjQ2MjA2NTg1MQ==",
+                "isDelisted": false,
+                "animationUrl": null,
+                "displayImageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "decimals": null,
+                "favoritesCount": 0,
+                "isFavorite": false,
+                "isFrozen": false,
+                "hasUnlockableContent": false,
+                "orderData": {
+                  "bestAsk": {
+                    "relayId": "T3JkZXJWMlR5cGU6NTc1OTQzODYyNQ==",
+                    "decimals": null,
+                    "paymentAssetQuantity": {
+                      "asset": {
+                        "usdSpotPrice": 1812.87,
+                        "decimals": 18,
+                        "id": "QXNzZXRUeXBlOjEzNjg5MDc3",
+                        "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+                        "symbol": "ETH",
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+                        }
+                      },
+                      "quantity": "650000000000000000",
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6MTI2NDI3MzYwNzc4NjA0NzQyMjQzNTc3NjQ3NzQyNjY3Njk0ODQy",
+                      "quantityInEth": "650000000000000000"
+                    },
+                    "orderType": "BASIC",
+                    "maker": {
+                      "address": "0x54965e4abb75368136412001f6acb9ed5ec7545f",
+                      "id": "QWNjb3VudFR5cGU6MTk5Mjk2Mjc3"
+                    },
+                    "closedAt": "2022-07-03T07:17:22",
+                    "dutchAuctionFinalPrice": null,
+                    "openedAt": "2022-06-03T07:20:10.876054",
+                    "priceFnEndedAt": null,
+                    "quantity": "1"
+                  },
+                  "bestBid": {
+                    "orderType": "BASIC",
+                    "paymentAssetQuantity": {
+                      "quantity": "100000000000000",
+                      "asset": {
+                        "decimals": 18,
+                        "imageUrl": "https://openseauserdata.com/files/accae6b6fb3888cbff27a013729c22dc.svg",
+                        "symbol": "WETH",
+                        "usdSpotPrice": 1812.87,
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzOA=="
+                        },
+                        "id": "QXNzZXRUeXBlOjQ2NDU2ODE="
+                      },
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6MzM5OTk1OTk1OTEyNDEzMzU2MTcwOTU4MDA3NzQ5MTgzMDgzNjI4"
+                    }
+                  }
+                },
+                "isEditable": {
+                  "value": false,
+                  "reason": "Unauthorized"
+                },
+                "isListable": true,
+                "ownership": null,
+                "creator": {
+                  "address": "0x989584374182ea79a9c3cb7b55fbf78b5c725c25",
+                  "id": "QWNjb3VudFR5cGU6MTQ1NDI0NzUy"
+                },
+                "ownedQuantity": null,
+                "assetEventData": {
+                  "lastSale": null
+                }
+              },
+              "assetBundle": null,
+              "__typename": "SearchResultType"
+            },
+            "cursor": "YXJyYXljb25uZWN0aW9uOjIw"
+          },
+          {
+            "node": {
+              "asset": {
+                "assetContract": {
+                  "address": "0xc1ad47aeb274157e24a5f01b5857830aef962843",
+                  "chain": "ETHEREUM",
+                  "id": "QXNzZXRDb250cmFjdFR5cGU6ODMxMzg1",
+                  "openseaVersion": null
+                },
+                "collection": {
+                  "isVerified": true,
+                  "relayId": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "id": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "displayData": {
+                    "cardDisplayStyle": "COVER"
+                  },
+                  "imageUrl": "https://lh3.googleusercontent.com/cDfIiQMlap3KmoLnlgridUvdhfGDCXVosa5zURHQNMES_r0otI8MEkUtqFUN7pKkr9U-3ItBTp1XKLg7ScxvziOBfbDd706q9eGS=s120",
+                  "slug": "akumu-dragonz",
+                  "isAuthorizedEditor": false,
+                  "name": "Akumu Dragonz"
+                },
+                "relayId": "QXNzZXRUeXBlOjQ2MjA2MzQxOA==",
+                "tokenId": "2273",
+                "backgroundColor": null,
+                "imageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "name": "Akumu Dragonz #2273",
+                "id": "QXNzZXRUeXBlOjQ2MjA2MzQxOA==",
+                "isDelisted": false,
+                "animationUrl": null,
+                "displayImageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "decimals": 0,
+                "favoritesCount": 3,
+                "isFavorite": false,
+                "isFrozen": false,
+                "hasUnlockableContent": false,
+                "orderData": {
+                  "bestAsk": {
+                    "relayId": "T3JkZXJWMlR5cGU6NTc1ODU4MDU0OQ==",
+                    "decimals": null,
+                    "paymentAssetQuantity": {
+                      "asset": {
+                        "usdSpotPrice": 1812.87,
+                        "decimals": 18,
+                        "id": "QXNzZXRUeXBlOjEzNjg5MDc3",
+                        "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+                        "symbol": "ETH",
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+                        }
+                      },
+                      "quantity": "650000000000000000",
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6MTYxNjQ1MTY0ODk4MzE3MTUxNTc3NjM4MjAyNDk1MTgxODE3Nzc5",
+                      "quantityInEth": "650000000000000000"
+                    },
+                    "orderType": "BASIC",
+                    "maker": {
+                      "address": "0xbbe3746ecb684b4cbf374fc2cba3849269d04709",
+                      "id": "QWNjb3VudFR5cGU6NTU2NTc0OTk="
+                    },
+                    "closedAt": "2022-06-04T04:17:17",
+                    "dutchAuctionFinalPrice": null,
+                    "openedAt": "2022-06-03T04:34:49.032225",
+                    "priceFnEndedAt": null,
+                    "quantity": "1"
+                  },
+                  "bestBid": {
+                    "orderType": "BASIC",
+                    "paymentAssetQuantity": {
+                      "quantity": "508900000000000000",
+                      "asset": {
+                        "decimals": 18,
+                        "imageUrl": "https://openseauserdata.com/files/accae6b6fb3888cbff27a013729c22dc.svg",
+                        "symbol": "WETH",
+                        "usdSpotPrice": 1812.87,
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzOA=="
+                        },
+                        "id": "QXNzZXRUeXBlOjQ2NDU2ODE="
+                      },
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6Mjc1OTUzMTM4ODkxOTQ0NDg1MjY3MDc3NTk3NDE4MDg3NDk5MTMz"
+                    }
+                  }
+                },
+                "isEditable": {
+                  "value": false,
+                  "reason": "Unauthorized"
+                },
+                "isListable": true,
+                "ownership": null,
+                "creator": {
+                  "address": "0x989584374182ea79a9c3cb7b55fbf78b5c725c25",
+                  "id": "QWNjb3VudFR5cGU6MTQ1NDI0NzUy"
+                },
+                "ownedQuantity": null,
+                "assetEventData": {
+                  "lastSale": {
+                    "unitPriceQuantity": {
+                      "asset": {
+                        "decimals": 18,
+                        "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+                        "symbol": "ETH",
+                        "usdSpotPrice": 1812.87,
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+                        },
+                        "id": "QXNzZXRUeXBlOjEzNjg5MDc3"
+                      },
+                      "quantity": "630000000000000000",
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6MTE3OTE2MjUyNTMyNDU3MDc4OTE2NzkxNTExNzk2NTc1MDg0MDU3"
+                    }
+                  }
+                }
+              },
+              "assetBundle": null,
+              "__typename": "SearchResultType"
+            },
+            "cursor": "YXJyYXljb25uZWN0aW9uOjIx"
+          },
+          {
+            "node": {
+              "asset": {
+                "assetContract": {
+                  "address": "0xc1ad47aeb274157e24a5f01b5857830aef962843",
+                  "chain": "ETHEREUM",
+                  "id": "QXNzZXRDb250cmFjdFR5cGU6ODMxMzg1",
+                  "openseaVersion": null
+                },
+                "collection": {
+                  "isVerified": true,
+                  "relayId": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "id": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "displayData": {
+                    "cardDisplayStyle": "COVER"
+                  },
+                  "imageUrl": "https://lh3.googleusercontent.com/cDfIiQMlap3KmoLnlgridUvdhfGDCXVosa5zURHQNMES_r0otI8MEkUtqFUN7pKkr9U-3ItBTp1XKLg7ScxvziOBfbDd706q9eGS=s120",
+                  "slug": "akumu-dragonz",
+                  "isAuthorizedEditor": false,
+                  "name": "Akumu Dragonz"
+                },
+                "relayId": "QXNzZXRUeXBlOjQ2NTUwNjU1NQ==",
+                "tokenId": "7185",
+                "backgroundColor": null,
+                "imageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "name": "Akumu Dragonz #7185",
+                "id": "QXNzZXRUeXBlOjQ2NTUwNjU1NQ==",
+                "isDelisted": false,
+                "animationUrl": null,
+                "displayImageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "decimals": null,
+                "favoritesCount": 0,
+                "isFavorite": false,
+                "isFrozen": false,
+                "hasUnlockableContent": false,
+                "orderData": {
+                  "bestAsk": {
+                    "relayId": "T3JkZXJWMlR5cGU6NTc1OTU1MjI3OQ==",
+                    "decimals": null,
+                    "paymentAssetQuantity": {
+                      "asset": {
+                        "usdSpotPrice": 1812.87,
+                        "decimals": 18,
+                        "id": "QXNzZXRUeXBlOjEzNjg5MDc3",
+                        "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+                        "symbol": "ETH",
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+                        }
+                      },
+                      "quantity": "650000000000000000",
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6MjU1ODg3NDA2MDYwMDIwNjM5MzUzNzcyMDM0ODE2Mzc5OTUxNDQw",
+                      "quantityInEth": "650000000000000000"
+                    },
+                    "orderType": "BASIC",
+                    "maker": {
+                      "address": "0xcb54a831f1f2a0fc19842a86df3ceba1be4bc67f",
+                      "id": "QWNjb3VudFR5cGU6NzAwMDU5MDk="
+                    },
+                    "closedAt": "2022-06-03T09:40:51",
+                    "dutchAuctionFinalPrice": null,
+                    "openedAt": "2022-06-03T07:42:24.674960",
+                    "priceFnEndedAt": null,
+                    "quantity": "1"
+                  },
+                  "bestBid": null
+                },
+                "isEditable": {
+                  "value": false,
+                  "reason": "Unauthorized"
+                },
+                "isListable": true,
+                "ownership": null,
+                "creator": {
+                  "address": "0x989584374182ea79a9c3cb7b55fbf78b5c725c25",
+                  "id": "QWNjb3VudFR5cGU6MTQ1NDI0NzUy"
+                },
+                "ownedQuantity": null,
+                "assetEventData": {
+                  "lastSale": null
+                }
+              },
+              "assetBundle": null,
+              "__typename": "SearchResultType"
+            },
+            "cursor": "YXJyYXljb25uZWN0aW9uOjIy"
+          },
+          {
+            "node": {
+              "asset": {
+                "assetContract": {
+                  "address": "0xc1ad47aeb274157e24a5f01b5857830aef962843",
+                  "chain": "ETHEREUM",
+                  "id": "QXNzZXRDb250cmFjdFR5cGU6ODMxMzg1",
+                  "openseaVersion": null
+                },
+                "collection": {
+                  "isVerified": true,
+                  "relayId": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "id": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "displayData": {
+                    "cardDisplayStyle": "COVER"
+                  },
+                  "imageUrl": "https://lh3.googleusercontent.com/cDfIiQMlap3KmoLnlgridUvdhfGDCXVosa5zURHQNMES_r0otI8MEkUtqFUN7pKkr9U-3ItBTp1XKLg7ScxvziOBfbDd706q9eGS=s120",
+                  "slug": "akumu-dragonz",
+                  "isAuthorizedEditor": false,
+                  "name": "Akumu Dragonz"
+                },
+                "relayId": "QXNzZXRUeXBlOjQ2NTUwNzA0MQ==",
+                "tokenId": "7382",
+                "backgroundColor": null,
+                "imageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "name": "Akumu Dragonz #7382",
+                "id": "QXNzZXRUeXBlOjQ2NTUwNzA0MQ==",
+                "isDelisted": false,
+                "animationUrl": null,
+                "displayImageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "decimals": null,
+                "favoritesCount": 0,
+                "isFavorite": false,
+                "isFrozen": false,
+                "hasUnlockableContent": false,
+                "orderData": {
+                  "bestAsk": {
+                    "relayId": "T3JkZXJWMlR5cGU6NTc1OTY4Mjc0NQ==",
+                    "decimals": null,
+                    "paymentAssetQuantity": {
+                      "asset": {
+                        "usdSpotPrice": 1812.87,
+                        "decimals": 18,
+                        "id": "QXNzZXRUeXBlOjEzNjg5MDc3",
+                        "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+                        "symbol": "ETH",
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+                        }
+                      },
+                      "quantity": "650000000000000000",
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6ODEwNzc5NTMyMjY5NDkyNzc4OTM4ODgwMTUxODE4ODY0NTI2NTM=",
+                      "quantityInEth": "650000000000000000"
+                    },
+                    "orderType": "BASIC",
+                    "maker": {
+                      "address": "0xe324c2f2524c0a7288866f9d132d5b43ef038349",
+                      "id": "QWNjb3VudFR5cGU6MTMxOTk2OTk="
+                    },
+                    "closedAt": "2022-06-03T09:06:18",
+                    "dutchAuctionFinalPrice": null,
+                    "openedAt": "2022-06-03T08:08:15.831368",
+                    "priceFnEndedAt": null,
+                    "quantity": "1"
+                  },
+                  "bestBid": null
+                },
+                "isEditable": {
+                  "value": false,
+                  "reason": "Unauthorized"
+                },
+                "isListable": true,
+                "ownership": null,
+                "creator": {
+                  "address": "0x989584374182ea79a9c3cb7b55fbf78b5c725c25",
+                  "id": "QWNjb3VudFR5cGU6MTQ1NDI0NzUy"
+                },
+                "ownedQuantity": null,
+                "assetEventData": {
+                  "lastSale": null
+                }
+              },
+              "assetBundle": null,
+              "__typename": "SearchResultType"
+            },
+            "cursor": "YXJyYXljb25uZWN0aW9uOjIz"
+          },
+          {
+            "node": {
+              "asset": {
+                "assetContract": {
+                  "address": "0xc1ad47aeb274157e24a5f01b5857830aef962843",
+                  "chain": "ETHEREUM",
+                  "id": "QXNzZXRDb250cmFjdFR5cGU6ODMxMzg1",
+                  "openseaVersion": null
+                },
+                "collection": {
+                  "isVerified": true,
+                  "relayId": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "id": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "displayData": {
+                    "cardDisplayStyle": "COVER"
+                  },
+                  "imageUrl": "https://lh3.googleusercontent.com/cDfIiQMlap3KmoLnlgridUvdhfGDCXVosa5zURHQNMES_r0otI8MEkUtqFUN7pKkr9U-3ItBTp1XKLg7ScxvziOBfbDd706q9eGS=s120",
+                  "slug": "akumu-dragonz",
+                  "isAuthorizedEditor": false,
+                  "name": "Akumu Dragonz"
+                },
+                "relayId": "QXNzZXRUeXBlOjQ2NjAxMzQ1Nw==",
+                "tokenId": "6963",
+                "backgroundColor": null,
+                "imageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "name": "Akumu Dragonz #6963",
+                "id": "QXNzZXRUeXBlOjQ2NjAxMzQ1Nw==",
+                "isDelisted": false,
+                "animationUrl": null,
+                "displayImageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "decimals": null,
+                "favoritesCount": 2,
+                "isFavorite": false,
+                "isFrozen": false,
+                "hasUnlockableContent": false,
+                "orderData": {
+                  "bestAsk": {
+                    "relayId": "T3JkZXJWMlR5cGU6NTc1OTY0MDY3MQ==",
+                    "decimals": null,
+                    "paymentAssetQuantity": {
+                      "asset": {
+                        "usdSpotPrice": 1812.87,
+                        "decimals": 18,
+                        "id": "QXNzZXRUeXBlOjEzNjg5MDc3",
+                        "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+                        "symbol": "ETH",
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+                        }
+                      },
+                      "quantity": "650000000000000000",
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6NjQ3MzM1MjI1MDI1MzM3Njg4MjQ3MjM0MzI4NjkxMzkxNjk2OTQ=",
+                      "quantityInEth": "650000000000000000"
+                    },
+                    "orderType": "BASIC",
+                    "maker": {
+                      "address": "0x17e2b01aad75d74e540105e452491ef1aac6e0ea",
+                      "id": "QWNjb3VudFR5cGU6NTcwMDUwMDU="
+                    },
+                    "closedAt": "2022-06-03T09:59:30",
+                    "dutchAuctionFinalPrice": null,
+                    "openedAt": "2022-06-03T08:00:06.023694",
+                    "priceFnEndedAt": null,
+                    "quantity": "1"
+                  },
+                  "bestBid": null
+                },
+                "isEditable": {
+                  "value": false,
+                  "reason": "Unauthorized"
+                },
+                "isListable": true,
+                "ownership": null,
+                "creator": {
+                  "address": "0x989584374182ea79a9c3cb7b55fbf78b5c725c25",
+                  "id": "QWNjb3VudFR5cGU6MTQ1NDI0NzUy"
+                },
+                "ownedQuantity": null,
+                "assetEventData": {
+                  "lastSale": null
+                }
+              },
+              "assetBundle": null,
+              "__typename": "SearchResultType"
+            },
+            "cursor": "YXJyYXljb25uZWN0aW9uOjI0"
+          },
+          {
+            "node": {
+              "asset": {
+                "assetContract": {
+                  "address": "0xc1ad47aeb274157e24a5f01b5857830aef962843",
+                  "chain": "ETHEREUM",
+                  "id": "QXNzZXRDb250cmFjdFR5cGU6ODMxMzg1",
+                  "openseaVersion": null
+                },
+                "collection": {
+                  "isVerified": true,
+                  "relayId": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "id": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "displayData": {
+                    "cardDisplayStyle": "COVER"
+                  },
+                  "imageUrl": "https://lh3.googleusercontent.com/cDfIiQMlap3KmoLnlgridUvdhfGDCXVosa5zURHQNMES_r0otI8MEkUtqFUN7pKkr9U-3ItBTp1XKLg7ScxvziOBfbDd706q9eGS=s120",
+                  "slug": "akumu-dragonz",
+                  "isAuthorizedEditor": false,
+                  "name": "Akumu Dragonz"
+                },
+                "relayId": "QXNzZXRUeXBlOjQ2MjA2OTQwNg==",
+                "tokenId": "2773",
+                "backgroundColor": null,
+                "imageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "name": "Akumu Dragonz #2773",
+                "id": "QXNzZXRUeXBlOjQ2MjA2OTQwNg==",
+                "isDelisted": false,
+                "animationUrl": null,
+                "displayImageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "decimals": null,
+                "favoritesCount": 9,
+                "isFavorite": false,
+                "isFrozen": false,
+                "hasUnlockableContent": false,
+                "orderData": {
+                  "bestAsk": {
+                    "relayId": "T3JkZXJWMlR5cGU6NTc1ODU3ODI1MQ==",
+                    "decimals": null,
+                    "paymentAssetQuantity": {
+                      "asset": {
+                        "usdSpotPrice": 1812.87,
+                        "decimals": 18,
+                        "id": "QXNzZXRUeXBlOjEzNjg5MDc3",
+                        "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+                        "symbol": "ETH",
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+                        }
+                      },
+                      "quantity": "650000000000000000",
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6Mjc3Njg5ODMxNTAzNjc4MjAyMDkxOTg1NzI4MzQwNzIwOTg3NDcz",
+                      "quantityInEth": "650000000000000000"
+                    },
+                    "orderType": "BASIC",
+                    "maker": {
+                      "address": "0xbbe3746ecb684b4cbf374fc2cba3849269d04709",
+                      "id": "QWNjb3VudFR5cGU6NTU2NTc0OTk="
+                    },
+                    "closedAt": "2022-06-04T04:20:58",
+                    "dutchAuctionFinalPrice": null,
+                    "openedAt": "2022-06-03T04:34:23.511119",
+                    "priceFnEndedAt": null,
+                    "quantity": "1"
+                  },
+                  "bestBid": {
+                    "orderType": "BASIC",
+                    "paymentAssetQuantity": {
+                      "quantity": "508900000000000000",
+                      "asset": {
+                        "decimals": 18,
+                        "imageUrl": "https://openseauserdata.com/files/accae6b6fb3888cbff27a013729c22dc.svg",
+                        "symbol": "WETH",
+                        "usdSpotPrice": 1812.87,
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzOA=="
+                        },
+                        "id": "QXNzZXRUeXBlOjQ2NDU2ODE="
+                      },
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6MjY0Njg4MDUzNzkxNTI5OTg4MjExMzkxNzk2MDcyMDA1MDg2OTc0"
+                    }
+                  }
+                },
+                "isEditable": {
+                  "value": false,
+                  "reason": "Unauthorized"
+                },
+                "isListable": true,
+                "ownership": null,
+                "creator": {
+                  "address": "0x989584374182ea79a9c3cb7b55fbf78b5c725c25",
+                  "id": "QWNjb3VudFR5cGU6MTQ1NDI0NzUy"
+                },
+                "ownedQuantity": null,
+                "assetEventData": {
+                  "lastSale": {
+                    "unitPriceQuantity": {
+                      "asset": {
+                        "decimals": 18,
+                        "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+                        "symbol": "ETH",
+                        "usdSpotPrice": 1812.87,
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+                        },
+                        "id": "QXNzZXRUeXBlOjEzNjg5MDc3"
+                      },
+                      "quantity": "478000000000000000",
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6OTY1NDk3MDM4NDcxMzIyMjE4ODIyNTA1NjM2NTE0MDg3MTQzODc="
+                    }
+                  }
+                }
+              },
+              "assetBundle": null,
+              "__typename": "SearchResultType"
+            },
+            "cursor": "YXJyYXljb25uZWN0aW9uOjI1"
+          },
+          {
+            "node": {
+              "asset": {
+                "assetContract": {
+                  "address": "0xc1ad47aeb274157e24a5f01b5857830aef962843",
+                  "chain": "ETHEREUM",
+                  "id": "QXNzZXRDb250cmFjdFR5cGU6ODMxMzg1",
+                  "openseaVersion": null
+                },
+                "collection": {
+                  "isVerified": true,
+                  "relayId": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "id": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "displayData": {
+                    "cardDisplayStyle": "COVER"
+                  },
+                  "imageUrl": "https://lh3.googleusercontent.com/cDfIiQMlap3KmoLnlgridUvdhfGDCXVosa5zURHQNMES_r0otI8MEkUtqFUN7pKkr9U-3ItBTp1XKLg7ScxvziOBfbDd706q9eGS=s120",
+                  "slug": "akumu-dragonz",
+                  "isAuthorizedEditor": false,
+                  "name": "Akumu Dragonz"
+                },
+                "relayId": "QXNzZXRUeXBlOjQ2NTQ4Mjc2MQ==",
+                "tokenId": "5239",
+                "backgroundColor": null,
+                "imageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "name": "Akumu Dragonz #5239",
+                "id": "QXNzZXRUeXBlOjQ2NTQ4Mjc2MQ==",
+                "isDelisted": false,
+                "animationUrl": null,
+                "displayImageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "decimals": null,
+                "favoritesCount": 2,
+                "isFavorite": false,
+                "isFrozen": false,
+                "hasUnlockableContent": false,
+                "orderData": {
+                  "bestAsk": {
+                    "relayId": "T3JkZXJWMlR5cGU6NTc1ODQ5MzUxMg==",
+                    "decimals": null,
+                    "paymentAssetQuantity": {
+                      "asset": {
+                        "usdSpotPrice": 1812.87,
+                        "decimals": 18,
+                        "id": "QXNzZXRUeXBlOjEzNjg5MDc3",
+                        "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+                        "symbol": "ETH",
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+                        }
+                      },
+                      "quantity": "659000000000000000",
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6MTI0NjcxNDk2NDc0NTE2MTg1MjAwNTM4NDkxOTg2MzA5Mjk3Nzg2",
+                      "quantityInEth": "659000000000000000"
+                    },
+                    "orderType": "BASIC",
+                    "maker": {
+                      "address": "0x6d9ed472da62b604ed479026185995889ae8f80e",
+                      "id": "QWNjb3VudFR5cGU6ODAwMzQ3OTc="
+                    },
+                    "closedAt": "2022-06-03T21:17:25",
+                    "dutchAuctionFinalPrice": null,
+                    "openedAt": "2022-06-03T04:18:40.045300",
+                    "priceFnEndedAt": null,
+                    "quantity": "1"
+                  },
+                  "bestBid": null
+                },
+                "isEditable": {
+                  "value": false,
+                  "reason": "Unauthorized"
+                },
+                "isListable": true,
+                "ownership": null,
+                "creator": {
+                  "address": "0x989584374182ea79a9c3cb7b55fbf78b5c725c25",
+                  "id": "QWNjb3VudFR5cGU6MTQ1NDI0NzUy"
+                },
+                "ownedQuantity": null,
+                "assetEventData": {
+                  "lastSale": null
+                }
+              },
+              "assetBundle": null,
+              "__typename": "SearchResultType"
+            },
+            "cursor": "YXJyYXljb25uZWN0aW9uOjI2"
+          },
+          {
+            "node": {
+              "asset": {
+                "assetContract": {
+                  "address": "0xc1ad47aeb274157e24a5f01b5857830aef962843",
+                  "chain": "ETHEREUM",
+                  "id": "QXNzZXRDb250cmFjdFR5cGU6ODMxMzg1",
+                  "openseaVersion": null
+                },
+                "collection": {
+                  "isVerified": true,
+                  "relayId": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "id": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "displayData": {
+                    "cardDisplayStyle": "COVER"
+                  },
+                  "imageUrl": "https://lh3.googleusercontent.com/cDfIiQMlap3KmoLnlgridUvdhfGDCXVosa5zURHQNMES_r0otI8MEkUtqFUN7pKkr9U-3ItBTp1XKLg7ScxvziOBfbDd706q9eGS=s120",
+                  "slug": "akumu-dragonz",
+                  "isAuthorizedEditor": false,
+                  "name": "Akumu Dragonz"
+                },
+                "relayId": "QXNzZXRUeXBlOjQ2NTUwNjQ0Mw==",
+                "tokenId": "7174",
+                "backgroundColor": null,
+                "imageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "name": "Akumu Dragonz #7174",
+                "id": "QXNzZXRUeXBlOjQ2NTUwNjQ0Mw==",
+                "isDelisted": false,
+                "animationUrl": null,
+                "displayImageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "decimals": null,
+                "favoritesCount": 1,
+                "isFavorite": false,
+                "isFrozen": false,
+                "hasUnlockableContent": false,
+                "orderData": {
+                  "bestAsk": {
+                    "relayId": "T3JkZXJWMlR5cGU6NTc1ODY0MTg4MA==",
+                    "decimals": null,
+                    "paymentAssetQuantity": {
+                      "asset": {
+                        "usdSpotPrice": 1812.87,
+                        "decimals": 18,
+                        "id": "QXNzZXRUeXBlOjEzNjg5MDc3",
+                        "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+                        "symbol": "ETH",
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+                        }
+                      },
+                      "quantity": "660000000000000000",
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6NDI5NzY5OTUwOTgxMzA0MDcyNDM3MTU2ODI1NDg3MzcyODcyMDM=",
+                      "quantityInEth": "660000000000000000"
+                    },
+                    "orderType": "BASIC",
+                    "maker": {
+                      "address": "0x8df3596762f1b6465acdfc3927a226c5677414f0",
+                      "id": "QWNjb3VudFR5cGU6MjQ4MjczMDg4"
+                    },
+                    "closedAt": "2022-07-03T04:44:28",
+                    "dutchAuctionFinalPrice": null,
+                    "openedAt": "2022-06-03T04:46:23.366566",
+                    "priceFnEndedAt": null,
+                    "quantity": "1"
+                  },
+                  "bestBid": null
+                },
+                "isEditable": {
+                  "value": false,
+                  "reason": "Unauthorized"
+                },
+                "isListable": true,
+                "ownership": null,
+                "creator": {
+                  "address": "0x989584374182ea79a9c3cb7b55fbf78b5c725c25",
+                  "id": "QWNjb3VudFR5cGU6MTQ1NDI0NzUy"
+                },
+                "ownedQuantity": null,
+                "assetEventData": {
+                  "lastSale": null
+                }
+              },
+              "assetBundle": null,
+              "__typename": "SearchResultType"
+            },
+            "cursor": "YXJyYXljb25uZWN0aW9uOjI3"
+          },
+          {
+            "node": {
+              "asset": {
+                "assetContract": {
+                  "address": "0xc1ad47aeb274157e24a5f01b5857830aef962843",
+                  "chain": "ETHEREUM",
+                  "id": "QXNzZXRDb250cmFjdFR5cGU6ODMxMzg1",
+                  "openseaVersion": null
+                },
+                "collection": {
+                  "isVerified": true,
+                  "relayId": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "id": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "displayData": {
+                    "cardDisplayStyle": "COVER"
+                  },
+                  "imageUrl": "https://lh3.googleusercontent.com/cDfIiQMlap3KmoLnlgridUvdhfGDCXVosa5zURHQNMES_r0otI8MEkUtqFUN7pKkr9U-3ItBTp1XKLg7ScxvziOBfbDd706q9eGS=s120",
+                  "slug": "akumu-dragonz",
+                  "isAuthorizedEditor": false,
+                  "name": "Akumu Dragonz"
+                },
+                "relayId": "QXNzZXRUeXBlOjQ2NTQ4NDk3Mg==",
+                "tokenId": "5392",
+                "backgroundColor": null,
+                "imageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "name": "Akumu Dragonz #5392",
+                "id": "QXNzZXRUeXBlOjQ2NTQ4NDk3Mg==",
+                "isDelisted": false,
+                "animationUrl": null,
+                "displayImageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "decimals": null,
+                "favoritesCount": 2,
+                "isFavorite": false,
+                "isFrozen": false,
+                "hasUnlockableContent": false,
+                "orderData": {
+                  "bestAsk": {
+                    "relayId": "T3JkZXJWMlR5cGU6NTc1OTIyNDQxMQ==",
+                    "decimals": null,
+                    "paymentAssetQuantity": {
+                      "asset": {
+                        "usdSpotPrice": 1812.87,
+                        "decimals": 18,
+                        "id": "QXNzZXRUeXBlOjEzNjg5MDc3",
+                        "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+                        "symbol": "ETH",
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+                        }
+                      },
+                      "quantity": "660000000000000000",
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6NTg1MTczNjU5MDEwMjE4NzI3MjU2NTg4Nzc3NjkxNzE5NzA4MzQ=",
+                      "quantityInEth": "660000000000000000"
+                    },
+                    "orderType": "BASIC",
+                    "maker": {
+                      "address": "0x0b4aba891929d51ec525b4886d58898f1c79edc2",
+                      "id": "QWNjb3VudFR5cGU6Mzk5ODQyMzE="
+                    },
+                    "closedAt": "2022-06-04T06:38:42",
+                    "dutchAuctionFinalPrice": null,
+                    "openedAt": "2022-06-03T06:39:16.548622",
+                    "priceFnEndedAt": null,
+                    "quantity": "1"
+                  },
+                  "bestBid": null
+                },
+                "isEditable": {
+                  "value": false,
+                  "reason": "Unauthorized"
+                },
+                "isListable": true,
+                "ownership": null,
+                "creator": {
+                  "address": "0x989584374182ea79a9c3cb7b55fbf78b5c725c25",
+                  "id": "QWNjb3VudFR5cGU6MTQ1NDI0NzUy"
+                },
+                "ownedQuantity": null,
+                "assetEventData": {
+                  "lastSale": null
+                }
+              },
+              "assetBundle": null,
+              "__typename": "SearchResultType"
+            },
+            "cursor": "YXJyYXljb25uZWN0aW9uOjI4"
+          },
+          {
+            "node": {
+              "asset": {
+                "assetContract": {
+                  "address": "0xc1ad47aeb274157e24a5f01b5857830aef962843",
+                  "chain": "ETHEREUM",
+                  "id": "QXNzZXRDb250cmFjdFR5cGU6ODMxMzg1",
+                  "openseaVersion": null
+                },
+                "collection": {
+                  "isVerified": true,
+                  "relayId": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "id": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "displayData": {
+                    "cardDisplayStyle": "COVER"
+                  },
+                  "imageUrl": "https://lh3.googleusercontent.com/cDfIiQMlap3KmoLnlgridUvdhfGDCXVosa5zURHQNMES_r0otI8MEkUtqFUN7pKkr9U-3ItBTp1XKLg7ScxvziOBfbDd706q9eGS=s120",
+                  "slug": "akumu-dragonz",
+                  "isAuthorizedEditor": false,
+                  "name": "Akumu Dragonz"
+                },
+                "relayId": "QXNzZXRUeXBlOjQ2NTUwNTU3Mw==",
+                "tokenId": "6807",
+                "backgroundColor": null,
+                "imageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "name": "Akumu Dragonz #6807",
+                "id": "QXNzZXRUeXBlOjQ2NTUwNTU3Mw==",
+                "isDelisted": false,
+                "animationUrl": null,
+                "displayImageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "decimals": null,
+                "favoritesCount": 4,
+                "isFavorite": false,
+                "isFrozen": false,
+                "hasUnlockableContent": false,
+                "orderData": {
+                  "bestAsk": {
+                    "relayId": "T3JkZXJWMlR5cGU6NTc1OTA0MTg0Mw==",
+                    "decimals": null,
+                    "paymentAssetQuantity": {
+                      "asset": {
+                        "usdSpotPrice": 1812.87,
+                        "decimals": 18,
+                        "id": "QXNzZXRUeXBlOjEzNjg5MDc3",
+                        "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+                        "symbol": "ETH",
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+                        }
+                      },
+                      "quantity": "660000000000000000",
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6MzA5MDIyODg5OTcxMDQ4Mzk2MjcyMjc2MDU5Mzg0MzU0NTAxNzAy",
+                      "quantityInEth": "660000000000000000"
+                    },
+                    "orderType": "BASIC",
+                    "maker": {
+                      "address": "0x3683661b565a6f6daaa7a94ecd1fd73a74c5df1d",
+                      "id": "QWNjb3VudFR5cGU6MzE2Nzc2MzY5"
+                    },
+                    "closedAt": "2022-06-03T11:30:32",
+                    "dutchAuctionFinalPrice": null,
+                    "openedAt": "2022-06-03T06:03:52.710029",
+                    "priceFnEndedAt": null,
+                    "quantity": "1"
+                  },
+                  "bestBid": null
+                },
+                "isEditable": {
+                  "value": false,
+                  "reason": "Unauthorized"
+                },
+                "isListable": true,
+                "ownership": null,
+                "creator": {
+                  "address": "0x989584374182ea79a9c3cb7b55fbf78b5c725c25",
+                  "id": "QWNjb3VudFR5cGU6MTQ1NDI0NzUy"
+                },
+                "ownedQuantity": null,
+                "assetEventData": {
+                  "lastSale": {
+                    "unitPriceQuantity": {
+                      "asset": {
+                        "decimals": 18,
+                        "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+                        "symbol": "ETH",
+                        "usdSpotPrice": 1812.87,
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+                        },
+                        "id": "QXNzZXRUeXBlOjEzNjg5MDc3"
+                      },
+                      "quantity": "640000000000000000",
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6MTk2NTI4Mzg1MDIxMTMyNDc4NzU3NjQ5ODM1NDI0NTMwNzA3NjI2"
+                    }
+                  }
+                }
+              },
+              "assetBundle": null,
+              "__typename": "SearchResultType"
+            },
+            "cursor": "YXJyYXljb25uZWN0aW9uOjI5"
+          },
+          {
+            "node": {
+              "asset": {
+                "assetContract": {
+                  "address": "0xc1ad47aeb274157e24a5f01b5857830aef962843",
+                  "chain": "ETHEREUM",
+                  "id": "QXNzZXRDb250cmFjdFR5cGU6ODMxMzg1",
+                  "openseaVersion": null
+                },
+                "collection": {
+                  "isVerified": true,
+                  "relayId": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "id": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "displayData": {
+                    "cardDisplayStyle": "COVER"
+                  },
+                  "imageUrl": "https://lh3.googleusercontent.com/cDfIiQMlap3KmoLnlgridUvdhfGDCXVosa5zURHQNMES_r0otI8MEkUtqFUN7pKkr9U-3ItBTp1XKLg7ScxvziOBfbDd706q9eGS=s120",
+                  "slug": "akumu-dragonz",
+                  "isAuthorizedEditor": false,
+                  "name": "Akumu Dragonz"
+                },
+                "relayId": "QXNzZXRUeXBlOjQ2NTUwMjcwOA==",
+                "tokenId": "6423",
+                "backgroundColor": null,
+                "imageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "name": "Akumu Dragonz #6423",
+                "id": "QXNzZXRUeXBlOjQ2NTUwMjcwOA==",
+                "isDelisted": false,
+                "animationUrl": null,
+                "displayImageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "decimals": null,
+                "favoritesCount": 0,
+                "isFavorite": false,
+                "isFrozen": false,
+                "hasUnlockableContent": false,
+                "orderData": {
+                  "bestAsk": {
+                    "relayId": "T3JkZXJWMlR5cGU6NTc1ODcyMjAzMg==",
+                    "decimals": null,
+                    "paymentAssetQuantity": {
+                      "asset": {
+                        "usdSpotPrice": 1812.87,
+                        "decimals": 18,
+                        "id": "QXNzZXRUeXBlOjEzNjg5MDc3",
+                        "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+                        "symbol": "ETH",
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+                        }
+                      },
+                      "quantity": "660000000000000000",
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6MjQwMDI1NTU0ODMxMTAxMjc2NjU2MTI1Njk0MjgwNDQxNzA1OA==",
+                      "quantityInEth": "660000000000000000"
+                    },
+                    "orderType": "BASIC",
+                    "maker": {
+                      "address": "0x054639d9ec7273fae7539a6dbc4156b410f882f6",
+                      "id": "QWNjb3VudFR5cGU6MjgyMTcyNDQ5"
+                    },
+                    "closedAt": "2022-06-04T05:00:59",
+                    "dutchAuctionFinalPrice": null,
+                    "openedAt": "2022-06-03T05:01:37.193714",
+                    "priceFnEndedAt": null,
+                    "quantity": "1"
+                  },
+                  "bestBid": null
+                },
+                "isEditable": {
+                  "value": false,
+                  "reason": "Unauthorized"
+                },
+                "isListable": true,
+                "ownership": null,
+                "creator": {
+                  "address": "0x989584374182ea79a9c3cb7b55fbf78b5c725c25",
+                  "id": "QWNjb3VudFR5cGU6MTQ1NDI0NzUy"
+                },
+                "ownedQuantity": null,
+                "assetEventData": {
+                  "lastSale": null
+                }
+              },
+              "assetBundle": null,
+              "__typename": "SearchResultType"
+            },
+            "cursor": "YXJyYXljb25uZWN0aW9uOjMw"
+          },
+          {
+            "node": {
+              "asset": {
+                "assetContract": {
+                  "address": "0xc1ad47aeb274157e24a5f01b5857830aef962843",
+                  "chain": "ETHEREUM",
+                  "id": "QXNzZXRDb250cmFjdFR5cGU6ODMxMzg1",
+                  "openseaVersion": null
+                },
+                "collection": {
+                  "isVerified": true,
+                  "relayId": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "id": "Q29sbGVjdGlvblR5cGU6MTU4NDA5Mjk=",
+                  "displayData": {
+                    "cardDisplayStyle": "COVER"
+                  },
+                  "imageUrl": "https://lh3.googleusercontent.com/cDfIiQMlap3KmoLnlgridUvdhfGDCXVosa5zURHQNMES_r0otI8MEkUtqFUN7pKkr9U-3ItBTp1XKLg7ScxvziOBfbDd706q9eGS=s120",
+                  "slug": "akumu-dragonz",
+                  "isAuthorizedEditor": false,
+                  "name": "Akumu Dragonz"
+                },
+                "relayId": "QXNzZXRUeXBlOjQ2NTUwMDYwMQ==",
+                "tokenId": "5993",
+                "backgroundColor": null,
+                "imageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "name": "Akumu Dragonz #5993",
+                "id": "QXNzZXRUeXBlOjQ2NTUwMDYwMQ==",
+                "isDelisted": false,
+                "animationUrl": null,
+                "displayImageUrl": "https://lh3.googleusercontent.com/mYyLOkRQNaLMjxN0HN0VZLl0HtMkTO1KjNo01S9xVb2WdQxOXi6nyAFAemMEMa5VmxDHMn6Cdqd1hql9doxNXCslvGg3KAVOroyXbw",
+                "decimals": 0,
+                "favoritesCount": 4,
+                "isFavorite": false,
+                "isFrozen": false,
+                "hasUnlockableContent": false,
+                "orderData": {
+                  "bestAsk": {
+                    "relayId": "T3JkZXJWMlR5cGU6NTc1ODQ4MTY5OQ==",
+                    "decimals": null,
+                    "paymentAssetQuantity": {
+                      "asset": {
+                        "usdSpotPrice": 1812.87,
+                        "decimals": 18,
+                        "id": "QXNzZXRUeXBlOjEzNjg5MDc3",
+                        "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+                        "symbol": "ETH",
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+                        }
+                      },
+                      "quantity": "668000000000000000",
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6MTQyMjkxMjk1OTMyODY5ODg1MTY5MjQ5NDE5MzU2MDAxOTgwODIx",
+                      "quantityInEth": "668000000000000000"
+                    },
+                    "orderType": "BASIC",
+                    "maker": {
+                      "address": "0xb7df7d1f7838885ed712a967c77bcfec93f6647d",
+                      "id": "QWNjb3VudFR5cGU6Mjc0MTkxNjQ0"
+                    },
+                    "closedAt": "2022-06-04T02:47:00",
+                    "dutchAuctionFinalPrice": null,
+                    "openedAt": "2022-06-03T04:16:26.424827",
+                    "priceFnEndedAt": null,
+                    "quantity": "1"
+                  },
+                  "bestBid": {
+                    "orderType": "BASIC",
+                    "paymentAssetQuantity": {
+                      "quantity": "60000000000000000",
+                      "asset": {
+                        "decimals": 18,
+                        "imageUrl": "https://openseauserdata.com/files/accae6b6fb3888cbff27a013729c22dc.svg",
+                        "symbol": "WETH",
+                        "usdSpotPrice": 1812.87,
+                        "assetContract": {
+                          "blockExplorerLink": "https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                          "chain": "ETHEREUM",
+                          "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzOA=="
+                        },
+                        "id": "QXNzZXRUeXBlOjQ2NDU2ODE="
+                      },
+                      "id": "QXNzZXRRdWFudGl0eVR5cGU6MjI2MjcxMjU0MjYwOTQyNTg3ODg5MjUwMTA5MjYwMzUwMzAxMTM2"
+                    }
+                  }
+                },
+                "isEditable": {
+                  "value": false,
+                  "reason": "Unauthorized"
+                },
+                "isListable": true,
+                "ownership": null,
+                "creator": {
+                  "address": "0x989584374182ea79a9c3cb7b55fbf78b5c725c25",
+                  "id": "QWNjb3VudFR5cGU6MTQ1NDI0NzUy"
+                },
+                "ownedQuantity": null,
+                "assetEventData": {
+                  "lastSale": null
+                }
+              },
+              "assetBundle": null,
+              "__typename": "SearchResultType"
+            },
+            "cursor": "YXJyYXljb25uZWN0aW9uOjMx"
+          }
+        ],
+        "totalCount": 9211,
+        "pageInfo": {
+          "endCursor": "YXJyYXljb25uZWN0aW9uOjMx",
+          "hasNextPage": true
+        }
+      }
+    }
+  }
+}

@@ -3,47 +3,47 @@
     "categories": [
       {
         "id": 1,
-        "coverImageUrl": "https://opensea.io/static/images/categories/art.png",
+        "coverImageUrl": "https://lh3.googleusercontent.com/kVVevhk9BBE5BSuIoQfkH5_5FVsPTJCR34wpVBf1ACURh9dfNaybChPgiicte10yb6SYVp5iMQNXaQrOnHXmRiiOtVxUzYJR3M1I=h200",
         "name": "Art"
       },
       {
         "id": 2,
-        "coverImageUrl": "https://opensea.io/static/images/categories/collectibles.png",
+        "coverImageUrl": "https://lh3.googleusercontent.com/l8oHCZk1C7EsY4Up-84SzLRwBGrRCDh7Z5k8WDnWIU1749AFyGY-ULYvZ952vKUhOydLrbdZHwjr50ARrqE2kYPEMqwHhg72d1JthQ=h200",
         "name": "Collectibles"
       },
       {
         "id": 3,
-        "coverImageUrl": "https://opensea.io/static/images/categories/domain-names.png",
+        "coverImageUrl": "https://lh3.googleusercontent.com/eSyL2ho1uDpSXApV-VHWTCR9xaV4wckPvBIh4rhz3gaBDzEVX1ElT5JWySJRPJKIxiZSnKdcCMlgk6PCfeh9D7a3TQmKeZ3o-1cF=h200",
         "name": "Domain Names"
       },
       {
         "id": 4,
-        "coverImageUrl": "https://opensea.io/static/images/categories/music.png",
+        "coverImageUrl": "https://lh3.googleusercontent.com/AvQukLHo8LVt8fcDkRPi8vxqJ3GUVi6XgKPIR_Z0HFl_JM5PENkOgDwXXA7sWvGGL1ij_tpWGlfiynlN9qdx5YS95wWiHBSidAIcJLc=h200",
         "name": "Music"
       },
       {
         "id": 5,
-        "coverImageUrl": "https://opensea.io/static/images/categories/photography-category.png",
+        "coverImageUrl": "https://lh3.googleusercontent.com/g6IAEmQm0J8J2ZoG0wLS04HEkVC7OvxNON5TvBZ4UR0Jm6LfIH4QwJNLWSnJsnabTnvarLUhpfRw_l-lMSBu6R0ymspZXNnT11YtXw=h200",
         "name": "Photography"
       },
       {
         "id": 6,
-        "coverImageUrl": "https://opensea.io/static/images/categories/sports.png",
+        "coverImageUrl": "https://lh3.googleusercontent.com/F97uNjhmvg4r91VD4zQ7TZrDwtwjqfbgygv64zrDqKsuITEX9wROYgHSsihHaqCOjhOmNf-IR91v2IJKqQFGEB_1GsSxOi6V0XDl2g=h200",
         "name": "Sports"
       },
       {
         "id": 7,
-        "coverImageUrl": "https://opensea.io/static/images/categories/trading-cards.png",
+        "coverImageUrl": "https://lh3.googleusercontent.com/8VGubP7xBfRaeO_EslP8yXVyI0sMyfysOnt1NfbBnY6O7djIVrMeCXHZ8Y2hDqu6DEEc7UZqf87CcxxEOlgVDcVG1TTT72KLpi4_G9M=h200",
         "name": "Trading Cards"
       },
       {
         "id": 8,
-        "coverImageUrl": "https://opensea.io/static/images/categories/utility.png",
+        "coverImageUrl": "https://lh3.googleusercontent.com/Vw6MpADIga_ZwmXOmclK87L8ax6pI_DylBcn-69kcr1Uhgw5Ij2RvXJD2MFJ0VarfIGeoFZw7NvpGLePX3e2VMztvg7XCQDNo12dLQ=h200",
         "name": "Utility"
       },
       {
         "id": 9,
-        "coverImageUrl": "https://opensea.io/static/images/categories/virtual-worlds.png",
+        "coverImageUrl": "https://lh3.googleusercontent.com/no-hL6XVnGKTaf7lvLyVaHBnK3wKUWfLP2FPbbxMm6yjosTCtTvPoK6gZnCEkw3NtXFINpKFcqy0JS9UYuu2S-WAnlVnOiB4r-P3=h200",
         "name": "Virtual Worlds"
       }
     ]
