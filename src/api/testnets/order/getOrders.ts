@@ -3,6 +3,7 @@ import client from '../client';
 import { orderFromJSON } from '../utils/utils';
 import type { GetOrdersResponse } from './types';
 import type { OpenSeaBaseGetRequestWithOrderby } from '../types';
+import type { AxiosRequestConfig } from 'axios';
 
 export type GetOrdersRequest = {
   listed_after?: string;
@@ -12,7 +13,10 @@ export type GetOrdersRequest = {
   include_bundled?: boolean;
 } & OpenSeaBaseGetRequestWithOrderby;
 
-export default async function getOrders(requestData: GetOrdersRequest) {
+export default async function getOrders(
+  requestData: GetOrdersRequest,
+  config?: AxiosRequestConfig,
+) {
   const options: GetOrdersRequest = {
     side: 1,
     bundled: false,
@@ -22,7 +26,7 @@ export default async function getOrders(requestData: GetOrdersRequest) {
     ...requestData,
   };
   const query = qs.stringify(options, { encodeValuesOnly: true });
-  const { data } = await client.get<GetOrdersResponse>(`/wyvern/v1/orders?${query}`);
+  const { data } = await client.get<GetOrdersResponse>(`/wyvern/v1/orders?${query}`, config);
 
   const result = data.orders.map(orderFromJSON);
 

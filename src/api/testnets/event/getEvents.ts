@@ -3,6 +3,7 @@ import client from '../client';
 import { eventFromJSON } from '../utils/utils';
 import type { GetEventsResponse } from './types';
 import type { OpenSeaBaseGetRequest } from '../types';
+import type { AxiosRequestConfig } from 'axios';
 
 export type GetEventsRequest = {
   occurred_after?: string;
@@ -19,13 +20,16 @@ export type GetEventsRequest = {
   auction_type?: 'english' | 'dutch' | 'min-price';
 } & OpenSeaBaseGetRequest;
 
-export default async function getEvents(requestData: GetEventsRequest) {
+export default async function getEvents(
+  requestData: GetEventsRequest,
+  config?: AxiosRequestConfig,
+) {
   const options: GetEventsRequest = {
     only_opensea: false,
     ...requestData,
   };
   const query = qs.stringify(options, { encodeValuesOnly: true });
-  const { data } = await client.get<GetEventsResponse>(`/api/v1/events?${query}`);
+  const { data } = await client.get<GetEventsResponse>(`/api/v1/events?${query}`, config);
 
   const result = data.asset_events.map(eventFromJSON);
 

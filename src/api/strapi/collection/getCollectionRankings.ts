@@ -3,6 +3,7 @@ import client from '../client';
 import { getDateByPeriod } from '../../../utils/dateUtils';
 import type { CategoryCode, PeriodCode } from '../commonCode/types';
 import type { GetCollectionsResponse, PaymentAsset } from './types';
+import type { AxiosRequestConfig } from 'axios';
 
 export type GetCollectionRankingsRequest = {
   name?: string;
@@ -11,13 +12,11 @@ export type GetCollectionRankingsRequest = {
   period?: PeriodCode;
   category?: CategoryCode;
 };
-export default async function getCollectionRankings({
-  name,
-  slug,
-  nftPaymentAsset,
-  period,
-  category,
-}: GetCollectionRankingsRequest) {
+
+export default async function getCollectionRankings(
+  { name, slug, nftPaymentAsset, period, category }: GetCollectionRankingsRequest,
+  config?: AxiosRequestConfig,
+) {
   const query = qs.stringify(
     {
       populate: {
@@ -47,7 +46,7 @@ export default async function getCollectionRankings({
     },
     { encodeValuesOnly: true },
   );
-  const { data } = await client.get<GetCollectionsResponse>(`/api/collections?${query}`);
+  const { data } = await client.get<GetCollectionsResponse>(`/api/collections?${query}`, config);
 
   return data;
 }

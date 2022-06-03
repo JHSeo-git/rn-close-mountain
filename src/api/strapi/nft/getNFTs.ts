@@ -1,12 +1,17 @@
 import qs from 'qs';
 import client from '../client';
 import { GetNFTsResponse, PaymentAsset } from './types';
+import type { AxiosRequestConfig } from 'axios';
 
 export type GetNFTsRequest = {
   name?: string;
   paymentAsset?: PaymentAsset;
 };
-export default async function getNFTs({ name, paymentAsset }: GetNFTsRequest) {
+
+export default async function getNFTs(
+  { name, paymentAsset }: GetNFTsRequest,
+  config?: AxiosRequestConfig,
+) {
   const query = qs.stringify(
     {
       populate: {
@@ -26,7 +31,7 @@ export default async function getNFTs({ name, paymentAsset }: GetNFTsRequest) {
     { encodeValuesOnly: true },
   );
 
-  const { data } = await client.get<GetNFTsResponse>(`/api/nfts?${query}`);
+  const { data } = await client.get<GetNFTsResponse>(`/api/nfts?${query}`, config);
 
   return data;
 }
