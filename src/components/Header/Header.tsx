@@ -1,17 +1,18 @@
-import { View, StyleSheet, Platform, StyleProp, ViewStyle } from 'react-native';
+import { useCallback } from 'react';
+import { View, StyleSheet, Platform, StyleProp, ViewStyle, Animated } from 'react-native';
 import UIText from '../UIText';
 import { IconButton } from 'react-native-paper';
+import CustomTouchableRipple from '../CustomTouchableRipple';
 import { COLORS, SIZES, SPACE } from '../../constants/design-token';
 import * as viewStyles from '../../constants/global-styles/viewStyles';
-import type { AllOrNone } from '../../utils/types/type-utils';
-
 import ChevronLeftSvg from '../../assets/icons/chevron-left.svg';
-import CustomTouchableRipple from '../CustomTouchableRipple';
-import { useCallback } from 'react';
+import type { AllOrNone } from '../../utils/types/type-utils';
 
 type DefaultProps = {
   style?: StyleProp<ViewStyle>;
+  animatedStyle?: Animated.AnimatedProps<ViewStyle>;
   title?: React.ReactNode;
+  dim?: boolean;
 };
 
 type LeftButtonProps = {
@@ -28,11 +29,13 @@ type HeaderProps = DefaultProps & AllOrNone<LeftButtonProps> & AllOrNone<RightBu
 
 const Header = ({
   style,
+  animatedStyle,
   title,
   leftIcon,
   onLeftIconPress,
   rightIcon,
   onRightIconPress,
+  dim = false,
 }: HeaderProps) => {
   const renderLeft = useCallback(() => {
     return (
@@ -42,15 +45,21 @@ const Header = ({
             borderless
             onPress={onLeftIconPress}
             style={{
+              width: 32,
+              height: 32,
               borderRadius: 16,
+              backgroundColor: 'white',
+              justifyContent: 'center',
+              alignItems: 'center',
             }}
+            rippleColor={dim ? COLORS.gray1 : undefined}
           >
-            <ChevronLeftSvg width={32} height={32} color={COLORS.hiContrast} />
+            <ChevronLeftSvg width={24} height={24} color={COLORS.hiContrast} />
           </CustomTouchableRipple>
         )}
       </>
     );
-  }, []);
+  }, [dim]);
 
   const renderRight = useCallback(() => {
     return (
@@ -79,9 +88,9 @@ const Header = ({
   return (
     <View style={[styles.container, style]}>
       <View style={styles.leftBox}>{renderLeft()}</View>
-      <View style={styles.centerBox}>
+      <Animated.View style={[styles.centerBox, animatedStyle]}>
         {typeof title === 'string' ? <UIText as="h2">{title}</UIText> : title}
-      </View>
+      </Animated.View>
       <View style={styles.rightBox}>{renderRight()}</View>
     </View>
   );
@@ -97,15 +106,19 @@ const styles = StyleSheet.create({
   },
   leftBox: {
     ...viewStyles.center,
+    zIndex: 1,
+    opacity: 1,
   },
   centerBox: {
     ...StyleSheet.absoluteFillObject,
     ...viewStyles.center,
-    zIndex: -1,
+    zIndex: 0,
     paddingTop: Platform.OS === 'android' ? SPACE.$2 : 0,
+    backgroundColor: COLORS.loContrast,
   },
   rightBox: {
     ...viewStyles.center,
+    zIndex: 1,
   },
 });
 
