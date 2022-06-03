@@ -4,8 +4,9 @@ import SettingScreen from '../SettingScreen';
 import SignInScreen from '../SignInScreen';
 import SignUpScreen from '../SignUpScreen';
 import SampleStackNavigation from '../__sample__/SampleStack';
+import type { RootStackParamList } from '../types';
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const RootStack = () => {
   return (

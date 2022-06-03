@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import { useEffect } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -14,7 +14,6 @@ import * as viewStyles from '../../constants/global-styles/viewStyles';
 import type { PaymentAsset } from '../../api/strapi/collection/types';
 import type { PeriodCode } from '../../api/strapi/commonCode/types';
 import type { RankingsStackScreenProps } from '../types';
-import { useFocusEffect } from '@react-navigation/native';
 
 type RankingsFilter = 'period' | 'category' | 'chain';
 type RankingsScreenProps = RankingsStackScreenProps<'Rankings'>;
@@ -46,25 +45,23 @@ const RankingsScreen = observer(({}: RankingsScreenProps) => {
     });
   };
 
-  useFocusEffect(
-    useCallback(() => {
-      const init = async () => {
-        await Promise.all([
-          rankingsStore.retrievePeriods(),
-          rankingsStore.retrieveCategories(),
-          rankingsStore.retrieveChains(),
-        ]);
-        await collectionStore.retrieveCollectionRankings({});
-      };
+  useEffect(() => {
+    const init = async () => {
+      await Promise.all([
+        rankingsStore.retrievePeriods(),
+        rankingsStore.retrieveCategories(),
+        rankingsStore.retrieveChains(),
+      ]);
+      await collectionStore.retrieveCollectionRankings({});
+    };
 
-      init();
+    init();
 
-      return () => {
-        rankingsStore.reset();
-        collectionStore.reset();
-      };
-    }, []),
-  );
+    return () => {
+      rankingsStore.reset();
+      collectionStore.reset();
+    };
+  }, []);
 
   return (
     <SafeAreaView style={viewStyles.flex_1_bg_white}>
