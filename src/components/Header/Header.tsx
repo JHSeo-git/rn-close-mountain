@@ -1,4 +1,4 @@
-import { View, StyleSheet, Platform } from 'react-native';
+import { View, StyleSheet, Platform, StyleProp, ViewStyle } from 'react-native';
 import UIText from '../UIText';
 import { IconButton } from 'react-native-paper';
 import { COLORS, SIZES, SPACE } from '../../constants/design-token';
@@ -7,9 +7,11 @@ import type { AllOrNone } from '../../utils/types/type-utils';
 
 import ChevronLeftSvg from '../../assets/icons/chevron-left.svg';
 import CustomTouchableRipple from '../CustomTouchableRipple';
+import { useCallback } from 'react';
 
 type DefaultProps = {
-  title?: string;
+  style?: StyleProp<ViewStyle>;
+  title?: React.ReactNode;
 };
 
 type LeftButtonProps = {
@@ -24,8 +26,15 @@ type RightButtonProps = {
 
 type HeaderProps = DefaultProps & AllOrNone<LeftButtonProps> & AllOrNone<RightButtonProps>;
 
-const Header = ({ title, leftIcon, onLeftIconPress, rightIcon, onRightIconPress }: HeaderProps) => {
-  const renderLeft = () => {
+const Header = ({
+  style,
+  title,
+  leftIcon,
+  onLeftIconPress,
+  rightIcon,
+  onRightIconPress,
+}: HeaderProps) => {
+  const renderLeft = useCallback(() => {
     return (
       <>
         {leftIcon === 'back' && (
@@ -41,9 +50,9 @@ const Header = ({ title, leftIcon, onLeftIconPress, rightIcon, onRightIconPress 
         )}
       </>
     );
-  };
+  }, []);
 
-  const renderRight = () => {
+  const renderRight = useCallback(() => {
     return (
       <>
         {rightIcon === 'setting' && (
@@ -65,12 +74,14 @@ const Header = ({ title, leftIcon, onLeftIconPress, rightIcon, onRightIconPress 
         )}
       </>
     );
-  };
+  }, []);
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, style]}>
       <View style={styles.leftBox}>{renderLeft()}</View>
-      <View style={styles.centerBox}>{title && <UIText as="h2">{title}</UIText>}</View>
+      <View style={styles.centerBox}>
+        {typeof title === 'string' ? <UIText as="h2">{title}</UIText> : title}
+      </View>
       <View style={styles.rightBox}>{renderRight()}</View>
     </View>
   );
