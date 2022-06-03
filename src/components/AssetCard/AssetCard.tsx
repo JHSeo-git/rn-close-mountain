@@ -5,8 +5,8 @@ import UIIcon from '../UIIcon';
 import ChainIcon from '../ChainIcon';
 import useSkeleton from '../../hooks/useSkeleton';
 import { COLORS, RADII, SPACE } from '../../constants/design-token';
-import type { Chain } from '../../api/testnets/asset/types';
 import VerifiedIcon from '../../assets/icons/verified-icon.svg';
+import type { ChainScalar } from '../../graphql/types/generated';
 
 type AssetCardProps = {
   style?: StyleProp<ViewStyle>;
@@ -14,7 +14,7 @@ type AssetCardProps = {
   isVerified: boolean;
   collectionName: string;
   name: string;
-  chain: Chain;
+  chain: ChainScalar;
   price: number;
   favoritesCount: number;
   onPress?: () => void;

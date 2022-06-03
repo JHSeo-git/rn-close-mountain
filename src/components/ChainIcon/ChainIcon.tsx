@@ -1,9 +1,9 @@
 import SolanaSvg from '../../assets/icons/solana.svg';
 import UIIcon from '../../components/UIIcon';
-import type { Chain } from '../../api/testnets/asset/types';
+import type { ChainScalar } from '../../graphql/types/generated';
 
 type ChainIconProps = {
-  chain: Chain;
+  chain: ChainScalar;
   size?: number;
 };
 

@@ -168,7 +168,7 @@ export type CollectionSlug = string;
 export type CollectionSort = 'ONE_DAY_VOLUME' | 'SEVEN_DAY_VOLUME' | 'THIRTY_DAY_VOLUME';
 export type SearchResultModel = 'ASSETS' | 'BUNDLES'; // TODO
 export type AddressScalar = string;
-export type ChainScalar = 'ETHEREUM' | 'MATIC' | 'KLAYTN';
+export type ChainScalar = 'ETHEREUM' | 'MATIC' | 'KLAYTN' | 'SOLANA';
 export type SearchToggle = 'BUY_NOW' | 'ON_AUCTION' | 'IS_NEW' | 'HAS_OFFERS';
 export type SearchSortBy =
   | 'LISTING_DATE'

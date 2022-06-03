@@ -9,6 +9,7 @@ import { useStore } from '../../../contexts/StoreContext';
 import { SPACE } from '../../../constants/design-token';
 import { generateSkeletonList } from '../../../utils/styleUtils';
 import type { ExpiredSoonAsset } from '../../../api/testnets/asset/getExpiredSoonAssets';
+import type { ChainScalar } from '../../../graphql/types/generated';
 
 const ExpiredSoonSection = observer(() => {
   const { t } = useTranslation();
@@ -79,10 +80,10 @@ const ExpiredSoonSection = observer(() => {
               ]}
               coverImageUrl={item.asset.displayImageUrl}
               collectionName={item.asset.collection.name}
-              name={item.asset.name}
+              name={item.asset.name ?? ''}
               isVerified={item.asset.collection.isVerified}
               favoritesCount={item.asset.favoritesCount}
-              chain={item.asset.assetContract.chain}
+              chain={item.asset.assetContract.chain as ChainScalar}
               // TODO: 가격은 어떻게 계산?가져오는거야?
               price={0.19}
               // TODO: onPress
