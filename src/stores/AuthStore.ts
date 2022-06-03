@@ -89,6 +89,7 @@ class AuthStore extends BaseStore {
     }
 
     // TODO: api server logout call
+
     await this.sessionOut();
     return signOutResult;
   };

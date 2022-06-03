@@ -44,9 +44,9 @@ class GoogleSignInStore extends BaseStore {
         return;
       }
 
-      const result = await this.callAPI(
+      const result = await this.callAPI(() =>
         googleSignIn({
-          oauthToken: googleUserInfo.idToken,
+          oauthToken: googleUserInfo.idToken!,
           accessToken,
           email: googleUserInfo.user.email,
         }),
@@ -82,7 +82,7 @@ class GoogleSignInStore extends BaseStore {
   };
 
   signOut = async () => {
-    await this.callAPI(GoogleSignin.signOut());
+    await this.callAPI(() => GoogleSignin.signOut());
 
     return true;
   };

@@ -2,27 +2,23 @@ import { action, makeObservable, observable, runInAction } from 'mobx';
 import BaseStore from './base/BaseStore';
 import RootStore from './RootStore';
 import getEvents from '../api/testnets/event/getEvents';
-import getCategories from '../api/testnets/collection/getCategories';
-import getPromotion from '../api/testnets/promition/getPromotion';
-import getTopCollections from '../api/testnets/collection/getTopCollections';
-import getCollectionsScroller from '../api/testnets/collection/getCollectionsScroller';
+import getCategories, { Category } from '../api/testnets/collection/getCategories';
+import getPromotion, { Promotion } from '../api/testnets/collection/getPromotion';
+import getTopCollections, { TopCollection } from '../api/testnets/collection/getTopCollections';
+import getCollectionsScroller, {
+  TrendingCollection,
+} from '../api/testnets/collection/getCollectionsScroller';
+import getExpiredSoonAssets, { ExpiredSoonAsset } from '../api/testnets/asset/getExpiredSoonAssets';
 import type { OpenSeaAsset } from '../utils/types/opensea/types';
-import type {
-  Category,
-  TopCollectionsNode,
-  TrendingCollectionsNode,
-} from '../api/testnets/collection/types';
-import type { Promotion } from '../api/testnets/promition/types';
-import { SearchEdgeNode } from '../api/testnets/asset/types';
-import getExpiredSoonAssets from '../api/testnets/asset/getExpiredSoonAssets';
 
 class MainHomeStore extends BaseStore {
+  pullToRefresh: boolean = false;
   featuredAsset: OpenSeaAsset | undefined;
   notableDrops: Promotion[] = [];
   categories: Category[] = [];
-  trendingCollections: TrendingCollectionsNode[] = [];
-  topCollections: TopCollectionsNode[] = [];
-  expiredSoonAssets: SearchEdgeNode[] = [];
+  trendingCollections: TrendingCollection[] = [];
+  topCollections: TopCollection[] = [];
+  expiredSoonAssets: ExpiredSoonAsset[] = [];
   retrieveFeaturedAssetLoading: boolean = false;
   retrieveNotableDropsLoading: boolean = false;
   retrieveCategoriesLoading: boolean = false;
@@ -33,6 +29,7 @@ class MainHomeStore extends BaseStore {
   constructor(root: RootStore) {
     super(root);
     makeObservable(this, {
+      pullToRefresh: observable,
       featuredAsset: observable,
       notableDrops: observable,
       categories: observable,
@@ -45,6 +42,7 @@ class MainHomeStore extends BaseStore {
       retrieveTrendingCollectionsLoading: observable,
       retrieveTopCollectionsLoading: observable,
       retrieveExpiredSoonAssetsLoading: observable,
+      setPullToRefresh: action,
       retrieveFeaturedAsset: action,
       retrieveNotableDrops: action,
       retrieveCategories: action,
@@ -53,6 +51,10 @@ class MainHomeStore extends BaseStore {
       retrieveExpiredSoonAssets: action,
     });
   }
+
+  setPullToRefresh = (pullToRefresh: boolean) => {
+    this.pullToRefresh = pullToRefresh;
+  };
 
   /**
    * 한달 이내의 이벤트가 'successful'인 Asset 중 하나를 조회한다.
@@ -95,6 +97,7 @@ class MainHomeStore extends BaseStore {
     });
     try {
       // TODO: remove delay when api is ready
+
       const result = await this.callAPI(() => getPromotion(), { delay: 2000 });
 
       runInAction(() => {
@@ -120,7 +123,7 @@ class MainHomeStore extends BaseStore {
       const result = await this.callAPI(() => getCategories());
 
       runInAction(() => {
-        this.categories = result;
+        this.categories = result.categories;
       });
 
       return result;

@@ -54,7 +54,7 @@ class EmailSignUpStore extends BaseStore {
   };
 
   signUp = async (requestData: SignUpRequest) => {
-    const result = await this.callAPI(signUp(requestData), { useLoader: true });
+    const result = await this.callAPI(() => signUp(requestData), { useLoader: true });
 
     return result;
   };

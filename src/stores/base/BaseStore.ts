@@ -55,6 +55,8 @@ class BaseStore {
   protected errorHandler(e: any) {
     if (e instanceof AppError) {
       throw e;
+    } else if (axios.isCancel(e)) {
+      console.log('Request canceled: ', e.message);
     } else if (axios.isAxiosError(e) && e.response) {
       /**
        * @see https://github.com/axios/axios/issues/3612#issuecomment-933263425

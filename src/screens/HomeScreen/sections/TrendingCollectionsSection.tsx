@@ -1,7 +1,6 @@
 import { FlatList, StyleSheet } from 'react-native';
 import { useCallback, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useFocusEffect } from '@react-navigation/native';
 import { observer } from 'mobx-react-lite';
 import TrendingCollectionCard from './TrendingCollectionCard';
 import SectionView from '../../../components/SectionView';
@@ -15,6 +14,7 @@ const TrendingCollectionsSection = observer(() => {
   const flatListRef = useRef<FlatList>(null);
 
   const {
+    pullToRefresh,
     trendingCollections,
     retrieveTrendingCollections,
     retrieveTrendingCollectionsLoading: loading,
@@ -37,11 +37,15 @@ const TrendingCollectionsSection = observer(() => {
     );
   }, []);
 
-  useFocusEffect(
-    useCallback(() => {
+  useEffect(() => {
+    retrieveTrendingCollections();
+  }, []);
+
+  useEffect(() => {
+    if (pullToRefresh) {
       retrieveTrendingCollections();
-    }, []),
-  );
+    }
+  }, [pullToRefresh]);
 
   useEffect(() => {
     if (!loading) {

@@ -1,9 +1,8 @@
-import { useCallback } from 'react';
+import { useEffect } from 'react';
 import { View, StyleSheet, Image } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import LinearGradient from 'react-native-linear-gradient';
 import MaskedView from '@react-native-masked-view/masked-view';
-import { useFocusEffect } from '@react-navigation/native';
 import { observer } from 'mobx-react-lite';
 import FeaturedAssetCard from './FeaturedAssetCard';
 import UIText from '../../../components/UIText';
@@ -17,16 +16,21 @@ const FeaturedAssetSecion = observer(() => {
   const { mainHomeStore } = useStore();
 
   const {
+    pullToRefresh,
     featuredAsset: asset,
     retrieveFeaturedAsset,
     retrieveFeaturedAssetLoading: loading,
   } = mainHomeStore;
 
-  useFocusEffect(
-    useCallback(() => {
+  useEffect(() => {
+    retrieveFeaturedAsset();
+  }, []);
+
+  useEffect(() => {
+    if (pullToRefresh) {
       retrieveFeaturedAsset();
-    }, []),
-  );
+    }
+  }, [pullToRefresh]);
 
   return (
     <View style={styles.container}>

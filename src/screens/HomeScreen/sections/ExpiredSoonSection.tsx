@@ -1,30 +1,45 @@
 import { StyleSheet } from 'react-native';
-import { useCallback } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { observer } from 'mobx-react-lite';
 import { FlatList } from 'react-native-gesture-handler';
-import { useFocusEffect } from '@react-navigation/native';
 import AssetCard from '../../../components/AssetCard';
 import SectionView from '../../../components/SectionView';
 import { useStore } from '../../../contexts/StoreContext';
 import { SPACE } from '../../../constants/design-token';
 import { generateSkeletonList } from '../../../utils/styleUtils';
+import type { ExpiredSoonAsset } from '../../../api/testnets/asset/getExpiredSoonAssets';
 
 const ExpiredSoonSection = observer(() => {
   const { t } = useTranslation();
   const { mainHomeStore } = useStore();
+  const flatListRef = useRef<FlatList<ExpiredSoonAsset>>(null);
 
   const {
+    pullToRefresh,
     expiredSoonAssets,
     retrieveExpiredSoonAssets,
     retrieveExpiredSoonAssetsLoading: loading,
   } = mainHomeStore;
 
-  useFocusEffect(
-    useCallback(() => {
+  useEffect(() => {
+    retrieveExpiredSoonAssets();
+  }, []);
+
+  useEffect(() => {
+    if (pullToRefresh) {
       retrieveExpiredSoonAssets();
-    }, []),
-  );
+    }
+  }, [pullToRefresh]);
+
+  useEffect(() => {
+    if (!loading) {
+      flatListRef.current?.scrollToOffset({
+        offset: 0,
+        animated: true,
+      });
+    }
+  }, [loading]);
 
   const renderSkeleton = useCallback(() => {
     return (
@@ -49,6 +64,7 @@ const ExpiredSoonSection = observer(() => {
         renderSkeleton()
       ) : (
         <FlatList
+          ref={flatListRef}
           horizontal
           showsHorizontalScrollIndicator={false}
           contentContainerStyle={styles.flatList}

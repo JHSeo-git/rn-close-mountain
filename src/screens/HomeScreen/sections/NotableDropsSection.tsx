@@ -1,24 +1,48 @@
 import { useCallback, useEffect, useRef } from 'react';
-import { FlatList, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { observer } from 'mobx-react-lite';
+import { FlatList } from 'react-native-gesture-handler';
+import NotableDropCard from './NotableDropCard';
 import SectionView from '../../../components/SectionView';
 import { useStore } from '../../../contexts/StoreContext';
 import { SPACE } from '../../../constants/design-token';
 import { generateSkeletonList } from '../../../utils/styleUtils';
-import { useFocusEffect } from '@react-navigation/native';
-import NotableDropCard from './NotableDropCard';
+import { useNavigation } from '@react-navigation/native';
+import type { HomeStackScreenProps } from '../../types';
+import type { Promotion } from '../../../api/testnets/collection/getPromotion';
 
 const NotableDropsSection = observer(() => {
   const { t } = useTranslation();
   const { mainHomeStore } = useStore();
-  const flatListRef = useRef<FlatList>(null);
+  const navigation = useNavigation<HomeStackScreenProps<'Home'>['navigation']>();
+  const flatListRef = useRef<FlatList<Promotion>>(null);
 
   const {
+    pullToRefresh,
     notableDrops,
     retrieveNotableDrops,
     retrieveNotableDropsLoading: loading,
   } = mainHomeStore;
+
+  useEffect(() => {
+    retrieveNotableDrops();
+  }, []);
+
+  useEffect(() => {
+    if (pullToRefresh) {
+      retrieveNotableDrops();
+    }
+  }, [pullToRefresh]);
+
+  useEffect(() => {
+    if (!loading) {
+      flatListRef.current?.scrollToOffset({
+        offset: 0,
+        animated: true,
+      });
+    }
+  }, [loading]);
 
   const renderSkeleton = useCallback(() => {
     return (
@@ -36,21 +60,6 @@ const NotableDropsSection = observer(() => {
       />
     );
   }, []);
-
-  useFocusEffect(
-    useCallback(() => {
-      retrieveNotableDrops();
-    }, []),
-  );
-
-  useEffect(() => {
-    if (!loading) {
-      flatListRef.current?.scrollToOffset({
-        offset: 0,
-        animated: true,
-      });
-    }
-  }, [loading]);
 
   return (
     <SectionView title={t('home.notable_drops')}>
@@ -73,8 +82,12 @@ const NotableDropsSection = observer(() => {
               ]}
               coverImageUrl={item.promoCardImg}
               name={item.promoHeader}
-              // TODO: onPress
-              onPress={() => {}}
+              onPress={() =>
+                item.id &&
+                navigation.navigate('Collection', {
+                  collectionId: item.id,
+                })
+              }
             />
           )}
         />

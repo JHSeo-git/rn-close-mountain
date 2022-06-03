@@ -1,6 +1,5 @@
-import { useCallback } from 'react';
+import { useCallback, useEffect } from 'react';
 import { StyleSheet, FlatList } from 'react-native';
-import { useFocusEffect } from '@react-navigation/native';
 import { observer } from 'mobx-react-lite';
 import CategoryCard from '../../../components/CategoryCard';
 import SectionView from '../../../components/SectionView';
@@ -10,7 +9,12 @@ import { generateSkeletonList } from '../../../utils/styleUtils';
 
 const CategoriesSection = observer(() => {
   const { mainHomeStore } = useStore();
-  const { categories, retrieveCategories, retrieveCategoriesLoading: loading } = mainHomeStore;
+  const {
+    pullToRefresh,
+    categories,
+    retrieveCategories,
+    retrieveCategoriesLoading: loading,
+  } = mainHomeStore;
 
   const renderSkeleton = useCallback(() => {
     return (
@@ -29,11 +33,15 @@ const CategoriesSection = observer(() => {
     );
   }, []);
 
-  useFocusEffect(
-    useCallback(() => {
+  useEffect(() => {
+    retrieveCategories();
+  }, []);
+
+  useEffect(() => {
+    if (pullToRefresh) {
       retrieveCategories();
-    }, []),
-  );
+    }
+  }, [pullToRefresh]);
 
   return (
     <SectionView>
@@ -53,8 +61,8 @@ const CategoriesSection = observer(() => {
                 index === 0 && styles.listLeft,
                 index === categories.length - 1 && styles.listRight,
               ]}
-              coverImageUrl={item.coverImageUrl}
-              name={item.name}
+              coverImageUrl={item.coverImageUrl ?? ''}
+              name={item.name ?? ''}
               // TODO: onPress
               onPress={() => {}}
             />

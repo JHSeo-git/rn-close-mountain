@@ -2,7 +2,6 @@ import { useCallback, useEffect, useRef } from 'react';
 import { StyleSheet } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { ScrollView } from 'react-native-gesture-handler';
-import { useFocusEffect } from '@react-navigation/native';
 import { observer } from 'mobx-react-lite';
 import MostActiveCard from './MostActiveCard';
 import UIText from '../../../components/UIText';
@@ -18,6 +17,7 @@ const MostActiveSection = observer(() => {
   const listRef = useRef<ScrollView>(null);
 
   const {
+    pullToRefresh,
     topCollections,
     retrieveTopCollections,
     retrieveTopCollectionsLoading: loading,
@@ -41,11 +41,15 @@ const MostActiveSection = observer(() => {
     );
   }, []);
 
-  useFocusEffect(
-    useCallback(() => {
+  useEffect(() => {
+    retrieveTopCollections();
+  }, []);
+
+  useEffect(() => {
+    if (pullToRefresh) {
       retrieveTopCollections();
-    }, []),
-  );
+    }
+  }, [pullToRefresh]);
 
   useEffect(() => {
     if (!loading) {
@@ -73,10 +77,10 @@ const MostActiveSection = observer(() => {
             <MostActiveCard
               style={[styles.card, index === 0 && styles.listLeft]}
               key={collection.id}
-              logoImageUrl={collection.logo}
-              name={collection.name}
-              isVerified={collection.isVerified}
-              changedRatio={collection.statsV2.thirtyDayChange}
+              logoImageUrl={collection.logo ?? ''}
+              name={collection.name ?? ''}
+              isVerified={!!collection.isVerified}
+              changedRatio={collection.statsV2?.thirtyDayChange ?? undefined}
               // TODO: onPress
               onPress={() => {}}
             />
@@ -85,6 +89,7 @@ const MostActiveSection = observer(() => {
             mode="contained"
             icon="chevron-right"
             style={styles.buttonStyle}
+            labelStyle={styles.buttonLabelStyle}
             contentStyle={{ flexDirection: 'row-reverse' }}
             // TODO: onPress
             onPress={() => {}}
@@ -113,9 +118,13 @@ const styles = StyleSheet.create({
     marginRight: SPACE.$5,
   },
   buttonStyle: {
+    flex: 1,
     marginHorizontal: SPACE.$5,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  buttonLabelStyle: {
+    marginVertical: SPACE.$5,
   },
 });
 
