@@ -12,14 +12,14 @@ type LoaderProps = {
 const Loader = observer(({ force = false }: LoaderProps) => {
   const { loaderStore } = useStore();
 
-  if (!force && !loaderStore.loading) {
+  if (!force && !loaderStore.visible) {
     return null;
   }
 
   return (
     <Portal>
       <View style={styles.container}>
-        <ActivityIndicator animating={loaderStore.loading} size="large" color={COLORS.primary} />
+        <ActivityIndicator animating={loaderStore.visible} size="large" color={COLORS.primary} />
       </View>
     </Portal>
   );
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     ...viewStyles.center,
     flex: 1,
     zIndex: 9999,
-    backgroundColor: COLORS.grayA8,
+    backgroundColor: COLORS.grayA11,
   },
 });
 
