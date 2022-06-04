@@ -2,47 +2,73 @@ import { action, makeObservable, observable, runInAction } from 'mobx';
 import getCollectionRankings, {
   GetCollectionRankingsRequest,
 } from '../api/strapi/collection/getCollectionRankings';
-import getCollections, { GetCollectionsRequest } from '../api/strapi/collection/getCollections';
 import BaseStore from './base/BaseStore';
 import RootStore from './RootStore';
 import type { CollectionData } from '../api/strapi/collection/types';
+import type { OpenSeaCollection } from '../utils/types/opensea/types';
+import getCollection, { GetCollectionRequest } from '../api/opensea/collection/getCollection';
 
 class CollectionStore extends BaseStore {
-  collections: CollectionData[] = [];
+  collection: OpenSeaCollection | undefined;
+  collectionRankings: CollectionData[] = [];
+  retrieveCollectionLoading: boolean = false;
+  retrieveCollectionRankingsLoading: boolean = false;
 
   constructor(root: RootStore) {
     super(root);
     makeObservable(this, {
-      collections: observable,
+      collection: observable,
+      collectionRankings: observable,
+      retrieveCollectionLoading: observable,
+      retrieveCollectionRankingsLoading: observable,
       retrieveCollection: action,
       retrieveCollectionRankings: action,
     });
   }
 
-  reset = () => {
+  retrieveCollection = async (requestData: GetCollectionRequest) => {
     runInAction(() => {
-      this.collections = [];
+      this.retrieveCollectionLoading = true;
     });
-  };
+    try {
+      const result = await this.callAPI(() => getCollection(requestData), {
+        delay: 2000,
+        useLoader: true,
+      });
 
-  retrieveCollection = async (requestData?: GetCollectionsRequest) => {
-    const result = await this.callAPI(() => getCollections(requestData ?? {}));
+      runInAction(() => {
+        this.collection = result;
+      });
 
-    runInAction(() => {
-      this.collections = result.data;
-    });
-
-    return result;
+      return result;
+    } catch (e) {
+      throw e;
+    } finally {
+      runInAction(() => {
+        this.retrieveCollectionLoading = false;
+      });
+    }
   };
 
   retrieveCollectionRankings = async (requestData?: GetCollectionRankingsRequest) => {
-    const result = await this.callAPI(() => getCollectionRankings(requestData ?? {}));
-
     runInAction(() => {
-      this.collections = result.data;
+      this.retrieveCollectionRankingsLoading = true;
     });
+    try {
+      const result = await this.callAPI(() => getCollectionRankings(requestData ?? {}));
 
-    return result;
+      runInAction(() => {
+        this.collectionRankings = result.data;
+      });
+
+      return result;
+    } catch (e) {
+      throw e;
+    } finally {
+      runInAction(() => {
+        this.retrieveCollectionRankingsLoading = false;
+      });
+    }
   };
 }
 

@@ -1,14 +1,14 @@
 import { action, makeObservable, observable, runInAction } from 'mobx';
 import BaseStore from './base/BaseStore';
 import RootStore from './RootStore';
-import getEvents from '../api/testnets/event/getEvents';
-import getCategories, { Category } from '../api/testnets/collection/getCategories';
-import getPromotion, { Promotion } from '../api/testnets/collection/getPromotion';
-import getTopCollections, { TopCollection } from '../api/testnets/collection/getTopCollections';
+import getEvents from '../api/opensea/event/getEvents';
+import getCategories, { Category } from '../api/opensea/collection/getCategories';
+import getPromotion, { Promotion } from '../api/opensea/collection/getPromotion';
+import getTopCollections, { TopCollection } from '../api/opensea/collection/getTopCollections';
 import getCollectionsScroller, {
   TrendingCollection,
-} from '../api/testnets/collection/getCollectionsScroller';
-import getExpiredSoonAssets, { ExpiredSoonAsset } from '../api/testnets/asset/getExpiredSoonAssets';
+} from '../api/opensea/collection/getCollectionsScroller';
+import getExpiredSoonAssets, { ExpiredSoonAsset } from '../api/opensea/asset/getExpiredSoonAssets';
 import type { OpenSeaAsset } from '../utils/types/opensea/types';
 
 class MainHomeStore extends BaseStore {

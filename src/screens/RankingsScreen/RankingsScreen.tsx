@@ -59,7 +59,6 @@ const RankingsScreen = observer(({}: RankingsScreenProps) => {
 
     return () => {
       rankingsStore.reset();
-      collectionStore.reset();
     };
   }, []);
 
@@ -69,7 +68,7 @@ const RankingsScreen = observer(({}: RankingsScreenProps) => {
       <View style={{ flex: 1 }}>
         <FlatList
           contentContainerStyle={styles.flatList}
-          data={collectionStore.collections}
+          data={collectionStore.collectionRankings}
           keyExtractor={item => item.attributes.slug}
           showsVerticalScrollIndicator={false}
           ListHeaderComponent={

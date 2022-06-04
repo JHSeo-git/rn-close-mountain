@@ -10,7 +10,9 @@ import { SPACE } from '../../../constants/design-token';
 import { generateSkeletonList } from '../../../utils/styleUtils';
 import { useNavigation } from '@react-navigation/native';
 import type { HomeStackScreenProps } from '../../types';
-import type { Promotion } from '../../../api/testnets/collection/getPromotion';
+import type { Promotion } from '../../../api/opensea/collection/getPromotion';
+
+const getSlugFromLink = (link: string) => link.split('/').pop();
 
 const NotableDropsSection = observer(() => {
   const { t } = useTranslation();
@@ -82,12 +84,14 @@ const NotableDropsSection = observer(() => {
               ]}
               coverImageUrl={item.promoCardImg}
               name={item.promoHeader}
-              onPress={() =>
-                item.id &&
-                navigation.navigate('Collection', {
-                  collectionId: item.id,
-                })
-              }
+              onPress={() => {
+                const collectionSlug = getSlugFromLink(item.promoCardLink);
+                if (collectionSlug) {
+                  navigation.navigate('Collection', {
+                    collectionSlug,
+                  });
+                }
+              }}
             />
           )}
         />

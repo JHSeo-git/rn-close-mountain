@@ -8,7 +8,7 @@ import SectionView from '../../../components/SectionView';
 import { useStore } from '../../../contexts/StoreContext';
 import { SPACE } from '../../../constants/design-token';
 import { generateSkeletonList } from '../../../utils/styleUtils';
-import type { ExpiredSoonAsset } from '../../../api/testnets/asset/getExpiredSoonAssets';
+import type { ExpiredSoonAsset } from '../../../api/opensea/asset/getExpiredSoonAssets';
 import type { ChainScalar } from '../../../graphql/types/generated';
 
 const ExpiredSoonSection = observer(() => {
