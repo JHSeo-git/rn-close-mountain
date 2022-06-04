@@ -12,7 +12,7 @@ type DefaultProps = {
   style?: StyleProp<ViewStyle>;
   animatedStyle?: Animated.AnimatedProps<ViewStyle>;
   title?: React.ReactNode;
-  dim?: boolean;
+  transparent?: boolean;
 };
 
 type LeftButtonProps = {
@@ -21,7 +21,7 @@ type LeftButtonProps = {
 };
 
 type RightButtonProps = {
-  rightIcon: 'setting' | 'hamberger-menu' | 'search' | 'close';
+  rightIcon: 'setting' | 'hamberger-menu' | 'search' | 'close' | 'filter';
   onRightIconPress: () => void;
 };
 
@@ -35,7 +35,7 @@ const Header = ({
   onLeftIconPress,
   rightIcon,
   onRightIconPress,
-  dim = false,
+  transparent = false,
 }: HeaderProps) => {
   const renderLeft = useCallback(() => {
     return (
@@ -52,23 +52,37 @@ const Header = ({
               justifyContent: 'center',
               alignItems: 'center',
             }}
-            rippleColor={dim ? COLORS.gray1 : undefined}
+            rippleColor={transparent ? COLORS.gray1 : undefined}
           >
             <ChevronLeftSvg width={24} height={24} color={COLORS.hiContrast} />
           </CustomTouchableRipple>
         )}
       </>
     );
-  }, [dim]);
+  }, [transparent]);
 
   const renderRight = useCallback(() => {
     return (
       <>
         {rightIcon === 'setting' && (
-          <IconButton icon="cog" size={24} color={COLORS.hiContrast} onPress={onRightIconPress} />
+          <IconButton
+            icon="cog"
+            size={24}
+            color={COLORS.hiContrast}
+            onPress={onRightIconPress}
+            rippleColor={transparent ? COLORS.gray1 : undefined}
+            style={{ backgroundColor: COLORS.loContrast }}
+          />
         )}
         {rightIcon === 'hamberger-menu' && (
-          <IconButton icon="menu" size={24} color={COLORS.hiContrast} onPress={onRightIconPress} />
+          <IconButton
+            icon="menu"
+            size={24}
+            color={COLORS.hiContrast}
+            onPress={onRightIconPress}
+            rippleColor={transparent ? COLORS.gray1 : undefined}
+            style={{ backgroundColor: COLORS.loContrast }}
+          />
         )}
         {rightIcon === 'search' && (
           <IconButton
@@ -76,14 +90,33 @@ const Header = ({
             size={24}
             color={COLORS.hiContrast}
             onPress={onRightIconPress}
+            rippleColor={transparent ? COLORS.gray1 : undefined}
+            style={{ backgroundColor: COLORS.loContrast }}
           />
         )}
         {rightIcon === 'close' && (
-          <IconButton icon="close" size={24} color={COLORS.hiContrast} onPress={onRightIconPress} />
+          <IconButton
+            icon="close"
+            size={24}
+            color={COLORS.hiContrast}
+            onPress={onRightIconPress}
+            rippleColor={transparent ? COLORS.gray1 : undefined}
+            style={{ backgroundColor: COLORS.loContrast }}
+          />
+        )}
+        {rightIcon === 'filter' && (
+          <IconButton
+            icon="filter-variant"
+            size={24}
+            color={COLORS.hiContrast}
+            onPress={onRightIconPress}
+            rippleColor={transparent ? COLORS.gray1 : undefined}
+            style={{ backgroundColor: COLORS.loContrast }}
+          />
         )}
       </>
     );
-  }, []);
+  }, [transparent]);
 
   return (
     <View style={[styles.container, style]}>
