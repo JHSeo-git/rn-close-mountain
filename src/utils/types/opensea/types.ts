@@ -329,6 +329,8 @@ export interface OpenSeaCollection extends OpenSeaFees {
   externalLink?: string;
   // Link to the collection's wiki, if available
   wikiLink?: string;
+
+  bannerImageUrl?: string;
 }
 
 export interface OpenSeaTraitStats {

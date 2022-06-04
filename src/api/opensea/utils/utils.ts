@@ -148,6 +148,7 @@ export const collectionFromJSON = (collection: any): OpenSeaCollection => {
     traitStats: collection.traits as OpenSeaTraitStats,
     externalLink: collection.external_url,
     wikiLink: collection.wiki_url,
+    bannerImageUrl: collection.banner_image_url,
   };
 };
 

@@ -5,20 +5,29 @@ import Manager from './Manager';
 
 const DEBUG = false;
 
-if (!Config.TESTNETS_URL) {
+if (!Config.OPENSEA_URL) {
   throw new AppError({
-    message: 'env.TESTNETS_URL is not defined',
-    name: 'TESTNETS_URL_NOT_DEFINED',
+    message: 'env.OPENSEA_URL is not defined',
+    name: 'OPENSEA_URL_NOT_DEFINED',
+    label: 'APP',
+  });
+}
+
+if (!Config.OPENSEA_API_KEY) {
+  throw new AppError({
+    message: 'env.OPENSEA_API_KEY is not defined',
+    name: 'OPENSEA_API_KEY_NOT_DEFINED',
     label: 'APP',
   });
 }
 
 const client = axios.create();
 
-const baseURL = Config.TESTNETS_URL;
+const baseURL = Config.OPENSEA_URL;
 client.defaults.baseURL = baseURL;
 client.defaults.withCredentials = true;
 client.defaults.headers.common['Content-Type'] = 'application/json';
+client.defaults.headers.common['x-api-key'] = Config.OPENSEA_API_KEY;
 
 export function applyToken(token: string) {
   client.defaults.headers.common.Authorization = `Bearer ${token}`;
