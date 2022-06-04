@@ -331,6 +331,7 @@ export interface OpenSeaCollection extends OpenSeaFees {
   wikiLink?: string;
 
   bannerImageUrl?: string;
+  safelistRequestStatus?: 'verified';
 }
 
 export interface OpenSeaTraitStats {

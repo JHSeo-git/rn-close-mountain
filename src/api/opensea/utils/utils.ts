@@ -149,6 +149,7 @@ export const collectionFromJSON = (collection: any): OpenSeaCollection => {
     externalLink: collection.external_url,
     wikiLink: collection.wiki_url,
     bannerImageUrl: collection.banner_image_url,
+    safelistRequestStatus: collection.safelist_request_status,
   };
 };
 
