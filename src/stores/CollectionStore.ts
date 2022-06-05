@@ -23,8 +23,13 @@ class CollectionStore extends BaseStore {
       retrieveCollectionRankingsLoading: observable,
       retrieveCollection: action,
       retrieveCollectionRankings: action,
+      collectionCleanup: action,
     });
   }
+
+  collectionCleanup = () => {
+    this.collection = undefined;
+  };
 
   retrieveCollection = async (requestData: GetCollectionRequest) => {
     runInAction(() => {
