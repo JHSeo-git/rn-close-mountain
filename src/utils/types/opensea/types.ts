@@ -316,7 +316,7 @@ export interface OpenSeaCollection extends OpenSeaFees {
   // Image for the collection when featured
   featuredImageUrl: string;
   // Object with stats about the collection
-  stats: object;
+  stats: OpenSeaStats;
   // Data about displaying cards
   displayData: object;
   // Tokens allowed for this collection
@@ -332,6 +332,30 @@ export interface OpenSeaCollection extends OpenSeaFees {
 
   bannerImageUrl?: string;
   safelistRequestStatus?: 'verified';
+}
+
+export interface OpenSeaStats {
+  oneDayVolume: number;
+  oneDayChange: number;
+  oneDaySales: number;
+  oneDayAveragePrice: number;
+  sevenDayVolume: number;
+  sevenDayChange: number;
+  sevenDaySales: number;
+  sevenDayAveragePrice: number;
+  thirtyDayVolume: number;
+  thirtyDayChange: number;
+  thirtyDaySales: number;
+  thirtyDayAveragePrice: number;
+  totalVolume: number;
+  totalSales: number;
+  totalSupply: number;
+  count: number;
+  numOwners: number;
+  averagePrice: number;
+  numReports: number;
+  marketCap: number;
+  floorPrice: number;
 }
 
 export interface OpenSeaTraitStats {

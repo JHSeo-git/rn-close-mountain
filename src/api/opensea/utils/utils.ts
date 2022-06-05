@@ -9,6 +9,7 @@ import {
   OpenSeaCollection,
   OpenSeaEvent,
   OpenSeaFungibleToken,
+  OpenSeaStats,
   OpenSeaTraitStats,
   OpenSeaUser,
   Order,
@@ -144,7 +145,7 @@ export const collectionFromJSON = (collection: any): OpenSeaCollection => {
     payoutAddress: collection.payout_address,
     imageUrl: collection.image_url,
     largeImageUrl: collection.large_image_url,
-    stats: collection.stats,
+    stats: statsFromJSON(collection.stats),
     traitStats: collection.traits as OpenSeaTraitStats,
     externalLink: collection.external_url,
     wikiLink: collection.wiki_url,
@@ -322,5 +323,31 @@ export const accountFromJSON = (account: any): OpenSeaAccount => {
 export const userFromJSON = (user: any): OpenSeaUser => {
   return {
     username: user.username,
+  };
+};
+
+export const statsFromJSON = (stats: any): OpenSeaStats => {
+  return {
+    oneDayVolume: stats.one_day_volume,
+    oneDayChange: stats.one_day_change,
+    oneDaySales: stats.one_day_sales,
+    oneDayAveragePrice: stats.one_day_average_price,
+    sevenDayVolume: stats.seven_day_volume,
+    sevenDayChange: stats.seven_day_change,
+    sevenDaySales: stats.seven_day_sales,
+    sevenDayAveragePrice: stats.seven_day_average_price,
+    thirtyDayVolume: stats.thirty_day_volume,
+    thirtyDayChange: stats.thirty_day_change,
+    thirtyDaySales: stats.thirty_day_sales,
+    thirtyDayAveragePrice: stats.thirty_day_average_price,
+    totalVolume: stats.total_volume,
+    totalSales: stats.total_sales,
+    totalSupply: stats.total_supply,
+    count: stats.count,
+    numOwners: stats.num_owners,
+    averagePrice: stats.average_price,
+    numReports: stats.num_reports,
+    marketCap: stats.market_cap,
+    floorPrice: stats.floor_price,
   };
 };
