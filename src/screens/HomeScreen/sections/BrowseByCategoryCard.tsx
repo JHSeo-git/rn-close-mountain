@@ -3,7 +3,7 @@ import React from 'react';
 import { Card } from 'react-native-paper';
 import { COLORS, SPACE } from '../../../constants/design-token';
 import UIText from '../../../components/UIText';
-import useSkeleton from '../../../hooks/useSkeleton';
+import useFlashOpacity from '../../../hooks/useFlashOpacity';
 import { useTranslation } from 'react-i18next';
 
 type BrowseByCategoryCardProps = {
@@ -30,7 +30,7 @@ const BrowseByCategoryCard = ({
 };
 
 const Skeleton = () => {
-  const { opacity } = useSkeleton();
+  const { opacity } = useFlashOpacity();
   return (
     <Card style={styles.card}>
       <Animated.View style={[styles.cardCover, styles.skeleton, { opacity }]} />

@@ -3,7 +3,7 @@ import { Card } from 'react-native-paper';
 import LinearGradient from 'react-native-linear-gradient';
 import UIText from '../UIText';
 import { COLORS, RADII, SPACE } from '../../constants/design-token';
-import useSkeleton from '../../hooks/useSkeleton';
+import useFlashOpacity from '../../hooks/useFlashOpacity';
 
 type CategoryCardProps = {
   style?: StyleProp<ViewStyle>;
@@ -27,7 +27,7 @@ const CategoryCard = ({ style, coverImageUrl, name, onPress }: CategoryCardProps
 };
 
 const Skeleton = ({ style }: Pick<CategoryCardProps, 'style'>) => {
-  const { opacity } = useSkeleton();
+  const { opacity } = useFlashOpacity();
 
   return (
     <Card style={[styles.card, style]}>

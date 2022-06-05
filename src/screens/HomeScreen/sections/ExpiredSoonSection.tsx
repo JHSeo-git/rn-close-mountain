@@ -7,14 +7,16 @@ import AssetCard from '../../../components/AssetCard';
 import SectionView from '../../../components/SectionView';
 import { useStore } from '../../../contexts/StoreContext';
 import { SPACE } from '../../../constants/design-token';
-import { generateSkeletonList } from '../../../utils/styleUtils';
 import type { ExpiredSoonAsset } from '../../../api/opensea/asset/getExpiredSoonAssets';
 import type { ChainScalar } from '../../../graphql/types/generated';
+import type { SkeletonItem } from '../../../utils/styleUtils';
+import useSkeletonItems from '../../../hooks/useSkeletonItems';
 
 const ExpiredSoonSection = observer(() => {
   const { t } = useTranslation();
   const { mainHomeStore } = useStore();
   const flatListRef = useRef<FlatList<ExpiredSoonAsset>>(null);
+  const skeletonItems = useSkeletonItems();
 
   const {
     pullToRefresh,
@@ -22,6 +24,34 @@ const ExpiredSoonSection = observer(() => {
     retrieveExpiredSoonAssets,
     retrieveExpiredSoonAssetsLoading: loading,
   } = mainHomeStore;
+
+  const renderSkeletonItem = useCallback(
+    ({ item, index }: { item: SkeletonItem; index: number }) => {
+      return <AssetCard.Skeleton style={[styles.card, index === 0 && styles.listLeft]} />;
+    },
+    [],
+  );
+
+  const renderListItem = useCallback(
+    ({ item, index }: { item: ExpiredSoonAsset; index: number }) => {
+      return (
+        <AssetCard
+          style={[styles.card, index === 0 && styles.listLeft]}
+          coverImageUrl={item.asset.displayImageUrl}
+          collectionName={item.asset.collection.name}
+          name={item.asset.name ?? ''}
+          isVerified={item.asset.collection.isVerified}
+          favoritesCount={item.asset.favoritesCount}
+          chain={item.asset.assetContract.chain as ChainScalar}
+          // TODO: 가격은 어떻게 계산?가져오는거야?
+          price={0.19}
+          // TODO: onPress
+          onPress={() => {}}
+        />
+      );
+    },
+    [],
+  );
 
   useEffect(() => {
     retrieveExpiredSoonAssets();
@@ -48,13 +78,9 @@ const ExpiredSoonSection = observer(() => {
         horizontal
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={styles.flatList}
-        data={generateSkeletonList(3)}
+        data={skeletonItems}
         keyExtractor={item => `${item.id}`}
-        renderItem={({ item, index }) => (
-          <AssetCard.Skeleton
-            style={[styles.card, index === 0 && styles.listLeft, index === 2 && styles.listRight]}
-          />
-        )}
+        renderItem={renderSkeletonItem}
       />
     );
   }, []);
@@ -71,25 +97,7 @@ const ExpiredSoonSection = observer(() => {
           contentContainerStyle={styles.flatList}
           data={expiredSoonAssets}
           keyExtractor={item => `${item.asset.id}`}
-          renderItem={({ item, index }) => (
-            <AssetCard
-              style={[
-                styles.card,
-                index === 0 && styles.listLeft,
-                index === expiredSoonAssets.length - 1 && styles.listRight,
-              ]}
-              coverImageUrl={item.asset.displayImageUrl}
-              collectionName={item.asset.collection.name}
-              name={item.asset.name ?? ''}
-              isVerified={item.asset.collection.isVerified}
-              favoritesCount={item.asset.favoritesCount}
-              chain={item.asset.assetContract.chain as ChainScalar}
-              // TODO: 가격은 어떻게 계산?가져오는거야?
-              price={0.19}
-              // TODO: onPress
-              onPress={() => {}}
-            />
-          )}
+          renderItem={renderListItem}
         />
       )}
     </SectionView>
@@ -99,15 +107,13 @@ const ExpiredSoonSection = observer(() => {
 const styles = StyleSheet.create({
   flatList: {
     paddingVertical: SPACE.$1,
+    paddingRight: SPACE.$5,
   },
   card: {
     marginLeft: SPACE.$3,
   },
   listLeft: {
     marginLeft: SPACE.$5,
-  },
-  listRight: {
-    marginRight: SPACE.$5,
   },
 });
 

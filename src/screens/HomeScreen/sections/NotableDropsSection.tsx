@@ -1,24 +1,25 @@
 import { useCallback, useEffect, useRef } from 'react';
 import { StyleSheet } from 'react-native';
 import { useTranslation } from 'react-i18next';
-import { observer } from 'mobx-react-lite';
 import { FlatList } from 'react-native-gesture-handler';
+import { useNavigation } from '@react-navigation/native';
+import { observer } from 'mobx-react-lite';
 import NotableDropCard from './NotableDropCard';
 import SectionView from '../../../components/SectionView';
 import { useStore } from '../../../contexts/StoreContext';
+import { getSlugFromLink } from '../../../utils/openseaUtils';
 import { SPACE } from '../../../constants/design-token';
-import { generateSkeletonList } from '../../../utils/styleUtils';
-import { useNavigation } from '@react-navigation/native';
 import type { HomeStackScreenProps } from '../../types';
+import type { SkeletonItem } from '../../../utils/styleUtils';
 import type { Promotion } from '../../../api/opensea/collection/getPromotion';
-
-const getSlugFromLink = (link: string) => link.split('/').pop();
+import useSkeletonItems from '../../../hooks/useSkeletonItems';
 
 const NotableDropsSection = observer(() => {
   const { t } = useTranslation();
   const { mainHomeStore } = useStore();
   const navigation = useNavigation<HomeStackScreenProps<'Home'>['navigation']>();
   const flatListRef = useRef<FlatList<Promotion>>(null);
+  const skeletonItems = useSkeletonItems();
 
   const {
     pullToRefresh,
@@ -26,6 +27,31 @@ const NotableDropsSection = observer(() => {
     retrieveNotableDrops,
     retrieveNotableDropsLoading: loading,
   } = mainHomeStore;
+
+  const renderSkeletonItem = useCallback(
+    ({ item, index }: { item: SkeletonItem; index: number }) => {
+      return <NotableDropCard.Skeleton style={[styles.card, index === 0 && styles.listLeft]} />;
+    },
+    [],
+  );
+
+  const renderListItem = useCallback(({ item, index }: { item: Promotion; index: number }) => {
+    return (
+      <NotableDropCard
+        style={[styles.card, index === 0 && styles.listLeft]}
+        coverImageUrl={item.promoCardImg}
+        name={item.promoHeader}
+        onPress={() => {
+          const collectionSlug = getSlugFromLink(item.promoCardLink);
+          if (collectionSlug) {
+            navigation.navigate('Collection', {
+              collectionSlug,
+            });
+          }
+        }}
+      />
+    );
+  }, []);
 
   useEffect(() => {
     retrieveNotableDrops();
@@ -52,13 +78,9 @@ const NotableDropsSection = observer(() => {
         horizontal
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={styles.flatList}
-        data={generateSkeletonList()}
+        data={skeletonItems}
         keyExtractor={item => `${item.id}`}
-        renderItem={({ item, index }) => (
-          <NotableDropCard.Skeleton
-            style={[styles.card, index === 0 && styles.listLeft, index === 2 && styles.listRight]}
-          />
-        )}
+        renderItem={renderSkeletonItem}
       />
     );
   }, []);
@@ -75,25 +97,7 @@ const NotableDropsSection = observer(() => {
           contentContainerStyle={styles.flatList}
           data={notableDrops}
           keyExtractor={item => `${item.id}`}
-          renderItem={({ item, index }) => (
-            <NotableDropCard
-              style={[
-                styles.card,
-                index === 0 && styles.listLeft,
-                index === notableDrops.length - 1 && styles.listRight,
-              ]}
-              coverImageUrl={item.promoCardImg}
-              name={item.promoHeader}
-              onPress={() => {
-                const collectionSlug = getSlugFromLink(item.promoCardLink);
-                if (collectionSlug) {
-                  navigation.navigate('Collection', {
-                    collectionSlug,
-                  });
-                }
-              }}
-            />
-          )}
+          renderItem={renderListItem}
         />
       )}
     </SectionView>
@@ -103,15 +107,13 @@ const NotableDropsSection = observer(() => {
 const styles = StyleSheet.create({
   flatList: {
     paddingVertical: SPACE.$1,
+    paddingRight: SPACE.$5,
   },
   card: {
     marginLeft: SPACE.$3,
   },
   listLeft: {
     marginLeft: SPACE.$5,
-  },
-  listRight: {
-    marginRight: SPACE.$5,
   },
   slider: {},
   sliderContentContainer: {
@@ -120,44 +122,3 @@ const styles = StyleSheet.create({
 });
 
 export default NotableDropsSection;
-
-// <SectionView title={t('home.notable_drops')} titleViewStyle={styles.sectionHeader}>
-//   {loading ? (
-//     <View style={{ marginHorizontal: SPACE.$5 }}>
-//       <NotableDropCarouselCard.Skeleton />
-//     </View>
-//   ) : notableDrops.length > 0 ? (
-//     <>
-//       <Carousel
-//         ref={carouselRef}
-//         sliderWidth={sliderWidth}
-//         itemWidth={itemWidth}
-//         inactiveSlideScale={1}
-//         containerCustomStyle={styles.slider}
-//         contentContainerCustomStyle={styles.sliderContentContainer}
-//         onSnapToItem={index => setActiveSlide(index)}
-//         data={notableDrops}
-//         keyExtractor={item => `${item.id}`}
-//         renderItem={({ item }) => (
-//           <NotableDropCarouselCard
-//             style={{ marginHorizontal: itemHorizontalMargin }}
-//             coverImageUrl={item.promoCardImg}
-//             name={item.promoHeader}
-//             cardColor={item.cardColor}
-//             chipText="Live"
-//             onPress={() => {}}
-//           />
-//         )}
-//       />
-//       <UICarouselDots
-//         dotsLength={notableDrops.length}
-//         activeSlide={activeSlide}
-//         carouselRef={carouselRef}
-//       />
-//     </>
-//   ) : (
-//     <View style={{ marginHorizontal: SPACE.$5 }}>
-//       <NotableDropCarouselCard.Empty />
-//     </View>
-//   )}
-// </SectionView>

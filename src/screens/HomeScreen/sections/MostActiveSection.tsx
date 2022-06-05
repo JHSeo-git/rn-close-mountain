@@ -7,14 +7,15 @@ import MostActiveCard from './MostActiveCard';
 import UIText from '../../../components/UIText';
 import SectionView from '../../../components/SectionView';
 import { useStore } from '../../../contexts/StoreContext';
-import { generateSkeletonList } from '../../../utils/styleUtils';
 import { SPACE } from '../../../constants/design-token';
 import CustomButton from '../../../components/CustomButton';
+import useSkeletonItems from '../../../hooks/useSkeletonItems';
 
 const MostActiveSection = observer(() => {
   const { t } = useTranslation();
   const { mainHomeStore } = useStore();
   const listRef = useRef<ScrollView>(null);
+  const skeletonItems = useSkeletonItems();
 
   const {
     pullToRefresh,
@@ -31,7 +32,7 @@ const MostActiveSection = observer(() => {
         style={{ flexGrow: 0 }}
         contentContainerStyle={styles.list}
       >
-        {generateSkeletonList(3).map((item, index) => (
+        {skeletonItems.map((item, index) => (
           <MostActiveCard.Skeleton
             style={[styles.card, index === 0 && styles.listLeft, index === 2 && styles.listRight]}
             key={item.id}
@@ -107,6 +108,7 @@ const MostActiveSection = observer(() => {
 const styles = StyleSheet.create({
   list: {
     paddingVertical: SPACE.$1,
+    paddingRight: SPACE.$5,
   },
   card: {
     marginLeft: SPACE.$3,

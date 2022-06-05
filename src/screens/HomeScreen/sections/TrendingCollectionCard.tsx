@@ -2,7 +2,7 @@ import { View, StyleProp, ViewStyle, StyleSheet, Image, Animated } from 'react-n
 import { Card } from 'react-native-paper';
 import UIText from '../../../components/UIText';
 import { COLORS, RADII, SPACE } from '../../../constants/design-token';
-import useSkeleton from '../../../hooks/useSkeleton';
+import useFlashOpacity from '../../../hooks/useFlashOpacity';
 
 type TrendingCollectionCardProps = {
   style?: StyleProp<ViewStyle>;
@@ -45,7 +45,7 @@ const TrendingCollectionCard = ({
 };
 
 const Skeleton = ({ style }: Pick<TrendingCollectionCardProps, 'style'>) => {
-  const { opacity } = useSkeleton();
+  const { opacity } = useFlashOpacity();
 
   return (
     <Card style={[styles.card, style]}>

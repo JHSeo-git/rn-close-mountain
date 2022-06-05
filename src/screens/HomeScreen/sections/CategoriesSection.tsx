@@ -1,11 +1,13 @@
-import { useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useMemo } from 'react';
 import { StyleSheet, FlatList } from 'react-native';
 import { observer } from 'mobx-react-lite';
 import CategoryCard from '../../../components/CategoryCard';
 import SectionView from '../../../components/SectionView';
 import { useStore } from '../../../contexts/StoreContext';
 import { SPACE } from '../../../constants/design-token';
-import { generateSkeletonList } from '../../../utils/styleUtils';
+import useSkeletonItems from '../../../hooks/useSkeletonItems';
+import type { Category } from '../../../api/opensea/collection/getCategories';
+import type { SkeletonItem } from '../../../utils/styleUtils';
 
 const CategoriesSection = observer(() => {
   const { mainHomeStore } = useStore();
@@ -15,6 +17,26 @@ const CategoriesSection = observer(() => {
     retrieveCategories,
     retrieveCategoriesLoading: loading,
   } = mainHomeStore;
+  const skeletonItems = useSkeletonItems();
+
+  const renderSkeletonItem = useCallback(
+    ({ item, index }: { item: SkeletonItem; index: number }) => {
+      return <CategoryCard.Skeleton style={[styles.card, index === 0 && styles.listLeft]} />;
+    },
+    [],
+  );
+
+  const renderListItem = useCallback(({ item, index }: { item: Category; index: number }) => {
+    return (
+      <CategoryCard
+        style={[styles.card, index === 0 && styles.listLeft]}
+        coverImageUrl={item.coverImageUrl ?? ''}
+        name={item.name ?? ''}
+        // TODO: onPress
+        onPress={() => {}}
+      />
+    );
+  }, []);
 
   const renderSkeleton = useCallback(() => {
     return (
@@ -22,13 +44,9 @@ const CategoriesSection = observer(() => {
         horizontal
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={styles.flatList}
-        data={generateSkeletonList()}
+        data={skeletonItems}
         keyExtractor={item => `${item.id}`}
-        renderItem={({ item, index }) => (
-          <CategoryCard.Skeleton
-            style={[styles.card, index === 0 && styles.listLeft, index === 2 && styles.listRight]}
-          />
-        )}
+        renderItem={renderSkeletonItem}
       />
     );
   }, []);
@@ -54,19 +72,7 @@ const CategoriesSection = observer(() => {
           contentContainerStyle={styles.flatList}
           data={categories}
           keyExtractor={item => `${item.id}`}
-          renderItem={({ item, index }) => (
-            <CategoryCard
-              style={[
-                styles.card,
-                index === 0 && styles.listLeft,
-                index === categories.length - 1 && styles.listRight,
-              ]}
-              coverImageUrl={item.coverImageUrl ?? ''}
-              name={item.name ?? ''}
-              // TODO: onPress
-              onPress={() => {}}
-            />
-          )}
+          renderItem={renderListItem}
         />
       )}
     </SectionView>
@@ -76,15 +82,13 @@ const CategoriesSection = observer(() => {
 const styles = StyleSheet.create({
   flatList: {
     paddingVertical: SPACE.$1,
+    paddingRight: SPACE.$5,
   },
   card: {
     marginLeft: SPACE.$3,
   },
   listLeft: {
     marginLeft: SPACE.$5,
-  },
-  listRight: {
-    marginRight: SPACE.$5,
   },
 });
 

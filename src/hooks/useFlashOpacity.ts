@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { Animated } from 'react-native';
 
-export default function useSkeleton() {
+export default function useFlashOpacity() {
   const opacity = useRef(new Animated.Value(1)).current;
   const flash = Animated.loop(
     Animated.sequence([

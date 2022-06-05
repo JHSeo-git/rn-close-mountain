@@ -3,7 +3,7 @@ import { Card } from 'react-native-paper';
 import UIText from '../UIText';
 import UIIcon from '../UIIcon';
 import ChainIcon from '../ChainIcon';
-import useSkeleton from '../../hooks/useSkeleton';
+import useFlashOpacity from '../../hooks/useFlashOpacity';
 import { COLORS, RADII, SPACE } from '../../constants/design-token';
 import VerifiedIcon from '../../assets/icons/verified-icon.svg';
 import type { ChainScalar } from '../../graphql/types/generated';
@@ -73,7 +73,7 @@ const AssetCard = ({
 };
 
 const Skeleton = ({ style }: Pick<AssetCardProps, 'style'>) => {
-  const { opacity } = useSkeleton();
+  const { opacity } = useFlashOpacity();
 
   return <Animated.View style={[styles.card, styles.skeleton, { opacity }, style]} />;
 };

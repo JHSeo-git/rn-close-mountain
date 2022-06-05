@@ -1,7 +1,7 @@
 import { View, StyleProp, ViewStyle, StyleSheet, Animated } from 'react-native';
 import { Card } from 'react-native-paper';
 import UIText from '../../../components/UIText';
-import useSkeleton from '../../../hooks/useSkeleton';
+import useFlashOpacity from '../../../hooks/useFlashOpacity';
 import { COLORS, RADII, SPACE } from '../../../constants/design-token';
 
 type NotableDropCardProps = {
@@ -25,7 +25,7 @@ const NotableDropCard = ({ style, coverImageUrl, name, onPress }: NotableDropCar
 };
 
 const Skeleton = ({ style }: Pick<NotableDropCardProps, 'style'>) => {
-  const { opacity } = useSkeleton();
+  const { opacity } = useFlashOpacity();
 
   return (
     <Card style={[styles.card, style]}>

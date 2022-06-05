@@ -2,7 +2,7 @@ import { View, StyleSheet, StyleProp, ViewStyle, Animated } from 'react-native';
 import { Avatar, Card, IconButton } from 'react-native-paper';
 import { COLORS, SIZES, SPACE } from '../../../constants/design-token';
 import UIText from '../../../components/UIText';
-import useSkeleton from '../../../hooks/useSkeleton';
+import useFlashOpacity from '../../../hooks/useFlashOpacity';
 import { useTranslation } from 'react-i18next';
 
 type FeaturedAssetCardProps = {
@@ -53,7 +53,7 @@ const FeaturedAssetCard = ({
 };
 
 const Skeleton = () => {
-  const { opacity } = useSkeleton();
+  const { opacity } = useFlashOpacity();
   return (
     <Card style={styles.card}>
       <Animated.View style={[styles.skeleton, { opacity }]} />

@@ -3,7 +3,7 @@ import UIText from '../../../components/UIText';
 import CustomTouchableRipple from '../../../components/CustomTouchableRipple';
 import { COLORS, RADII, SPACE } from '../../../constants/design-token';
 import VerifiedIcon from '../../../assets/icons/verified-icon.svg';
-import useSkeleton from '../../../hooks/useSkeleton';
+import useFlashOpacity from '../../../hooks/useFlashOpacity';
 
 type MostActiveCardProps = {
   style?: StyleProp<ViewStyle>;
@@ -70,7 +70,7 @@ const MostActiveCard = ({
 };
 
 const Skeleton = ({ style }: Pick<MostActiveCardProps, 'style'>) => {
-  const { opacity } = useSkeleton();
+  const { opacity } = useFlashOpacity();
 
   return <Animated.View style={[styles.card, styles.skeleton, { opacity }, style]} />;
 };
