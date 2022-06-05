@@ -8,5 +8,8 @@ export function widthByPercent(percentage: number) {
   return Math.round(value);
 }
 
-export const generateSkeletonList = (length = 3) =>
+export type SkeletonItem = {
+  id: number;
+};
+export const generateSkeletonList = (length = 3): SkeletonItem[] =>
   Array.from({ length }).map((_, index) => ({ id: index }));
