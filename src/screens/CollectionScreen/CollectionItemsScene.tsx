@@ -77,7 +77,7 @@ const CollectionItemsScene = observer(
             // renderSkeleton()
             <View style={styles.list}>
               {selectedCollections.map((item, index) => (
-                <View style={{ flexGrow: 1 }}>
+                <View key={item.asset.id} style={{ flexGrow: 1 }}>
                   <AssetCard
                     style={[styles.card]}
                     coverImageUrl={item.asset.displayImageUrl}
