@@ -7,11 +7,13 @@ import { COLORS, SIZES, SPACE } from '../../constants/design-token';
 import * as viewStyles from '../../constants/global-styles/viewStyles';
 import ChevronLeftSvg from '../../assets/icons/chevron-left.svg';
 import type { AllOrNone } from '../../utils/types/type-utils';
+import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
 type DefaultProps = {
   style?: StyleProp<ViewStyle>;
   animatedStyle?: Animated.AnimatedProps<ViewStyle>;
   title?: React.ReactNode;
+  onTitlePress?: () => void;
   transparent?: boolean;
 };
 
@@ -31,6 +33,7 @@ const Header = ({
   style,
   animatedStyle,
   title,
+  onTitlePress,
   leftIcon,
   onLeftIconPress,
   rightIcon,
@@ -122,7 +125,9 @@ const Header = ({
     <View style={[styles.container, style]}>
       <View style={styles.leftBox}>{renderLeft()}</View>
       <Animated.View style={[styles.centerBox, animatedStyle]}>
-        {typeof title === 'string' ? <UIText as="h2">{title}</UIText> : title}
+        <TouchableWithoutFeedback onPress={onTitlePress}>
+          {typeof title === 'string' ? <UIText as="h2">{title}</UIText> : title}
+        </TouchableWithoutFeedback>
       </Animated.View>
       <View style={styles.rightBox}>{renderRight()}</View>
     </View>

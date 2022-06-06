@@ -57,7 +57,7 @@ const UISelect = ({
               leftIcon
             ))}
           {selectedItem ? (
-            <UIText numberOfLines={numberOfLines} as="small" style={{ flex: 1 }}>
+            <UIText numberOfLines={numberOfLines} as="small">
               {selectedItem.label}
             </UIText>
           ) : (
@@ -98,13 +98,15 @@ const styles = StyleSheet.create({
   button: {
     borderWidth: 1,
     borderColor: COLORS.borderColor,
-    paddingVertical: SPACE.$3,
-    paddingLeft: SPACE.$4,
-    paddingRight: SPACE.$3,
+
     borderRadius: RADII.lg,
     backgroundColor: COLORS.gray1,
   },
   buttonBox: {
+    height: SPACE.$10,
+    paddingVertical: SPACE.$1,
+    paddingLeft: SPACE.$4,
+    paddingRight: SPACE.$3,
     flexDirection: 'row',
     alignItems: 'center',
   },
