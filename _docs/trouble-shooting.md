@@ -89,3 +89,49 @@ js run roop가 화면 리프레쉬 rate와 동기화 되기 때문에 1~16사이
 정확한 스크롤 위치 추적이 필요하지 않는 한 높은 숫자를 설정하는 것이 좋습니다.
 
 0인 경우에는 스크롤 할 때마다 이벤트가 한 번만 전송됩니다.
+
+## reaact-native-tab-view in scrollview
+
+> https://github.com/satya164/react-native-tab-view#avoid-rendering-tabview-inside-scrollview
+
+Vertical `ScrollView` children으로 `TabView`를 사용하는 것은 `TabView` 내부 `FlatList`에서 최적화를 방해합니다. 가능하다면 이렇게 사용하지 마세요.
+
+## react-native-tab-view not showing in vertical scrollview
+
+> https://github.com/satya164/react-native-tab-view/issues/938#issuecomment-567356156
+
+그럼에도 불구하고 ScrollView 내부에서 TabView를 써야할 경우가 있는데 v3 을 사용하면 동적 height가 적용되기에 flex 설정에 유의해야 합니다.
+
+특히 ScrollView에 `contentContainerStyle={{ flexGrow: 1 }}` 처럼 flex: 1 이 아닌 flexGrow: 1 을 설정해야 tabview 내부 동적 height가 정상적으로 화면에 보여집니다.
+
+## 최적화 팁
+
+> https://github.com/satya164/react-native-tab-view#avoid-unnecessary-re-renders
+
+불필요한 리렌더링을 막기 위해 PureComponent로 작성하거나 React.memo를 사용하세요.
+
+```jsx
+export default class HomeComponent extends React.PureComponent {
+  render() {
+    return (
+      <View style={styles.page}>
+        <Avatar />
+        <NewsFeed />
+      </View>
+    );
+  }
+}
+```
+
+```jsx
+function HomeComponent() {
+  return (
+    <View style={styles.page}>
+      <Avatar />
+      <NewsFeed />
+    </View>
+  );
+}
+
+export default React.memo(HomeComponent);
+```
