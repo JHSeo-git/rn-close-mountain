@@ -1,37 +1,47 @@
 import { useEffect } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { FlatList, StyleSheet, View } from 'react-native';
 import { observer } from 'mobx-react-lite';
-import { COLORS, SPACE } from '../../constants/design-token';
 import { useStore } from '../../contexts/StoreContext';
 import type { HomeStackScreenProps } from '../types';
 import CollectionScreenView from './CollectionScreenView';
+import CollectionScreenTabView from './CollectionScreenTabView';
+import CollectionScreenCustomTabView from './CollectionScreenCustomTabView';
+import CollectionScreenHeader from './CollectionScreenHeader';
+import useSkeletonItems from '../../hooks/useSkeletonItems';
 
 type CollectionScreenProps = HomeStackScreenProps<'Collection'>;
 
 const CollectionScreen = observer(({ navigation, route }: CollectionScreenProps) => {
   const { collectionStore } = useStore();
-  const { retrieveCollection } = collectionStore;
+  const { retrieveCollection, retrieveSelectedCollections } = collectionStore;
 
   useEffect(() => {
     retrieveCollection({ connection_slug: route.params.collectionSlug });
+    retrieveSelectedCollections();
   }, []);
+
+  const items = useSkeletonItems();
 
   return (
     <CollectionScreenView>
-      <View style={styles.dummy} />
-      <View style={styles.dummy} />
-      <View style={styles.dummy} />
-      <View style={styles.dummy} />
-      <View style={styles.dummy} />
+      <CollectionScreenCustomTabView />
     </CollectionScreenView>
+    // <View style={{ flex: 1 }}>
+    //   <CollectionScreenHeader />
+    //   <FlatList data={items} renderItem={({ item, index }) => <View style={styles.dummy} />} />
+    // </View>
   );
 });
 
 const styles = StyleSheet.create({
-  dummy: {
-    height: 300,
-    backgroundColor: COLORS.gray10,
+  main: {
     marginTop: 20,
+  },
+  dummy: {
+    marginVertical: 20,
+    paddingHorizontal: 20,
+    height: 100,
+    backgroundColor: 'red',
   },
 });
 

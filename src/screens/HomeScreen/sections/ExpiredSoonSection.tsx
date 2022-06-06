@@ -32,6 +32,19 @@ const ExpiredSoonSection = observer(() => {
     [],
   );
 
+  const renderSkeleton = useCallback(() => {
+    return (
+      <FlatList
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={styles.flatList}
+        data={skeletonItems}
+        keyExtractor={item => `${item.id}`}
+        renderItem={renderSkeletonItem}
+      />
+    );
+  }, []);
+
   const renderListItem = useCallback(
     ({ item, index }: { item: ExpiredSoonAsset; index: number }) => {
       return (
@@ -71,19 +84,6 @@ const ExpiredSoonSection = observer(() => {
       });
     }
   }, [loading]);
-
-  const renderSkeleton = useCallback(() => {
-    return (
-      <FlatList
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        contentContainerStyle={styles.flatList}
-        data={skeletonItems}
-        keyExtractor={item => `${item.id}`}
-        renderItem={renderSkeletonItem}
-      />
-    );
-  }, []);
 
   return (
     <SectionView title={t('home.expired_soon')}>

@@ -39,6 +39,11 @@
     "chain": "Chain",
     "explore": "Explore",
     "see_all": "See All",
+    "items": "items",
+    "owners": "owners",
+    "floor_price": "floor price",
+    "traded": "traded",
+    "activity": "Activity",
     "message": {
       "signin_main": "Sign in to Close Mountain",
       "profile_login": "Login for using all features",

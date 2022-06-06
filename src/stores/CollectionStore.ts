@@ -4,14 +4,19 @@ import getCollectionRankings, {
 } from '../api/strapi/collection/getCollectionRankings';
 import BaseStore from './base/BaseStore';
 import RootStore from './RootStore';
-import type { CollectionData } from '../api/strapi/collection/types';
 import type { OpenSeaCollection } from '../utils/types/opensea/types';
+import type { CollectionData } from '../api/strapi/collection/types';
 import getCollection, { GetCollectionRequest } from '../api/opensea/collection/getCollection';
+import getSelectedCollections, {
+  SelectedCollection,
+} from '../api/opensea/asset/getSelectedCollections';
 
 class CollectionStore extends BaseStore {
   collection: OpenSeaCollection | undefined;
   collectionRankings: CollectionData[] = [];
+  selectedCollections: SelectedCollection[] = [];
   retrieveCollectionLoading: boolean = false;
+  retrieveSelectedCollectionsLoading: boolean = false;
   retrieveCollectionRankingsLoading: boolean = false;
 
   constructor(root: RootStore) {
@@ -20,9 +25,11 @@ class CollectionStore extends BaseStore {
       collection: observable,
       collectionRankings: observable,
       retrieveCollectionLoading: observable,
+      retrieveSelectedCollectionsLoading: observable,
       retrieveCollectionRankingsLoading: observable,
       retrieveCollection: action,
       retrieveCollectionRankings: action,
+      retrieveSelectedCollections: action,
       collectionCleanup: action,
     });
   }
@@ -51,6 +58,27 @@ class CollectionStore extends BaseStore {
     } finally {
       runInAction(() => {
         this.retrieveCollectionLoading = false;
+      });
+    }
+  };
+
+  retrieveSelectedCollections = async () => {
+    runInAction(() => {
+      this.retrieveSelectedCollectionsLoading = true;
+    });
+    try {
+      const result = await this.callAPI(() => getSelectedCollections(), { delay: 2000 });
+
+      runInAction(() => {
+        this.selectedCollections = result;
+      });
+
+      return result;
+    } catch (e) {
+      throw e;
+    } finally {
+      runInAction(() => {
+        this.retrieveSelectedCollectionsLoading = false;
       });
     }
   };

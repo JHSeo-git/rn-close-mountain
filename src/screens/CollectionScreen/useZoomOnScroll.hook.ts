@@ -54,5 +54,6 @@ export default function useZoomOnScroll() {
     translateY,
     opacity,
     isOpacityScrollEnd,
+    pan,
   };
 }

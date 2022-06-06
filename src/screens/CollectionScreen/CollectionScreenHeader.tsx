@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useRef } from 'react';
-import { Animated, Image, StyleSheet, View } from 'react-native';
-import { ScrollView } from 'react-native-gesture-handler';
+import { Animated, Image, ImageStyle, StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
 import { IconButton } from 'react-native-paper';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { SvgUri } from 'react-native-svg';
@@ -11,8 +10,6 @@ import CollectionMoreArea from './CollectionMoreArea';
 import Header from '../../components/Header';
 import UIText from '../../components/UIText';
 import FadeOutGradient from '../../components/FadeOutGradient';
-import useZoomOnScroll from './useZoomOnScroll.hook';
-import usePassedTopOnScroll from './usePassedTopOnScroll.hook';
 import useFlashOpacity from '../../hooks/useFlashOpacity';
 import { useStore } from '../../contexts/StoreContext';
 import { getChainInfo } from '../../utils/openseaUtils';
@@ -20,7 +17,6 @@ import { heuristicNumber } from '../../utils/formatUtils';
 import { COLORS, RADII, SIZES, SPACE } from '../../constants/design-token';
 import VerifiedIcon from '../../assets/icons/verified-icon.svg';
 import type { HomeStackScreenProps } from '../types';
-import useTransitionEffect from '../../hooks/useTransitionEffect';
 
 const CollectionDashboardItem = ({
   iconUrl,
@@ -48,126 +44,149 @@ const CollectionDashboardItem = ({
   );
 };
 
-type CollectionScreenViewProps = {
-  children?: React.ReactNode;
-};
-
-const CollectionScreenView = observer(({ children }: CollectionScreenViewProps) => {
-  const logoRef = useRef<View>(null);
+const CollectionSkeleton = () => {
   const { opacity: skeletonOpacity } = useFlashOpacity();
-  const {
-    onScroll: onScrollZoom,
-    opacity,
-    scale,
-    translateY,
-    isOpacityScrollEnd,
-  } = useZoomOnScroll();
-  const { onScroll: onScrollPassedTop, isPassedTop } = usePassedTopOnScroll(logoRef);
-  const titleImageScale = useTransitionEffect({ toggleState: isPassedTop });
 
-  const { collectionStore } = useStore();
-  const { t } = useTranslation();
-  const insets = useSafeAreaInsets();
-  const navigation = useNavigation<HomeStackScreenProps<'Collection'>['navigation']>();
-
-  const { collection, retrieveCollectionLoading: loading } = collectionStore;
-  const chainInfo = getChainInfo(collection?.paymentTokens);
-
-  const renderHeaderTitle = useCallback(() => {
-    return (
-      <Animated.Image
-        source={{
-          uri: collection?.imageUrl,
-        }}
-        style={[
-          styles.headerTitleImage,
-          {
-            transform: [
-              {
-                scale: titleImageScale,
-              },
-            ],
-          },
-        ]}
-      />
-    );
-  }, [isPassedTop]);
-
-  const renderSkeleton = useCallback(() => {
-    return (
-      <>
-        <View style={styles.heroImageBox}>
-          <Animated.View
-            style={[styles.heroImageForSkeleton, styles.skeleton, { opacity: skeletonOpacity }]}
-          />
-        </View>
-        <View style={styles.titleSection}>
-          <View style={styles.titleSectionDim}>
-            <View style={styles.titleSectionLogoBox}>
-              <Animated.View
-                style={[styles.titleSectionLogo, styles.skeleton, { opacity: skeletonOpacity }]}
-              />
-            </View>
-          </View>
-          <View style={styles.titleSectionContent}>
+  return (
+    <>
+      <View style={styles.heroImageBox}>
+        <Animated.View
+          style={[styles.heroImageForSkeleton, styles.skeleton, { opacity: skeletonOpacity }]}
+        />
+      </View>
+      <View style={styles.titleSection}>
+        <View style={styles.titleSectionDim}>
+          <View style={styles.titleSectionLogoBox}>
             <Animated.View
-              style={[
-                styles.skeleton,
-                { height: SIZES.$10, width: '50%', borderRadius: RADII.lg },
-                { opacity: skeletonOpacity },
-              ]}
+              style={[styles.titleSectionLogo, styles.skeleton, { opacity: skeletonOpacity }]}
             />
           </View>
         </View>
-      </>
-    );
-  }, []);
+        <View style={styles.titleSectionContent}>
+          <Animated.View
+            style={[
+              styles.skeleton,
+              { height: SIZES.$10, width: '50%', borderRadius: RADII.lg },
+              { opacity: skeletonOpacity },
+            ]}
+          />
+        </View>
+      </View>
+    </>
+  );
+};
 
-  useEffect(() => {
-    return () => {
-      collectionStore.collectionCleanup();
-    };
-  }, []);
+type CollectionScreenHeaderProps = {
+  style?: StyleProp<ViewStyle>;
+  isPassedTop?: boolean;
+  isOpacityScrollEnd?: boolean;
+  headerTitleImageAnimatedStyle?: Animated.AnimatedProps<ImageStyle>;
+  headerAnimatedStyle?: Animated.AnimatedProps<ViewStyle>;
+  heroImageAnimatedStyle?: Animated.AnimatedProps<ImageStyle>;
+};
 
-  return (
-    <View style={styles.container}>
-      <Animated.View style={[styles.headerBox]}>
-        <Animated.View style={[styles.headerBoxPad, { height: insets.top }, { opacity }]} />
-        <Header
-          transparent={!isOpacityScrollEnd}
-          title={renderHeaderTitle()}
-          leftIcon="back"
-          onLeftIconPress={() => navigation.goBack()}
-          rightIcon="filter"
-          // TODO:
-          onRightIconPress={() => {}}
-          animatedStyle={{ opacity }}
+const CollectionScreenHeader = observer(
+  ({
+    style,
+    isPassedTop,
+    isOpacityScrollEnd,
+    headerTitleImageAnimatedStyle,
+    headerAnimatedStyle,
+    heroImageAnimatedStyle,
+  }: CollectionScreenHeaderProps) => {
+    const { t } = useTranslation();
+    const navigation = useNavigation<HomeStackScreenProps<'Collection'>['navigation']>();
+    const insets = useSafeAreaInsets();
+    const { collectionStore } = useStore();
+
+    const { collection, retrieveCollectionLoading: loading } = collectionStore;
+    const chainInfo = getChainInfo(collection?.paymentTokens);
+
+    /**
+     * refs
+     */
+    const logoRef = useRef<View>(null);
+    /**
+     * custom hooks
+     */
+    // const { opacity: skeletonOpacity } = useFlashOpacity();
+
+    const renderHeaderTitle = useCallback(() => {
+      return (
+        <Animated.Image
+          source={{
+            uri: collection?.imageUrl,
+          }}
+          style={[styles.headerTitleImage, headerTitleImageAnimatedStyle]}
         />
-      </Animated.View>
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ flexGrow: 1, paddingBottom: SIZES.iosBottomTabHeight }}
-        onScroll={e => {
-          onScrollZoom(e);
-          onScrollPassedTop();
-        }}
-        scrollEventThrottle={16}
-      >
-        {loading
-          ? renderSkeleton()
-          : collection && (
+      );
+    }, [isPassedTop]);
+
+    // const renderSkeleton = useCallback(() => {
+    //   return (
+    //     <>
+    //       <View style={styles.heroImageBox}>
+    //         <Animated.View
+    //           style={[styles.heroImageForSkeleton, styles.skeleton, { opacity: skeletonOpacity }]}
+    //         />
+    //       </View>
+    //       <View style={styles.titleSection}>
+    //         <View style={styles.titleSectionDim}>
+    //           <View style={styles.titleSectionLogoBox}>
+    //             <Animated.View
+    //               style={[styles.titleSectionLogo, styles.skeleton, { opacity: skeletonOpacity }]}
+    //             />
+    //           </View>
+    //         </View>
+    //         <View style={styles.titleSectionContent}>
+    //           <Animated.View
+    //             style={[
+    //               styles.skeleton,
+    //               { height: SIZES.$10, width: '50%', borderRadius: RADII.lg },
+    //               { opacity: skeletonOpacity },
+    //             ]}
+    //           />
+    //         </View>
+    //       </View>
+    //     </>
+    //   );
+    // }, []);
+
+    useEffect(() => {
+      return () => {
+        collectionStore.collectionCleanup();
+      };
+    }, []);
+
+    return (
+      <View style={[styles.container, style]}>
+        <Animated.View style={[styles.headerBox]}>
+          <Animated.View
+            style={[styles.headerBoxPad, { height: insets.top }, headerAnimatedStyle]}
+          />
+          <Header
+            transparent={!isOpacityScrollEnd}
+            title={renderHeaderTitle()}
+            leftIcon="back"
+            onLeftIconPress={() => navigation.goBack()}
+            rightIcon="filter"
+            // TODO:
+            onRightIconPress={() => {}}
+            animatedStyle={headerAnimatedStyle}
+          />
+        </Animated.View>
+        <View>
+          {loading ? (
+            <CollectionSkeleton />
+          ) : (
+            collection && (
               <>
                 <View style={styles.heroImageBox}>
                   <Animated.Image
                     source={{
                       uri: collection.bannerImageUrl,
                     }}
-                    style={[
-                      styles.heroImage,
-                      {
-                        transform: [{ scale }, { translateY }],
-                      },
-                    ]}
+                    style={[styles.heroImage, heroImageAnimatedStyle]}
                     resizeMode="cover"
                   />
                 </View>
@@ -233,13 +252,14 @@ const CollectionScreenView = observer(({ children }: CollectionScreenViewProps) 
                     />
                   </View>
                 </View>
-                {children && <View style={{ flex: 1 }}>{children}</View>}
               </>
-            )}
-      </ScrollView>
-    </View>
-  );
-});
+            )
+          )}
+        </View>
+      </View>
+    );
+  },
+);
 
 const styles = StyleSheet.create({
   container: {
@@ -274,7 +294,8 @@ const styles = StyleSheet.create({
     height: 200,
   },
   titleSection: {
-    marginTop: -175,
+    // marginTop: -175,
+    transform: [{ translateY: -175 }],
   },
   titleSectionDim: {
     paddingTop: 25,
@@ -330,4 +351,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CollectionScreenView;
+export default CollectionScreenHeader;

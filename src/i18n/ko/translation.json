@@ -39,6 +39,11 @@
     "chain": "블록체인",
     "explore": "탐험하기",
     "see_all": "전체 보기",
+    "items": "아이템",
+    "owners": "소유자",
+    "floor_price": "Floor가",
+    "traded": "총 거래가",
+    "activity": "활동",
     "message": {
       "signin_main": "Close Mountain에 로그인하세요",
       "profile_login": "로그인해서 프로필을 볼 수 있습니다",

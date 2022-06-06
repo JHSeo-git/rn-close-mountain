@@ -43,15 +43,7 @@ const CollectionMoreArea = ({ style, text }: CollectionMoreAreaProps) => {
 
   return (
     <View style={styles.container}>
-      <Animated.View
-        style={[
-          styles.textBox,
-          {
-            height: interpolateHeight,
-          },
-          style,
-        ]}
-      >
+      <Animated.View style={[styles.textBox, { height: interpolateHeight }, style]}>
         <UIText as="xsmall" numberOfLines={open ? undefined : 2}>
           {text}
         </UIText>

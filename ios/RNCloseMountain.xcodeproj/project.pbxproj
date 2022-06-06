@@ -18,17 +18,17 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		21724CE085E346BCBF57C8FF /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F65E1744CE4429097A45847 /* Poppins-Black.ttf */; };
-		232AC739C27EF10E47E6E1B4 /* libPods-RNCloseMountain.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 82C1AA0013C9C18084CC3063 /* libPods-RNCloseMountain.a */; };
 		324B82E51250366AAFCE6293 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD25DA04295E2DEF751362BE /* ExpoModulesProvider.swift */; };
 		436FE0342822BE7E00CC0FBB /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 436FE0242822BE7E00CC0FBB /* MaterialCommunityIcons.ttf */; };
 		4886BE81C3F147278ED94039 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3356BC532F04AF593D925D9 /* Poppins-Light.ttf */; };
+		511C294BBD959EE06381E894 /* libPods-RNCloseMountain.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBE44C9D7D3D4AFCC2ABA5E /* libPods-RNCloseMountain.a */; };
 		51E9FC5B03F04355A3D99007 /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = EE43CF5285B843B3A4848130 /* Pretendard-Thin.otf */; };
 		551CD0FF1C3B4114954B3D8E /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5029FB277BD64CDB950464D5 /* Poppins-Bold.ttf */; };
 		56A971E68FEB3E34E012FD97 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD1FAF5672F072DF8E0618C /* ExpoModulesProvider.swift */; };
 		59081D86F71B4B75966A5A9B /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = EFC1150D555C431EB211C1DA /* Pretendard-ExtraLight.otf */; };
+		5B98501F729544B960A8C8B4 /* libPods-RNCloseMountain-RNCloseMountainTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 08F0D4732C23FBD9C38E6F74 /* libPods-RNCloseMountain-RNCloseMountainTests.a */; };
 		5CCEDBA711334013B7C0D970 /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 258B8AB331C849D6842DC3D7 /* Pretendard-ExtraBold.otf */; };
 		64055EC3701B434EA0E0437B /* Poppins-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BCA10415AD44FED8C3D8D94 /* Poppins-MediumItalic.ttf */; };
-		75562D36C1BD0E4249307214 /* libPods-RNCloseMountain-RNCloseMountainTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 422818ED7647EE7C3D53863E /* libPods-RNCloseMountain-RNCloseMountainTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		99ED4076059B42BEA099CA9E /* Poppins-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D47CA873385B413C8D49AB38 /* Poppins-Thin.ttf */; };
 		A0C820FA8DC543069E29F11F /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2CFDBE2D41814F10B2D9A208 /* Pretendard-Black.otf */; };
@@ -60,6 +60,8 @@
 		00E356EE1AD99517003FC87E /* RNCloseMountainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RNCloseMountainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* RNCloseMountainTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNCloseMountainTests.m; sourceTree = "<group>"; };
+		08F0D4732C23FBD9C38E6F74 /* libPods-RNCloseMountain-RNCloseMountainTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNCloseMountain-RNCloseMountainTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DBE44C9D7D3D4AFCC2ABA5E /* libPods-RNCloseMountain.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNCloseMountain.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07F961A680F5B00A75B9A /* RNCloseMountain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RNCloseMountain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = RNCloseMountain/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = RNCloseMountain/AppDelegate.mm; sourceTree = "<group>"; };
@@ -69,34 +71,31 @@
 		222AD259B2FA4E78B5E639BC /* Poppins-SemiBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-SemiBoldItalic.ttf"; path = "../src/assets/fonts/Poppins-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		258B8AB331C849D6842DC3D7 /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Pretendard-ExtraBold.otf"; path = "../src/assets/fonts/Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
 		2CFDBE2D41814F10B2D9A208 /* Pretendard-Black.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Pretendard-Black.otf"; path = "../src/assets/fonts/Pretendard-Black.otf"; sourceTree = "<group>"; };
-		2DC8CAF0B2CD20A6A607AFAB /* Pods-RNCloseMountain-RNCloseMountainTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNCloseMountain-RNCloseMountainTests.release.xcconfig"; path = "Target Support Files/Pods-RNCloseMountain-RNCloseMountainTests/Pods-RNCloseMountain-RNCloseMountainTests.release.xcconfig"; sourceTree = "<group>"; };
 		3AD1FAF5672F072DF8E0618C /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-RNCloseMountain-RNCloseMountainTests/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 		3BCA10415AD44FED8C3D8D94 /* Poppins-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-MediumItalic.ttf"; path = "../src/assets/fonts/Poppins-MediumItalic.ttf"; sourceTree = "<group>"; };
-		422818ED7647EE7C3D53863E /* libPods-RNCloseMountain-RNCloseMountainTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNCloseMountain-RNCloseMountainTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		436FE0242822BE7E00CC0FBB /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialCommunityIcons.ttf; sourceTree = "<group>"; };
 		4EF858A4F7B54934840614CE /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-SemiBold.ttf"; path = "../src/assets/fonts/Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		5029FB277BD64CDB950464D5 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Bold.ttf"; path = "../src/assets/fonts/Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		5842F0A06AFD43788354B8C7 /* Poppins-ThinItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-ThinItalic.ttf"; path = "../src/assets/fonts/Poppins-ThinItalic.ttf"; sourceTree = "<group>"; };
 		6295A79942FA4A119E005061 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Pretendard-Bold.otf"; path = "../src/assets/fonts/Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		638AAFB825EC181BA9002B71 /* Pods-RNCloseMountain-RNCloseMountainTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNCloseMountain-RNCloseMountainTests.debug.xcconfig"; path = "Target Support Files/Pods-RNCloseMountain-RNCloseMountainTests/Pods-RNCloseMountain-RNCloseMountainTests.debug.xcconfig"; sourceTree = "<group>"; };
 		69AD165BCD3044B3B8438CA8 /* Poppins-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Italic.ttf"; path = "../src/assets/fonts/Poppins-Italic.ttf"; sourceTree = "<group>"; };
 		6B63D4F06BCE4EF98DF1FE2B /* Poppins-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-ExtraBoldItalic.ttf"; path = "../src/assets/fonts/Poppins-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
 		7F65E1744CE4429097A45847 /* Poppins-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Black.ttf"; path = "../src/assets/fonts/Poppins-Black.ttf"; sourceTree = "<group>"; };
 		819F844CD4C247698C0674AE /* Poppins-ExtraLightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-ExtraLightItalic.ttf"; path = "../src/assets/fonts/Poppins-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = RNCloseMountain/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		82C1AA0013C9C18084CC3063 /* libPods-RNCloseMountain.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNCloseMountain.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8E4756D0F2F19406EB50063A /* Pods-RNCloseMountain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNCloseMountain.release.xcconfig"; path = "Target Support Files/Pods-RNCloseMountain/Pods-RNCloseMountain.release.xcconfig"; sourceTree = "<group>"; };
 		9550CAB13ECF4364BDE5B421 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Pretendard-Medium.otf"; path = "../src/assets/fonts/Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		991A100380CC493BA340284B /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-ExtraBold.ttf"; path = "../src/assets/fonts/Poppins-ExtraBold.ttf"; sourceTree = "<group>"; };
 		A79085317FB1454E965EE0F1 /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-ExtraLight.ttf"; path = "../src/assets/fonts/Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
 		AE00B57F1824428393D7FA7A /* Poppins-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-LightItalic.ttf"; path = "../src/assets/fonts/Poppins-LightItalic.ttf"; sourceTree = "<group>"; };
-		B8B979FD3AEF5BC9882BACEC /* Pods-RNCloseMountain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNCloseMountain.debug.xcconfig"; path = "Target Support Files/Pods-RNCloseMountain/Pods-RNCloseMountain.debug.xcconfig"; sourceTree = "<group>"; };
 		BADB8CCBDF104DB381109464 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Pretendard-Regular.otf"; path = "../src/assets/fonts/Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		C64A7457E3CA4638B92615A7 /* Poppins-BlackItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-BlackItalic.ttf"; path = "../src/assets/fonts/Poppins-BlackItalic.ttf"; sourceTree = "<group>"; };
+		CCD16283FD27F0E6C9F13708 /* Pods-RNCloseMountain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNCloseMountain.release.xcconfig"; path = "Target Support Files/Pods-RNCloseMountain/Pods-RNCloseMountain.release.xcconfig"; sourceTree = "<group>"; };
 		CD25DA04295E2DEF751362BE /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-RNCloseMountain/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 		D157E2F7B46E46078DEE5444 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Pretendard-SemiBold.otf"; path = "../src/assets/fonts/Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		D47CA873385B413C8D49AB38 /* Poppins-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Thin.ttf"; path = "../src/assets/fonts/Poppins-Thin.ttf"; sourceTree = "<group>"; };
 		D52052CF63FF412794C1C7C1 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Medium.ttf"; path = "../src/assets/fonts/Poppins-Medium.ttf"; sourceTree = "<group>"; };
-		D5564E581703223556497CB6 /* Pods-RNCloseMountain-RNCloseMountainTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNCloseMountain-RNCloseMountainTests.debug.xcconfig"; path = "Target Support Files/Pods-RNCloseMountain-RNCloseMountainTests/Pods-RNCloseMountain-RNCloseMountainTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DD996EB75B43EC7CE14EB8A0 /* Pods-RNCloseMountain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNCloseMountain.debug.xcconfig"; path = "Target Support Files/Pods-RNCloseMountain/Pods-RNCloseMountain.debug.xcconfig"; sourceTree = "<group>"; };
 		E3356BC532F04AF593D925D9 /* Poppins-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Light.ttf"; path = "../src/assets/fonts/Poppins-Light.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		EE43CF5285B843B3A4848130 /* Pretendard-Thin.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Pretendard-Thin.otf"; path = "../src/assets/fonts/Pretendard-Thin.otf"; sourceTree = "<group>"; };
@@ -104,6 +103,7 @@
 		F1E77C2D2CD44CE48678A579 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Regular.ttf"; path = "../src/assets/fonts/Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		F42117830EDF43DDAD01B80A /* Pretendard-Light.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Pretendard-Light.otf"; path = "../src/assets/fonts/Pretendard-Light.otf"; sourceTree = "<group>"; };
 		F492D0DCBEB04C97B12E7E4E /* Poppins-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-BoldItalic.ttf"; path = "../src/assets/fonts/Poppins-BoldItalic.ttf"; sourceTree = "<group>"; };
+		FC81FBCB87142E98594B5D33 /* Pods-RNCloseMountain-RNCloseMountainTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNCloseMountain-RNCloseMountainTests.release.xcconfig"; path = "Target Support Files/Pods-RNCloseMountain-RNCloseMountainTests/Pods-RNCloseMountain-RNCloseMountainTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75562D36C1BD0E4249307214 /* libPods-RNCloseMountain-RNCloseMountainTests.a in Frameworks */,
+				5B98501F729544B960A8C8B4 /* libPods-RNCloseMountain-RNCloseMountainTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,7 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				232AC739C27EF10E47E6E1B4 /* libPods-RNCloseMountain.a in Frameworks */,
+				511C294BBD959EE06381E894 /* libPods-RNCloseMountain.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,8 +160,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				82C1AA0013C9C18084CC3063 /* libPods-RNCloseMountain.a */,
-				422818ED7647EE7C3D53863E /* libPods-RNCloseMountain-RNCloseMountainTests.a */,
+				0DBE44C9D7D3D4AFCC2ABA5E /* libPods-RNCloseMountain.a */,
+				08F0D4732C23FBD9C38E6F74 /* libPods-RNCloseMountain-RNCloseMountainTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -254,10 +254,10 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B8B979FD3AEF5BC9882BACEC /* Pods-RNCloseMountain.debug.xcconfig */,
-				8E4756D0F2F19406EB50063A /* Pods-RNCloseMountain.release.xcconfig */,
-				D5564E581703223556497CB6 /* Pods-RNCloseMountain-RNCloseMountainTests.debug.xcconfig */,
-				2DC8CAF0B2CD20A6A607AFAB /* Pods-RNCloseMountain-RNCloseMountainTests.release.xcconfig */,
+				DD996EB75B43EC7CE14EB8A0 /* Pods-RNCloseMountain.debug.xcconfig */,
+				CCD16283FD27F0E6C9F13708 /* Pods-RNCloseMountain.release.xcconfig */,
+				638AAFB825EC181BA9002B71 /* Pods-RNCloseMountain-RNCloseMountainTests.debug.xcconfig */,
+				FC81FBCB87142E98594B5D33 /* Pods-RNCloseMountain-RNCloseMountainTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -286,12 +286,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "RNCloseMountainTests" */;
 			buildPhases = (
-				71F74FCDD47E246E45BE5AB8 /* [CP] Check Pods Manifest.lock */,
+				306EB5E5DE204DB0E66E4C1A /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				A197CEA25A26C77499BF137F /* [CP] Embed Pods Frameworks */,
-				12F456A2A8A1822D3D3A64A4 /* [CP] Copy Pods Resources */,
+				8A068A3D587C5D16FE61274A /* [CP] Embed Pods Frameworks */,
+				BF36EA3816604648B1C05BD5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -307,14 +307,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "RNCloseMountain" */;
 			buildPhases = (
-				65136BA5BBD3E1F7DAB1C392 /* [CP] Check Pods Manifest.lock */,
+				A7FBFF24E02E7E307D57B14A /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				EC42384168C09F8F3C60A1BD /* [CP] Embed Pods Frameworks */,
-				EC20E87F89D09F5CDE1B182A /* [CP] Copy Pods Resources */,
+				8B29236D596B7FB56A021FA3 /* [CP] Embed Pods Frameworks */,
+				90AD26A0D37E4035C6E16897 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -423,46 +423,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
-		12F456A2A8A1822D3D3A64A4 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RNCloseMountain-RNCloseMountainTests/Pods-RNCloseMountain-RNCloseMountainTests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RNCloseMountain-RNCloseMountainTests/Pods-RNCloseMountain-RNCloseMountainTests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RNCloseMountain-RNCloseMountainTests/Pods-RNCloseMountain-RNCloseMountainTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		65136BA5BBD3E1F7DAB1C392 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RNCloseMountain-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		71F74FCDD47E246E45BE5AB8 /* [CP] Check Pods Manifest.lock */ = {
+		306EB5E5DE204DB0E66E4C1A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -484,7 +445,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A197CEA25A26C77499BF137F /* [CP] Embed Pods Frameworks */ = {
+		8A068A3D587C5D16FE61274A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -501,7 +462,24 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RNCloseMountain-RNCloseMountainTests/Pods-RNCloseMountain-RNCloseMountainTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EC20E87F89D09F5CDE1B182A /* [CP] Copy Pods Resources */ = {
+		8B29236D596B7FB56A021FA3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RNCloseMountain/Pods-RNCloseMountain-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RNCloseMountain/Pods-RNCloseMountain-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RNCloseMountain/Pods-RNCloseMountain-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		90AD26A0D37E4035C6E16897 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -518,21 +496,43 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RNCloseMountain/Pods-RNCloseMountain-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EC42384168C09F8F3C60A1BD /* [CP] Embed Pods Frameworks */ = {
+		A7FBFF24E02E7E307D57B14A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RNCloseMountain/Pods-RNCloseMountain-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RNCloseMountain/Pods-RNCloseMountain-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RNCloseMountain-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RNCloseMountain/Pods-RNCloseMountain-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF36EA3816604648B1C05BD5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RNCloseMountain-RNCloseMountainTests/Pods-RNCloseMountain-RNCloseMountainTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RNCloseMountain-RNCloseMountainTests/Pods-RNCloseMountain-RNCloseMountainTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RNCloseMountain-RNCloseMountainTests/Pods-RNCloseMountain-RNCloseMountainTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -589,7 +589,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D5564E581703223556497CB6 /* Pods-RNCloseMountain-RNCloseMountainTests.debug.xcconfig */;
+			baseConfigurationReference = 638AAFB825EC181BA9002B71 /* Pods-RNCloseMountain-RNCloseMountainTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -617,7 +617,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2DC8CAF0B2CD20A6A607AFAB /* Pods-RNCloseMountain-RNCloseMountainTests.release.xcconfig */;
+			baseConfigurationReference = FC81FBCB87142E98594B5D33 /* Pods-RNCloseMountain-RNCloseMountainTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -642,7 +642,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B8B979FD3AEF5BC9882BACEC /* Pods-RNCloseMountain.debug.xcconfig */;
+			baseConfigurationReference = DD996EB75B43EC7CE14EB8A0 /* Pods-RNCloseMountain.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -669,7 +669,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8E4756D0F2F19406EB50063A /* Pods-RNCloseMountain.release.xcconfig */;
+			baseConfigurationReference = CCD16283FD27F0E6C9F13708 /* Pods-RNCloseMountain.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
