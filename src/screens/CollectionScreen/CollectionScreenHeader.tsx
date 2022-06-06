@@ -1,5 +1,14 @@
 import { useCallback, useEffect, useRef } from 'react';
-import { Animated, Image, ImageStyle, StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
+import {
+  Animated,
+  Image,
+  ImageStyle,
+  LayoutChangeEvent,
+  StyleProp,
+  StyleSheet,
+  View,
+  ViewStyle,
+} from 'react-native';
 import { IconButton } from 'react-native-paper';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { SvgUri } from 'react-native-svg';
@@ -78,11 +87,13 @@ const CollectionSkeleton = () => {
 
 type CollectionScreenHeaderProps = {
   style?: StyleProp<ViewStyle>;
-  isPassedTop?: boolean;
-  isOpacityScrollEnd?: boolean;
-  headerTitleImageAnimatedStyle?: Animated.AnimatedProps<ImageStyle>;
-  headerAnimatedStyle?: Animated.AnimatedProps<ViewStyle>;
-  heroImageAnimatedStyle?: Animated.AnimatedProps<ImageStyle>;
+  isPassedTop: boolean;
+  isOpacityScrollEnd: boolean;
+  headerTitleImageAnimatedStyle: Animated.AnimatedProps<ImageStyle>;
+  headerAnimatedStyle: Animated.AnimatedProps<ViewStyle>;
+  heroImageAnimatedStyle: Animated.AnimatedProps<ImageStyle>;
+  setHeaderHeight: (height: number) => void;
+  logoRef: React.RefObject<View>;
 };
 
 const CollectionScreenHeader = observer(
@@ -93,6 +104,8 @@ const CollectionScreenHeader = observer(
     headerTitleImageAnimatedStyle,
     headerAnimatedStyle,
     heroImageAnimatedStyle,
+    setHeaderHeight,
+    logoRef,
   }: CollectionScreenHeaderProps) => {
     const { t } = useTranslation();
     const navigation = useNavigation<HomeStackScreenProps<'Collection'>['navigation']>();
@@ -105,12 +118,23 @@ const CollectionScreenHeader = observer(
     /**
      * refs
      */
-    const logoRef = useRef<View>(null);
+    // const logoRef = useRef<View>(null);
+
     /**
      * custom hooks
      */
     // const { opacity: skeletonOpacity } = useFlashOpacity();
 
+    /**
+     * events
+     */
+    const headerOnLayout = useCallback((e: LayoutChangeEvent) => {
+      setHeaderHeight(e.nativeEvent.layout.height);
+    }, []);
+
+    /**
+     * render method
+     */
     const renderHeaderTitle = useCallback(() => {
       return (
         <Animated.Image
@@ -122,36 +146,6 @@ const CollectionScreenHeader = observer(
       );
     }, [isPassedTop]);
 
-    // const renderSkeleton = useCallback(() => {
-    //   return (
-    //     <>
-    //       <View style={styles.heroImageBox}>
-    //         <Animated.View
-    //           style={[styles.heroImageForSkeleton, styles.skeleton, { opacity: skeletonOpacity }]}
-    //         />
-    //       </View>
-    //       <View style={styles.titleSection}>
-    //         <View style={styles.titleSectionDim}>
-    //           <View style={styles.titleSectionLogoBox}>
-    //             <Animated.View
-    //               style={[styles.titleSectionLogo, styles.skeleton, { opacity: skeletonOpacity }]}
-    //             />
-    //           </View>
-    //         </View>
-    //         <View style={styles.titleSectionContent}>
-    //           <Animated.View
-    //             style={[
-    //               styles.skeleton,
-    //               { height: SIZES.$10, width: '50%', borderRadius: RADII.lg },
-    //               { opacity: skeletonOpacity },
-    //             ]}
-    //           />
-    //         </View>
-    //       </View>
-    //     </>
-    //   );
-    // }, []);
-
     useEffect(() => {
       return () => {
         collectionStore.collectionCleanup();
@@ -159,7 +153,7 @@ const CollectionScreenHeader = observer(
     }, []);
 
     return (
-      <View style={[styles.container, style]}>
+      <View style={[styles.container, style]} onLayout={headerOnLayout}>
         <Animated.View style={[styles.headerBox]}>
           <Animated.View
             style={[styles.headerBoxPad, { height: insets.top }, headerAnimatedStyle]}
@@ -183,9 +177,7 @@ const CollectionScreenHeader = observer(
               <>
                 <View style={styles.heroImageBox}>
                   <Animated.Image
-                    source={{
-                      uri: collection.bannerImageUrl,
-                    }}
+                    source={{ uri: collection.bannerImageUrl }}
                     style={[styles.heroImage, heroImageAnimatedStyle]}
                     resizeMode="cover"
                   />

@@ -1,4 +1,4 @@
-import { Animated, FlatListProps, StyleSheet } from 'react-native';
+import { Animated, FlatListProps, StyleSheet, View } from 'react-native';
 import { observer } from 'mobx-react-lite';
 import { useStore } from '../../contexts/StoreContext';
 import AssetCard from '../../components/AssetCard';
@@ -64,20 +64,48 @@ const CollectionItemsScene = observer(
 
     return (
       <>
-        {loading ? (
-          renderSkeleton()
-        ) : (
-          <Animated.FlatList
-            {...props}
-            ref={flatListRef}
-            numColumns={2}
-            showsVerticalScrollIndicator={false}
-            contentContainerStyle={[styles.flatList, contentContainerStyle]}
-            data={selectedCollections}
-            keyExtractor={item => `${item.asset.id}`}
-            renderItem={renderListItem}
-          />
-        )}
+        {
+          loading ? (
+            <View style={styles.list}>
+              {selectedCollections.map((item, index) => (
+                <View style={{ flexGrow: 1 }}>
+                  <AssetCard.Skeleton style={[styles.card]} />;
+                </View>
+              ))}
+            </View>
+          ) : (
+            // renderSkeleton()
+            <View style={styles.list}>
+              {selectedCollections.map((item, index) => (
+                <View style={{ flexGrow: 1 }}>
+                  <AssetCard
+                    style={[styles.card]}
+                    coverImageUrl={item.asset.displayImageUrl}
+                    collectionName={item.asset.collection.name}
+                    name={item.asset.name ?? ''}
+                    isVerified={item.asset.collection.isVerified}
+                    favoritesCount={item.asset.favoritesCount}
+                    chain={item.asset.assetContract.chain as ChainScalar}
+                    // TODO: 가격은 어떻게 계산?가져오는거야?
+                    price={0.19}
+                    // TODO: onPress
+                    onPress={() => {}}
+                  />
+                </View>
+              ))}
+            </View>
+          )
+          // <Animated.FlatList
+          //   {...props}
+          //   ref={flatListRef}
+          //   numColumns={2}
+          //   showsVerticalScrollIndicator={false}
+          //   contentContainerStyle={[styles.flatList, contentContainerStyle]}
+          //   data={selectedCollections}
+          //   keyExtractor={item => `${item.asset.id}`}
+          //   renderItem={renderListItem}
+          // />
+        }
       </>
     );
   },
@@ -91,6 +119,12 @@ const styles = StyleSheet.create({
   card: {
     marginHorizontal: SPACE.$2,
     marginVertical: SPACE.$2,
+  },
+  list: {
+    paddingHorizontal: SPACE.$2,
+    paddingVertical: SPACE.$2,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
   },
 });
 

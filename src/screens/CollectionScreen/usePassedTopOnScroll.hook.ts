@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
@@ -24,7 +24,7 @@ export default function usePassedTopOnScroll(
     return 0;
   }, [safeAreaInsets.top, options.offset, options.useSafeInSets]);
 
-  const onScroll = () => {
+  const onScroll = useCallback(() => {
     ref.current?.measure((x, y, width, height, pageX, pageY) => {
       if (pageY <= topOffset) {
         setIsPassedTop(true);
@@ -32,7 +32,7 @@ export default function usePassedTopOnScroll(
         setIsPassedTop(false);
       }
     });
-  };
+  }, []);
 
   return {
     isPassedTop,
