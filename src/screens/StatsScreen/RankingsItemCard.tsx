@@ -69,10 +69,10 @@ const RankingsItemCard = ({ rankNo, collection, onPress, style }: RankingsItemCa
   );
 };
 
-const Skeleton = () => {
+const Skeleton = ({ style }: Pick<RankingsItemCardProps, 'style'>) => {
   const { opacity } = useFlashOpacity();
   return (
-    <View style={[styles.card]}>
+    <View style={[styles.card, style]}>
       <View style={[styles.head]}>
         <Animated.View
           style={[
@@ -99,7 +99,7 @@ const Skeleton = () => {
             styles.skeleton,
             {
               marginLeft: SPACE.$2,
-              width: '50%',
+              width: '70%',
               height: SIZES.$5,
               borderRadius: RADII.base,
             },

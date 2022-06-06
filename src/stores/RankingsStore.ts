@@ -8,6 +8,7 @@ import { OpenSeaCollection } from '../utils/types/opensea/types';
 import getCollections from '../api/opensea/collection/getCollections';
 
 class RankingsStore extends BaseStore {
+  pullToRefresh: boolean = false;
   periods: CommonCodeData[] = [];
   categories: CommonCodeData[] = [];
   chains: CommonCodeData[] = [];
@@ -23,6 +24,7 @@ class RankingsStore extends BaseStore {
   constructor(root: RootStore) {
     super(root);
     makeObservable(this, {
+      pullToRefresh: observable,
       periods: observable,
       categories: observable,
       chains: observable,
@@ -31,9 +33,11 @@ class RankingsStore extends BaseStore {
       selectedCategoryItem: observable,
       selectedChainItem: observable,
       retrieveCollectionsLoading: observable,
+      setPullToRefresh: action,
       setSelectedPeriodItem: action,
       setSelectedCategoryItem: action,
       setSelectedChainItem: action,
+      fetchCodes: action,
       retrieveCategories: action,
       retrieveChains: action,
       retrieveCollections: action,
@@ -48,6 +52,8 @@ class RankingsStore extends BaseStore {
   }
 
   reset() {
+    this.offset = 0;
+    this.collections = [];
     this.periods = [];
     this.categories = [];
     this.chains = [];
@@ -56,9 +62,9 @@ class RankingsStore extends BaseStore {
     this.selectedChainItem = undefined;
   }
 
-  clearPaging() {
-    this.offset = 0;
-  }
+  setPullToRefresh = (pullToRefresh: boolean) => {
+    this.pullToRefresh = pullToRefresh;
+  };
 
   setSelectedPeriodItem = (item: SelectItem) => {
     this.selectedPeriodItem = item;
@@ -68,6 +74,10 @@ class RankingsStore extends BaseStore {
   };
   setSelectedChainItem = (item: SelectItem) => {
     this.selectedChainItem = item;
+  };
+
+  fetchCodes = async () => {
+    await Promise.all([this.retrievePeriods(), this.retrieveCategories(), this.retrieveChains()]);
   };
 
   retrievePeriods = async () => {
@@ -102,8 +112,13 @@ class RankingsStore extends BaseStore {
     this.offset += this.PAGINATION;
     this.retrieveCollections();
   };
-  retrieveCollections = async () => {
+
+  retrieveCollections = async (init = false) => {
     runInAction(() => {
+      if (init) {
+        this.offset = 0;
+        this.collections = [];
+      }
       this.retrieveCollectionsLoading = true;
     });
     try {
@@ -113,7 +128,7 @@ class RankingsStore extends BaseStore {
             limit: this.PAGINATION,
             offset: this.offset,
           }),
-        { delay: 2000, useLoader: this.offset === 0 },
+        { delay: 2000 },
       );
 
       runInAction(() => {

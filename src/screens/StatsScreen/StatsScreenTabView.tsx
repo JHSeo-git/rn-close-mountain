@@ -1,13 +1,13 @@
-import { observer } from 'mobx-react-lite';
-import { useCallback, useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useCallback, useRef, useState } from 'react';
 import { View, useWindowDimensions, StyleSheet } from 'react-native';
+import { useTranslation } from 'react-i18next';
 import { TabBar, TabView } from 'react-native-tab-view';
+import { observer } from 'mobx-react-lite';
+import RankingsScene, { RankingsSceneRef } from './RankingsScene';
 import Header from '../../components/Header';
 import UIIcon from '../../components/UIIcon';
 import UIText from '../../components/UIText';
 import { COLORS, SPACE } from '../../constants/design-token';
-import RankingsScene from './RankingsScene';
 
 const TabBarTop = {
   tabWidth: 120,
@@ -27,16 +27,34 @@ type TabItemRenderProps = {
 const StatsScreenTabView = observer(() => {
   const layout = useWindowDimensions();
   const { t } = useTranslation();
+  /**
+   * states
+   */
   const [index, setIndex] = useState(0);
   const [routes] = useState<Routes[]>([
     { key: 'rankings', title: t('common.rankings'), icon: 'chart-bar' },
     { key: 'activity', title: t('common.activity'), icon: 'chart-line-variant' },
   ]);
 
+  /**
+   * refs
+   */
+  const rankingsSceneRef = useRef<RankingsSceneRef>(null);
+
+  /**
+   * events
+   */
+  const onScrollToTop = useCallback(() => {
+    rankingsSceneRef.current?.scrollToOffset({
+      animated: true,
+      offset: 0,
+    });
+  }, []);
+
   const renderScene = useCallback(({ route }: TabItemRenderProps) => {
     switch (route.key) {
       case 'rankings':
-        return <RankingsScene />;
+        return <RankingsScene ref={rankingsSceneRef} />;
       case 'activity':
         return <UIText>activity</UIText>;
       default:
@@ -65,8 +83,9 @@ const StatsScreenTabView = observer(() => {
 
   return (
     <View style={{ flex: 1 }}>
-      <Header title={t('common.stats')} />
+      <Header title={t('common.stats')} onTitlePress={onScrollToTop} />
       <TabView
+        swipeEnabled={false}
         style={styles.tabView}
         navigationState={{ index, routes }}
         renderScene={renderScene}
@@ -94,18 +113,17 @@ const StatsScreenTabView = observer(() => {
 const styles = StyleSheet.create({
   tabView: {
     flex: 1,
-    borderBottomWidth: 1,
-    borderBottomColor: COLORS.borderColor,
   },
   tabBarBox: {
     flexDirection: 'row',
     justifyContent: 'center',
+    borderBottomWidth: 1,
+    borderBottomColor: COLORS.borderColor,
   },
   tabBarContainer: {
     backgroundColor: COLORS.transparent,
   },
   tabBar: {
-    borderWidth: 0,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
