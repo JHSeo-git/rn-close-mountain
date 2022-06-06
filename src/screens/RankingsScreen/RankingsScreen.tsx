@@ -14,6 +14,7 @@ import * as viewStyles from '../../constants/global-styles/viewStyles';
 import type { PaymentAsset } from '../../api/strapi/collection/types';
 import type { PeriodCode } from '../../api/strapi/commonCode/types';
 import type { RankingsStackScreenProps } from '../types';
+import UISelect from '../../components/UISelect';
 
 type RankingsFilter = 'period' | 'category' | 'chain';
 type RankingsScreenProps = RankingsStackScreenProps<'Rankings'>;
@@ -27,22 +28,21 @@ const RankingsScreen = observer(({}: RankingsScreenProps) => {
     selectedFilter: string,
     selectedLabel: string,
   ) => {
-    if (filter === 'period') {
-      rankingsStore.setSelectedPeriod(selectedFilter);
-      rankingsStore.setSelectedPeriodLabel(selectedLabel);
-    } else if (filter === 'category') {
-      rankingsStore.setSelectedCategory(selectedFilter);
-      rankingsStore.setSelectedCategoryLabel(selectedLabel);
-    } else if (filter === 'chain') {
-      rankingsStore.setSelectedChain(selectedFilter);
-      rankingsStore.setSelectedChainLabel(selectedLabel);
-    }
-
-    await collectionStore.retrieveCollectionRankings({
-      period: rankingsStore.selectedPeriod as PeriodCode,
-      nftPaymentAsset: rankingsStore.selectedChain as PaymentAsset,
-      // TODO: category,
-    });
+    // if (filter === 'period') {
+    //   rankingsStore.setSelectedPeriod(selectedFilter);
+    //   rankingsStore.setSelectedPeriodLabel(selectedLabel);
+    // } else if (filter === 'category') {
+    //   rankingsStore.setSelectedCategory(selectedFilter);
+    //   rankingsStore.setSelectedCategoryLabel(selectedLabel);
+    // } else if (filter === 'chain') {
+    //   rankingsStore.setSelectedChain(selectedFilter);
+    //   rankingsStore.setSelectedChainLabel(selectedLabel);
+    // }
+    // await collectionStore.retrieveCollectionRankings({
+    //   period: rankingsStore.selectedPeriod as PeriodCode,
+    //   nftPaymentAsset: rankingsStore.selectedChain as PaymentAsset,
+    //   // TODO: category,
+    // });
   };
 
   useEffect(() => {
@@ -83,76 +83,34 @@ const RankingsScreen = observer(({}: RankingsScreenProps) => {
                 contentContainerStyle={styles.filtersWrapper}
               >
                 <View style={[styles.filterBox, styles.filterBoxHead]}>
-                  <UIPicker
+                  <UISelect
                     leftIcon="update"
                     title={t('common.period')}
                     placeholder={t('common.period')}
-                    selectedValue={rankingsStore.selectedPeriod}
-                    selectedLabel={rankingsStore.selectedPeriodLabel}
-                    onValueChange={(item, index) =>
-                      onFilterChange(
-                        'period',
-                        item,
-                        rankingsStore.periods[index - 1].attributes.codeName,
-                      )
-                    }
-                  >
-                    {rankingsStore.periods.map((item, index) => (
-                      <UIPicker.Item
-                        key={index}
-                        label={item.attributes.codeName}
-                        value={item.attributes.code}
-                      />
-                    ))}
-                  </UIPicker>
+                    selectedItem={rankingsStore.selectedPeriodItem}
+                    setSelectedItem={rankingsStore.setSelectedPeriodItem}
+                    items={rankingsStore.periodItems}
+                  />
                 </View>
                 <View style={styles.filterBox}>
-                  <UIPicker
+                  <UISelect
                     leftIcon="atom"
                     title={t('common.category')}
                     placeholder={t('common.category')}
-                    selectedValue={rankingsStore.selectedCategory}
-                    selectedLabel={rankingsStore.selectedCategoryLabel}
-                    onValueChange={(item, index) =>
-                      onFilterChange(
-                        'category',
-                        item,
-                        rankingsStore.categories[index - 1].attributes.codeName,
-                      )
-                    }
-                  >
-                    {rankingsStore.categories.map((item, index) => (
-                      <UIPicker.Item
-                        key={index}
-                        label={item.attributes.codeName}
-                        value={item.attributes.code}
-                      />
-                    ))}
-                  </UIPicker>
+                    selectedItem={rankingsStore.selectedCategoryItem}
+                    setSelectedItem={rankingsStore.setSelectedCategoryItem}
+                    items={rankingsStore.categoryItems}
+                  />
                 </View>
                 <View style={[styles.filterBox, styles.filterBoxTail]}>
-                  <UIPicker
+                  <UISelect
                     leftIcon="link-variant"
                     title={t('common.chain')}
                     placeholder={t('common.chain')}
-                    selectedValue={rankingsStore.selectedChain}
-                    selectedLabel={rankingsStore.selectedChainLabel}
-                    onValueChange={(item, index) =>
-                      onFilterChange(
-                        'chain',
-                        item,
-                        rankingsStore.chains[index - 1].attributes.codeName,
-                      )
-                    }
-                  >
-                    {rankingsStore.chains.map((item, index) => (
-                      <UIPicker.Item
-                        key={index}
-                        label={item.attributes.codeName}
-                        value={item.attributes.code}
-                      />
-                    ))}
-                  </UIPicker>
+                    selectedItem={rankingsStore.selectedChainItem}
+                    setSelectedItem={rankingsStore.setSelectedChainItem}
+                    items={rankingsStore.chainItems}
+                  />
                 </View>
               </ScrollView>
             </>

@@ -1,19 +1,17 @@
-import { action, makeObservable, observable, runInAction } from 'mobx';
+import { action, computed, makeObservable, observable, runInAction } from 'mobx';
 import getCommonCode from '../api/strapi/commonCode/getCommonCode';
 import BaseStore from './base/BaseStore';
 import RootStore from './RootStore';
 import type { CommonCodeData } from '../api/strapi/commonCode/types';
+import { SelectItem } from '../components/UISelect/UISelect';
 
 class RankingsStore extends BaseStore {
   periods: CommonCodeData[] = [];
   categories: CommonCodeData[] = [];
   chains: CommonCodeData[] = [];
-  selectedPeriod = '';
-  selectedPeriodLabel = '';
-  selectedCategory = '';
-  selectedCategoryLabel = '';
-  selectedChain = '';
-  selectedChainLabel = '';
+  selectedPeriodItem: SelectItem | undefined;
+  selectedCategoryItem: SelectItem | undefined;
+  selectedChainItem: SelectItem | undefined;
 
   constructor(root: RootStore) {
     super(root);
@@ -21,20 +19,19 @@ class RankingsStore extends BaseStore {
       periods: observable,
       categories: observable,
       chains: observable,
-      selectedPeriod: observable,
-      selectedPeriodLabel: observable,
-      selectedCategory: observable,
-      selectedCategoryLabel: observable,
-      selectedChain: observable,
-      selectedChainLabel: observable,
-      setSelectedPeriod: action,
-      setSelectedPeriodLabel: action,
-      setSelectedCategory: action,
-      setSelectedCategoryLabel: action,
-      setSelectedChain: action,
-      setSelectedChainLabel: action,
+      selectedPeriodItem: observable,
+      selectedCategoryItem: observable,
+      selectedChainItem: observable,
+      setSelectedPeriodItem: action,
+      setSelectedCategoryItem: action,
+      setSelectedChainItem: action,
       retrieveCategories: action,
       retrieveChains: action,
+
+      periodItems: computed,
+      categoryItems: computed,
+      chainItems: computed,
+
       reset: action,
     });
   }
@@ -43,30 +40,19 @@ class RankingsStore extends BaseStore {
     this.periods = [];
     this.categories = [];
     this.chains = [];
-    this.selectedPeriod = '';
-    this.selectedPeriodLabel = '';
-    this.selectedCategory = '';
-    this.selectedCategoryLabel = '';
-    this.selectedChainLabel = '';
+    this.selectedPeriodItem = undefined;
+    this.selectedCategoryItem = undefined;
+    this.selectedChainItem = undefined;
   }
 
-  setSelectedPeriod = (period: string) => {
-    this.selectedPeriod = period;
+  setSelectedPeriodItem = (item: SelectItem) => {
+    this.selectedPeriodItem = item;
   };
-  setSelectedPeriodLabel = (periodLabel: string) => {
-    this.selectedPeriodLabel = periodLabel;
+  setSelectedCategoryItem = (item: SelectItem) => {
+    this.selectedCategoryItem = item;
   };
-  setSelectedCategory = (category: string) => {
-    this.selectedCategory = category;
-  };
-  setSelectedCategoryLabel = (categoryLabel: string) => {
-    this.selectedCategoryLabel = categoryLabel;
-  };
-  setSelectedChain = (chain: string) => {
-    this.selectedChain = chain;
-  };
-  setSelectedChainLabel = (chainLabel: string) => {
-    this.selectedChainLabel = chainLabel;
+  setSelectedChainItem = (item: SelectItem) => {
+    this.selectedChainItem = item;
   };
 
   retrievePeriods = async () => {
@@ -96,6 +82,39 @@ class RankingsStore extends BaseStore {
 
     return result;
   };
+
+  get periodItems(): SelectItem[] {
+    return this.periods.map(period => {
+      const item: SelectItem = {
+        key: period.id,
+        label: period.attributes.codeName,
+        value: period.attributes.code,
+      };
+      return item;
+    });
+  }
+
+  get categoryItems(): SelectItem[] {
+    return this.categories.map(category => {
+      const item: SelectItem = {
+        key: category.id,
+        label: category.attributes.codeName,
+        value: category.attributes.code,
+      };
+      return item;
+    });
+  }
+
+  get chainItems(): SelectItem[] {
+    return this.chains.map(chain => {
+      const item: SelectItem = {
+        key: chain.id,
+        label: chain.attributes.codeName,
+        value: chain.attributes.code,
+      };
+      return item;
+    });
+  }
 }
 
 export default RankingsStore;
