@@ -18,10 +18,12 @@ export type RootStackScreenProps<T extends keyof RootStackParamList> = NativeSta
 
 export type MainTabParamList = {
   HomeStack: undefined;
-  RankingsStack: undefined;
+  Stats: undefined;
   Search: undefined;
   Profile: undefined;
   More: undefined;
+
+  RankingsStack: undefined;
 };
 
 export type MainTabScreenProps<T extends keyof MainTabParamList> = CompositeScreenProps<

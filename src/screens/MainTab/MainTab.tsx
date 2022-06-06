@@ -19,6 +19,8 @@ import BarChartSvg from '../../assets/icons/bar-chart.svg';
 import SearchSvg from '../../assets/icons/search.svg';
 import PersonSvg from '../../assets/icons/person.svg';
 import HamburgerMenuSvg from '../../assets/icons/hamburger-menu.svg';
+import StatsScreen from '../StatsScreen';
+import UIIcon from '../../components/UIIcon';
 
 const Tab = createBottomTabNavigator<MainTabParamList>();
 
@@ -67,17 +69,17 @@ const MainTab = observer(() => {
         }}
       />
       <Tab.Screen
-        name="RankingsStack"
-        component={RankingsScreen}
+        name="Stats"
+        component={StatsScreen}
         options={{
           tabBarLabel: ({ focused }) => (
             <UIText style={[styles.tabLabel, focused && textStyles.primary]}>
-              {t('common.rankings')}
+              {t('common.stats')}
             </UIText>
           ),
           tabBarIcon: ({ color, size, focused }) => (
             <View style={[styles.tabIconBox, focused && styles.tabActive]}>
-              <BarChartSvg width={size} height={size} color={color} />
+              <UIIcon name="chart-box-outline" size={size} color={color} />
             </View>
           ),
         }}
@@ -130,6 +132,22 @@ const MainTab = observer(() => {
           ),
         }}
       />
+      {/* <Tab.Screen
+        name="RankingsStack"
+        component={RankingsScreen}
+        options={{
+          tabBarLabel: ({ focused }) => (
+            <UIText style={[styles.tabLabel, focused && textStyles.primary]}>
+              {t('common.rankings')}
+            </UIText>
+          ),
+          tabBarIcon: ({ color, size, focused }) => (
+            <View style={[styles.tabIconBox, focused && styles.tabActive]}>
+              <BarChartSvg width={size} height={size} color={color} />
+            </View>
+          ),
+        }}
+      /> */}
     </Tab.Navigator>
   );
 });

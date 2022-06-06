@@ -11,7 +11,7 @@ import GoogleSignInStore from './GoogleSignInStore';
 import LoaderStore from './LoaderStore';
 import SignUpStore from './SignUpStore';
 import SnackbarStore from './SnackbarStore';
-import RankingsStore from './RankinsStore';
+import RankingsStore from './RankingsStore';
 import VerificationStore from './VerificationStore';
 import MainHomeStore from './MainHomeStore';
 

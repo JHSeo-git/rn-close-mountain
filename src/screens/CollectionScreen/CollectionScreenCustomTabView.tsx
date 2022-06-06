@@ -69,7 +69,6 @@ const CollectionScreenCustomTabViewScene = ({
   useEffect(() => {
     if (focused) {
       viewRef.current?.measure((x, y, width, height) => {
-        console.log('set: ', height);
         setHeight(height);
       });
     }
@@ -78,7 +77,6 @@ const CollectionScreenCustomTabViewScene = ({
   // change rendered
   const onLayout = (event: LayoutChangeEvent) => {
     if (focused) {
-      console.log('set: ', event.nativeEvent.layout.height);
       setHeight(event.nativeEvent.layout.height);
     }
   };

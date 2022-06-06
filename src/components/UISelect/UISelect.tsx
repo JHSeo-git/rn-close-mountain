@@ -102,6 +102,7 @@ const styles = StyleSheet.create({
     paddingLeft: SPACE.$4,
     paddingRight: SPACE.$3,
     borderRadius: RADII.lg,
+    backgroundColor: COLORS.gray1,
   },
   buttonBox: {
     flexDirection: 'row',

@@ -12,14 +12,14 @@ export type GetCollectionsRequest = {
 export default async function getCollections(
   requestData: GetCollectionsRequest,
   config?: AxiosRequestConfig,
-) {
+): Promise<GetCollectionsResponse> {
   const options: GetCollectionsRequest = {
     ...requestData,
   };
   const query = qs.stringify(options, { encodeValuesOnly: true });
-  const { data } = await client.get<GetCollectionsResponse>(`/api/v1/collections?${query}`, config);
+  const { data } = await client.get(`/api/v1/collections?${query}`, config);
 
-  const result = data.map(collectionFromJSON);
+  const result = data.collections.map(collectionFromJSON);
 
   return result;
 }

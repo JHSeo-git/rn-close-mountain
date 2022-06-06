@@ -4,6 +4,8 @@ import BaseStore from './base/BaseStore';
 import RootStore from './RootStore';
 import type { CommonCodeData } from '../api/strapi/commonCode/types';
 import { SelectItem } from '../components/UISelect/UISelect';
+import { OpenSeaCollection } from '../utils/types/opensea/types';
+import getCollections from '../api/opensea/collection/getCollections';
 
 class RankingsStore extends BaseStore {
   periods: CommonCodeData[] = [];
@@ -12,6 +14,11 @@ class RankingsStore extends BaseStore {
   selectedPeriodItem: SelectItem | undefined;
   selectedCategoryItem: SelectItem | undefined;
   selectedChainItem: SelectItem | undefined;
+  collections: OpenSeaCollection[] = [];
+  retrieveCollectionsLoading: boolean = false;
+
+  offset: number = 0;
+  private PAGINATION: number = 30;
 
   constructor(root: RootStore) {
     super(root);
@@ -19,14 +26,18 @@ class RankingsStore extends BaseStore {
       periods: observable,
       categories: observable,
       chains: observable,
+      collections: observable,
       selectedPeriodItem: observable,
       selectedCategoryItem: observable,
       selectedChainItem: observable,
+      retrieveCollectionsLoading: observable,
       setSelectedPeriodItem: action,
       setSelectedCategoryItem: action,
       setSelectedChainItem: action,
       retrieveCategories: action,
       retrieveChains: action,
+      retrieveCollections: action,
+      retrieveNextCollections: action,
 
       periodItems: computed,
       categoryItems: computed,
@@ -43,6 +54,10 @@ class RankingsStore extends BaseStore {
     this.selectedPeriodItem = undefined;
     this.selectedCategoryItem = undefined;
     this.selectedChainItem = undefined;
+  }
+
+  clearPaging() {
+    this.offset = 0;
   }
 
   setSelectedPeriodItem = (item: SelectItem) => {
@@ -81,6 +96,42 @@ class RankingsStore extends BaseStore {
     });
 
     return result;
+  };
+
+  retrieveNextCollections = () => {
+    this.offset += this.PAGINATION;
+    this.retrieveCollections();
+  };
+  retrieveCollections = async () => {
+    runInAction(() => {
+      this.retrieveCollectionsLoading = true;
+    });
+    try {
+      const result = await this.callAPI(
+        () =>
+          getCollections({
+            limit: this.PAGINATION,
+            offset: this.offset,
+          }),
+        { delay: 2000, useLoader: this.offset === 0 },
+      );
+
+      runInAction(() => {
+        if (this.offset !== 0) {
+          this.collections = [...this.collections, ...result];
+        } else {
+          this.collections = result;
+        }
+      });
+
+      return result;
+    } catch (e) {
+      throw e;
+    } finally {
+      runInAction(() => {
+        this.retrieveCollectionsLoading = true;
+      });
+    }
   };
 
   get periodItems(): SelectItem[] {
