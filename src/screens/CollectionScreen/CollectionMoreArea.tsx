@@ -1,6 +1,14 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Animated, StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
+import {
+  Animated,
+  NativeSyntheticEvent,
+  StyleProp,
+  StyleSheet,
+  TextLayoutEventData,
+  View,
+  ViewStyle,
+} from 'react-native';
 import UIText from '../../components/UIText';
 import FadeOutGradient from '../../components/FadeOutGradient';
 import CustomTouchableRipple from '../../components/CustomTouchableRipple';
@@ -14,8 +22,11 @@ type CollectionMoreAreaProps = {
 // TODO: better animating
 const CollectionMoreArea = ({ style, text }: CollectionMoreAreaProps) => {
   const [open, setOpen] = useState(false);
+  const [showMore, setShowMore] = useState(false);
   const { t } = useTranslation();
+
   const height = useRef(new Animated.Value(0)).current;
+
   const interpolateHeight = height.interpolate({
     inputRange: [0, 100],
     outputRange: ['0%', '100%'],
@@ -24,6 +35,10 @@ const CollectionMoreArea = ({ style, text }: CollectionMoreAreaProps) => {
     inputRange: [0, 100],
     outputRange: [1, 0],
   });
+
+  const onTextLayout = useCallback((e: NativeSyntheticEvent<TextLayoutEventData>) => {
+    setShowMore(e.nativeEvent.lines.length >= 2);
+  }, []);
 
   useEffect(() => {
     if (open) {
@@ -44,7 +59,7 @@ const CollectionMoreArea = ({ style, text }: CollectionMoreAreaProps) => {
   return (
     <View style={styles.container}>
       <Animated.View style={[styles.textBox, { height: interpolateHeight }, style]}>
-        <UIText as="xsmall" numberOfLines={open ? undefined : 2}>
+        <UIText as="xsmall" numberOfLines={open ? undefined : 2} onTextLayout={onTextLayout}>
           {text}
         </UIText>
       </Animated.View>
@@ -52,11 +67,13 @@ const CollectionMoreArea = ({ style, text }: CollectionMoreAreaProps) => {
         <Animated.View style={[styles.backdrop, { opacity: interpolateOpacity }]}>
           <FadeOutGradient style={{ flex: 1 }} />
         </Animated.View>
-        <CustomTouchableRipple style={styles.buttonStyle}>
-          <UIText as="xsmall_primary" onPress={() => setOpen(!open)}>
-            {open ? t('common.less-') : t('common.more+')}
-          </UIText>
-        </CustomTouchableRipple>
+        {showMore && (
+          <CustomTouchableRipple style={styles.buttonStyle}>
+            <UIText as="xsmall_primary" onPress={() => setOpen(!open)}>
+              {open ? t('common.less-') : t('common.more+')}
+            </UIText>
+          </CustomTouchableRipple>
+        )}
       </View>
     </View>
   );
