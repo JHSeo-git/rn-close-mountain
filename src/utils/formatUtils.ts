@@ -20,3 +20,10 @@ export function heuristicNumber(value: number) {
 
   return parseFloat(value.toFixed(2));
 }
+
+/**
+ * @see https://stackoverflow.com/a/2901298
+ */
+export function numberWithCommas(value: number) {
+  return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
