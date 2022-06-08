@@ -45,6 +45,13 @@
     "floor_price": "floor price",
     "traded": "traded",
     "activity": "Activity",
+    "reports": "Reports",
+    "capped_owners": "Owners",
+    "sales": "Sales",
+    "details": "Details",
+    "offers": "Offers",
+    "listings": "Listings",
+    "item_activity": "item Activity",
     "message": {
       "signin_main": "Sign in to Close Mountain",
       "profile_login": "Login for using all features",
