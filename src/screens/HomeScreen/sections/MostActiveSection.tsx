@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef } from 'react';
 import { StyleSheet } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { ScrollView } from 'react-native-gesture-handler';
+import { useNavigation } from '@react-navigation/native';
 import { observer } from 'mobx-react-lite';
 import MostActiveCard from './MostActiveCard';
 import UIText from '../../../components/UIText';
@@ -10,10 +11,13 @@ import { useStore } from '../../../contexts/StoreContext';
 import { SPACE } from '../../../constants/design-token';
 import CustomButton from '../../../components/CustomButton';
 import useSkeletonItems from '../../../hooks/useSkeletonItems';
+import type { HomeStackScreenProps } from '../../types';
 
 const MostActiveSection = observer(() => {
   const { t } = useTranslation();
   const { mainHomeStore } = useStore();
+  const navigation = useNavigation<HomeStackScreenProps<'Home'>['navigation']>();
+
   const listRef = useRef<ScrollView>(null);
   const skeletonItems = useSkeletonItems();
 
@@ -82,8 +86,7 @@ const MostActiveSection = observer(() => {
               name={collection.name ?? ''}
               isVerified={!!collection.isVerified}
               changedRatio={collection.statsV2?.thirtyDayChange ?? undefined}
-              // TODO: onPress
-              onPress={() => {}}
+              onPress={() => navigation.navigate('Collection', { collectionSlug: collection.slug })}
             />
           ))}
           <CustomButton

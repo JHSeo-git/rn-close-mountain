@@ -1,6 +1,7 @@
 import SampleStore from './__sample__/SampleStore';
 
 import AppSettingStore from './AppSettingStore';
+import AssetStore from './AssetStore';
 import AuthStore from './AuthStore';
 import BiometricStore from './BiometricStore';
 import BottomTabStore from './BottomTabStore';
@@ -21,6 +22,7 @@ class RootStore {
   sampleStore: SampleStore;
 
   appSettingStore: AppSettingStore;
+  assetStore: AssetStore;
   authStore: AuthStore;
   biometricStore: BiometricStore;
   bottomTabStore: BottomTabStore;
@@ -40,6 +42,7 @@ class RootStore {
     this.sampleStore = new SampleStore();
 
     this.appSettingStore = new AppSettingStore(this);
+    this.assetStore = new AssetStore(this);
     this.authStore = new AuthStore(this);
     this.biometricStore = new BiometricStore(this);
     this.bottomTabStore = new BottomTabStore(this);

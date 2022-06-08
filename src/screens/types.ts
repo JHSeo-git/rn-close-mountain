@@ -33,7 +33,7 @@ export type MainTabScreenProps<T extends keyof MainTabParamList> = CompositeScre
 
 export type HomeStackParamList = {
   Home: undefined;
-  Asset: { assetId: string };
+  Asset: { assetContractAddress: string; tokenId: string };
   Collection: { collectionSlug: string };
 };
 

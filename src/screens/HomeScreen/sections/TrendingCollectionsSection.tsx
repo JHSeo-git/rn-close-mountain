@@ -1,6 +1,7 @@
 import { FlatList, StyleSheet } from 'react-native';
 import { useCallback, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useNavigation } from '@react-navigation/native';
 import { observer } from 'mobx-react-lite';
 import TrendingCollectionCard from './TrendingCollectionCard';
 import SectionView from '../../../components/SectionView';
@@ -9,10 +10,12 @@ import { useStore } from '../../../contexts/StoreContext';
 import { SPACE } from '../../../constants/design-token';
 import type { SkeletonItem } from '../../../utils/styleUtils';
 import type { TrendingCollection } from '../../../api/opensea/collection/getCollectionsScroller';
+import type { HomeStackScreenProps } from '../../types';
 
 const TrendingCollectionsSection = observer(() => {
   const { t } = useTranslation();
   const { mainHomeStore } = useStore();
+  const navigation = useNavigation<HomeStackScreenProps<'Home'>['navigation']>();
   const flatListRef = useRef<FlatList>(null);
   const skeletonItems = useSkeletonItems();
 
@@ -41,7 +44,8 @@ const TrendingCollectionsSection = observer(() => {
           logoImageUrl={item.logo}
           name={item.name}
           username={item.owner.displayName ?? ''}
-          onPress={() => {}}
+          onPress={() => navigation.navigate('Collection', { collectionSlug: item.slug })}
+          // TODO: onUserPress
           onUserPress={() => {}}
         />
       );

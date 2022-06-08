@@ -11,10 +11,13 @@ import type { ExpiredSoonAsset } from '../../../api/opensea/asset/getExpiredSoon
 import type { ChainScalar } from '../../../graphql/types/generated';
 import type { SkeletonItem } from '../../../utils/styleUtils';
 import useSkeletonItems from '../../../hooks/useSkeletonItems';
+import { HomeStackScreenProps } from '../../types';
+import { useNavigation } from '@react-navigation/native';
 
 const ExpiredSoonSection = observer(() => {
   const { t } = useTranslation();
   const { mainHomeStore } = useStore();
+  const navigation = useNavigation<HomeStackScreenProps<'Home'>['navigation']>();
   const flatListRef = useRef<FlatList<ExpiredSoonAsset>>(null);
   const skeletonItems = useSkeletonItems();
 
@@ -59,7 +62,12 @@ const ExpiredSoonSection = observer(() => {
           // TODO: 가격은 어떻게 계산?가져오는거야?
           price={0.19}
           // TODO: onPress
-          onPress={() => {}}
+          onPress={() =>
+            navigation.navigate('Asset', {
+              assetContractAddress: item.asset.assetContract.address,
+              tokenId: item.asset.tokenId,
+            })
+          }
         />
       );
     },
