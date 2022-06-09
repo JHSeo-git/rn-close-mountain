@@ -1,11 +1,12 @@
 import { View, Text } from 'react-native';
 import React from 'react';
+import AssetScreenTabViewSceneView from './AssetScreenTabView.SceneView';
 
 const AssetScreenTabViewOffersScene = () => {
   return (
-    <View>
+    <AssetScreenTabViewSceneView>
       <Text>AssetScreenTabViewOffersScene</Text>
-    </View>
+    </AssetScreenTabViewSceneView>
   );
 };
 

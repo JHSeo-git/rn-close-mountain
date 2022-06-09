@@ -23,7 +23,7 @@ type LeftButtonProps = {
 };
 
 type RightButtonProps = {
-  rightIcon: 'setting' | 'hamberger-menu' | 'search' | 'close' | 'filter';
+  rightIcon: 'setting' | 'hamberger-menu' | 'search' | 'close' | 'filter' | 'share';
   onRightIconPress: () => void;
 };
 
@@ -110,6 +110,16 @@ const Header = ({
         {rightIcon === 'filter' && (
           <IconButton
             icon="filter-variant"
+            size={24}
+            color={COLORS.hiContrast}
+            onPress={onRightIconPress}
+            rippleColor={transparent ? COLORS.gray1 : undefined}
+            style={{ backgroundColor: COLORS.loContrast }}
+          />
+        )}
+        {rightIcon === 'share' && (
+          <IconButton
+            icon="share-variant-outline"
             size={24}
             color={COLORS.hiContrast}
             onPress={onRightIconPress}

@@ -64,7 +64,7 @@ const AssetScreenView = observer(() => {
   const {
     //
     onScroll,
-    isOpacityScrollEnd,
+    transparent,
     scale,
     touchDown,
     opacity,
@@ -96,11 +96,17 @@ const AssetScreenView = observer(() => {
   }, []);
 
   return (
-    <View style={styles.container}>
+    <ScrollView
+      showsVerticalScrollIndicator={false}
+      contentContainerStyle={styles.container}
+      onScroll={onScroll}
+      scrollEventThrottle={16}
+      stickyHeaderIndices={[5]}
+    >
       <Animated.View style={[styles.headerBox]}>
         <Animated.View style={[styles.headerBoxPad, { height: insets.top }, { opacity }]} />
         <Header
-          transparent={!isOpacityScrollEnd}
+          transparent={transparent}
           title={renderHeaderTitle()}
           leftIcon="back"
           onLeftIconPress={() => navigation.goBack()}
@@ -117,55 +123,46 @@ const AssetScreenView = observer(() => {
         ]}
         colors={[randomColors[(asset?.id ?? 0) % randomColors.length], COLORS.transparent]}
       />
-      <ScrollView
-        // showsVerticalScrollIndicator={false}
-        style={{ flexGrow: 0 }}
-        contentContainerStyle={{ flexGrow: 1, paddingBottom: SIZES.iosBottomTabHeight }}
-        onScroll={onScroll}
-        scrollEventThrottle={16}
-        // stickyHeaderIndices={loading ? [3] : undefined}
-      >
-        {loading ? (
-          renderSkeleton()
-        ) : (
-          <>
-            <View style={{ paddingTop: SIZES.headerHeight + insets.top }}>
-              <View style={styles.heroImageBox}>
-                <Animated.Image
-                  source={{ uri: asset?.imageUrl }}
-                  style={[styles.heroImage, { transform: [{ scale }, { translateY }] }]}
-                  resizeMode="cover"
-                />
-              </View>
-            </View>
-            <View style={styles.contentBox}>
-              <UIText as="h4_primary">{asset?.collection.name}</UIText>
-              <UIText as="h4" style={{ marginTop: SPACE.$2 }}>
-                {asset?.name}
-              </UIText>
-            </View>
-            <View style={styles.dashboardBox}>
-              <DashboardItem
-                icon="note-outline"
-                value={numberWithCommas(asset?.collection.stats.numReports ?? 0)}
-                label={t('common.reports')}
-              />
-              <DashboardItem
-                icon="account-circle-outline"
-                value={numberWithCommas(asset?.collection.stats.numOwners ?? 0)}
-                label={t('common.owners')}
-              />
-              <DashboardItem
-                icon="note-multiple-outline"
-                value={numberWithCommas(asset?.numSales ?? 0)}
-                label={t('common.sales')}
+      {loading ? (
+        renderSkeleton()
+      ) : (
+        <>
+          <View style={{ paddingTop: SIZES.headerHeight + insets.top }}>
+            <View style={styles.heroImageBox}>
+              <Animated.Image
+                source={{ uri: asset?.imageUrl }}
+                style={[styles.heroImage, { transform: [{ scale }, { translateY }] }]}
+                resizeMode="cover"
               />
             </View>
-            <AssetScreenTabView />
-          </>
-        )}
-      </ScrollView>
-    </View>
+          </View>
+          <View style={styles.contentBox}>
+            <UIText as="h4_primary">{asset?.collection.name}</UIText>
+            <UIText as="h4" style={{ marginTop: SPACE.$2 }}>
+              {asset?.name}
+            </UIText>
+          </View>
+          <View style={styles.dashboardBox}>
+            <DashboardItem
+              icon="note-outline"
+              value={numberWithCommas(asset?.collection.stats.numReports ?? 0)}
+              label={t('common.reports')}
+            />
+            <DashboardItem
+              icon="account-circle-outline"
+              value={numberWithCommas(asset?.collection.stats.numOwners ?? 0)}
+              label={t('common.owners')}
+            />
+            <DashboardItem
+              icon="note-multiple-outline"
+              value={numberWithCommas(asset?.numSales ?? 0)}
+              label={t('common.sales')}
+            />
+          </View>
+          <AssetScreenTabView />
+        </>
+      )}
+    </ScrollView>
   );
 });
 
@@ -179,6 +176,7 @@ const styles = StyleSheet.create({
     top: 0,
     left: 0,
     right: 0,
+    zIndex: -1,
   },
   headerBox: {
     // backgroundColor: COLORS.loContrast,
@@ -191,6 +189,7 @@ const styles = StyleSheet.create({
   },
   headerBoxPad: {
     backgroundColor: COLORS.loContrast,
+    zIndex: 1,
   },
   headerTitleImage: {
     width: 40,

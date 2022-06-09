@@ -1,11 +1,11 @@
-import { View, Text, StyleSheet, useWindowDimensions, ScrollView } from 'react-native';
-import React, { useCallback, useRef, useState } from 'react';
+import { View, StyleSheet, useWindowDimensions, ScrollView } from 'react-native';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import AssetScreenTabViewDetailsScene from './AssetScreenTabView.DetailsScene';
 import AssetScreenTabViewOffersScene from './AssetScreenTabView.OffersScene';
 import AssetScreenTabViewListingsScene from './AssetScreenTabView.ListingsScene';
 import AssetScreenTabViewItemActivityScene from './AssetScreenTabView.ItemActivityScene';
-import { TabBar, TabBarIndicator, TabView } from 'react-native-tab-view';
+import { TabBar, TabView } from 'react-native-tab-view';
 import { COLORS, SPACE } from '../../constants/design-token';
 import UIText from '../../components/UIText';
 import UIIcon from '../../components/UIIcon';
@@ -92,36 +92,32 @@ const AssetScreenTabView = () => {
   }, []);
 
   return (
-    <View style={{ flexGrow: 1 }}>
-      <View style={{ height: '100%' }}>
-        <TabView
-          style={styles.tabView}
-          navigationState={{ index: tabIndex, routes }}
-          renderScene={renderScene}
-          onIndexChange={setTabIndex}
-          initialLayout={{ width: layout.width }}
-          renderTabBar={props => {
-            return (
-              <TabBar
-                {...props}
-                scrollEnabled
-                renderLabel={renderLabel}
-                renderIcon={renderIcon}
-                style={styles.tabBarContainer}
-                tabStyle={styles.tabBar}
-                indicatorStyle={styles.tabBarIndicator}
-              />
-            );
-          }}
-        />
-      </View>
-    </View>
+    <TabView
+      style={styles.tabView}
+      navigationState={{ index: tabIndex, routes }}
+      renderScene={renderScene}
+      onIndexChange={setTabIndex}
+      initialLayout={{ width: layout.width }}
+      renderTabBar={props => {
+        return (
+          <TabBar
+            {...props}
+            scrollEnabled
+            renderLabel={renderLabel}
+            renderIcon={renderIcon}
+            style={styles.tabBarContainer}
+            tabStyle={styles.tabBar}
+            indicatorStyle={styles.tabBarIndicator}
+          />
+        );
+      }}
+    />
   );
 };
 
 const styles = StyleSheet.create({
   tabView: {
-    flexGrow: 1,
+    flex: 1,
   },
   tabBarContainer: {
     borderTopWidth: 1,

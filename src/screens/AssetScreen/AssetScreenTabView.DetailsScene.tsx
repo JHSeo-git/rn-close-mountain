@@ -1,23 +1,27 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import React from 'react';
+import AssetScreenTabViewSceneView from './AssetScreenTabView.SceneView';
 
 const AssetScreenTabViewDetailsScene = () => {
   return (
-    <View style={{ flexGrow: 1 }}>
+    <AssetScreenTabViewSceneView>
       <View style={styles.dummy} />
       <View style={styles.dummy} />
       <View style={styles.dummy} />
       <View style={styles.dummy} />
       <View style={styles.dummy} />
       <View style={styles.dummy} />
-    </View>
+    </AssetScreenTabViewSceneView>
   );
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
   dummy: {
     margin: 20,
-    backgroundColor: 'red',
+    backgroundColor: 'blue',
     height: 200,
   },
 });

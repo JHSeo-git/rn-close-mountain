@@ -1,19 +1,19 @@
-import { useEffect, useRef, useState } from 'react';
-import { Animated } from 'react-native';
+import { useEffect, useState } from 'react';
+import useOnScroll from '../../hooks/useOnScroll';
 
-const opacityScrollEndOffset = 10;
+const OPACITY_OFFSET = 10;
 
 export default function useZoomOutOnScroll(height: number) {
-  const [isOpacityScrollEnd, setIsOpacityScrollEnd] = useState(false);
+  const [transparent, setTransparent] = useState(false);
   const [touchDown, setTouchDown] = useState(false);
-  const pan = useRef(new Animated.Value(0)).current;
+  const { y: pan, onScroll } = useOnScroll();
 
   useEffect(() => {
     pan.addListener(({ value }) => {
-      if (value > opacityScrollEndOffset) {
-        setIsOpacityScrollEnd(true);
+      if (value > OPACITY_OFFSET) {
+        setTransparent(false);
       } else {
-        setIsOpacityScrollEnd(false);
+        setTransparent(true);
       }
 
       if (value >= height) {
@@ -22,20 +22,10 @@ export default function useZoomOutOnScroll(height: number) {
         setTouchDown(false);
       }
     });
+    return () => {
+      pan.removeAllListeners();
+    };
   }, [pan]);
-
-  const onScroll = Animated.event(
-    [
-      {
-        nativeEvent: {
-          contentOffset: { y: pan },
-        },
-      },
-    ],
-    {
-      useNativeDriver: false,
-    },
-  );
 
   const scale = pan.interpolate({
     inputRange: [0, height],
@@ -50,7 +40,7 @@ export default function useZoomOutOnScroll(height: number) {
   });
 
   const opacity = pan.interpolate({
-    inputRange: [0, opacityScrollEndOffset],
+    inputRange: [0, OPACITY_OFFSET],
     outputRange: [0, 1],
     extrapolate: 'clamp',
   });
@@ -58,9 +48,10 @@ export default function useZoomOutOnScroll(height: number) {
   return {
     onScroll,
     touchDown,
-    isOpacityScrollEnd,
+    transparent,
     scale,
     opacity,
     translateY,
+    pan,
   };
 }
