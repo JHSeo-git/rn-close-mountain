@@ -10,6 +10,7 @@ import UIBottomSheetModal, { UIBottomSheetModalRef } from '../UIBottomSheetModal
 import UIIcon from '../UIIcon';
 import UIText from '../UIText';
 
+// TODO: change to screen navigate
 const BiometricAuth = observer(() => {
   const bottomSheetRef = useRef<UIBottomSheetModalRef>(null);
   const { t } = useTranslation();
