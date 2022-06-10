@@ -4,16 +4,14 @@ import { useTranslation } from 'react-i18next';
 import { StyleSheet, View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { SIZES } from '../../constants/design-token';
-import { useStore } from '../../contexts/StoreContext';
-import { HomeStackScreenProps } from '../types';
 import AssetScreenHeader from './AssetScreen.Header';
 import AssetScreenMainView from './AssetScreen.MainView';
 import AssetScreenTabBar from './AssetScreen.TabBar';
 import AssetScreenTabView from './AssetScreen.TabView';
-import AssetScreenTabViewDetailsScene from './AssetScreenTabView.DetailsScene';
-import AssetScreenTabViewOffersScene from './AssetScreenTabView.OffersScene';
 import useZoomOutOnScroll from './useZoomOutOnScroll.hook';
+import { SIZES } from '../../constants/design-token';
+import { useStore } from '../../contexts/StoreContext';
+import type { HomeStackScreenProps } from '../types';
 
 const HERO_IMAGE_HEIGHT = 300;
 
