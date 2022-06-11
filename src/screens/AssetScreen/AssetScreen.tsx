@@ -12,6 +12,7 @@ import useZoomOutOnScroll from './useZoomOutOnScroll.hook';
 import { SIZES } from '../../constants/design-token';
 import { useStore } from '../../contexts/StoreContext';
 import type { HomeStackScreenProps } from '../types';
+import AssetScreenBottom from './AssetScreen.Bottom';
 
 const HERO_IMAGE_HEIGHT = 300;
 
@@ -102,6 +103,7 @@ const AssetScreen = observer(({ route }: AssetScreenProps) => {
         />
         <AssetScreenTabBar routes={routes} setTabIndex={setTabIndex} tabIndex={tabIndex} />
         <AssetScreenTabView tabKey={routes[tabIndex].key} />
+        <AssetScreenBottom />
       </ScrollView>
     </View>
   );

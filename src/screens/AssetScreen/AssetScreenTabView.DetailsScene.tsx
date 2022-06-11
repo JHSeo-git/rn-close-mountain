@@ -1,5 +1,5 @@
 import { observer } from 'mobx-react-lite';
-import { useCallback, useMemo, useRef, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { View, StyleSheet, Animated } from 'react-native';
 import Accordion from 'react-native-collapsible/Accordion';
@@ -37,7 +37,11 @@ const AboutContent = ({ asset }: { asset?: OpenSeaAsset }) => {
       <View style={styles.flexBox}>
         <View style={{ position: 'relative' }}>
           <Avatar.Image size={SIZES.$8} source={{ uri: asset.imageUrlThumbnail }} />
-          <VerifiedIcon size={SIZES.$2} boxStyle={{ position: 'absolute', bottom: 0, right: 0 }} />
+          <VerifiedIcon
+            visible={asset.collection.safelistRequestStatus === 'verified'}
+            size={SIZES.$2}
+            boxStyle={{ position: 'absolute', bottom: 0, right: 0 }}
+          />
         </View>
         <View style={{ flexShrink: 1, marginLeft: SPACE.$4 }}>
           <UIText as="h4" numberOfLines={2}>
@@ -70,7 +74,6 @@ const AssetScreenTabViewDetailsScene = observer(() => {
     {
       title: t('common.about_collection'),
       content: <AboutContent asset={asset} />,
-      // content: 'test',
     },
   ];
 

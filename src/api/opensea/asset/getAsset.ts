@@ -15,13 +15,7 @@ export default async function getAsset(
   { asset_contract_address, token_id, account_address, include_orders = false }: GetAssetRequest,
   config?: AxiosRequestConfig,
 ): Promise<GetAssetResponse> {
-  const query = qs.stringify(
-    {
-      account_address,
-      include_orders,
-    },
-    { encodeValuesOnly: true },
-  );
+  const query = qs.stringify({ account_address, include_orders }, { encodeValuesOnly: true });
   const { data } = await client.get(
     `/api/v1/asset/${asset_contract_address}/${token_id}?${query}`,
     config,
