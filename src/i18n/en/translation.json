@@ -73,6 +73,9 @@
     "empty_notable_drops_message": "The Notable Drops are not available yet.",
     "empty_browse_by_category": "The Category are not available yet."
   },
+  "collection": {
+    "more_asset_info_title": "More from this collection"
+  },
   "footer": {
     "privacy_policy": "Privacy Policy",
     "terms_of_use": "Terms of Use",

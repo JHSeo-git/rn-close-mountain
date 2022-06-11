@@ -73,6 +73,9 @@
     "empty_notable_drops_message": "The Notable Drops 준비중 입니다.",
     "empty_browse_by_category": "The Category 준비중 입니다."
   },
+  "collection": {
+    "more_asset_info_title": "이 컬렉션의 또 다른 Asset"
+  },
   "footer": {
     "privacy_policy": "개인 정보 보호 정책",
     "terms_of_use": "이용 약관",
